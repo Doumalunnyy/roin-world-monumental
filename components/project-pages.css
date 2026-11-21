@@ -1,0 +1,649 @@
+.atlas.geo-widget {
+  --atlas-surface: #111b23;
+  --atlas-line: #455661;
+  --atlas-pale: #d8e2e6;
+  display: grid;
+  grid-template-columns: minmax(0, 2.35fr) minmax(260px, 1fr);
+  align-items: stretch;
+  gap: 0;
+  background: var(--atlas-surface);
+  color: #f2f5f5;
+  border-block: 1px solid var(--atlas-line);
+}
+.atlas-map-frame {
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+  min-width: 0;
+  position: relative;
+  background: radial-gradient(
+    ellipse at 67% 40%,
+    #213541 0%,
+    #16252e 42%,
+    #101b23 88%
+  );
+}
+.atlas .atlas-canvas {
+  width: 100%;
+  aspect-ratio: 1000 / 470;
+  background: url("../public/images/world-map.svg") center / 100% 100% no-repeat;
+  position: relative;
+}
+.atlas .map-pin {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+}
+.atlas .map-pin:focus-visible {
+  z-index: 4;
+  border-radius: 50%;
+}
+.atlas .map-pin i {
+  width: 10px;
+  height: 10px;
+  background: #f3f7f8;
+  border: 2px solid #172733;
+  outline: 1px solid #b4c6d0;
+}
+.atlas .map-pin.selected {
+  z-index: 3;
+}
+.atlas .map-pin.selected i {
+  background: var(--lime);
+  outline-color: var(--lime);
+  box-shadow: 0 0 0 5px #c7f1d72b;
+}
+.atlas .map-pin span {
+  display: block;
+  inset-inline-start: calc(50% + 10px);
+  left: calc(50% + 10px);
+  font: 600 11px/1.65 var(--font);
+  padding: 0 5px;
+  background: #13212ceb;
+}
+.atlas .atlas-panel {
+  padding: clamp(18px, 2.4vw, 38px);
+  border-inline-start: 1px solid var(--atlas-line);
+}
+.atlas .atlas-tabs {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 26px;
+}
+.atlas .atlas-tabs button {
+  border: 0;
+  min-height: 34px;
+  padding: 2px 0;
+  color: #c4d0d5;
+  border-bottom: 2px solid transparent;
+  font-size: 12px;
+}
+.atlas .atlas-tabs button[aria-pressed="true"] {
+  color: #fff;
+  border-color: var(--lime);
+}
+.atlas-title {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.atlas-title h3 {
+  color: #fff;
+  font-size: clamp(26px, 2.6vw, 46px);
+}
+.atlas-title small {
+  color: var(--atlas-pale);
+  font:
+    11px/1.5 ui-monospace,
+    monospace;
+}
+.atlas-detail > p {
+  color: var(--atlas-pale);
+  font-size: 14px;
+  line-height: 1.55;
+  margin-block: 16px;
+}
+.atlas .geo-selection {
+  max-width: none;
+}
+.atlas .geo-selection a {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 3px 9px;
+  border-color: var(--atlas-line);
+  padding: 12px 0;
+  margin: 0;
+}
+.atlas .geo-selection a strong {
+  font-size: 21px;
+}
+.atlas .geo-selection a span {
+  color: var(--atlas-pale);
+}
+.atlas-catalogue {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--lime);
+  font-size: 13px;
+  font-weight: 700;
+  min-height: 36px;
+}
+.technical-band {
+  background: #14212a;
+  color: #f4f6f7;
+  color-scheme: dark;
+}
+.technical-band .text-link {
+  color: #fff;
+}
+.register-section > h2,
+.discipline-connections h2,
+.catalogue-intro h2,
+.case-bottom h2,
+.field-report > h2,
+.case-stages h2 {
+  font-size: clamp(32px, 4vw, 66px);
+  line-height: 1.08;
+}
+.region-register {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(15px, 2.5vw, 40px);
+  margin-top: 34px;
+}
+.register-image,
+.discipline-visual,
+.related-thumbnail,
+.field-gallery a,
+.viewer-image {
+  position: relative;
+  overflow: hidden;
+}
+.register-image {
+  aspect-ratio: 1.65;
+}
+.region-register h3 {
+  font-size: clamp(25px, 2.5vw, 40px);
+  margin-block: 19px 4px;
+}
+.region-register p,
+.related-records small {
+  color: #424e53;
+}
+.region-register article > a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  border-block: 1px solid #9ca6a8;
+  margin-block-start: 16px;
+  padding-block: 14px;
+  font-weight: 650;
+}
+.catalogue {
+  scroll-margin-top: 12px;
+}
+.catalogue-intro {
+  display: flex;
+  gap: 25px;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  margin: 0 0 30px;
+}
+.catalogue .catalogue-controls {
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 12px 24px;
+}
+.catalogue-controls select {
+  min-height: 42px;
+}
+.catalogue-controls .clear-selection {
+  padding: 7px 0;
+  text-decoration: underline;
+  font-size: 0.9rem;
+}
+.portfolio-entry {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: clamp(18px, 4vw, 70px);
+  align-items: center;
+  border-bottom: 1px solid #a9b0b1;
+  padding-block: clamp(18px, 2.6vw, 43px);
+}
+.portfolio-entry:first-child {
+  padding-block-start: 0;
+}
+.portfolio-entry .project-image {
+  aspect-ratio: 2.35;
+  overflow: hidden;
+}
+.portfolio-text {
+  max-width: 52ch;
+}
+.site-caption {
+  position: absolute;
+  inset-inline-start: 0;
+  bottom: 0;
+  max-width: 100%;
+  padding: 5px 11px;
+  background: #101820e8;
+  color: #f2f5f6;
+  font-size: 12px;
+  line-height: 1.45;
+}
+.portfolio-country {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #425159;
+}
+.portfolio-text h2 {
+  margin-top: 10px;
+  font-size: clamp(27px, 3.5vw, 59px);
+}
+.portfolio-text p {
+  color: #344249;
+  line-height: 1.55;
+}
+.portfolio-sector {
+  margin-top: 23px;
+  padding-block-start: 10px;
+  border-top: 1px solid #a9b0b1;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  font-weight: 650;
+  font-size: 13px;
+}
+.discipline-overview article {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(24px, 5.7vw, 96px);
+  padding-block: clamp(24px, 4.4vw, 70px);
+  border-top: 1px solid #adb3b3;
+}
+.discipline-overview article:first-child {
+  padding-top: 0;
+  border: 0;
+}
+.discipline-overview article:last-child {
+  padding-bottom: 0;
+}
+.discipline-overview article:nth-child(even) .discipline-visual {
+  order: 1;
+}
+.discipline-visual {
+  aspect-ratio: 1.5;
+}
+.discipline-entry > h2,
+.discipline-detail h2,
+.process-layout h2 {
+  font-size: clamp(32px, 3.9vw, 62px);
+}
+.discipline-entry p,
+.discipline-detail p {
+  margin-block: 20px;
+  color: #364349;
+  max-width: 58ch;
+}
+.discipline-entry ul {
+  padding-inline-start: 19px;
+  line-height: 1.8;
+}
+.discipline-detail,
+.process-layout,
+.case-intro,
+.case-bottom {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: clamp(24px, 7vw, 115px);
+}
+.discipline-detail ol {
+  list-style: decimal-leading-zero;
+  margin: 0;
+  padding-inline-start: 2rem;
+}
+.discipline-detail li {
+  padding: 15px 0 15px 6px;
+  border-bottom: 1px solid #a5adae;
+  font-weight: 650;
+  font-size: clamp(20px, 2.1vw, 32px);
+}
+.discipline-detail li::marker {
+  color: #536168;
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+}
+.process-layout {
+  padding-block: clamp(42px, 6vw, 90px);
+}
+.process-layout p {
+  max-width: 55ch;
+  font-size: clamp(19px, 2vw, 29px);
+  line-height: 1.45;
+  margin-block-end: 23px;
+}
+.discipline-connections {
+  display: grid;
+  gap: 45px;
+}
+.related-records {
+  display: grid;
+  gap: 0;
+  margin-top: 22px;
+}
+.related-records a {
+  display: grid;
+  grid-template-columns: clamp(70px, 9vw, 130px) 1fr auto;
+  align-items: center;
+  gap: 14px;
+  border-top: 1px solid #aab0b2;
+  padding-block: 13px;
+}
+.related-records small,
+.related-records strong {
+  display: block;
+}
+.related-records strong {
+  font-size: clamp(19px, 2vw, 34px);
+  line-height: 1.22;
+}
+.related-thumbnail {
+  aspect-ratio: 1.75;
+}
+.record-facts {
+  margin: 0;
+}
+.record-facts > div {
+  border-top: 1px solid #98a4a8;
+  padding-block: 13px 21px;
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 14px;
+}
+.record-facts dt {
+  color: #47575f;
+}
+.record-facts dd {
+  margin: 0;
+  font-weight: 700;
+  line-height: 1.4;
+}
+.record-facts a {
+  display: block;
+}
+.record-prose {
+  display: grid;
+  gap: 40px;
+}
+.record-prose section h2 {
+  font-size: clamp(25px, 3vw, 45px);
+}
+.record-prose section p {
+  font-size: clamp(17px, 1.45vw, 22px);
+  line-height: 1.6;
+  margin-block: 16px 12px;
+}
+.case-stages {
+  padding-block-end: clamp(40px, 5vw, 82px);
+}
+.field-report .tag {
+  color: #dce4e8;
+}
+.field-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-block-start: 30px;
+}
+.field-gallery figure:first-child {
+  grid-column: 1 / -1;
+}
+.field-gallery a {
+  display: block;
+  aspect-ratio: 1.9;
+}
+.field-gallery figure:first-child a {
+  aspect-ratio: 2.65;
+}
+.field-zoom {
+  position: absolute;
+  inset-inline-end: 12px;
+  bottom: 12px;
+  display: grid;
+  place-items: center;
+  background: #10171be8;
+  color: #fff;
+  width: 36px;
+  height: 36px;
+}
+.field-gallery figcaption {
+  font-size: 13px;
+  line-height: 1.5;
+  margin-top: 7px;
+  color: #d5dfe4;
+}
+.case-videos {
+  display: grid;
+  justify-items: start;
+  gap: 18px;
+  margin-top: 36px;
+}
+.case-videos h3 {
+  font-size: 30px;
+}
+.case-bottom h2 {
+  margin-bottom: 20px;
+}
+.field-viewer {
+  position: fixed;
+  inset: 0;
+  width: min(1240px, 94vw);
+  max-width: 96vw;
+  max-height: 94dvh;
+  border: 0;
+  margin: auto;
+  background: #0e171e;
+  color: #f2f6f7;
+  padding: 0;
+}
+.field-viewer::backdrop {
+  background: #05090eeb;
+}
+.field-viewer-inner {
+  padding: clamp(12px, 2vw, 28px);
+}
+.viewer-top,
+.viewer-bottom,
+.viewer-pager {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.viewer-top {
+  margin-bottom: 8px;
+}
+.viewer-bottom {
+  margin-top: 10px;
+}
+.viewer-pager {
+  flex: none;
+}
+.viewer-top button,
+.viewer-bottom button {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #606d78;
+  display: grid;
+  place-items: center;
+}
+.viewer-image {
+  height: min(65dvh, 790px);
+  background: #0a1116;
+}
+.viewer-image .photo {
+  object-fit: contain;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .atlas-in-view .atlas-canvas {
+    animation: atlas-chart 0.85s ease-out both;
+  }
+  .atlas-in-view .map-pin i {
+    animation: atlas-plotted 0.42s ease-out backwards;
+    animation-delay: calc(140ms + var(--pin-order) * 100ms);
+  }
+  .atlas-detail {
+    animation: atlas-detail 0.24s ease-out;
+  }
+  .portfolio-entry img,
+  .discipline-visual img,
+  .field-gallery a img {
+    transition: transform 0.5s ease;
+  }
+  @media (hover: hover) {
+    .portfolio-entry:hover img,
+    .field-gallery a:hover img {
+      transform: scale(1.025);
+    }
+  }
+}
+@keyframes atlas-chart {
+  from {
+    opacity: 0.35;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes atlas-plotted {
+  from {
+    opacity: 0;
+    transform: scale(0.65);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes atlas-detail {
+  from {
+    opacity: 0.6;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (max-width: 1000px) {
+  .atlas.geo-widget {
+    grid-template-columns: minmax(0, 1.7fr) minmax(235px, 1fr);
+  }
+  .atlas .map-pin span {
+    display: none;
+  }
+  .atlas .map-pin.selected span {
+    display: block;
+  }
+}
+@media (max-width: 720px) {
+  .atlas.geo-widget {
+    grid-template-columns: 1fr;
+  }
+  .atlas-map-frame {
+    display: block;
+  }
+  .atlas .atlas-canvas {
+    width: 130%;
+    margin-left: -20%;
+  }
+  .atlas .atlas-panel {
+    border-inline-start: 0;
+    border-top: 1px solid var(--atlas-line);
+  }
+  .atlas .atlas-tabs {
+    gap: 18px;
+    margin-bottom: 16px;
+  }
+  .atlas .atlas-tabs button {
+    min-height: 40px;
+  }
+  .atlas-title h3 {
+    font-size: 27px;
+  }
+  .atlas .geo-selection a {
+    grid-template-columns: 1fr auto;
+  }
+  .atlas .map-pin {
+    width: 28px;
+    height: 28px;
+  }
+  .atlas .map-pin.selected span {
+    display: none;
+  }
+  .catalogue-intro {
+    gap: 14px;
+  }
+  .catalogue .catalogue-controls {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+  }
+  .catalogue .catalogue-controls label,
+  .catalogue .catalogue-controls select {
+    width: 100%;
+    min-width: 0;
+  }
+  .catalogue .catalogue-controls > span {
+    margin: 0;
+  }
+  .catalogue-controls .clear-selection {
+    justify-self: start;
+  }
+  .portfolio-entry,
+  .discipline-detail,
+  .process-layout,
+  .case-intro,
+  .case-bottom,
+  .discipline-overview article,
+  .region-register {
+    grid-template-columns: 1fr;
+  }
+  .portfolio-entry .project-image {
+    aspect-ratio: 1.7;
+  }
+  .discipline-overview article:nth-child(even) .discipline-visual {
+    order: 0;
+  }
+  .discipline-detail ol {
+    margin-inline-start: 0;
+  }
+  .discipline-detail li {
+    font-size: 19px;
+  }
+  .region-register {
+    gap: 30px;
+  }
+  .field-gallery {
+    gap: 15px;
+  }
+  .field-gallery figure:first-child a,
+  .field-gallery a {
+    aspect-ratio: 1.55;
+  }
+  .record-facts > div {
+    grid-template-columns: 0.8fr 1.4fr;
+  }
+  .viewer-bottom {
+    flex-wrap: wrap;
+  }
+}

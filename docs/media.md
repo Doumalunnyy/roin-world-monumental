@@ -1,6 +1,30 @@
-# Фотографии ROIN WORLD / MONUMENTAL
+# Фирменные материалы и фотографии
 
-Фотографии хранятся в `public/images`. На сайте доступна [страница авторов и лицензий](../public/images/credits.html). Карточка с интерьером действующей станции «Пакш» использует архив МАГАТЭ 2012 года. Снимки Unsplash иллюстрируют отрасль и профессии. Для портрета в разделе команды сохраняйте подпись «Иллюстративное фото».
+## Логотип
+
+В шапке сайта и подвале используется белый векторный логотип из шапки международного сайта ROIN WORLD. Файл в архиве проекта совпадает с опубликованным оригиналом. Для светлого фона компонент Wordmark поддерживает графитовую подложку. Брендбук и отдельный цветной вектор заказчик не предоставлял. [Официальный SVG](https://roinworld.ae/wp-content/uploads/2025/11/Logo_RoinWorld_white.svg)
+
+В «app/favicon.ico» хранится исходная иконка международного сайта. Для крупных экранов «app/icon.svg» воспроизводит группу контуров атома из того же официального логотипа на графитовом фоне. В карточке для социальных сетей «public/brand/social.jpg» использованы официальный логотип и панорама из архива ниже. [Оригинал ICO](https://roinworld.ae/favicon.ico)
+
+## Корпоративный архив
+
+Для главной и внутренних страниц подготовлены фотографии из международной медиатеки ROIN WORLD. WebP-файлы хранятся в «public/images». Полные адреса исходников и описание фактического содержания приведены ниже. Медиатека указывает корпоративного издателя и не приводит отдельной открытой лицензии. [Международная медиатека](https://roinworld.ae/media/) · [Корпоративный архив](https://roinworld.com/media/)
+
+| Файл | Содержание | Оригинал |
+| --- | --- | --- |
+| archive-aerial.webp и archive-aerial-mobile.webp | Панорама строительства энергетического комплекса | [ROIN WORLD](https://roinworld.ae/wp-content/uploads/2025/11/WhatsApp-Image-2025-09-30-at-16.28.42.jpeg) |
+| archive-briefing.webp | Рабочая встреча на строительной площадке | [ROIN WORLD](https://roinworld.ae/wp-content/uploads/2018/05/DSC_0365.jpg) |
+| engineering.webp | Монтаж металлоконструкций на промышленной площадке | [ROIN WORLD](https://roinworld.ae/wp-content/uploads/2025/11/WhatsApp-Image-2025-09-30-at-16.28.52-2.jpeg) |
+| logistics.webp | Разгрузка труб на строительной площадке | [ROIN WORLD](https://roinworld.ae/wp-content/uploads/2025/11/WhatsApp-Image-2025-09-30-at-16.28.54-1.jpeg) |
+| supply.webp | Образцы бетона и материалы на строительной площадке | [ROIN WORLD](https://roinworld.ae/wp-content/uploads/2018/08/foto-stroiki-8.jpg) |
+| catering.webp | Команда ROIN WORLD у мобильного объекта на площадке | [ROIN WORLD](https://roinworld.ae/wp-content/uploads/2018/08/foto-stroiki-7.jpg) |
+| team.webp | Специалисты за совместной работой на площадке | [ROIN WORLD](https://roinworld.ae/wp-content/uploads/2018/08/foto-stroiki-10.jpg) |
+| hero-2.webp | Индустриальные сооружения и водоёмы с высоты | [ROIN WORLD](https://roinworld.ae/wp-content/uploads/2025/11/WhatsApp-Image-2025-09-30-at-16.28.54-3.jpeg) |
+| hero-3.webp | Промышленные здания и башенные краны при боковом освещении | [ROIN WORLD](https://roinworld.ae/wp-content/uploads/2025/11/WhatsApp-Image-2025-09-30-at-16.28.52-1.jpeg) |
+
+Для главной выбран первый панорамный снимок официальной галереи. Номер проекта и конкретное место для этой фотографии в подписи издателя отсутствуют. В мобильной версии используется вертикальный фрагмент того же кадра. Сюжеты у направлений показывают среду работы. Сервисный блок использует кадр возле мобильного объекта. В медиатеке не найден подписанный репортаж из столовой. Подписи и альтернативный текст передают фактическую сцену. Записи для этих кадров находятся в «content/captions.json» и доступны редактору в CMS.
+
+## Внешние фотографии объектов
 
 | Файлы WebP | Сюжет | Источник | Лицензия |
 | --- | --- | --- | --- |
@@ -9,18 +33,9 @@
 | `project-bd.webp` | Градирни АЭС «Руппур» и мост Хардинга | [Jusujon1980](https://commons.wikimedia.org/wiki/File:Ruppur_Nuclear_Power_Plant_2024.jpg) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
 | `project-eg.webp` | Строительство АЭС «Эль-Дабаа», Египет, 2025 | [Управление пресс-службы и информации Президента России / www.kremlin.ru](https://commons.wikimedia.org/wiki/File:Al-Dabaa_Reactor_5.jpg) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
 | `project-hu.webp` | Действующая АЭС «Пакш», 2012. Архивная иллюстрация региона | [IAEA Imagebank](https://commons.wikimedia.org/wiki/File:Nuclear_Power_Plant_Paks.jpg) | [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/) |
-| `engineering.webp` | Башенные краны, Дубай | [Luan Fonseca](https://unsplash.com/photos/meko0Uosh0g) | [Unsplash License](https://unsplash.com/license) |
-| `logistics.webp` | Контейнеровоз и портовые краны, Гамбург | [Christian Lue](https://unsplash.com/photos/GeaNU1H5dyo) | [Unsplash License](https://unsplash.com/license) |
-| `supply.webp` | Складские стеллажи с грузами | [Russ Murray](https://unsplash.com/photos/M7G_m5XJ-go) | [Unsplash License](https://unsplash.com/license) |
-| `catering.webp` | Команда поваров за работой, Тайбэй | [Amos K](https://unsplash.com/photos/MBIuvUxLsrc) | [Unsplash License](https://unsplash.com/license) |
-| `team.webp` | Специалист в защитной каске и очках, Швеция | [Jimmy Nilsson Masth](https://unsplash.com/photos/ZC_bI3NG83A) | [Unsplash License](https://unsplash.com/license) |
-| `hero-2.webp` | Ночной вид энергетического объекта, Антверпен | [Nicolas HIPPERT](https://unsplash.com/photos/C82jAEQkfE0) | [Unsplash License](https://unsplash.com/license) |
-| `hero-3.webp` | Градирни в тумане, Чехия | [Lukáš Lehotský](https://unsplash.com/photos/10jM0O-HQwo) | [Unsplash License](https://unsplash.com/license) |
 
-## Обработка и замена
+Обработка включает кадрирование, изменение размера и сжатие WebP. Для части архивных изображений применена цветокоррекция. Открытые лицензии внешних фотографий и авторство указаны также на [странице источников](../public/images/credits.html).
 
-Применены кадрирование, изменение размера, умеренная цветокоррекция и сжатие в WebP. Файлы с CC BY-SA сохраняют соответствующую исходную лицензию. Оригиналы доступны по ссылкам в таблице. Кадры с внешних источников следует подписывать отдельно от корпоративного архива.
+## При замене через CMS
 
-При замене через CMS заполните сюжет и alt на всех активных языках, сведения об авторе и правах. Обновите сведения на странице фотоисточников. Для первого экрана подготовьте отдельный портретный кадр. Для фото венгерского проекта после получения архива используйте подтверждённый кадр строительства «Пакш II».
-
-Кадры `hero-2.webp` и `hero-3.webp` подходят для общей темы энергетики. Фотографии показывают объекты Бельгии и Чехии. Название проекта рядом с таким кадром требует его собственной фотографии.
+Укажите в подписи сюжет, автора, источник и условия использования. Для фотографий конкретного объекта или человека требуется подтверждённая атрибуция. Для каждого активного языка заполните описание изображения. При загрузке нового файла обновите соответствующую строку в реестре и на странице источников. Для первого экрана загрузите также вертикальную версию и укажите проект только при подтверждённой связи. Для кейса Венгрии используется фото действующей станции «Пакш». Для замены требуется разрешённый к корпоративной публикации кадр «Пакш II».

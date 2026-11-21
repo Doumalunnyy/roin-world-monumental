@@ -1,35 +1,219 @@
 {
-  "vacancies": [],
+  "vacancies": [
+    {
+      "slug": "interpreter-assistant",
+      "title": {
+        "ru": "Помощник переводчика RU–EN",
+        "en": "Interpreter Assistant, Russian–English",
+        "ar": "مساعد مترجم للروسية والإنجليزية"
+      },
+      "department": {
+        "ru": "Администрация",
+        "en": "Administration",
+        "ar": "الإدارة"
+      },
+      "location": {
+        "ru": "Филиал в Бангладеш",
+        "en": "Bangladesh branch",
+        "ar": "فرع بنغلاديش"
+      },
+      "body": {
+        "ru": "Позиция «Помощник переводчика RU–EN» опубликована ROIN WORLD для филиала в Бангладеш.",
+        "en": "ROIN WORLD lists the role of Interpreter Assistant, Russian–English for its Bangladesh branch.",
+        "ar": "أدرجت ROIN WORLD وظيفة «مساعد مترجم للروسية والإنجليزية» لفرعها في بنغلاديش."
+      },
+      "source": "https://roinworld.ae/team/"
+    },
+    {
+      "slug": "head-of-section",
+      "title": {
+        "ru": "Начальник участка",
+        "en": "Head of Section",
+        "ar": "رئيس قسم"
+      },
+      "department": {
+        "ru": "Строительство",
+        "en": "Construction",
+        "ar": "الإنشاءات"
+      },
+      "location": {
+        "ru": "Филиал в Бангладеш",
+        "en": "Bangladesh branch",
+        "ar": "فرع بنغلاديش"
+      },
+      "body": {
+        "ru": "Позиция «Начальник участка» опубликована ROIN WORLD для филиала в Бангладеш.",
+        "en": "ROIN WORLD lists the role of Head of Section for its Bangladesh branch.",
+        "ar": "أدرجت ROIN WORLD وظيفة «رئيس قسم» لفرعها في بنغلاديش."
+      },
+      "source": "https://roinworld.ae/team/"
+    },
+    {
+      "slug": "building-foreman",
+      "title": {
+        "ru": "Производитель строительных работ",
+        "en": "Building Foreman",
+        "ar": "مراقب أعمال البناء"
+      },
+      "department": {
+        "ru": "Строительство",
+        "en": "Construction",
+        "ar": "الإنشاءات"
+      },
+      "location": {
+        "ru": "Филиал в Бангладеш",
+        "en": "Bangladesh branch",
+        "ar": "فرع بنغلاديش"
+      },
+      "body": {
+        "ru": "Позиция «Производитель строительных работ» опубликована ROIN WORLD для филиала в Бангладеш.",
+        "en": "ROIN WORLD lists the role of Building Foreman for its Bangladesh branch.",
+        "ar": "أدرجت ROIN WORLD وظيفة «مراقب أعمال البناء» لفرعها في بنغلاديش."
+      },
+      "source": "https://roinworld.ae/team/"
+    },
+    {
+      "slug": "head-engineer-ptd",
+      "title": {
+        "ru": "Главный инженер производственно-технического отдела",
+        "en": "Head Engineer, Production and Technical Department",
+        "ar": "كبير مهندسي قسم الإنتاج والشؤون الفنية"
+      },
+      "department": {
+        "ru": "Инженерные работы",
+        "en": "Engineering",
+        "ar": "الهندسة"
+      },
+      "location": {
+        "ru": "Филиал в Бангладеш",
+        "en": "Bangladesh branch",
+        "ar": "فرع بنغلاديش"
+      },
+      "body": {
+        "ru": "Позиция «Главный инженер производственно-технического отдела» опубликована ROIN WORLD для филиала в Бангладеш.",
+        "en": "ROIN WORLD lists the role of Head Engineer, Production and Technical Department for its Bangladesh branch.",
+        "ar": "أدرجت ROIN WORLD وظيفة «كبير مهندسي قسم الإنتاج والشؤون الفنية» لفرعها في بنغلاديش."
+      },
+      "source": "https://roinworld.ae/team/"
+    },
+    {
+      "slug": "primary-documentation-accountant",
+      "title": {
+        "ru": "Бухгалтер по первичной документации",
+        "en": "Primary Documentation Accountant",
+        "ar": "محاسب الوثائق الأولية"
+      },
+      "department": {
+        "ru": "Финансы",
+        "en": "Finance",
+        "ar": "الشؤون المالية"
+      },
+      "location": {
+        "ru": "Филиал в Бангладеш",
+        "en": "Bangladesh branch",
+        "ar": "فرع بنغلاديش"
+      },
+      "body": {
+        "ru": "Позиция «Бухгалтер по первичной документации» опубликована ROIN WORLD для филиала в Бангладеш.",
+        "en": "ROIN WORLD lists the role of Primary Documentation Accountant for its Bangladesh branch.",
+        "ar": "أدرجت ROIN WORLD وظيفة «محاسب الوثائق الأولية» لفرعها في بنغلاديش."
+      },
+      "source": "https://roinworld.ae/team/"
+    },
+    {
+      "slug": "instrumentation-engineer",
+      "title": {
+        "ru": "Инженер-электрик по контрольно-измерительным приборам",
+        "en": "Electrical Engineer, Control and Testing Instrumentation",
+        "ar": "مهندس كهرباء لأجهزة القياس والتحكم والاختبار"
+      },
+      "department": {
+        "ru": "Инженерные работы",
+        "en": "Engineering",
+        "ar": "الهندسة"
+      },
+      "location": {
+        "ru": "Филиал в Бангладеш",
+        "en": "Bangladesh branch",
+        "ar": "فرع بنغلاديش"
+      },
+      "body": {
+        "ru": "Позиция «Инженер-электрик по контрольно-измерительным приборам» опубликована ROIN WORLD для филиала в Бангладеш.",
+        "en": "ROIN WORLD lists the role of Electrical Engineer, Control and Testing Instrumentation for its Bangladesh branch.",
+        "ar": "أدرجت ROIN WORLD وظيفة «مهندس كهرباء لأجهزة القياس والتحكم والاختبار» لفرعها في بنغلاديش."
+      },
+      "source": "https://roinworld.ae/team/"
+    },
+    {
+      "slug": "cleaning-services-manager",
+      "title": {
+        "ru": "Руководитель клининговой службы",
+        "en": "Cleaning Services Manager",
+        "ar": "مدير خدمات النظافة"
+      },
+      "department": {
+        "ru": "Сервисы",
+        "en": "Site services",
+        "ar": "خدمات الموقع"
+      },
+      "location": {
+        "ru": "Филиал в Бангладеш",
+        "en": "Bangladesh branch",
+        "ar": "فرع بنغلاديش"
+      },
+      "body": {
+        "ru": "Позиция «Руководитель клининговой службы» опубликована ROIN WORLD для филиала в Бангладеш.",
+        "en": "ROIN WORLD lists the role of Cleaning Services Manager for its Bangladesh branch.",
+        "ar": "أدرجت ROIN WORLD وظيفة «مدير خدمات النظافة» لفرعها في بنغلاديش."
+      },
+      "source": "https://roinworld.ae/team/"
+    }
+  ],
   "certificates": [
     {
       "slug": "iso-9001",
-      "title": "ISO 9001",
-      "file": "https://roinworld.ae/wp-content/uploads/2025/11/9001-scaled.png",
+      "title": "ISO 9001:2015",
+      "file": "/documents/iso-9001.png",
       "summary": {
         "ru": "Менеджмент качества",
         "en": "Quality management",
         "ar": "إدارة الجودة"
-      }
+      },
+      "source": "https://roinworld.ae/wp-content/uploads/2025/11/9001-scaled.png",
+      "preview": "/documents/iso-9001-preview.webp",
+      "issued": "2024-07-19",
+      "expires": "2027-07-19",
+      "holder": "ROIN WORLD, FZE"
     },
     {
       "slug": "iso-14001",
-      "title": "ISO 14001",
-      "file": "https://roinworld.ae/wp-content/uploads/2025/11/14001-scaled.png",
+      "title": "ISO 14001:2015",
+      "file": "/documents/iso-14001.png",
       "summary": {
         "ru": "Экологический менеджмент",
         "en": "Environmental management",
         "ar": "الإدارة البيئية"
-      }
+      },
+      "source": "https://roinworld.ae/wp-content/uploads/2025/11/14001-scaled.png",
+      "preview": "/documents/iso-14001-preview.webp",
+      "issued": "2024-07-19",
+      "expires": "2027-07-19",
+      "holder": "ROIN WORLD, FZE"
     },
     {
       "slug": "iso-45001",
-      "title": "ISO 45001",
-      "file": "https://roinworld.ae/wp-content/uploads/2025/11/45001-scaled.png",
+      "title": "ISO 45001:2018",
+      "file": "/documents/iso-45001.png",
       "summary": {
         "ru": "Охрана здоровья и безопасность труда",
         "en": "Occupational health and safety",
         "ar": "الصحة والسلامة المهنية"
-      }
+      },
+      "source": "https://roinworld.ae/wp-content/uploads/2025/11/45001-scaled.png",
+      "preview": "/documents/iso-45001-preview.webp",
+      "issued": "2024-07-19",
+      "expires": "2027-07-19",
+      "holder": "ROIN WORLD, FZE"
     }
   ]
 }

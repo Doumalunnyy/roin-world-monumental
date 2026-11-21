@@ -5,7 +5,7 @@ import { SiteHeader } from "@/components/Chrome";
 import { Footer } from "@/components/Shared";
 import { CompanyPages } from "@/components/CompanyPages";
 import { ProjectPages } from "@/components/ProjectPages";
-import { Icon } from "@/components/Icons";
+import { SectionHero, sectionCover } from "@/components/SectionHero";
 import { publicUrl } from "@/lib/urls";
 import {
   txt,
@@ -19,12 +19,7 @@ import {
   description,
   primary,
   secondary,
-  home,
-  projects,
-  news,
-  services,
   type Key,
-  type Lang,
 } from "@/lib/content";
 
 type Params = { lang: string; slug?: string[] };
@@ -40,14 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!title) return { robots: { index: false } };
   const summary = description(lang, path),
     url = origin + href(lang, path);
-  const cover =
-    (path.startsWith("projects/")
-      ? projects.find((p) => p.slug === slug[1])?.image
-      : path.startsWith("services/")
-        ? services.find((s) => s.slug === slug[1])?.image
-        : path.startsWith("news/")
-          ? news.find((n) => n.slug === slug[1])?.image
-          : undefined) || home.hero;
+  const cover = path ? sectionCover(path) || "/brand/social.jpg" : "/brand/social.jpg";
   const fullTitle = path
     ? title + " — ROIN WORLD"
     : "ROIN WORLD — " + txt(lang, "expertTag");
@@ -78,29 +66,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       images: [previewImage],
     },
   };
-}
-function Crumbs({
-  lang,
-  slug,
-  title,
-}: {
-  lang: Lang;
-  slug: string[];
-  title: string;
-}) {
-  return (
-    <nav aria-label={txt(lang, "breadcrumb")} className="crumbs">
-      <a href={href(lang)}>{txt(lang, "home")}</a>
-      <Icon name="right" size={11} />
-      {slug.length > 1 && (
-        <>
-          <a href={href(lang, slug[0])}>{txt(lang, slug[0] as Key)}</a>
-          <Icon name="right" size={11} />
-        </>
-      )}
-      <span aria-current="page">{title}</span>
-    </nav>
-  );
 }
 export default async function Page({ params }: Props) {
   const { lang, slug = [] } = await params;
@@ -140,7 +105,6 @@ export default async function Page({ params }: Props) {
         url: origin + href(lang),
         sameAs: ["https://roinworld.ae/", "https://roinworld.com/"],
       };
-  const noIntro = slug.length > 1 && ["news", "careers"].includes(slug[0]);
   return (
     <>
       <SiteHeader
@@ -165,13 +129,7 @@ export default async function Page({ params }: Props) {
       <main id="main" className={path ? "interior" : ""}>
         {path ? (
           <>
-            <div className="page-top">
-              <div className="shell">
-                <Crumbs lang={lang} slug={slug} title={title} />
-                <h1 className={title.split(/\s+/).some(word=>word.length>15) ? "long-title" : undefined}>{title}</h1>
-                {!noIntro && <p>{description(lang, path)}</p>}
-              </div>
-            </div>
+            <SectionHero lang={lang} path={path} title={title} />
             {["services", "projects", "geography"].includes(slug[0]) ? (
               <ProjectPages lang={lang} path={path} />
             ) : (

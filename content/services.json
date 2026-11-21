@@ -23,7 +23,12 @@
         "ar": "الإعداد الهندسي\nتنسيق الموقع\nأعمال البناء"
       },
       "image": "/images/engineering.webp",
-      "index": "01"
+      "index": "01",
+      "approach": {
+        "ru": "Последовательность работ начинается с чертежей. Инженерная подготовка связывает задачи бригад с готовностью участка и очередностью строительных операций.",
+        "en": "Work sequencing begins with the drawings. Engineering preparation connects crew assignments with site readiness and the order in which construction can proceed.",
+        "ar": "يبدأ ترتيب الأعمال من المخططات. ويربط التحضير الهندسي بين مهام الفرق وجاهزية الموقع وترتيب عمليات البناء."
+      }
     },
     {
       "slug": "logistics",
@@ -48,7 +53,12 @@
         "ar": "تخطيط النقل\nالتوصيل الدولي\nتنسيق الشحنات"
       },
       "image": "/images/logistics.webp",
-      "index": "02"
+      "index": "02",
+      "approach": {
+        "ru": "Планирование ведётся от момента, когда груз понадобится на объекте. От этой даты зависят маршрут, очередность отгрузок и время приёмки на площадке.",
+        "en": "Transport planning works back from the date a load is needed on site. That date shapes the route, dispatch sequence and delivery window.",
+        "ar": "ينطلق تخطيط النقل من موعد الحاجة إلى الشحنة في الموقع. وعلى أساسه يُحدَّد المسار وترتيب الشحنات ووقت الاستلام."
+      }
     },
     {
       "slug": "supply",
@@ -73,7 +83,12 @@
         "ar": "احتياجات المواد\nتنسيق الموردين\nتجهيز التوريدات"
       },
       "image": "/images/supply.webp",
-      "index": "03"
+      "index": "03",
+      "approach": {
+        "ru": "Потребность в материалах задаёт состав поставки. При комплектации важно сверить перечень позиций со спецификацией и подготовить их к передаче строительной команде.",
+        "en": "Material requirements define each delivery. The procurement team checks the package against the specification and prepares it for handover to the construction team.",
+        "ar": "تحدد احتياجات المواد محتوى كل توريد. وتُراجع بنود الشحنة وفق المواصفات قبل تجهيزها للتسليم إلى فريق البناء."
+      }
     },
     {
       "slug": "catering",
@@ -98,7 +113,12 @@
         "ar": "تنظيم الوجبات\nخدمات الفرق\nدعم المناوبات"
       },
       "image": "/images/catering.webp",
-      "index": "04"
+      "index": "04",
+      "approach": {
+        "ru": "График смен определяет время и место обслуживания. Расположение рабочих зон и численность смены помогают рассчитать потребность в питании и повседневных сервисах.",
+        "en": "Shift patterns determine where and when services are needed. The layout of work areas and the size of each shift inform catering and daily service needs.",
+        "ar": "تحدد جداول المناوبات وقت تقديم الخدمات ومكانها. ويساعد توزيع مناطق العمل وعدد أفراد كل مناوبة على تقدير احتياجات الوجبات والخدمات اليومية."
+      }
     }
   ]
 }

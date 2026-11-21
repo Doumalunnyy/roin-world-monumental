@@ -1,5 +1,7 @@
 export const contactCopy = {
   ru: {
+    mailMode: "Здесь можно подготовить письмо для офиса. Его отправка выполняется в вашей почтовой программе.",
+    openDraft: "Открыть письмо в почтовой программе",
     title: "Написать в ROIN WORLD",
     name: "Ваше имя",
     email: "Электронная почта",
@@ -12,7 +14,7 @@ export const contactCopy = {
     check: "Проверить заполнение",
     sending: "Отправляем…",
     closed: "Приём обращений через форму пока закрыт.",
-    verified: "Поля заполнены. Чтобы передать обращение, свяжитесь с офисом.",
+    verified: "Поля заполнены. Откройте подготовленное письмо и отправьте его со своей почты.",
     received: "Обращение принято. Спасибо за сообщение.",
     invalid: "Проверьте заполнение полей и согласие на обработку данных.",
     invalidName: "Введите имя длиной от 2 до 100 символов.",
@@ -28,6 +30,8 @@ export const contactCopy = {
     offices: "Контакты офисов",
   },
   en: {
+    mailMode: "Prepare an enquiry for our office here, then send it using your email app.",
+    openDraft: "Open the email in your mail app",
     title: "Write to ROIN WORLD",
     name: "Your name",
     email: "Email address",
@@ -40,7 +44,7 @@ export const contactCopy = {
     check: "Check details",
     sending: "Sending…",
     closed: "The enquiry form is currently closed.",
-    verified: "Your details are complete. To send your enquiry, contact an office.",
+    verified: "Your details are complete. Open the prepared email and send it from your mail app.",
     received: "We have received your enquiry. Thank you for getting in touch.",
     invalid: "Check your details and confirm your consent.",
     invalidName: "Enter a name between 2 and 100 characters.",
@@ -56,6 +60,8 @@ export const contactCopy = {
     offices: "Office contacts",
   },
   ar: {
+    mailMode: "يمكنك إعداد رسالة للمكتب هنا ثم إرسالها من تطبيق البريد الإلكتروني.",
+    openDraft: "فتح الرسالة في تطبيق البريد",
     title: "راسل ROIN WORLD",
     name: "اسمك",
     email: "البريد الإلكتروني",
@@ -85,6 +91,8 @@ export const contactCopy = {
     offices: "بيانات الاتصال بالمكاتب",
   },
   es: {
+    mailMode: "Prepara tu consulta para la oficina y envíala desde tu aplicación de correo.",
+    openDraft: "Abrir el mensaje en el correo",
     title: "Escribe a ROIN WORLD",
     name: "Tu nombre",
     email: "Correo electrónico",
@@ -111,6 +119,8 @@ export const contactCopy = {
     offices: "Contactos de las oficinas",
   },
   hu: {
+    mailMode: "Készítse el üzenetét az irodának, majd küldje el a levelezőprogramjából.",
+    openDraft: "Levél megnyitása a levelezőprogramban",
     title: "Írjon a ROIN WORLD csapatának",
     name: "Név",
     email: "E-mail-cím",

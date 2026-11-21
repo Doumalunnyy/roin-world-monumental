@@ -31,6 +31,8 @@ export type Person = {
   bio: Local;
   photo?: string;
   interviewSlug?: string;
+  experience?: Local;
+  achievements?: Local;
   source: string;
 };
 export type Project = {
@@ -44,6 +46,8 @@ export type Project = {
   image: string;
   role: Local;
   source: string;
+  context?: Local;
+  contextSource?: string;
   gallery: { image: string; caption: Local }[];
   videos: { url: string; title: Local; poster?: string }[];
   stages: { title: Local; body: Local }[];
@@ -52,6 +56,9 @@ export type Project = {
 export const company = {
   ...companyFile,
   people: companyFile.people as Person[],
+  partners: companyFile.partners as {
+    name: string; detail: Local; source: string; project?: string; logo?: string;
+  }[],
 };
 export const projects: Project[] = projectsFile.items;
 export const news = newsFile.items as {
@@ -61,14 +68,30 @@ export const news = newsFile.items as {
   date: string;
   image: string;
   video?: string;
+  category?: Local;
+  project?: string;
   source: string;
 }[];
-export const certificates = recordsFile.certificates;
+export const certificates = recordsFile.certificates as {
+  slug: string;
+  title: string;
+  file: string;
+  summary: Local;
+  preview?: string;
+  issued?: string;
+  expires?: string;
+  source?: string;
+  holder?: string;
+}[];
 export const vacancies = recordsFile.vacancies as {
   slug: string;
   title: Local;
   location: Local;
   body: Local;
+  department?: Local;
+  requirements?: Local;
+  responsibilities?: Local;
+  source?: string;
 }[];
 export const primary = [
   "about",

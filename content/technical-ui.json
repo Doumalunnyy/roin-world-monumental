@@ -1,0 +1,47 @@
+{
+  "countryProjects": {
+    "ru": "Проекты страны",
+    "en": "Projects in this country",
+    "ar": "مشاريع هذا البلد"
+  },
+  "regionRegister": {
+    "ru": "Страны и объекты",
+    "en": "Countries and sites",
+    "ar": "البلدان والمواقع"
+  },
+  "exploreGeography": {
+    "ru": "География проектов",
+    "en": "Explore project locations",
+    "ar": "استكشف مواقع المشاريع"
+  },
+  "serviceApproach": {
+    "ru": "Подход к работе",
+    "en": "Delivery approach",
+    "ar": "نهج التنفيذ"
+  },
+  "projectRecord": {
+    "ru": "Об объекте",
+    "en": "The site",
+    "ar": "عن الموقع"
+  },
+  "cooperation": {
+    "ru": "Обсудить сотрудничество",
+    "en": "Discuss working together",
+    "ar": "تواصل بشأن التعاون"
+  },
+  "catalogue": {
+    "ru": "Каталог проектов",
+    "en": "Project portfolio",
+    "ar": "دليل المشاريع"
+  },
+  "siteMedia": {
+    "ru": "Съёмка на площадке",
+    "en": "From the site",
+    "ar": "من موقع العمل"
+  },
+  "openImage": {
+    "ru": "Открыть фотографию",
+    "en": "Open photograph",
+    "ar": "فتح الصورة"
+  }
+}

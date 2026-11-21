@@ -2,7 +2,6 @@
 import { useState } from "react";
 import { Icon } from "./Icons";
 import { Photo, MediaButton } from "./Media";
-import map from "@/content/map.json";
 import { publicUrl } from "@/lib/urls";
 
 export type Feature = {
@@ -20,6 +19,8 @@ export type Feature = {
 type Common = { prev: string; next: string; more: string };
 export function Hero({
   title,
+  archiveFirst,
+  archiveLabel,
   intro,
   tag,
   aboutLabel,
@@ -37,6 +38,8 @@ export function Hero({
   labels,
 }: {
   title: string;
+  archiveFirst: boolean;
+  archiveLabel: string;
   intro: string;
   tag: string;
   aboutLabel: string;
@@ -54,9 +57,10 @@ export function Hero({
   labels: Common;
 }) {
   const [index, setIndex] = useState(0);
-  const item = items[index];
+  const count = items.length + Number(archiveFirst);
+  const item = items[index - Number(archiveFirst)];
   const step = (n: number) =>
-    setIndex((v) => (v + n + items.length) % items.length);
+    setIndex((v) => (v + n + count) % count);
   return (
     <section className="hero" aria-labelledby="hero-title">
       <div className="hero-picture" key={index}>
@@ -74,16 +78,16 @@ export function Hero({
               }}
             />
           </picture>
-        ) : (
+        ) : item ? (
           <Photo src={item.image} alt={item.caption} sizes="100vw" />
-        )}
+        ) : null}
       </div>
       <div className="hero-shade" />
       <div className="shell hero-layout">
         <div className="hero-copy">
           <div className="hero-label">
-            <i />
-            {tag}
+            <span className="hero-brand" dir="ltr">ROIN WORLD</span>
+            <span>{tag}</span>
           </div>
           <h1 id="hero-title">
             {title.split("\n").map((s, i) => (
@@ -106,25 +110,25 @@ export function Hero({
           </div>
         </div>
         <div className="hero-bottom">
-          <a className="scroll-cue" href="#about">
+          <a className="scroll-cue" href="#geography">
             <span>
               <Icon name="down" size={16} />
             </span>
             {scroll}
           </a>
-          {item && (
+          {count > 0 && (
             <div className="hero-index">
-              <a href={item.url} className="frame-caption" aria-live="polite">
-                <Icon name="pin" size={15} />
+              <a href={item?.url || "https://roinworld.ae/media/"} className="frame-caption" aria-live="polite">
+                <Icon name={item ? "pin" : "layers"} size={15} />
                 <span>
-                  {index === 0 ? item.title : item.caption}
-                  <small>{item.country}</small>
+                  {item ? item.title : archiveLabel}
+                  {item && <small>{item.country}</small>}
                 </span>
               </a>
               <div className="counter" dir="ltr">
                 <b>{String(index + 1).padStart(2, "0")}</b>
                 <span>/</span>
-                {String(items.length).padStart(2, "0")}
+                {String(count).padStart(2, "0")}
               </div>
               <div className="stepper">
                 <button aria-label={labels.prev} onClick={() => step(-1)}>
@@ -198,155 +202,4 @@ export function Featured({
     </div>
   );
 }
-export function GeographyMap({
-  items,
-  more,
-  label,
-}: {
-  items: Feature[];
-  more: string;
-  label: string;
-}) {
-  const [region, select] = useState(items[0]?.region);
-  const visible = items.filter((p) => p.region === region);
-  const countries = items.filter(
-    (p, i, a) => a.findIndex((x) => x.region === p.region) === i,
-  );
-  return (
-    <div className="geo-widget">
-      <div className="map-canvas" aria-label={label}>
-        {countries.map((p) => {
-          const xy = map.points[p.region as keyof typeof map.points];
-          return xy ? (
-            <button
-              key={p.region}
-              style={{ left: xy.x / 10 + "%", top: xy.y / 5.75 + "%" }}
-              className={"map-pin " + (region === p.region ? "selected" : "")}
-              aria-pressed={region === p.region}
-              onClick={() => select(p.region)}
-              aria-label={p.country}
-            >
-              <i />
-              <span>{p.country}</span>
-            </button>
-          ) : null;
-        })}
-      </div>
-      <div className="geo-results">
-        <div className="geo-country-list">
-          {countries.map((p) => (
-            <button
-              key={p.region}
-              aria-pressed={p.region === region}
-              onClick={() => select(p.region)}
-            >
-              {p.country}
-            </button>
-          ))}
-        </div>
-        <div className="geo-selection" aria-live="polite">
-          {visible.map((p) => (
-            <a href={p.url} key={p.slug} title={more}>
-              <span>{p.sector} </span>
-              <strong>{p.title}</strong>
-              <Icon name="arrow" />
-            </a>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
-export function ProjectFilters({
-  items,
-  areas,
-  labels,
-}: {
-  items: Feature[];
-  areas: { slug: string; name: string }[];
-  labels: {
-    country: string;
-    area: string;
-    allCountries: string;
-    allAreas: string;
-    noResults: string;
-    reset: string;
-    found: string;
-  };
-}) {
-  const [country, setCountry] = useState("");
-  const [area, setArea] = useState("");
-  const filtered = items.filter(
-    (p) =>
-      (!country || p.region === country) && (!area || p.areas.includes(area)),
-  );
-  return (
-    <>
-      <div className="filter-bar">
-        <label>
-          {labels.country}
-          <select value={country} onChange={(e) => setCountry(e.target.value)}>
-            <option value="">{labels.allCountries}</option>
-            {items
-              .filter(
-                (p, i, a) => a.findIndex((x) => x.region === p.region) === i,
-              )
-              .map((p) => (
-                <option key={p.region} value={p.region}>
-                  {p.country}
-                </option>
-              ))}
-          </select>
-        </label>
-        <label>
-          {labels.area}
-          <select value={area} onChange={(e) => setArea(e.target.value)}>
-            <option value="">{labels.allAreas}</option>
-            {areas.map((a) => (
-              <option key={a.slug} value={a.slug}>
-                {a.name}
-              </option>
-            ))}
-          </select>
-        </label>
-        <span aria-live="polite">
-          {labels.found} · {filtered.length}
-        </span>
-      </div>
-      {filtered.length ? (
-        <div className="project-grid">
-          {filtered.map((p) => (
-            <a className="project-card" key={p.slug} href={p.url}>
-              <div className="project-image">
-                <Photo src={p.image} alt={p.caption} />
-                <span className="credit">{p.caption}</span>
-              </div>
-              <div className="project-meta">
-                <span>{p.country}</span>
-                <span>{p.sector}</span>
-              </div>
-              <h2>
-                {p.title}
-                <Icon name="diagonal" />
-              </h2>
-              <p>{p.summary}</p>
-            </a>
-          ))}
-        </div>
-      ) : (
-        <div className="empty-results">
-          <p>{labels.noResults}</p>
-          <button
-            className="action"
-            onClick={() => {
-              setArea("");
-              setCountry("");
-            }}
-          >
-            {labels.reset}
-          </button>
-        </div>
-      )}
-    </>
-  );
-}
+export { GeographyMap, ProjectFilters } from "./Atlas";

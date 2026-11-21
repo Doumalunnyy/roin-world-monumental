@@ -28,6 +28,7 @@ export function ContactForm({ lang, enabled }: Props) {
   const titleId = useId();
   const noticeId = useId();
   const [busy, setBusy] = useState(false);
+  const [draft, setDraft] = useState("");
   const [feedback, setFeedback] = useState<Feedback | null>(null);
   const lastSubmission = useRef<{ signature: string; id: string } | null>(null);
 
@@ -52,6 +53,10 @@ export function ContactForm({ lang, enabled }: Props) {
     message.setCustomValidity(body.message.length < 10 ? t.invalidMessage : "");
     if (!form.reportValidity()) return;
     if (!enabled) {
+      if (officeEmail) {
+        const text = [body.name, body.company, body.email, "", body.message].filter((v, i) => v || i === 3).join("\n");
+        setDraft("mailto:" + officeEmail + "?subject=" + encodeURIComponent(t.title) + "&body=" + encodeURIComponent(text));
+      }
       setFeedback("verified");
       return;
     }
@@ -102,6 +107,7 @@ export function ContactForm({ lang, enabled }: Props) {
         )
           field.setCustomValidity("");
         if (feedback) setFeedback(null);
+        if (draft) setDraft("");
       }}
       onInvalid={(event) => {
         const field = event.target;
@@ -124,7 +130,7 @@ export function ContactForm({ lang, enabled }: Props) {
       <h2 id={titleId}>{t.title}</h2>
       {!enabled && (
         <p className="contact-form__notice" id={noticeId}>
-          {t.closed} {contactLink}
+          {t.mailMode} {contactLink}
         </p>
       )}
       <noscript>
@@ -217,7 +223,8 @@ export function ContactForm({ lang, enabled }: Props) {
         data-result={feedbackId}
       >
         {feedback && t[feedback]}
-        {feedback && ["closed", "verified", "unavailable", "limit"].includes(feedback) && <> {contactLink}</>}
+        {feedback === "verified" && draft && <> <a href={draft}>{t.openDraft}</a></>}
+        {feedback && (["closed", "unavailable", "limit"].includes(feedback) || (feedback === "verified" && !draft)) && <> {contactLink}</>}
       </p>
     </form>
   );

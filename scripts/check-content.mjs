@@ -55,7 +55,8 @@ for (const person of read("company").people) {
   )
     errors.push("Unknown interview: " + person.interviewSlug);
 }
-if (!read("projects").items.some((p) => p.slug === read("home").heroProject))
+const coverProject = read("home").heroProject;
+if (coverProject && !read("projects").items.some((p) => p.slug === coverProject))
   errors.push("Unknown homepage cover project");
 if (errors.length) throw Error(errors.join("\n"));
 console.log(

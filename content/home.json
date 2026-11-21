@@ -9,16 +9,16 @@
     "en": "ROIN WORLD is an international construction and engineering company. We contribute to major energy and infrastructure projects through engineering, logistics, procurement and site services.",
     "ar": "ROIN WORLD شركة دولية متخصصة في البناء والهندسة. نساهم في مشاريع كبرى للطاقة والبنية التحتية من خلال الهندسة والنقل والتوريد وخدمات المواقع."
   },
-  "hero": "/images/hero-dusk.webp",
-  "heroMobile": "/images/hero-dusk-mobile.webp",
+  "hero": "/images/archive-aerial.webp",
+  "heroMobile": "/images/archive-aerial-mobile.webp",
   "heroAlt": {
-    "ru": "Ночная панорама градирен АЭС «Руппур» в Бангладеш",
-    "en": "Cooling towers at Rooppur nuclear power plant in Bangladesh at night",
-    "ar": "أبراج التبريد في محطة روبور النووية في بنغلاديش ليلاً"
+    "ru": "Панорама строительства энергетического комплекса",
+    "en": "Aerial view of an energy construction site",
+    "ar": "منظر جوي لأعمال إنشاء مجمّع للطاقة"
   },
   "film": "https://www.youtube.com/watch?v=4KEZoq2ubVE",
   "teamImage": "/images/team.webp",
-  "careerImage": "/images/engineering.webp",
+  "careerImage": "/images/archive-briefing.webp",
   "about": {
     "ru": "Большие задачи.\nСильные решения.",
     "en": "Complex challenges.\nPractical solutions.",
@@ -30,14 +30,14 @@
     "ar": "نعمل حيث تتحول القرارات الهندسية إلى منشآت صناعية. تجمع مواقع البناء فرق التنفيذ وتوريد المواد وخدمات الأفراد، وتربط ROIN WORLD بين هذه الأعمال في المشاريع الدولية."
   },
   "expertise": {
-    "ru": "Комплексные решения\nдля масштабных проектов.",
-    "en": "Integrated services\nfor major projects.",
-    "ar": "خدمات متكاملة\nللمشاريع الكبرى."
+    "ru": "Направления деятельности",
+    "en": "Our capabilities",
+    "ar": "مجالات العمل"
   },
   "projects": {
-    "ru": "Международные проекты.\nРеальный масштаб.",
-    "en": "International projects.\nReal scale.",
-    "ar": "مشاريع دولية.\nعلى أرض الواقع."
+    "ru": "Избранные международные проекты",
+    "en": "Selected international projects",
+    "ar": "مشاريع دولية مختارة"
   },
   "team": {
     "ru": "За каждым проектом —\nнаша команда.",
@@ -45,9 +45,9 @@
     "ar": "وراء كل مشروع\nفريقنا."
   },
   "geo": {
-    "ru": "Международный опыт.\nЕдиные стандарты работы.",
-    "en": "International experience.\nShared working standards.",
-    "ar": "خبرات دولية.\nومعايير عمل مشتركة."
+    "ru": "География результата",
+    "en": "Where we work",
+    "ar": "نطاق مشاريعنا"
   },
   "career": {
     "ru": "Создавайте будущее\nвместе с нами.",
@@ -55,11 +55,11 @@
     "ar": "ابنوا المستقبل\nمعنا."
   },
   "contact": {
-    "ru": "Давайте создавать\nмасштаб вместе.",
-    "en": "Let’s build\nat scale together.",
-    "ar": "لنُنجز المشاريع\nالكبرى معاً."
+    "ru": "Обсудить сотрудничество",
+    "en": "Discuss a project",
+    "ar": "لنتحدث عن مشروعكم"
   },
   "teamCount": "800+",
   "teamCountSource": "https://roinworld.ae/",
-  "heroProject": "rooppur"
+  "heroProject": ""
 }

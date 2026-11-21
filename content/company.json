@@ -70,7 +70,8 @@
         "en": "ROIN WORLD identifies KHNP as a partner on the turbine island facilities at Egypt’s El Dabaa nuclear power plant.",
         "ar": "تذكر ROIN WORLD شركة KHNP ضمن شركائها في إنشاء مرافق جزيرة التوربينات بمحطة الضبعة النووية في مصر."
       },
-      "source": "https://roinworld.ae/projects/"
+      "source": "https://roinworld.ae/projects/",
+      "project": "el-dabaa"
     },
     {
       "name": "Doosan Enerbility",
@@ -79,7 +80,8 @@
         "en": "ROIN WORLD lists Doosan Enerbility among its partners for the turbine island facilities at El Dabaa.",
         "ar": "تدرج ROIN WORLD شركة دوسان إنربيليتي ضمن شركائها في إنشاء مرافق جزيرة التوربينات بالضبعة."
       },
-      "source": "https://roinworld.ae/projects/"
+      "source": "https://roinworld.ae/projects/",
+      "project": "el-dabaa"
     },
     {
       "name": "Atomstroyexport",
@@ -88,7 +90,8 @@
         "en": "In 2019 Atomstroyexport and ROIN WORLD held a joint fire drill at the Rooppur construction site.",
         "ar": "في عام ٢٠١٩ أجرت أتوم ستروي إكسبورت وROIN WORLD تدريباً مشتركاً على مكافحة الحرائق في موقع روبور."
       },
-      "source": "https://roinworld.com/roinworld-together-with-atomstroyexport-conducted-firefighting-training-exercises-at-the-rooppur-npp/"
+      "source": "https://roinworld.com/roinworld-together-with-atomstroyexport-conducted-firefighting-training-exercises-at-the-rooppur-npp/",
+      "project": "rooppur"
     }
   ],
   "offices": [
@@ -166,6 +169,44 @@
       "email": "info@roinworld.com",
       "phone": "+880 13 1309 0009",
       "source": "https://roinworld.ae/kontakti-2/"
+    }
+  ],
+  "partnerDirectory": [
+    {
+      "name": "Paks II. Zrt.",
+      "group": "customer",
+      "logo": "/partners/paks-ii.jpg",
+      "source": "https://roinworld.ae/wp-content/uploads/2017/12/logo_7.jpg"
+    },
+    {
+      "name": "BSRM",
+      "group": "supplier",
+      "logo": "/partners/bsrm.jpg",
+      "source": "https://roinworld.ae/wp-content/uploads/2017/12/logo_4.jpg"
+    },
+    {
+      "name": "Energypac",
+      "group": "supplier",
+      "logo": "/partners/energypac.jpg",
+      "source": "https://roinworld.ae/wp-content/uploads/2017/12/logo_5.jpg"
+    },
+    {
+      "name": "Felzer",
+      "group": "supplier",
+      "logo": "/partners/felzer.jpg",
+      "source": "https://roinworld.ae/wp-content/uploads/2017/12/logo_6.jpg"
+    },
+    {
+      "name": "Independent Technologies",
+      "group": "partner",
+      "logo": "/partners/independent-technologies.jpg",
+      "source": "https://roinworld.ae/wp-content/uploads/2017/12/logo_8.jpg"
+    },
+    {
+      "name": "Fagun Group",
+      "group": "partner",
+      "logo": "/partners/fagun-group.jpg",
+      "source": "https://roinworld.ae/wp-content/uploads/2019/05/logo_11.jpg"
     }
   ]
 }

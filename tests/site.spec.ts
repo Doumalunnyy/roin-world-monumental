@@ -29,25 +29,17 @@ test("hero and project carousels navigate independently and wrap", async ({
   await open(page, "/ru");
   const hero = page.locator(".hero");
   const featured = page.locator(".featured");
-  await expect(hero.locator(".frame-caption")).toHaveAttribute(
-    "href",
-    "/ru/projects/rooppur",
-  );
+  const archive = "https://roinworld.ae/media/";
+  await expect(hero.locator(".frame-caption")).toHaveAttribute("href", archive);
   await hero.getByRole("button", { name: "Предыдущий" }).click();
-  await expect(hero.locator(".frame-caption")).toHaveAttribute(
-    "href",
-    "/ru/projects/paks-ii",
-  );
+  await expect(hero.locator(".frame-caption")).toHaveAttribute("href", "/ru/projects/paks-ii");
   await hero.getByRole("button", { name: "Следующий" }).click();
-  await expect(hero.locator(".frame-caption")).toHaveAttribute(
-    "href",
-    "/ru/projects/rooppur",
-  );
+  await expect(hero.locator(".frame-caption")).toHaveAttribute("href", archive);
   await featured.getByRole("button", { name: "Следующий" }).click();
   await expect(featured.getByRole("heading")).toContainText("Эль-Дабаа");
   await expect(hero.locator(".frame-caption")).toHaveAttribute(
     "href",
-    "/ru/projects/rooppur",
+    archive,
   );
   await featured.getByRole("link", { name: "Подробнее" }).click();
   await expect(page).toHaveURL(/\/ru\/projects\/el-dabaa\/?$/);
@@ -153,7 +145,7 @@ test("film is requested on activation and released when the player closes", asyn
   await open(page, "/ru");
   const trigger = page
     .locator(".hero")
-    .getByRole("link", { name: "Смотреть фильм" });
+    .getByRole("link", { name: "Смотреть корпоративный фильм" });
   await expect(trigger).toHaveAttribute(
     "href",
     "https://www.youtube.com/watch?v=4KEZoq2ubVE",
@@ -189,7 +181,7 @@ test("closed contact intake validates locally without transferring personal data
   await open(page, "/ru/contacts");
   const form = page.getByRole("form", { name: "Написать в ROIN WORLD" });
   await expect(
-    form.getByText(/Приём обращений через форму пока закрыт/),
+    form.getByText(/Здесь можно подготовить письмо для офиса/),
   ).toBeVisible();
   const validate = form.getByRole("button", { name: /Проверить заполнение/ });
   await validate.click();
@@ -205,6 +197,7 @@ test("closed contact intake validates locally without transferring personal data
   await form.getByRole("checkbox").check();
   await validate.click();
   await expect(form.getByRole("status")).toContainText("Поля заполнены.");
+  await expect(form.getByRole("link", { name: "Открыть письмо в почтовой программе" })).toHaveAttribute("href", /^mailto:[^?]+\?subject=.+&body=.+/);
   expect(submissions).toEqual([]);
 });
 

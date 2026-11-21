@@ -1,3 +1,5 @@
+import Image from "next/image";
+import { publicUrl } from "@/lib/urls";
 import type { CSSProperties } from "react";
 type SymbolName =
   | "arrow"
@@ -81,21 +83,21 @@ export function Icon({
     </svg>
   );
 }
-export function Wordmark() {
+export function Wordmark({ surface = "dark" }: { surface?: "dark" | "light" }) {
   return (
-    <span className="wordmark" dir="ltr">
-      <svg
-        aria-hidden="true"
-        viewBox="0 0 38 32"
-        width="34"
-        height="29"
-        fill="currentColor"
-      >
-        <path d="M0 29 10 3h8L8 29zm12 0L22 3h8L20 29zm12 0 6-16 8 16z" />
-      </svg>
-      <span>
-        ROIN <b>WORLD</b>
-      </span>
+    <span
+      className="wordmark"
+      dir="ltr"
+      style={surface === "light" ? { backgroundColor: "#152329", padding: "3px 9px" } : undefined}
+    >
+      <Image
+        src={publicUrl("/brand/roin-world.svg")}
+        alt="ROIN WORLD"
+        width={149}
+        height={61}
+        unoptimized
+        style={{ display: "block", width: "clamp(112px, 11vw, 149px)", height: "auto" }}
+      />
     </span>
   );
 }

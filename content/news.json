@@ -15,7 +15,12 @@
       "date": "2026",
       "source": "https://www.youtube.com/watch?v=4KEZoq2ubVE",
       "video": "https://www.youtube.com/watch?v=4KEZoq2ubVE",
-      "image": "/images/hero.webp"
+      "image": "/images/hero.webp",
+      "category": {
+        "ru": "О компании",
+        "en": "Corporate",
+        "ar": "الشركة"
+      }
     },
     {
       "slug": "rooppur-training-building",
@@ -32,7 +37,13 @@
       "date": "2020-04-27",
       "source": "https://roinworld.com/work-at-facility-6-1-1-of-the-training-and-production-building-rooppur-npp-bangladesh/",
       "image": "/images/project-bd.webp",
-      "video": "https://www.youtube.com/watch?v=IlK5G-J8NZA"
+      "video": "https://www.youtube.com/watch?v=IlK5G-J8NZA",
+      "category": {
+        "ru": "Строительство",
+        "en": "Construction",
+        "ar": "الإنشاءات"
+      },
+      "project": "rooppur"
     },
     {
       "slug": "rooppur-fire-drill",
@@ -49,7 +60,13 @@
       "date": "2019-08-01",
       "source": "https://roinworld.com/roinworld-together-with-atomstroyexport-conducted-firefighting-training-exercises-at-the-rooppur-npp/",
       "image": "/images/team.webp",
-      "video": "https://www.youtube.com/watch?v=pP4MUHBQO3I"
+      "video": "https://www.youtube.com/watch?v=pP4MUHBQO3I",
+      "category": {
+        "ru": "Безопасность",
+        "en": "Safety",
+        "ar": "السلامة"
+      },
+      "project": "rooppur"
     }
   ]
 }

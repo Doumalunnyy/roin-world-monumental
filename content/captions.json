@@ -13,5 +13,65 @@
     "ru": "Градирни АЭС «Руппур»",
     "en": "Rooppur cooling towers",
     "ar": "أبراج التبريد في محطة روبور"
+  },
+  "/images/archive-aerial.webp": {
+    "ru": "Панорама строительства энергетического комплекса",
+    "en": "Aerial view of an energy construction site",
+    "ar": "منظر جوي لأعمال إنشاء مجمّع للطاقة"
+  },
+  "/images/archive-briefing.webp": {
+    "ru": "Рабочая встреча на строительной площадке",
+    "en": "A team briefing on site",
+    "ar": "اجتماع فريق العمل في الموقع"
+  },
+  "/images/engineering.webp": {
+    "ru": "Монтаж металлоконструкций на промышленной площадке",
+    "en": "Structural steelwork at an industrial site",
+    "ar": "تركيب الهياكل الفولاذية في موقع صناعي"
+  },
+  "/images/logistics.webp": {
+    "ru": "Разгрузка труб на строительной площадке",
+    "en": "Unloading pipes on site",
+    "ar": "تفريغ الأنابيب في موقع البناء"
+  },
+  "/images/supply.webp": {
+    "ru": "Образцы бетона и материалы на строительной площадке",
+    "en": "Concrete samples and materials on site",
+    "ar": "عينات الخرسانة والمواد في موقع البناء"
+  },
+  "/images/catering.webp": {
+    "ru": "Команда ROIN WORLD у мобильного объекта на площадке",
+    "en": "ROIN WORLD personnel beside a site facility",
+    "ar": "فريق ROIN WORLD بجوار مرفق ميداني"
+  },
+  "/images/team.webp": {
+    "ru": "Специалисты за совместной работой на площадке",
+    "en": "Site personnel working together",
+    "ar": "متخصصون يعملون معاً في الموقع"
+  },
+  "/images/hero-2.webp": {
+    "ru": "Индустриальные сооружения и водоёмы с высоты",
+    "en": "Aerial view of industrial facilities and basins",
+    "ar": "منظر جوي للمنشآت الصناعية وأحواض المياه"
+  },
+  "/images/hero-3.webp": {
+    "ru": "Промышленные здания и башенные краны при боковом освещении",
+    "en": "Industrial buildings and tower cranes in low sun",
+    "ar": "مبانٍ صناعية ورافعات برجية تحت ضوء الشمس المائل"
+  },
+  "/images/archive-aerial-mobile.webp": {
+    "ru": "Панорама строительства энергетического комплекса",
+    "en": "Aerial view of an energy construction site",
+    "ar": "منظر جوي لأعمال إنشاء مجمّع للطاقة"
+  },
+  "/images/hero.webp": {
+    "ru": "Площадка АЭС «Руппур», Бангладеш. Архив МАГАТЭ, 2023",
+    "en": "Rooppur NPP site, Bangladesh. IAEA archive, 2023",
+    "ar": "موقع محطة روبور في بنغلاديش. أرشيف الوكالة الدولية للطاقة الذرية، ٢٠٢٣"
+  },
+  "/images/hero-dusk.webp": {
+    "ru": "Градирни АЭС «Руппур» после заката",
+    "en": "Cooling towers at Rooppur NPP after sunset",
+    "ar": "أبراج تبريد محطة روبور بعد غروب الشمس"
   }
 }

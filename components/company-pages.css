@@ -309,16 +309,6 @@
 .company-pages .cp-news-thumb {
   aspect-ratio: 1.6;
 }
-.company-pages .cp-photo-note {
-  position: absolute;
-  inset-block-end: 0;
-  inset-inline-start: 0;
-  padding: 0.28rem 0.55rem;
-  background: #182024eb;
-  color: #f5f5f2;
-  font-size: 0.77rem;
-  line-height: 1.35;
-}
 .company-pages .cp-news-list h2 {
   margin-block: 0.45rem;
 }
@@ -461,4 +451,339 @@
   .company-pages .cp-news-thumb {
     aspect-ratio: 1.9;
   }
+}
+
+.company-pages .cp-block {
+  margin-block: var(--cp-space);
+}
+.company-pages .cp-block > h2,
+.company-pages .cp-library > h2,
+.company-pages .cp-partners > h2 {
+  margin-block-end: clamp(1.25rem, 3vw, 2.75rem);
+}
+.company-pages .cp-split {
+  display: grid;
+  align-items: start;
+  grid-template-columns: minmax(0, 1.14fr) minmax(0, 0.86fr);
+  gap: clamp(2rem, 7vw, 7.5rem);
+}
+.company-pages .cp-introduction .cp-lede {
+  margin-block-start: 1.1rem;
+}
+.company-pages .cp-milestones {
+  padding: 0;
+  list-style: none;
+  margin-block: 1.5rem;
+}
+.company-pages .cp-milestones li,
+.company-pages .cp-service-list .text-link {
+  border-block-start: 1px solid var(--cp-line);
+  padding-block: 0.95rem;
+}
+.company-pages .cp-service-list {
+  display: grid;
+  margin-block-start: 1.5rem;
+}
+.company-pages .cp-service-list .text-link {
+  justify-content: space-between;
+  margin: 0;
+}
+.company-pages .cp-sites,
+.company-pages .cp-docs-grid {
+  display: grid;
+  align-items: start;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2.4vw, 2.1rem);
+}
+.company-pages .cp-sites a {
+  position: relative;
+  display: block;
+  color: inherit;
+}
+.company-pages .cp-site-image {
+  background: #263339;
+  position: relative;
+  display: block;
+  aspect-ratio: 1.6;
+  overflow: hidden;
+}
+.company-pages .cp-site-image img {
+  object-fit: cover;
+}
+.company-pages .cp-sites .cp-meta {
+  margin-block: 0.8rem 0.2rem;
+}
+.company-pages .cp-sites strong {
+  display: block;
+  font-size: clamp(1.05rem, 2vw, 1.65rem);
+  padding-inline-end: 1.4rem;
+}
+.company-pages .cp-sites a > svg {
+  position: absolute;
+  inset-block-end: 0.2rem;
+  inset-inline-end: 0;
+}
+.company-pages .cp-standards,
+.company-pages .cp-contact-choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 2rem;
+  padding-block: 1.25rem;
+  border-block: 1px solid var(--cp-line);
+}
+.company-pages .cp-standards a,
+.company-pages .cp-contact-choices a,
+.company-pages .cp-scan-actions a {
+  color: inherit;
+  font-weight: 650;
+}
+.company-pages .cp-standards a {
+  font-size: clamp(1.1rem, 2vw, 1.7rem);
+}
+.company-pages .cp-contact-choices {
+  margin-block-end: 2.6rem;
+}
+.company-pages .cp-contact-choices a,
+.company-pages .cp-scan-actions a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 2.75rem;
+}
+.company-pages :is(.cp-invitation, .cp-application) {
+  background: #17252b;
+  color: #f3f4ed;
+  padding: clamp(1.5rem, 4vw, 3.5rem);
+}
+.company-pages .cp-invitation {
+  margin-block-start: var(--cp-space);
+}
+.company-pages .cp-application a {
+  color: inherit;
+}
+.company-pages .cp-application p {
+  max-width: 52ch;
+}
+.company-pages .cp-partner-logo {
+  position: relative;
+  display: block;
+  width: min(12rem, 100%);
+  height: 5.5rem;
+  margin-block-end: 1rem;
+}
+.company-pages .cp-partner-logo img {
+  object-fit: contain;
+  object-position: center;
+}
+.company-pages .cp-register article {
+  align-items: start;
+}
+.company-pages .cp-register h3 {
+  font-size: clamp(1.6rem, 2.9vw, 2.8rem);
+}
+.company-pages .cp-register article > div > .text-link {
+  margin-block: 0.8rem;
+  display: flex;
+  width: fit-content;
+}
+.company-pages .cp-profile-detail {
+  margin-block: 1.5rem;
+}
+.company-pages .cp-profile-detail p {
+  white-space: pre-line;
+}
+.company-pages .cp-library article {
+  min-width: 0;
+  scroll-margin-top: 6rem;
+}
+.company-pages .cp-scan {
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1.1;
+  background: #d9dedb;
+  margin-block-end: 1.2rem;
+  overflow: hidden;
+}
+.company-pages .cp-scan img {
+  object-fit: contain;
+  padding: 1rem;
+}
+.company-pages .cp-library article > p {
+  margin-block: 0.55rem 1.2rem;
+}
+.company-pages .cp-library dl {
+  margin: 1rem 0;
+}
+.company-pages .cp-library dt {
+  color: var(--cp-second);
+  font-size: 0.82rem;
+  border-block-start: 1px solid var(--cp-line);
+  padding-block-start: 0.45rem;
+}
+.company-pages .cp-library dd {
+  margin: 0.12rem 0 0.55rem;
+  font-weight: 650;
+}
+.company-pages .cp-library dd time {
+  color: inherit;
+}
+.company-pages .cp-scan-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.2rem;
+}
+.company-pages .cp-scan-actions a {
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+}
+.company-pages .cp-filter-toolbar {
+  display: flex;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: 1rem 1.75rem;
+  margin-block: 1.75rem;
+}
+.company-pages .cp-filter-toolbar label {
+  display: grid;
+  gap: 0.35rem;
+  font-weight: 650;
+  font-size: 0.86rem;
+}
+.company-pages .cp-filter-toolbar select,
+.company-pages .cp-filter-toolbar button {
+  min-height: 2.85rem;
+  font: inherit;
+  color: #1a2428;
+  background: transparent;
+  border: 1px solid #697572;
+  border-radius: 0;
+  padding: 0.45rem 0.85rem;
+}
+.company-pages .cp-filter-toolbar button {
+  cursor: pointer;
+}
+.company-pages .cp-filter-toolbar :is(button, select):focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+}
+.company-pages .cp-vacancies article {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.company-pages .cp-vacancies article > .text-link {
+  flex-shrink: 0;
+}
+.company-pages .cp-vacancies h3 a,
+.company-pages .cp-news-list h3 a {
+  color: inherit;
+}
+.company-pages .cp-vacancies h3,
+.company-pages .cp-news-list h3 {
+  margin-block: 0.4rem;
+}
+.company-pages .cp-job-detail p {
+  white-space: pre-line;
+}
+.company-pages .cp-news-meta {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  color: var(--cp-second);
+  font-size: 0.84rem;
+}
+.company-pages .cp-story-links > .text-link {
+  margin-block: 1.2rem;
+}
+.company-pages .cp-story .cp-video-link {
+  padding-block: 2rem;
+}
+.company-pages .cp-contacts :is(#offices, #enquiry) {
+  scroll-margin-top: 6rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .company-pages :is(.cp-sites a, .cp-person, .cp-news-thumb, .cp-scan) img {
+    transition: transform 0.45s cubic-bezier(0.22, 0.62, 0.25, 1);
+  }
+  .company-pages
+    :is(.cp-sites a, .cp-person, .cp-news-thumb, .cp-scan):hover
+    img {
+    transform: scale(1.025);
+  }
+  .company-pages .cp-index article {
+    animation: cp-publish 0.32s ease-out both;
+  }
+  @keyframes cp-publish {
+    from {
+      opacity: 0.5;
+      transform: translateY(4px);
+    }
+  }
+}
+@media (max-width: 760px) {
+  .company-pages .cp-split {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .company-pages .cp-docs-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 580px) {
+  .company-pages .cp-sites,
+  .company-pages .cp-docs-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .company-pages .cp-vacancies article {
+    display: grid;
+  }
+  .company-pages .cp-contacts aside {
+    grid-row: auto;
+  }
+  .company-pages .cp-docs-grid {
+    row-gap: 2.6rem;
+  }
+  .company-pages .cp-filter-toolbar label {
+    min-width: 0;
+    max-width: 100%;
+  }
+}
+
+.company-pages .cp-logo-directory {
+  margin-block-end: var(--cp-space);
+}
+.company-pages .cp-logo-row {
+  display: grid;
+  grid-template-columns: minmax(0, .38fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 1.25rem;
+  border-block-start: 1px solid var(--cp-line);
+  padding-block: 1.5rem;
+}
+.company-pages .cp-logo-row h2 { font-size: clamp(1.35rem, 2.4vw, 2.3rem); }
+.company-pages .cp-logo-row ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .8rem;
+}
+.company-pages .cp-logo-row li {
+  display: grid;
+  grid-template-rows: 4.25rem auto;
+  align-items: center;
+  gap: .5rem;
+  font-size: .85rem;
+  font-weight: 650;
+  color: var(--cp-second);
+}
+.company-pages .cp-catalogue-logo { position: relative; display: block; height: 100%; background: white; }
+.company-pages .cp-catalogue-logo img { object-fit: contain; }
+@media (max-width: 680px) {
+  .company-pages .cp-logo-row { grid-template-columns: minmax(0, 1fr); }
+  .company-pages .cp-logo-row ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }

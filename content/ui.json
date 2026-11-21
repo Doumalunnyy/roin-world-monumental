@@ -70,14 +70,14 @@
     "ar": "الخصوصية"
   },
   "expertTag": {
-    "ru": "Строительство и инжиниринг",
-    "en": "Construction and engineering",
-    "ar": "البناء والهندسة"
+    "ru": "Международная строительная и инжиниринговая компания",
+    "en": "International construction and engineering company",
+    "ar": "شركة دولية للإنشاءات والهندسة"
   },
   "film": {
-    "ru": "Смотреть фильм",
-    "en": "Watch the film",
-    "ar": "شاهد الفيلم"
+    "ru": "Смотреть корпоративный фильм",
+    "en": "Watch the company film",
+    "ar": "شاهد فيلم الشركة"
   },
   "watch": {
     "ru": "Смотреть видео",
@@ -200,9 +200,9 @@
     "ar": "اعمل مع ROIN WORLD"
   },
   "photoDemo": {
-    "ru": "Иллюстративная фотография",
-    "en": "Illustrative photograph",
-    "ar": "صورة توضيحية"
+    "ru": "Фотоархив",
+    "en": "Photo archive",
+    "ar": "الأرشيف المصور"
   },
   "photoCredits": {
     "ru": "Авторы фотографий",
@@ -493,5 +493,25 @@
     "ru": "Карточка проекта",
     "en": "Project profile",
     "ar": "ملف المشروع"
+  },
+  "experienceTitle": {
+    "ru": "Компания в цифрах",
+    "en": "Company in figures",
+    "ar": "الشركة بالأرقام"
+  },
+  "partnersLink": {
+    "ru": "Организации и проекты",
+    "en": "Partners and projects",
+    "ar": "الشركاء والمشاريع"
+  },
+  "documentLibrary": {
+    "ru": "Библиотека документов",
+    "en": "Document library",
+    "ar": "مكتبة الوثائق"
+  },
+  "corporateArchive": {
+    "ru": "Архив ROIN WORLD",
+    "en": "ROIN WORLD archive",
+    "ar": "أرشيف ROIN WORLD"
   }
 }

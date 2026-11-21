@@ -50,14 +50,14 @@
     "ar": "مشهد بانورامي لمنشأة صناعية"
   },
   "teamPhoto": {
-    "ru": "Специалист в защитной каске и очках",
-    "en": "Specialist wearing a hard hat and safety glasses",
-    "ar": "مختص يرتدي خوذة ونظارات واقية"
+    "ru": "Работа на площадке ROIN WORLD",
+    "en": "Work at a ROIN WORLD site",
+    "ar": "أعمال في أحد مواقع ROIN WORLD"
   },
   "careerPhoto": {
-    "ru": "Башенные краны на строительной площадке",
-    "en": "Tower cranes on a construction site",
-    "ar": "رافعات برجية في موقع إنشاء"
+    "ru": "Работы на строительной площадке",
+    "en": "Construction site operations",
+    "ar": "أعمال في موقع الإنشاء"
   },
   "policyStatus": {
     "ru": "Статус политики",
@@ -83,5 +83,245 @@
     "ru": "Запросите у офиса актуальные документы для вашей закупки или проекта.",
     "en": "Contact an office to request current documents for your procurement process or project.",
     "ar": "تواصل مع أحد المكاتب لطلب الوثائق الحالية الخاصة بالمشتريات أو المشروع."
+  },
+  "mission": {
+    "ru": "Наша задача",
+    "en": "Our purpose",
+    "ar": "غايتنا"
+  },
+  "missionText": {
+    "ru": "Связать подготовку площадки, строительные работы и ввод объекта в эксплуатацию. ROIN WORLD выстраивает работу вокруг требований проекта к качеству, срокам и стоимости.",
+    "en": "Connect site preparation, construction and commissioning. ROIN WORLD organises its work around the project’s quality, schedule and cost requirements.",
+    "ar": "نربط بين تهيئة الموقع والبناء والتشغيل، وننظّم العمل وفق متطلبات المشروع للجودة والجدول الزمني والتكلفة."
+  },
+  "companyProfile": {
+    "ru": "ROIN WORLD FZE",
+    "en": "ROIN WORLD FZE",
+    "ar": "ROIN WORLD FZE"
+  },
+  "historyLead": {
+    "ru": "Из истории компании",
+    "en": "From the company’s history",
+    "ar": "من تاريخ الشركة"
+  },
+  "internationalWork": {
+    "ru": "Наши проектные площадки",
+    "en": "Our project sites",
+    "ar": "مواقع مشاريعنا"
+  },
+  "workInCompany": {
+    "ru": "Работа на международной площадке",
+    "en": "Working on an international site",
+    "ar": "العمل في موقع دولي"
+  },
+  "culture": {
+    "ru": "Профессиональная культура",
+    "en": "Working culture",
+    "ar": "ثقافة العمل"
+  },
+  "cultureText": {
+    "ru": "На «Руппуре» местные строительные бригады работали под руководством мастеров участка. В архиве компании — репортажи об устройстве оснований и совместных учениях по пожарной безопасности.",
+    "en": "At Rooppur, local construction crews worked under site foremen. The company archive documents foundation works and a joint fire drill.",
+    "ar": "في روبور عملت فرق بناء محلية بإشراف مراقبي الموقع. ويوثّق أرشيف الشركة أعمال الأساسات وتدريباً مشتركاً على مكافحة الحرائق."
+  },
+  "capabilityDocs": {
+    "ru": "Системы менеджмента",
+    "en": "Management systems",
+    "ar": "أنظمة الإدارة"
+  },
+  "documentAction": {
+    "ru": "Запросить документ для проекта",
+    "en": "Request a document for a project",
+    "ar": "طلب وثيقة لمشروع"
+  },
+  "discuss": {
+    "ru": "Обсудить сотрудничество",
+    "en": "Discuss working together",
+    "ar": "مناقشة فرص التعاون"
+  },
+  "experience": {
+    "ru": "Профессиональный опыт",
+    "en": "Professional experience",
+    "ar": "الخبرة المهنية"
+  },
+  "achievements": {
+    "ru": "Достижения",
+    "en": "Achievements",
+    "ar": "الإنجازات"
+  },
+  "projectConnection": {
+    "ru": "Проект",
+    "en": "Project",
+    "ar": "المشروع"
+  },
+  "directoryOfPartners": {
+    "ru": "Организации и совместные работы",
+    "en": "Organisations and shared work",
+    "ar": "الجهات والأعمال المشتركة"
+  },
+  "issued": {
+    "ru": "Первичная регистрация",
+    "en": "Initial registration",
+    "ar": "التسجيل الأول"
+  },
+  "expires": {
+    "ru": "Срок действия по документу",
+    "en": "Expiry stated on document",
+    "ar": "تاريخ الانتهاء الوارد في الوثيقة"
+  },
+  "download": {
+    "ru": "Скачать оригинал",
+    "en": "Download original",
+    "ar": "تنزيل النسخة الأصلية"
+  },
+  "holder": {
+    "ru": "Организация",
+    "en": "Certificate holder",
+    "ar": "الجهة الحاصلة على الشهادة"
+  },
+  "all": {
+    "ru": "Все",
+    "en": "All",
+    "ar": "الكل"
+  },
+  "category": {
+    "ru": "Категория",
+    "en": "Category",
+    "ar": "الفئة"
+  },
+  "location": {
+    "ru": "Место работы",
+    "en": "Location",
+    "ar": "مكان العمل"
+  },
+  "department": {
+    "ru": "Направление",
+    "en": "Discipline",
+    "ar": "التخصص"
+  },
+  "noMatches": {
+    "ru": "По выбранным параметрам ничего не найдено.",
+    "en": "No matches for these filters.",
+    "ar": "لا توجد نتائج تطابق هذه الخيارات."
+  },
+  "clear": {
+    "ru": "Сбросить фильтры",
+    "en": "Clear filters",
+    "ar": "مسح عوامل التصفية"
+  },
+  "apply": {
+    "ru": "Отправить резюме",
+    "en": "Send your CV",
+    "ar": "إرسال السيرة الذاتية"
+  },
+  "application": {
+    "ru": "Порядок отклика",
+    "en": "How to apply",
+    "ar": "طريقة التقدم"
+  },
+  "applicationText": {
+    "ru": "Направьте резюме в ROIN WORLD по электронной почте. Укажите название позиции в теме письма и уточните у команды подбора актуальность вакансии и условия работы.",
+    "en": "Email your CV to ROIN WORLD and include the role in the subject. Ask the recruitment team to confirm availability and employment terms.",
+    "ar": "أرسل سيرتك الذاتية إلى ROIN WORLD بالبريد الإلكتروني مع ذكر اسم الوظيفة في عنوان الرسالة. يرجى التأكد من توافر الشاغر وشروط العمل لدى فريق التوظيف."
+  },
+  "responsibilities": {
+    "ru": "Обязанности",
+    "en": "Responsibilities",
+    "ar": "المسؤوليات"
+  },
+  "requirements": {
+    "ru": "Требования",
+    "en": "Requirements",
+    "ar": "المتطلبات"
+  },
+  "officialRecruitment": {
+    "ru": "Страница подбора ROIN WORLD",
+    "en": "ROIN WORLD recruitment page",
+    "ar": "صفحة التوظيف في ROIN WORLD"
+  },
+  "vacancySource": {
+    "ru": "Позиции, опубликованные компанией",
+    "en": "Positions listed by the company",
+    "ar": "الوظائف المنشورة من الشركة"
+  },
+  "viewAll": {
+    "ru": "Все публикации",
+    "en": "All publications",
+    "ar": "جميع المنشورات"
+  },
+  "contactTopics": {
+    "ru": "С чем вы обращаетесь?",
+    "en": "What is your enquiry about?",
+    "ar": "ما موضوع استفسارك؟"
+  },
+  "officeDirectory": {
+    "ru": "Адреса и телефоны",
+    "en": "Addresses and telephone numbers",
+    "ar": "العناوين وأرقام الهاتف"
+  },
+  "generalMail": {
+    "ru": "Общая почта офиса",
+    "en": "General office mailbox",
+    "ar": "البريد العام للمكتب"
+  },
+  "write": {
+    "ru": "Написать сообщение",
+    "en": "Write a message",
+    "ar": "كتابة رسالة"
+  },
+  "reports": {
+    "ru": "Репортажи с площадки",
+    "en": "Site reports",
+    "ar": "تقارير من الموقع"
+  },
+  "cultureLink": {
+    "ru": "Люди на площадках",
+    "en": "People on site",
+    "ar": "فرق العمل في المواقع"
+  },
+  "contactProject": {
+    "ru": "Вопрос по проекту",
+    "en": "Project enquiry",
+    "ar": "استفسار عن مشروع"
+  },
+  "lastCategory": {
+    "ru": "Публикации",
+    "en": "Publications",
+    "ar": "المنشورات"
+  },
+  "docRegister": {
+    "ru": "Реестр документов",
+    "en": "Document register",
+    "ar": "سجل الوثائق"
+  },
+  "archive": {
+    "ru": "Архив ROIN WORLD",
+    "en": "ROIN WORLD archive",
+    "ar": "أرشيف ROIN WORLD"
+  },
+  "companyProfileText": {
+    "ru": "На «Руппуре» в Бангладеш бригада выполнила железобетонные основания под тренажёры учебного корпуса. В египетском Эль-Дабаа ROIN WORLD сотрудничает с KHNP и Doosan Enerbility на объектах турбинного острова.",
+    "en": "At Rooppur in Bangladesh, the construction crew built reinforced concrete foundations for simulators in the training building. At El Dabaa in Egypt, ROIN WORLD works with KHNP and Doosan Enerbility on the turbine island facilities.",
+    "ar": "في روبور ببنغلاديش، نفّذ فريق البناء الأساسات الخرسانية المسلحة لأجهزة المحاكاة في مبنى التدريب. وفي الضبعة بمصر، تتعاون ROIN WORLD مع شركتي KHNP ودوسان إنربيليتي في منشآت جزيرة التوربينات."
+  },
+  "customer": {
+    "ru": "Заказчики",
+    "en": "Customers",
+    "ar": "العملاء"
+  },
+  "supplier": {
+    "ru": "Поставщики",
+    "en": "Suppliers",
+    "ar": "المورّدون"
+  },
+  "partner": {
+    "ru": "Партнёры",
+    "en": "Partners",
+    "ar": "الشركاء"
+  },
+  "partnerList": {
+    "ru": "Организации в каталоге ROIN WORLD",
+    "en": "Organisations in the ROIN WORLD directory",
+    "ar": "الجهات في دليل ROIN WORLD"
   }
 }

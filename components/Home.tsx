@@ -2,6 +2,7 @@ import {
   home,
   services,
   projects,
+  certificates,
   company,
   txt,
   href,
@@ -22,7 +23,7 @@ export function Home({ lang }: { lang: Lang }) {
   const coverProject = items.find((p) => p.slug === home.heroProject);
   const heroItems = coverProject
     ? [coverProject, ...items.filter((p) => p !== coverProject)]
-    : [];
+    : items;
   const labels = { prev: t("prev"), next: t("next"), more: t("more") };
   const office = company.offices.find((o) => o.email);
   return (
@@ -42,11 +43,43 @@ export function Home({ lang }: { lang: Lang }) {
         hero={home.hero}
         heroMobile={home.heroMobile}
         alt={home.heroAlt[lang]}
+        archiveFirst={!coverProject}
+        archiveLabel={t("corporateArchive")}
         items={heroItems}
         labels={labels}
       />
-      <section id="about" className="home-about">
+      <section id="geography" className="home-geo section-space">
         <div className="shell">
+          <div className="section-heading">
+            <h2>{home.geo[lang]}</h2>
+            <Action to={href(lang, "geography")}>{t("geography")}</Action>
+          </div>
+          <GeographyMap lang={lang} items={items} label={t("geoText")} more={t("more")} />
+        </div>
+      </section>
+      <section className="home-expertise section-space">
+        <div className="shell">
+          <Tag>{t("servicesHeading")}</Tag>
+          <div className="section-heading">
+            <h2>{home.expertise[lang]}</h2>
+            <Action to={href(lang, "services")}>{t("allServices")}</Action>
+          </div>
+          <ExpertiseGrid lang={lang} />
+        </div>
+      </section>
+      <section className="home-projects section-space">
+        <div className="shell">
+          <Tag>{t("projectHeading")}</Tag>
+          <div className="section-heading">
+            <h2>{home.projects[lang]}</h2>
+            <Action to={href(lang, "projects")}>{t("allProjects")}</Action>
+          </div>
+          <Featured items={items} labels={labels} />
+        </div>
+      </section>
+      <section className="experience section-space">
+        <div className="shell">
+          <h2>{t("experienceTitle")}</h2>
           <div className="facts">
             <a href={href(lang, "services")}>
               <strong dir="ltr">
@@ -71,62 +104,38 @@ export function Home({ lang }: { lang: Lang }) {
               <span>{t("factsTeam")}</span>
             </a>
           </div>
-          <div className="about-split section-space">
-            <div>
-              <Tag>{t("about")}</Tag>
-              <h2>{home.about[lang]}</h2>
-            </div>
-            <div className="about-summary">
-              <p>{home.aboutText[lang]}</p>
-              <Action to={href(lang, "about")}>{t("companyDetails")}</Action>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="home-expertise section-space">
-        <div className="shell">
-          <Tag>{t("servicesHeading")}</Tag>
-          <div className="section-heading">
-            <h2>{home.expertise[lang]}</h2>
-            <Action to={href(lang, "services")}>{t("allServices")}</Action>
-          </div>
-          <ExpertiseGrid lang={lang} />
-        </div>
-      </section>
-      <section className="home-projects section-space">
-        <div className="shell">
-          <Tag>{t("projectHeading")}</Tag>
-          <div className="section-heading">
-            <h2>{home.projects[lang]}</h2>
-            <Action to={href(lang, "projects")}>{t("allProjects")}</Action>
-          </div>
-          <Featured items={items} labels={labels} />
         </div>
       </section>
       <section className="team-band">
         <div className="team-view">
           <Photo
             src={home.teamImage}
-            alt={t("photoDemo") + " · " + t("team")}
+            alt=""
             sizes="(max-width:700px) 100vw, 50vw"
           />
-          <span className="credit">{t("photoDemo")}</span>
         </div>
         <div className="team-copy">
           <Tag>{t("teamTag")}</Tag>
           <h2>{home.team[lang]}</h2>
           <p>{t("teamText")}</p>
-          <Action to={href(lang, "team")}>{t("teamLink")}</Action>
+          <div className="panel-actions">
+            <Action to={href(lang, "team")}>{t("teamLink")}</Action>
+            <Action to={href(lang, "leadership")}>{t("leadership")}</Action>
+          </div>
         </div>
       </section>
-      <section className="home-geo section-space">
-        <div className="shell">
-          <Tag>{t("geoTag")}</Tag>
-          <div className="section-heading">
-            <h2>{home.geo[lang]}</h2>
-            <Action to={href(lang, "geography")}>{t("geography")}</Action>
+      <section className="credentials section-space">
+        <div className="shell credentials-layout">
+          <div>
+            <h2>{t("partners")}</h2>
+            <ul>{company.partners.slice(0, 3).map((p) => <li key={p.name}>{p.name}</li>)}</ul>
+            <Action to={href(lang, "partners")}>{t("partnersLink")}</Action>
           </div>
-          <GeographyMap items={items} label={t("geoText")} more={t("more")} />
+          <div>
+            <h2>{t("certificates")}</h2>
+            <ul>{certificates.slice(0, 3).map((c) => <li key={c.slug}><bdi>{c.title}</bdi><small>{c.summary[lang]}</small></li>)}</ul>
+            <Action to={href(lang, "certificates")}>{t("documentLibrary")}</Action>
+          </div>
         </div>
       </section>
       <section className="career-band">

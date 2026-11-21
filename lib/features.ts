@@ -2,7 +2,6 @@ import {
   projects,
   services,
   href,
-  txt,
   type Lang,
   type Project,
   type Local,
@@ -10,7 +9,7 @@ import {
 import captions from "@/content/captions.json";
 export function caption(lang: Lang, image: string) {
   return (
-    (captions as Record<string, Local>)[image]?.[lang] || txt(lang, "photoDemo")
+    (captions as Record<string, Local>)[image]?.[lang] || ""
   );
 }
 export function feature(lang: Lang, p: Project) {

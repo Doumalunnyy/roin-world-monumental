@@ -63,7 +63,13 @@
         }
       ],
       "stages": [],
-      "stories": []
+      "stories": [],
+      "context": {
+        "ru": "«Руппур» — первая атомная электростанция Бангладеш. Национальный доклад страны для МАГАТЭ описывает проект из двух энергоблоков.",
+        "en": "Rooppur is Bangladesh’s first nuclear power plant. The country’s national report to the IAEA describes a two-unit project.",
+        "ar": "روبور هي أول محطة للطاقة النووية في بنغلاديش. ويصف التقرير الوطني المقدم إلى الوكالة الدولية للطاقة الذرية مشروعاً يضم وحدتين لتوليد الكهرباء."
+      },
+      "contextSource": "https://www.iaea.org/sites/default/files/24/02/cns_bangladesh_national_report_2022.pdf"
     },
     {
       "slug": "el-dabaa",
@@ -101,7 +107,13 @@
       "gallery": [],
       "videos": [],
       "stages": [],
-      "stories": []
+      "stories": [],
+      "context": {
+        "ru": "«Эль-Дабаа» строится на средиземноморском побережье Египта. По данным египетского Управления атомных электростанций, проект предусматривает четыре энергоблока общей мощностью 4,8 ГВт.",
+        "en": "El Dabaa is on Egypt’s Mediterranean coast. The Egyptian Nuclear Power Plants Authority describes a four-unit project with a combined capacity of 4.8 GW.",
+        "ar": "تقع الضبعة على ساحل مصر المطل على البحر المتوسط. ووفقاً لهيئة المحطات النووية لتوليد الكهرباء، يضم المشروع أربع وحدات بقدرة إجمالية تبلغ ٤٫٨ غيغاواط."
+      },
+      "contextSource": "https://nppa.gov.eg/News/Details?id=2091"
     },
     {
       "slug": "paks-ii",
@@ -139,7 +151,13 @@
       "gallery": [],
       "videos": [],
       "stages": [],
-      "stories": []
+      "stories": [],
+      "context": {
+        "ru": "Проект «Пакш II» расширяет площадку существующей АЭС «Пакш». Соглашения о строительстве предусматривают два новых энергоблока мощностью 1 200 МВт каждый.",
+        "en": "Paks II extends the existing Paks nuclear power site. The construction agreements provide for two new units rated at 1,200 MW each.",
+        "ar": "يوسّع مشروع باكس ٢ موقع محطة باكس القائمة. وتنص اتفاقيات الإنشاء على إضافة وحدتين جديدتين بقدرة ١٢٠٠ ميغاواط لكل منهما."
+      },
+      "contextSource": "https://paks2.hu/web/paks-2-en/w/contracts-signed-on-implementation-of-new-reactor-units-at-the-paks-nuclear-power-plant"
     }
   ]
 }
