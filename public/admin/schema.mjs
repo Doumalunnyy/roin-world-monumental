@@ -1,0 +1,100 @@
+// Each file collection edits the same JSON document that Next.js reads.
+const input = (name, label, widget = 'string', options = {}) => ({ name, label, widget, ...options });
+const uri = (name, label, required = true) => input(name, label, 'string', {
+  required,
+  pattern: ['^https?://[^\\s]+$', 'Укажите полный адрес, начиная с https://']
+});
+const image = (name = 'image', label = 'Изображение', required = true) => input(name, label, 'image', { required });
+const slug = input('slug', 'Идентификатор в адресе', 'string', {
+  pattern: ['^[a-z0-9]+(-[a-z0-9]+)*$', 'Используйте строчные латинские буквы, цифры и дефисы'],
+  hint: 'Сохраните идентификатор опубликованной записи, чтобы прежние ссылки продолжали работать.'
+});
+const source = uri('source', 'Источник сведений');
+const list = (name, label, fields, summary, required = false) => ({
+  name, label, fields, summary, required, widget: 'list', collapsed: true, default: []
+});
+const file = (name, label, fields) => ({
+  name, label, fields, file: 'content/' + name + '.json', format: 'json'
+});
+
+export function collections({ languages, interfaceKeys, companyInterfaceKeys, captionPaths }) {
+  const tr = (name, label, widget = 'string', hint) => ({
+    name, label, widget: 'object', collapsed: true,
+    ...(hint ? { hint } : {}),
+    fields: languages.map(({ code, label: language }) => input(code, language, widget))
+  });
+  const title = tr('title', 'Название');
+  const body = tr('body', 'Текст', 'text');
+  const summary = tr('summary', 'Краткое описание', 'text');
+  const heading = '{{fields.title.ru}}';
+  const library = {
+    name: 'pages', label: 'Материалы сайта',
+    editor: { preview: false },
+    files: [
+      file('home', 'Главная страница', [
+        tr('title', 'Заголовок первого экрана', 'text', 'Перенос строки задаёт композицию заголовка.'),
+        tr('intro', 'Вводный текст', 'text'), image('hero', 'Обложка для компьютеров'),
+        image('heroMobile', 'Обложка для телефонов'), tr('heroAlt', 'Описание обложки для экранного диктора'),
+        input('heroProject', 'Идентификатор проекта на первом кадре'), uri('film', 'Корпоративный фильм'), tr('about', 'Заголовок о компании'),
+        tr('aboutText', 'О компании', 'text'), tr('expertise', 'Заголовок направлений'),
+        tr('projects', 'Заголовок проектов'), tr('team', 'Заголовок команды'), image('teamImage', 'Фото команды'),
+        input('teamCount', 'Численность команды'), uri('teamCountSource', 'Источник данных о численности'),
+        tr('geo', 'Заголовок карты'), tr('career', 'Заголовок карьеры'), image('careerImage', 'Фото для карьеры'),
+        tr('contact', 'Заголовок контактов')
+      ]),
+      file('services', 'Направления', [list('items', 'Направления деятельности', [
+        slug, input('index', 'Индекс', 'string', { hint: 'Например, 01.' }), title, image(), summary, body,
+        tr('scope', 'Состав работ', 'text', 'Вводите каждый вид работ с новой строки.')
+      ], heading, true)]),
+      file('projects', 'Проекты', [list('items', 'Карточки проектов', [
+        slug, title, tr('country', 'Страна'),
+        input('region', 'Страна на карте', 'select', { options: [
+          { label: 'Бангладеш', value: 'bangladesh' }, { label: 'Египет', value: 'egypt' },
+          { label: 'Венгрия', value: 'hungary' }
+        ] }),
+        tr('sector', 'Отрасль'), summary, tr('role', 'Роль ROIN WORLD', 'text'), source, image(),
+        input('services', 'Направления работ', 'list', {
+          field: input('slug', 'Идентификатор направления'), hint: 'Укажите идентификаторы из раздела «Направления».'
+        }),
+        list('gallery', 'Фотогалерея', [image(), tr('caption', 'Подпись')], '{{fields.caption.ru}}'),
+        list('videos', 'Видео и таймлапсы', [
+          title, input('url', 'Адрес видео или путь к файлу', 'file', { choose_url: true }),
+          image('poster', 'Обложка', false)
+        ], heading),
+        list('stages', 'Этапы проекта', [title, body], heading),
+        list('stories', 'Люди проекта', [input('person', 'Идентификатор сотрудника', 'string', {
+          hint: 'Возьмите идентификатор из раздела «Компания и люди».'
+        })], '{{fields.person}}')
+      ], heading, true)]),
+      file('company', 'Компания и люди', [
+        list('history', 'Вехи истории', [title, body, source], heading),
+        list('people', 'Люди', [
+          slug, tr('name', 'Имя и фамилия'), tr('role', 'Должность'), tr('bio', 'Биография', 'text'),
+          input('group', 'Группа', 'select', { options: [
+            { label: 'Руководство', value: 'leadership' }, { label: 'Специалисты', value: 'team' }
+          ] }), image('photo', 'Портрет', false), input('interviewSlug', 'Идентификатор опубликованного интервью в новостях', 'string', {required:false}), source
+        ], '{{fields.name.ru}}'),
+        list('partners', 'Партнёры', [input('name', 'Название организации'), tr('detail', 'Сотрудничество', 'text'), source], '{{fields.name}}'),
+        list('offices', 'Офисы', [tr('label', 'Название офиса'), tr('address', 'Адрес', 'text'),
+          input('email', 'Email', 'string', { required: false }), input('phone', 'Телефон', 'string', { required: false }), source
+        ], '{{fields.label.ru}}')
+      ]),
+      file('news', 'Новости и медиа', [list('items', 'Публикации', [
+        slug, title, input('date', 'Дата или год', 'string', {
+          pattern: ['^\\d{4}(-\\d{2}-\\d{2})?$', 'Введите год или дату в формате ГГГГ-ММ-ДД']
+        }), body, image(), uri('video', 'Ссылка на видео', false), source
+      ], heading)]),
+      file('records', 'Вакансии и сертификаты', [
+        list('vacancies', 'Вакансии', [slug, title, tr('location', 'Место работы'), body], heading),
+        list('certificates', 'Сертификаты', [slug, input('title', 'Название'),
+          input('file', 'Скан или PDF', 'file', { choose_url: true }), summary], '{{fields.title}}')
+      ])
+    ]
+  };
+  if (interfaceKeys.length) {
+    library.files.push(file('ui', 'Переводы интерфейса', interfaceKeys.map(key => tr(key, key, 'text'))));
+  }
+  library.files.push(file('company-ui', 'Тексты внутренних страниц', companyInterfaceKeys.map(key => tr(key, key, 'text'))));
+  library.files.push(file('captions', 'Подписи фотографий', captionPaths.map(path => tr(path, path, 'text'))));
+  return [library];
+}

@@ -1,0 +1,17 @@
+{
+  "/images/project-hu.webp": {
+    "ru": "Действующая АЭС «Пакш». Архив МАГАТЭ, 2012",
+    "en": "Operating Paks NPP. IAEA archive, 2012",
+    "ar": "محطة باكس العاملة. أرشيف الوكالة الدولية للطاقة الذرية، ٢٠١٢"
+  },
+  "/images/project-eg.webp": {
+    "ru": "Площадка АЭС «Эль-Дабаа»",
+    "en": "El Dabaa nuclear construction site",
+    "ar": "موقع بناء محطة الضبعة النووية"
+  },
+  "/images/project-bd.webp": {
+    "ru": "Градирни АЭС «Руппур»",
+    "en": "Rooppur cooling towers",
+    "ar": "أبراج التبريد في محطة روبور"
+  }
+}

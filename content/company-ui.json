@@ -1,0 +1,87 @@
+{
+  "principles": {
+    "ru": "Принципы работы",
+    "en": "Working principles",
+    "ar": "مبادئ العمل"
+  },
+  "quality": {
+    "ru": "Качество",
+    "en": "Quality",
+    "ar": "الجودة"
+  },
+  "qualityText": {
+    "ru": "Компания относит качество работ и услуг к обязанностям каждого участника проекта.",
+    "en": "The company describes the quality of its work and services as a responsibility shared by everyone on a project.",
+    "ar": "تعتبر الشركة جودة الأعمال والخدمات مسؤولية مشتركة بين جميع المشاركين في المشروع."
+  },
+  "partnership": {
+    "ru": "Партнёрство",
+    "en": "Partnership",
+    "ar": "الشراكة"
+  },
+  "partnershipText": {
+    "ru": "В основе отношений с заказчиками компания называет прозрачность, добросовестность и ответственность.",
+    "en": "Transparency, integrity and responsibility guide how the company works with its clients.",
+    "ar": "تسترشد الشركة بالشفافية والنزاهة وتحمل المسؤولية في تعاملها مع عملائها."
+  },
+  "siteArchive": {
+    "ru": "Из архива площадки",
+    "en": "From the site archive",
+    "ar": "من أرشيف الموقع"
+  },
+  "aboutNavigation": {
+    "ru": "Узнать о компании",
+    "en": "Explore the company",
+    "ar": "تعرّف إلى الشركة"
+  },
+  "archiveMore": {
+    "ru": "Ещё из архива",
+    "en": "More from the archive",
+    "ar": "المزيد من الأرشيف"
+  },
+  "imageCredit": {
+    "ru": "Сведения о фотографии",
+    "en": "Photography credits",
+    "ar": "بيانات الصورة"
+  },
+  "siteImage": {
+    "ru": "Панорама промышленного объекта",
+    "en": "Panoramic view of an industrial facility",
+    "ar": "مشهد بانورامي لمنشأة صناعية"
+  },
+  "teamPhoto": {
+    "ru": "Специалист в защитной каске и очках",
+    "en": "Specialist wearing a hard hat and safety glasses",
+    "ar": "مختص يرتدي خوذة ونظارات واقية"
+  },
+  "careerPhoto": {
+    "ru": "Башенные краны на строительной площадке",
+    "en": "Tower cranes on a construction site",
+    "ar": "رافعات برجية في موقع إنشاء"
+  },
+  "policyStatus": {
+    "ru": "Статус политики",
+    "en": "Policy status",
+    "ar": "حالة السياسة"
+  },
+  "requests": {
+    "ru": "Обращения и внешние сервисы",
+    "en": "Enquiries and external services",
+    "ar": "الاستفسارات والخدمات الخارجية"
+  },
+  "readPosition": {
+    "ru": "Открыть вакансию",
+    "en": "View vacancy",
+    "ar": "عرض الوظيفة"
+  },
+  "careerSubject": {
+    "ru": "Вопрос о трудоустройстве в ROIN WORLD",
+    "en": "Career enquiry at ROIN WORLD",
+    "ar": "استفسار عن العمل لدى ROIN WORLD"
+  },
+  "documentsEmpty": {
+    "ru": "Запросите у офиса актуальные документы для вашей закупки или проекта.",
+    "en": "Contact an office to request current documents for your procurement process or project.",
+    "ar": "تواصل مع أحد المكاتب لطلب الوثائق الحالية الخاصة بالمشتريات أو المشروع."
+  }
+}

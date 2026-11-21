@@ -1,0 +1,497 @@
+{
+  "home": {
+    "ru": "Главная",
+    "en": "Home",
+    "ar": "الرئيسية"
+  },
+  "about": {
+    "ru": "О компании",
+    "en": "Company",
+    "ar": "عن الشركة"
+  },
+  "services": {
+    "ru": "Направления",
+    "en": "Expertise",
+    "ar": "مجالات العمل"
+  },
+  "projects": {
+    "ru": "Проекты",
+    "en": "Projects",
+    "ar": "المشاريع"
+  },
+  "team": {
+    "ru": "Команда",
+    "en": "People",
+    "ar": "الفريق"
+  },
+  "careers": {
+    "ru": "Карьера",
+    "en": "Careers",
+    "ar": "المسارات المهنية"
+  },
+  "contacts": {
+    "ru": "Контакты",
+    "en": "Contact",
+    "ar": "اتصل بنا"
+  },
+  "history": {
+    "ru": "История компании",
+    "en": "Our history",
+    "ar": "تاريخ الشركة"
+  },
+  "leadership": {
+    "ru": "Руководство",
+    "en": "Leadership",
+    "ar": "الإدارة"
+  },
+  "geography": {
+    "ru": "География",
+    "en": "Our locations",
+    "ar": "الانتشار الجغرافي"
+  },
+  "partners": {
+    "ru": "Партнёры",
+    "en": "Partners",
+    "ar": "الشركاء"
+  },
+  "certificates": {
+    "ru": "Сертификаты",
+    "en": "Certificates",
+    "ar": "الشهادات"
+  },
+  "news": {
+    "ru": "Новости и медиа",
+    "en": "News and media",
+    "ar": "الأخبار والإعلام"
+  },
+  "privacy": {
+    "ru": "Конфиденциальность",
+    "en": "Privacy",
+    "ar": "الخصوصية"
+  },
+  "expertTag": {
+    "ru": "Строительство и инжиниринг",
+    "en": "Construction and engineering",
+    "ar": "البناء والهندسة"
+  },
+  "film": {
+    "ru": "Смотреть фильм",
+    "en": "Watch the film",
+    "ar": "شاهد الفيلم"
+  },
+  "watch": {
+    "ru": "Смотреть видео",
+    "en": "Watch video",
+    "ar": "شاهد الفيديو"
+  },
+  "filmTitle": {
+    "ru": "Корпоративный фильм",
+    "en": "Corporate film",
+    "ar": "فيلم الشركة"
+  },
+  "more": {
+    "ru": "Подробнее",
+    "en": "Explore",
+    "ar": "اعرف المزيد"
+  },
+  "allProjects": {
+    "ru": "Все проекты",
+    "en": "All projects",
+    "ar": "جميع المشاريع"
+  },
+  "allServices": {
+    "ru": "Все направления",
+    "en": "All expertise",
+    "ar": "جميع المجالات"
+  },
+  "menu": {
+    "ru": "Меню",
+    "en": "Menu",
+    "ar": "القائمة"
+  },
+  "close": {
+    "ru": "Закрыть",
+    "en": "Close",
+    "ar": "إغلاق"
+  },
+  "language": {
+    "ru": "Язык",
+    "en": "Language",
+    "ar": "اللغة"
+  },
+  "navigation": {
+    "ru": "Навигация",
+    "en": "Navigation",
+    "ar": "التنقل"
+  },
+  "skip": {
+    "ru": "К содержанию",
+    "en": "Skip to content",
+    "ar": "انتقل إلى المحتوى"
+  },
+  "scroll": {
+    "ru": "Листайте вниз",
+    "en": "Scroll to explore",
+    "ar": "انتقل للأسفل"
+  },
+  "prev": {
+    "ru": "Предыдущий",
+    "en": "Previous",
+    "ar": "السابق"
+  },
+  "next": {
+    "ru": "Следующий",
+    "en": "Next",
+    "ar": "التالي"
+  },
+  "show": {
+    "ru": "Показать",
+    "en": "Show",
+    "ar": "عرض"
+  },
+  "gallery": {
+    "ru": "Фотогалерея",
+    "en": "Gallery",
+    "ar": "معرض الصور"
+  },
+  "project": {
+    "ru": "Проект",
+    "en": "Project",
+    "ar": "المشروع"
+  },
+  "servicesHeading": {
+    "ru": "Направления деятельности",
+    "en": "Our expertise",
+    "ar": "مجالات عملنا"
+  },
+  "projectHeading": {
+    "ru": "Избранные проекты",
+    "en": "Selected projects",
+    "ar": "مشاريع مختارة"
+  },
+  "teamTag": {
+    "ru": "Люди ROIN WORLD",
+    "en": "People of ROIN WORLD",
+    "ar": "أفراد ROIN WORLD"
+  },
+  "geoTag": {
+    "ru": "География проектов",
+    "en": "Project locations",
+    "ar": "مواقع المشاريع"
+  },
+  "teamText": {
+    "ru": "Инженеры, строители и специалисты по логистике работают над общими задачами на международных площадках.",
+    "en": "Engineers, construction crews and logistics specialists work together on international sites.",
+    "ar": "يتعاون المهندسون وفرق البناء وأخصائيو النقل في مواقع دولية."
+  },
+  "teamLink": {
+    "ru": "Знакомьтесь с командой",
+    "en": "Meet our people",
+    "ar": "تعرّف على فريقنا"
+  },
+  "careerText": {
+    "ru": "Познакомьтесь с работой на международных строительных площадках и свяжитесь с командой по вопросам трудоустройства.",
+    "en": "Explore work on international construction sites and contact the team about career opportunities.",
+    "ar": "تعرف على العمل في مواقع البناء الدولية وتواصل مع الفريق بشأن فرص التوظيف."
+  },
+  "careerLink": {
+    "ru": "Карьера в ROIN WORLD",
+    "en": "Careers at ROIN WORLD",
+    "ar": "اعمل مع ROIN WORLD"
+  },
+  "photoDemo": {
+    "ru": "Иллюстративная фотография",
+    "en": "Illustrative photograph",
+    "ar": "صورة توضيحية"
+  },
+  "photoCredits": {
+    "ru": "Авторы фотографий",
+    "en": "Photo credits",
+    "ar": "حقوق الصور"
+  },
+  "source": {
+    "ru": "Источник",
+    "en": "Source",
+    "ar": "المصدر"
+  },
+  "backHome": {
+    "ru": "На главную",
+    "en": "Back to home",
+    "ar": "العودة إلى الرئيسية"
+  },
+  "related": {
+    "ru": "Другие проекты",
+    "en": "Related projects",
+    "ar": "مشاريع أخرى"
+  },
+  "area": {
+    "ru": "Направление работ",
+    "en": "Area of work",
+    "ar": "مجال العمل"
+  },
+  "country": {
+    "ru": "Страна",
+    "en": "Country",
+    "ar": "الدولة"
+  },
+  "industry": {
+    "ru": "Отрасль",
+    "en": "Sector",
+    "ar": "القطاع"
+  },
+  "role": {
+    "ru": "Участие ROIN WORLD",
+    "en": "ROIN WORLD’s role",
+    "ar": "دور ROIN WORLD"
+  },
+  "scope": {
+    "ru": "Состав направления",
+    "en": "Scope of services",
+    "ar": "نطاق الخدمات"
+  },
+  "topic": {
+    "ru": "Обсудить сотрудничество",
+    "en": "Discuss a project",
+    "ar": "ناقش التعاون"
+  },
+  "allCountries": {
+    "ru": "Все страны",
+    "en": "All countries",
+    "ar": "جميع الدول"
+  },
+  "allAreas": {
+    "ru": "Все направления",
+    "en": "All disciplines",
+    "ar": "جميع المجالات"
+  },
+  "reset": {
+    "ru": "Сбросить фильтры",
+    "en": "Reset filters",
+    "ar": "إعادة ضبط الخيارات"
+  },
+  "noResults": {
+    "ru": "Для выбранных условий проектов нет.",
+    "en": "No projects match these filters.",
+    "ar": "لا توجد مشاريع تطابق هذه الخيارات."
+  },
+  "found": {
+    "ru": "Найдено проектов",
+    "en": "Projects found",
+    "ar": "عدد المشاريع"
+  },
+  "geoText": {
+    "ru": "Выберите страну, чтобы увидеть проекты ROIN WORLD.",
+    "en": "Select a country to explore ROIN WORLD projects.",
+    "ar": "اختر دولة للاطلاع على مشاريع ROIN WORLD."
+  },
+  "companyDetails": {
+    "ru": "О компании подробнее",
+    "en": "Company profile",
+    "ar": "ملف الشركة"
+  },
+  "ourProjects": {
+    "ru": "Наши проекты",
+    "en": "Our projects",
+    "ar": "مشاريعنا"
+  },
+  "directory": {
+    "ru": "Разделы сайта",
+    "en": "Site directory",
+    "ar": "دليل الموقع"
+  },
+  "contactUs": {
+    "ru": "Связаться с нами",
+    "en": "Get in touch",
+    "ar": "تواصل معنا"
+  },
+  "aboutCaption": {
+    "ru": "Международная строительная компания",
+    "en": "International construction company",
+    "ar": "شركة إنشاءات دولية"
+  },
+  "factsServices": {
+    "ru": "направления деятельности",
+    "en": "areas of expertise",
+    "ar": "مجالات عمل"
+  },
+  "factsRegions": {
+    "ru": "страны в обзоре проектов",
+    "en": "countries in this project selection",
+    "ar": "دول في مجموعة المشاريع"
+  },
+  "factsTeam": {
+    "ru": "специалистов по данным компании",
+    "en": "specialists according to the company",
+    "ar": "متخصص وفق بيانات الشركة"
+  },
+  "servicesIntro": {
+    "ru": "Компетенции ROIN WORLD охватывают сам процесс строительства и обеспечение объекта — от перевозки оборудования до повседневной работы команд.",
+    "en": "ROIN WORLD brings together construction and site support, from equipment transport to everyday services for the people on site.",
+    "ar": "تجمع ROIN WORLD بين أعمال البناء ودعم المواقع، من نقل المعدات إلى الخدمات اليومية لفرق العمل."
+  },
+  "projectsIntro": {
+    "ru": "Три страны, три площадки атомного строительства. Изучите географию проектов и подтверждённую роль компании на каждом объекте.",
+    "en": "Explore three nuclear construction sites and the company’s documented role in each project.",
+    "ar": "تعرف على ثلاثة مواقع بناء نووية ودور الشركة الموثق في كل مشروع."
+  },
+  "historyIntro": {
+    "ru": "События из открытого архива ROIN WORLD — от работы на площадке до международного сотрудничества.",
+    "en": "Milestones from ROIN WORLD’s public archive, from work on site to international cooperation.",
+    "ar": "محطات من أرشيف ROIN WORLD، من العمل الميداني إلى التعاون الدولي."
+  },
+  "leadIntro": {
+    "ru": "Люди, определяющие направление развития компании.",
+    "en": "The people shaping the company’s direction.",
+    "ar": "الأشخاص الذين يرسمون مسار الشركة."
+  },
+  "partnersIntro": {
+    "ru": "Организации, сотрудничество с которыми отмечено в материалах ROIN WORLD.",
+    "en": "Organisations whose collaboration is documented by ROIN WORLD.",
+    "ar": "جهات توثّق ROIN WORLD التعاون معها."
+  },
+  "certificateIntro": {
+    "ru": "Документы из открытого архива компании. Область сертификации, даты и сведения об организации указаны в каждом документе.",
+    "en": "Documents from the corporate archive. Each document sets out its scope, dates and issuing organisation.",
+    "ar": "وثائق من أرشيف الشركة. تُذكر جهة الإصدار والتواريخ ونطاق الشهادة في كل وثيقة."
+  },
+  "openDoc": {
+    "ru": "Открыть документ",
+    "en": "Open document",
+    "ar": "فتح الوثيقة"
+  },
+  "contactIntro": {
+    "ru": "Выберите представительство или направьте обращение команде ROIN WORLD.",
+    "en": "Find a representative office or contact the ROIN WORLD team.",
+    "ar": "اختر مكتباً تمثيلياً أو تواصل مع فريق ROIN WORLD."
+  },
+  "offices": {
+    "ru": "Представительства",
+    "en": "Offices",
+    "ar": "المكاتب"
+  },
+  "mediaIntro": {
+    "ru": "Корпоративный фильм, кадры со стройплощадок и события из архива компании.",
+    "en": "The corporate film, site footage and events from the company archive.",
+    "ar": "فيلم الشركة ولقطات المواقع وفعاليات من الأرشيف."
+  },
+  "vacancies": {
+    "ru": "Вакансии",
+    "en": "Open positions",
+    "ar": "الوظائف الشاغرة"
+  },
+  "vacancyEmpty": {
+    "ru": "В этом каталоге пока нет опубликованных вакансий. Уточните актуальные возможности у команды компании.",
+    "en": "There are currently no listings in this catalogue. Contact the team for available opportunities.",
+    "ar": "لا توجد إعلانات وظائف منشورة هنا حالياً. يمكن التواصل مع الفريق لمعرفة الفرص المتاحة."
+  },
+  "join": {
+    "ru": "Связаться по вопросам карьеры",
+    "en": "Contact the careers team",
+    "ar": "تواصل بشأن فرص العمل"
+  },
+  "biography": {
+    "ru": "Биография",
+    "en": "Biography",
+    "ar": "السيرة المهنية"
+  },
+  "interviews": {
+    "ru": "Истории и интервью",
+    "en": "Stories and interviews",
+    "ar": "قصص ومقابلات"
+  },
+  "interviewsPending": {
+    "ru": "Раздел готовится к публикации. Здесь появятся интервью со специалистами с их согласия.",
+    "en": "Interviews will appear here once the specialists have approved their stories.",
+    "ar": "ستُنشر المقابلات هنا بعد موافقة المختصين على قصصهم."
+  },
+  "media": {
+    "ru": "Медиа",
+    "en": "Media",
+    "ar": "الوسائط"
+  },
+  "stages": {
+    "ru": "Этапы проекта",
+    "en": "Project milestones",
+    "ar": "مراحل المشروع"
+  },
+  "externalVideo": {
+    "ru": "Открыть у источника",
+    "en": "Open original video",
+    "ar": "فتح الفيديو الأصلي"
+  },
+  "privacyIntro": {
+    "ru": "Информация об обработке обращений в этой версии сайта.",
+    "en": "How this version of the website handles enquiries.",
+    "ar": "معلومات عن معالجة المراسلات في هذه النسخة من الموقع."
+  },
+  "privacyText": {
+    "ru": "Форма запрашивает имя, электронную почту и текст обращения. При включённом приёме эти сведения сохраняются на сервере оператора для ответа на обращение. Если приём закрыт, данные формы не сохраняются. Для просмотра страниц регистрация не требуется. Внешний видеоплеер подключается после выбора просмотра. При переходе по внешним ссылкам действуют правила соответствующего сервиса.",
+    "en": "The form requests a name, email address and message. When submissions are enabled, the operator’s server stores these details to respond. When closed, the form stores no submissions. Browsing requires no registration. External video players load on request. External services apply their own policies.",
+    "ar": "يطلب النموذج الاسم والبريد الإلكتروني ونص الرسالة. عند تفعيل الاستلام تُحفظ هذه البيانات في خادم المشغّل للرد. عند إيقاف الاستلام لا تُحفظ الرسائل. لا يتطلب التصفح التسجيل. يتم تحميل مشغلات الفيديو الخارجية عند الطلب وتخضع الروابط الخارجية لسياسات خدماتها."
+  },
+  "privacyPending": {
+    "ru": "Перед запуском оператору предстоит опубликовать утверждённую политику, сроки хранения и порядок обращения по вопросам персональных данных.",
+    "en": "Before launch, the operator must publish its approved policy, retention periods and privacy contact details.",
+    "ar": "قبل الإطلاق سينشر المشغّل السياسة المعتمدة وفترات الاحتفاظ وقنوات التواصل المتعلقة بالبيانات."
+  },
+  "notFound": {
+    "ru": "Страница не найдена",
+    "en": "Page not found",
+    "ar": "الصفحة غير موجودة"
+  },
+  "notFoundText": {
+    "ru": "Воспользуйтесь навигацией или вернитесь на главную страницу.",
+    "en": "Use the navigation or return to the home page.",
+    "ar": "استخدم القائمة أو عد إلى الصفحة الرئيسية."
+  },
+  "video": {
+    "ru": "Видео",
+    "en": "Video",
+    "ar": "فيديو"
+  },
+  "teamArchive": {
+    "ru": "Команда на площадке",
+    "en": "On site with the team",
+    "ar": "الفريق في الموقع"
+  },
+  "otherExpertise": {
+    "ru": "Другие направления",
+    "en": "Other services",
+    "ar": "مجالات أخرى"
+  },
+  "contactLabel": {
+    "ru": "Обращение в компанию",
+    "en": "Company enquiries",
+    "ar": "مراسلة الشركة"
+  },
+  "countryProject": {
+    "ru": "Проекты в стране",
+    "en": "Projects in this country",
+    "ar": "المشاريع في الدولة"
+  },
+  "firstFrame": {
+    "ru": "Панорама площадки",
+    "en": "Site panorama",
+    "ar": "مشهد الموقع"
+  },
+  "secondFrame": {
+    "ru": "Строительные работы",
+    "en": "Construction work",
+    "ar": "أعمال البناء"
+  },
+  "thirdFrame": {
+    "ru": "Промышленная архитектура",
+    "en": "Industrial architecture",
+    "ar": "العمارة الصناعية"
+  },
+  "breadcrumb": {
+    "ru": "Путь к странице",
+    "en": "Breadcrumbs",
+    "ar": "مسار الصفحة"
+  },
+  "details": {
+    "ru": "Карточка проекта",
+    "en": "Project profile",
+    "ar": "ملف المشروع"
+  }
+}

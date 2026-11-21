@@ -1,0 +1,65 @@
+{
+  "title": {
+    "ru": "СОЗДАЁМ МАСШТАБ.\nСТРОИМ БУДУЩЕЕ.",
+    "en": "CREATING SCALE.\nBUILDING THE FUTURE.",
+    "ar": "نصنع الفارق.\nونبني المستقبل."
+  },
+  "intro": {
+    "ru": "ROIN WORLD — международная компания в сфере строительства и инженерных работ. Участвуем в реализации крупных энергетических и инфраструктурных проектов, объединяя инженерные компетенции, логистику, снабжение и комплексные сервисы.",
+    "en": "ROIN WORLD is an international construction and engineering company. We contribute to major energy and infrastructure projects through engineering, logistics, procurement and site services.",
+    "ar": "ROIN WORLD شركة دولية متخصصة في البناء والهندسة. نساهم في مشاريع كبرى للطاقة والبنية التحتية من خلال الهندسة والنقل والتوريد وخدمات المواقع."
+  },
+  "hero": "/images/hero-dusk.webp",
+  "heroMobile": "/images/hero-dusk-mobile.webp",
+  "heroAlt": {
+    "ru": "Ночная панорама градирен АЭС «Руппур» в Бангладеш",
+    "en": "Cooling towers at Rooppur nuclear power plant in Bangladesh at night",
+    "ar": "أبراج التبريد في محطة روبور النووية في بنغلاديش ليلاً"
+  },
+  "film": "https://www.youtube.com/watch?v=4KEZoq2ubVE",
+  "teamImage": "/images/team.webp",
+  "careerImage": "/images/engineering.webp",
+  "about": {
+    "ru": "Большие задачи.\nСильные решения.",
+    "en": "Complex challenges.\nPractical solutions.",
+    "ar": "تحديات كبيرة.\nوحلول عملية."
+  },
+  "aboutText": {
+    "ru": "Мы работаем там, где решения инженеров становятся промышленными объектами. На одной площадке сходятся строительные команды, поставки материалов и сервисы для людей. ROIN WORLD объединяет эти направления в международных проектах.",
+    "en": "We work where engineering decisions become industrial facilities. Construction crews, material deliveries and site services come together on every site. ROIN WORLD connects these disciplines on international projects.",
+    "ar": "نعمل حيث تتحول القرارات الهندسية إلى منشآت صناعية. تجمع مواقع البناء فرق التنفيذ وتوريد المواد وخدمات الأفراد، وتربط ROIN WORLD بين هذه الأعمال في المشاريع الدولية."
+  },
+  "expertise": {
+    "ru": "Комплексные решения\nдля масштабных проектов.",
+    "en": "Integrated services\nfor major projects.",
+    "ar": "خدمات متكاملة\nللمشاريع الكبرى."
+  },
+  "projects": {
+    "ru": "Международные проекты.\nРеальный масштаб.",
+    "en": "International projects.\nReal scale.",
+    "ar": "مشاريع دولية.\nعلى أرض الواقع."
+  },
+  "team": {
+    "ru": "За каждым проектом —\nнаша команда.",
+    "en": "Behind every project\nis our team.",
+    "ar": "وراء كل مشروع\nفريقنا."
+  },
+  "geo": {
+    "ru": "Международный опыт.\nЕдиные стандарты работы.",
+    "en": "International experience.\nShared working standards.",
+    "ar": "خبرات دولية.\nومعايير عمل مشتركة."
+  },
+  "career": {
+    "ru": "Создавайте будущее\nвместе с нами.",
+    "en": "Build the future\nwith us.",
+    "ar": "ابنوا المستقبل\nمعنا."
+  },
+  "contact": {
+    "ru": "Давайте создавать\nмасштаб вместе.",
+    "en": "Let’s build\nat scale together.",
+    "ar": "لنُنجز المشاريع\nالكبرى معاً."
+  },
+  "teamCount": "800+",
+  "teamCountSource": "https://roinworld.ae/",
+  "heroProject": "rooppur"
+}

@@ -1,0 +1,55 @@
+{
+  "items": [
+    {
+      "slug": "corporate-film-2026",
+      "title": {
+        "ru": "ROIN WORLD. Корпоративный фильм",
+        "en": "ROIN WORLD. The corporate film",
+        "ar": "ROIN WORLD. فيلم الشركة"
+      },
+      "body": {
+        "ru": "Корпоративный фильм ROIN WORLD 2026 года знакомит с компанией. Посмотреть фильм целиком можно на YouTube.",
+        "en": "The 2026 corporate film introduces ROIN WORLD. Watch the full film on YouTube.",
+        "ar": "يعرّف فيلم الشركة لعام ٢٠٢٦ بشركة ROIN WORLD. يمكن مشاهدة الفيلم كاملاً على يوتيوب."
+      },
+      "date": "2026",
+      "source": "https://www.youtube.com/watch?v=4KEZoq2ubVE",
+      "video": "https://www.youtube.com/watch?v=4KEZoq2ubVE",
+      "image": "/images/hero.webp"
+    },
+    {
+      "slug": "rooppur-training-building",
+      "title": {
+        "ru": "Основания для тренажёров на «Руппуре»",
+        "en": "Foundations for the Rooppur simulators",
+        "ar": "أساسات أجهزة المحاكاة في روبور"
+      },
+      "body": {
+        "ru": "В учебно-производственном корпусе АЭС «Руппур» команда ROIN WORLD завершила устройство железобетонной плиты и оснований под тренажёры. Бетонирование выполняла местная строительная бригада под руководством мастеров участка. Компания опубликовала видеорепортаж с площадки.",
+        "en": "At Rooppur’s training building, a local construction crew led by site foremen completed the reinforced concrete slab and foundations for the simulators. ROIN WORLD published a video report on the work.",
+        "ar": "في مبنى التدريب بمحطة روبور، أنجز فريق بناء محلي بإشراف مراقبي الموقع بلاطة من الخرسانة المسلحة وأساسات لأجهزة المحاكاة. ونشرت ROIN WORLD تقريراً مصوراً عن الأعمال."
+      },
+      "date": "2020-04-27",
+      "source": "https://roinworld.com/work-at-facility-6-1-1-of-the-training-and-production-building-rooppur-npp-bangladesh/",
+      "image": "/images/project-bd.webp",
+      "video": "https://www.youtube.com/watch?v=IlK5G-J8NZA"
+    },
+    {
+      "slug": "rooppur-fire-drill",
+      "title": {
+        "ru": "Противопожарные учения на стройплощадке",
+        "en": "Fire drill at the Rooppur site",
+        "ar": "تدريب على مكافحة الحرائق في موقع روبور"
+      },
+      "body": {
+        "ru": "Сотрудники ROIN WORLD и «Атомстройэкспорта» провели совместные противопожарные учения на площадке АЭС «Руппур» в Бангладеш. В тренировке участвовали специалисты ROIN WORLD со спецтехникой компании. Ход учений зафиксирован в видеорепортаже.",
+        "en": "ROIN WORLD and Atomstroyexport teams held a joint fire drill at the Rooppur construction site in Bangladesh. ROIN WORLD specialists took part with the company’s own equipment. A video report documents the exercise.",
+        "ar": "أجرى فريقا ROIN WORLD وأتوم ستروي إكسبورت تدريباً مشتركاً على مكافحة الحرائق في موقع إنشاء محطة روبور في بنغلاديش. وشارك متخصصو ROIN WORLD بمعدات الشركة. ويوثّق تقرير مصور مجريات التدريب."
+      },
+      "date": "2019-08-01",
+      "source": "https://roinworld.com/roinworld-together-with-atomstroyexport-conducted-firefighting-training-exercises-at-the-rooppur-npp/",
+      "image": "/images/team.webp",
+      "video": "https://www.youtube.com/watch?v=pP4MUHBQO3I"
+    }
+  ]
+}

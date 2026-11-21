@@ -1,0 +1,145 @@
+{
+  "items": [
+    {
+      "slug": "rooppur",
+      "region": "bangladesh",
+      "country": {
+        "ru": "Бангладеш",
+        "en": "Bangladesh",
+        "ar": "بنغلاديش"
+      },
+      "title": {
+        "ru": "АЭС «Руппур»",
+        "en": "Rooppur NPP",
+        "ar": "محطة روبور النووية"
+      },
+      "summary": {
+        "ru": "Строительство АЭС «Руппур» в Бангладеш входит в число международных проектов ROIN WORLD в атомной энергетике.",
+        "en": "Construction of the Rooppur nuclear power plant in Bangladesh is among ROIN WORLD’s international energy projects.",
+        "ar": "يُعد بناء محطة روبور للطاقة النووية في بنغلاديش أحد مشاريع الطاقة الدولية التي تشارك فيها ROIN WORLD."
+      },
+      "sector": {
+        "ru": "Атомная энергетика",
+        "en": "Nuclear energy",
+        "ar": "الطاقة النووية"
+      },
+      "services": [
+        "engineering"
+      ],
+      "image": "/images/project-bd.webp",
+      "role": {
+        "ru": "В корпоративном архиве описаны работы ROIN WORLD на объекте 6.1.1 учебно-производственного корпуса АЭС «Руппур». Опубликованный видеосюжет показывает эту часть строительства.",
+        "en": "The company archive documents ROIN WORLD’s work on facility 6.1.1 of the Rooppur training and production building. A published site video covers this part of construction.",
+        "ar": "يوثق أرشيف الشركة أعمال ROIN WORLD في المنشأة 6.1.1 من مبنى التدريب والإنتاج بمحطة روبور. ويعرض فيديو من الموقع هذا الجزء من أعمال البناء."
+      },
+      "source": "https://roinworld.com/work-at-facility-6-1-1-of-the-training-and-production-building-rooppur-npp-bangladesh/",
+      "gallery": [
+        {
+          "image": "/images/hero.webp",
+          "caption": {
+            "ru": "Панорама строительства АЭС «Руппур»",
+            "en": "Overview of the Rooppur construction site",
+            "ar": "مشهد عام لموقع بناء محطة روبور"
+          }
+        },
+        {
+          "image": "/images/hero-dusk.webp",
+          "caption": {
+            "ru": "Ночная панорама градирен АЭС «Руппур» в Бангладеш",
+            "en": "Cooling towers at Rooppur nuclear power plant in Bangladesh at night",
+            "ar": "أبراج التبريد في محطة روبور النووية في بنغلاديش ليلاً"
+          }
+        }
+      ],
+      "videos": [
+        {
+          "title": {
+            "ru": "Основания для тренажёров на «Руппуре»",
+            "en": "Foundations for the Rooppur simulators",
+            "ar": "أساسات أجهزة المحاكاة في روبور"
+          },
+          "url": "https://www.youtube.com/watch?v=IlK5G-J8NZA",
+          "poster": "/images/hero.webp"
+        }
+      ],
+      "stages": [],
+      "stories": []
+    },
+    {
+      "slug": "el-dabaa",
+      "region": "egypt",
+      "country": {
+        "ru": "Египет",
+        "en": "Egypt",
+        "ar": "مصر"
+      },
+      "title": {
+        "ru": "АЭС «Эль-Дабаа»",
+        "en": "El Dabaa NPP",
+        "ar": "محطة الضبعة النووية"
+      },
+      "summary": {
+        "ru": "В Египте компания участвует в проекте строительства АЭС «Эль-Дабаа» на побережье Средиземного моря.",
+        "en": "In Egypt, the company participates in the El Dabaa nuclear power plant project on the Mediterranean coast.",
+        "ar": "تشارك الشركة في مصر في مشروع بناء محطة الضبعة للطاقة النووية على ساحل البحر المتوسط."
+      },
+      "sector": {
+        "ru": "Атомная энергетика",
+        "en": "Nuclear energy",
+        "ar": "الطاقة النووية"
+      },
+      "services": [
+        "engineering"
+      ],
+      "image": "/images/project-eg.webp",
+      "role": {
+        "ru": "Компания указывает этот объект в перечне строящихся АЭС, в которых принимает участие.",
+        "en": "ROIN WORLD lists this plant among the nuclear construction projects in which it participates.",
+        "ar": "تدرج الشركة هذه المحطة ضمن مشاريع البناء النووي التي تشارك فيها."
+      },
+      "source": "https://roinworld.ae/",
+      "gallery": [],
+      "videos": [],
+      "stages": [],
+      "stories": []
+    },
+    {
+      "slug": "paks-ii",
+      "region": "hungary",
+      "country": {
+        "ru": "Венгрия",
+        "en": "Hungary",
+        "ar": "المجر"
+      },
+      "title": {
+        "ru": "АЭС «Пакш II»",
+        "en": "Paks II NPP",
+        "ar": "محطة باكس ٢"
+      },
+      "summary": {
+        "ru": "Венгерский проект «Пакш II» входит в географию участия ROIN WORLD в международном атомном строительстве.",
+        "en": "The Paks II project in Hungary is part of ROIN WORLD’s international nuclear construction portfolio.",
+        "ar": "يندرج مشروع باكس ٢ في المجر ضمن المشاريع الدولية التي تشارك فيها ROIN WORLD في قطاع البناء النووي."
+      },
+      "sector": {
+        "ru": "Атомная энергетика",
+        "en": "Nuclear energy",
+        "ar": "الطاقة النووية"
+      },
+      "services": [
+        "engineering"
+      ],
+      "image": "/images/project-hu.webp",
+      "role": {
+        "ru": "Компания указывает этот объект в перечне строящихся АЭС, в которых принимает участие.",
+        "en": "ROIN WORLD lists this plant among the nuclear construction projects in which it participates.",
+        "ar": "تدرج الشركة هذه المحطة ضمن مشاريع البناء النووي التي تشارك فيها."
+      },
+      "source": "https://roinworld.ae/",
+      "gallery": [],
+      "videos": [],
+      "stages": [],
+      "stories": []
+    }
+  ]
+}

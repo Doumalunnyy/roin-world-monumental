@@ -1,0 +1,104 @@
+{
+  "items": [
+    {
+      "slug": "engineering",
+      "title": {
+        "ru": "Строительство и инженерные работы",
+        "en": "Construction and engineering",
+        "ar": "البناء والهندسة"
+      },
+      "summary": {
+        "ru": "Инженерная подготовка и организация строительных работ.",
+        "en": "Engineering preparation and construction operations.",
+        "ar": "التحضير الهندسي وتنظيم أعمال البناء."
+      },
+      "body": {
+        "ru": "На крупном объекте проектные решения проходят через десятки рабочих групп. Инженеры связывают чертежи, последовательность работ и задачи строительных бригад.",
+        "en": "On a large site, design decisions pass through many teams. Engineers connect drawings and work sequences with the tasks of construction crews.",
+        "ar": "في المواقع الكبرى تتشارك فرق عديدة في تنفيذ التصاميم. ويربط المهندسون المخططات وتسلسل الأعمال بمهام فرق البناء."
+      },
+      "scope": {
+        "ru": "Инженерная подготовка\nКоординация на площадке\nСтроительные работы",
+        "en": "Engineering preparation\nSite coordination\nConstruction work",
+        "ar": "الإعداد الهندسي\nتنسيق الموقع\nأعمال البناء"
+      },
+      "image": "/images/engineering.webp",
+      "index": "01"
+    },
+    {
+      "slug": "logistics",
+      "title": {
+        "ru": "Логистика и транспорт",
+        "en": "Logistics and transport",
+        "ar": "الخدمات اللوجستية والنقل"
+      },
+      "summary": {
+        "ru": "Доставка оборудования и материалов на площадку.",
+        "en": "Moving equipment and materials to site.",
+        "ar": "نقل المعدات والمواد إلى الموقع."
+      },
+      "body": {
+        "ru": "Доставка материалов связана с графиком строительства. Маршрут, порядок отгрузки и приёмка требуют согласования между поставщиками, перевозчиками и командой на объекте.",
+        "en": "Deliveries follow the construction programme. Routes, dispatch and site reception depend on coordination between suppliers, carriers and the site team.",
+        "ar": "تتبع عمليات التسليم برنامج البناء. ويتطلب الشحن والاستلام التنسيق بين الموردين والناقلين وفريق الموقع."
+      },
+      "scope": {
+        "ru": "Планирование перевозок\nМеждународная доставка\nКоординация отгрузок",
+        "en": "Transport planning\nInternational delivery\nDispatch coordination",
+        "ar": "تخطيط النقل\nالتوصيل الدولي\nتنسيق الشحنات"
+      },
+      "image": "/images/logistics.webp",
+      "index": "02"
+    },
+    {
+      "slug": "supply",
+      "title": {
+        "ru": "Снабжение и комплектация",
+        "en": "Supply and procurement",
+        "ar": "التوريد والتجهيز"
+      },
+      "summary": {
+        "ru": "Материалы и комплектация под задачи объекта.",
+        "en": "Sourcing materials to meet site requirements.",
+        "ar": "توفير المواد وفق احتياجات الموقع."
+      },
+      "body": {
+        "ru": "Комплектация начинается с перечня материалов для конкретного этапа. Потребности площадки определяют состав поставки, сроки закупки и порядок передачи материалов в работу.",
+        "en": "Procurement starts with material requirements for each stage. Site needs inform purchasing schedules, deliveries and handover to the teams doing the work.",
+        "ar": "يبدأ التجهيز بحصر المواد اللازمة لكل مرحلة. وتحدد احتياجات الموقع مواعيد الشراء والتسليم لفرق التنفيذ."
+      },
+      "scope": {
+        "ru": "Потребность в материалах\nРабота с поставщиками\nКомплектация поставок",
+        "en": "Material requirements\nSupplier coordination\nSupply planning",
+        "ar": "احتياجات المواد\nتنسيق الموردين\nتجهيز التوريدات"
+      },
+      "image": "/images/supply.webp",
+      "index": "03"
+    },
+    {
+      "slug": "catering",
+      "title": {
+        "ru": "Организация питания и сервисов",
+        "en": "Catering and site services",
+        "ar": "الإعاشة وخدمات الموقع"
+      },
+      "summary": {
+        "ru": "Питание и повседневные сервисы для команд на объекте.",
+        "en": "Catering and daily support for teams on site.",
+        "ar": "الوجبات والخدمات اليومية لفرق العمل."
+      },
+      "body": {
+        "ru": "Рабочая смена зависит и от того, как устроен повседневный быт. Организация питания и сервисов учитывает график команд, расположение рабочих зон и местные условия.",
+        "en": "A working shift depends on how everyday needs are met. Catering and site services take account of team schedules, work areas and local conditions.",
+        "ar": "يعتمد سير المناوبات على تلبية الاحتياجات اليومية. وتراعي خدمات الإعاشة جداول الفرق ومناطق العمل والظروف المحلية."
+      },
+      "scope": {
+        "ru": "Организация питания\nСервисы для команд\nОбеспечение рабочих смен",
+        "en": "Catering operations\nTeam services\nShift support",
+        "ar": "تنظيم الوجبات\nخدمات الفرق\nدعم المناوبات"
+      },
+      "image": "/images/catering.webp",
+      "index": "04"
+    }
+  ]
+}

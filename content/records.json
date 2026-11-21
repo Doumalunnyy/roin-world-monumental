@@ -1,0 +1,35 @@
+{
+  "vacancies": [],
+  "certificates": [
+    {
+      "slug": "iso-9001",
+      "title": "ISO 9001",
+      "file": "https://roinworld.ae/wp-content/uploads/2025/11/9001-scaled.png",
+      "summary": {
+        "ru": "Менеджмент качества",
+        "en": "Quality management",
+        "ar": "إدارة الجودة"
+      }
+    },
+    {
+      "slug": "iso-14001",
+      "title": "ISO 14001",
+      "file": "https://roinworld.ae/wp-content/uploads/2025/11/14001-scaled.png",
+      "summary": {
+        "ru": "Экологический менеджмент",
+        "en": "Environmental management",
+        "ar": "الإدارة البيئية"
+      }
+    },
+    {
+      "slug": "iso-45001",
+      "title": "ISO 45001",
+      "file": "https://roinworld.ae/wp-content/uploads/2025/11/45001-scaled.png",
+      "summary": {
+        "ru": "Охрана здоровья и безопасность труда",
+        "en": "Occupational health and safety",
+        "ar": "الصحة والسلامة المهنية"
+      }
+    }
+  ]
+}
