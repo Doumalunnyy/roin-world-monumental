@@ -23,29 +23,42 @@ async function open(page: Page, path: string) {
   await page.evaluate(() => document.fonts.ready.then(() => undefined));
 }
 
-test("hero and project carousels navigate independently and wrap", async ({
-  page,
-}) => {
+test("archive hero and project selection are independent under reduced motion", async ({page}) => {
   await open(page, "/ru");
-  const hero = page.locator(".hero");
-  const featured = page.locator(".featured");
-  const archive = "https://roinworld.ae/media/";
-  await expect(hero.locator(".frame-caption")).toHaveAttribute("href", archive);
-  await hero.getByRole("button", { name: "Предыдущий" }).click();
-  await expect(hero.locator(".frame-caption")).toHaveAttribute("href", "/ru/projects/paks-ii");
-  await hero.getByRole("button", { name: "Следующий" }).click();
-  await expect(hero.locator(".frame-caption")).toHaveAttribute("href", archive);
-  await featured.getByRole("button", { name: "Следующий" }).click();
-  await expect(featured.getByRole("heading")).toContainText("Эль-Дабаа");
-  await expect(hero.locator(".frame-caption")).toHaveAttribute(
-    "href",
-    archive,
-  );
-  await featured.getByRole("link", { name: "Подробнее" }).click();
+  const hero = page.locator('[data-sequence="hero"]');
+  const featured = page.locator('[data-sequence="projects"]');
+  await expect(hero.locator('a[href*="/about"]')).toHaveCount(0);
+  await expect(hero.getByRole("link", {name:/фильм/i})).toBeVisible();
+  await expect(hero).toHaveAttribute("data-active", "0");
+  await featured.locator(".sequence-tabs button").nth(1).click();
+  await expect(featured).toHaveAttribute("data-active", "1");
+  await expect(hero).toHaveAttribute("data-active", "0");
+  await featured.getByRole("link", {name:/Подробнее/}).click();
   await expect(page).toHaveURL(/\/ru\/projects\/el-dabaa\/?$/);
-  await expect(page.getByRole("heading", { level: 1 })).toContainText(
-    "Эль-Дабаа",
-  );
+});
+test("visible photo sequences advance in place and the logo strip can be paused", async ({page}) => {
+  await page.emulateMedia({reducedMotion:"no-preference"});
+  await open(page, "/ru");
+  const hero = page.locator('[data-sequence="hero"]');
+  const projects = page.locator('[data-sequence="projects"]');
+  const heading = hero.locator("h1");
+  const position = await heading.boundingBox();
+  await expect(hero).toHaveAttribute("data-active", "1", {timeout:16000});
+  expect(await heading.boundingBox()).toEqual(position);
+  await hero.locator(".sequence-toggle").click();
+  await expect(hero).toHaveAttribute("data-running", "false");
+  await projects.scrollIntoViewIfNeeded();
+  await page.mouse.move(0,0);
+  await expect(projects).toHaveAttribute("data-active","1",{timeout:16000});
+  await expect(hero).toHaveAttribute("data-active","1");
+  const strip = page.locator(".partner-strip");
+  await strip.scrollIntoViewIfNeeded();
+  await expect(strip).toHaveAttribute("data-running","true");
+  await strip.getByRole("button").click();
+  await expect(strip).toHaveAttribute("data-running","false");
+  await expect(strip.locator("ul").first().getByRole("img")).toHaveCount(6);
+  await page.emulateMedia({reducedMotion:"reduce"});
+  await expect(strip.locator(".partner-track")).toHaveCSS("animation-name","none");
 });
 
 test("project filters combine, communicate an empty result and reset", async ({
@@ -183,7 +196,7 @@ test("closed contact intake validates locally without transferring personal data
   await expect(
     form.getByText(/Здесь можно подготовить письмо для офиса/),
   ).toBeVisible();
-  const validate = form.getByRole("button", { name: /Проверить заполнение/ });
+  const validate = form.getByRole("button", { name: /Подготовить письмо/ });
   await validate.click();
   await expect(form.getByRole("textbox", { name: "Ваше имя" })).toBeFocused();
   await expect(form.getByRole("status")).toBeEmpty();
@@ -196,7 +209,7 @@ test("closed contact intake validates locally without transferring personal data
     .fill("Проверка локальной валидации.");
   await form.getByRole("checkbox").check();
   await validate.click();
-  await expect(form.getByRole("status")).toContainText("Поля заполнены.");
+  await expect(form.getByRole("status")).toContainText("Черновик готов.");
   await expect(form.getByRole("link", { name: "Открыть письмо в почтовой программе" })).toHaveAttribute("href", /^mailto:[^?]+\?subject=.+&body=.+/);
   expect(submissions).toEqual([]);
 });

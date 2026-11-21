@@ -20,6 +20,7 @@ export function feature(lang: Lang, p: Project) {
     title: p.title[lang],
     sector: p.sector[lang],
     summary: p.summary[lang],
+    role: p.role[lang],
     image: p.image,
     caption: caption(lang, p.image),
     url: href(lang, "projects/" + p.slug),

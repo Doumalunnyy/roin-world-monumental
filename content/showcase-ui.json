@@ -1,0 +1,32 @@
+{
+  "ru": {
+    "film": "Смотреть корпоративный фильм",
+    "archive": "Фотоархив ROIN WORLD",
+    "pause": "Приостановить автопоказ",
+    "resume": "Возобновить автопоказ",
+    "index": "Кадр",
+    "select": "Выбор проекта",
+    "role": "Участие ROIN WORLD",
+    "illustration": "Иллюстративное фото"
+  },
+  "en": {
+    "film": "Watch the corporate film",
+    "archive": "ROIN WORLD photo archive",
+    "pause": "Pause slideshow",
+    "resume": "Resume slideshow",
+    "index": "Frame",
+    "select": "Select a project",
+    "role": "ROIN WORLD’s role",
+    "illustration": "Illustrative photograph"
+  },
+  "ar": {
+    "film": "شاهد فيلم الشركة",
+    "archive": "أرشيف صور ROIN WORLD",
+    "pause": "إيقاف العرض التلقائي مؤقتاً",
+    "resume": "استئناف العرض التلقائي",
+    "index": "الصورة",
+    "select": "اختيار المشروع",
+    "role": "دور ROIN WORLD",
+    "illustration": "صورة توضيحية"
+  }
+}

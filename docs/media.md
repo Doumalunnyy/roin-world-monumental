@@ -12,17 +12,19 @@
 
 | Файл | Содержание | Оригинал |
 | --- | --- | --- |
+| archive-rooppur-workshop.webp | Цех предварительной сборки на площадке 4.1 АЭС «Руппур», Бангладеш. Корпоративный репортаж от 22.08.2019 | [Публикация ROIN WORLD](https://roinworld.com/roinworld-completed-work-on-site-4-1-rooppur-npp/) · [Оригинал 1919 × 1074](https://roinworld.com/wp-content/uploads/2019/08/4.1-1.jpg) |
 | archive-aerial.webp и archive-aerial-mobile.webp | Панорама строительства энергетического комплекса | [ROIN WORLD](https://roinworld.ae/wp-content/uploads/2025/11/WhatsApp-Image-2025-09-30-at-16.28.42.jpeg) |
 | archive-briefing.webp | Рабочая встреча на строительной площадке | [ROIN WORLD](https://roinworld.ae/wp-content/uploads/2018/05/DSC_0365.jpg) |
 | engineering.webp | Монтаж металлоконструкций на промышленной площадке | [ROIN WORLD](https://roinworld.ae/wp-content/uploads/2025/11/WhatsApp-Image-2025-09-30-at-16.28.52-2.jpeg) |
 | logistics.webp | Разгрузка труб на строительной площадке | [ROIN WORLD](https://roinworld.ae/wp-content/uploads/2025/11/WhatsApp-Image-2025-09-30-at-16.28.54-1.jpeg) |
-| supply.webp | Образцы бетона и материалы на строительной площадке | [ROIN WORLD](https://roinworld.ae/wp-content/uploads/2018/08/foto-stroiki-8.jpg) |
-| catering.webp | Команда ROIN WORLD у мобильного объекта на площадке | [ROIN WORLD](https://roinworld.ae/wp-content/uploads/2018/08/foto-stroiki-7.jpg) |
 | team.webp | Специалисты за совместной работой на площадке | [ROIN WORLD](https://roinworld.ae/wp-content/uploads/2018/08/foto-stroiki-10.jpg) |
 | hero-2.webp | Индустриальные сооружения и водоёмы с высоты | [ROIN WORLD](https://roinworld.ae/wp-content/uploads/2025/11/WhatsApp-Image-2025-09-30-at-16.28.54-3.jpeg) |
 | hero-3.webp | Промышленные здания и башенные краны при боковом освещении | [ROIN WORLD](https://roinworld.ae/wp-content/uploads/2025/11/WhatsApp-Image-2025-09-30-at-16.28.52-1.jpeg) |
+| archive-roof.webp | Монтаж кровли стального каркаса | [ROIN WORLD](https://roinworld.ae/wp-content/uploads/2025/11/WhatsApp-Image-2025-09-30-at-16.28.59.jpeg) |
+| archive-field-team.webp | Бетонирование плиты бригадой на площадке | [ROIN WORLD](https://roinworld.ae/wp-content/uploads/2018/08/foto-stroiki-2.jpg) |
 
-Для главной выбран первый панорамный снимок официальной галереи. Номер проекта и конкретное место для этой фотографии в подписи издателя отсутствуют. В мобильной версии используется вертикальный фрагмент того же кадра. Сюжеты у направлений показывают среду работы. Сервисный блок использует кадр возле мобильного объекта. В медиатеке не найден подписанный репортаж из столовой. Подписи и альтернативный текст передают фактическую сцену. Записи для этих кадров находятся в «content/captions.json» и доступны редактору в CMS.
+Для первого экрана подобраны пять видов из открытой галереи. Файлы, исходные размеры, описания и основания выбора приведены в [реестре отбора](photo-selection.md). В нём также есть [контактный лист](archive-contact-sheet.jpg). Подписи архивных кадров описывают видимое. Для проекта требуются индивидуальные сведения об объекте. Для материалов, публикуемых самой компанией, дополнительное подтверждение полномочий на внешнюю корпоративную публикацию и согласия изображённых людей остаются предметом редакторской приёмки.
+
 
 ## Внешние фотографии объектов
 
@@ -33,6 +35,8 @@
 | `project-bd.webp` | Градирни АЭС «Руппур» и мост Хардинга | [Jusujon1980](https://commons.wikimedia.org/wiki/File:Ruppur_Nuclear_Power_Plant_2024.jpg) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
 | `project-eg.webp` | Строительство АЭС «Эль-Дабаа», Египет, 2025 | [Управление пресс-службы и информации Президента России / www.kremlin.ru](https://commons.wikimedia.org/wiki/File:Al-Dabaa_Reactor_5.jpg) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
 | `project-hu.webp` | Действующая АЭС «Пакш», 2012. Архивная иллюстрация региона | [IAEA Imagebank](https://commons.wikimedia.org/wiki/File:Nuclear_Power_Plant_Paks.jpg) | [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/) |
+| `supply.webp` | Складские полки, иллюстрация услуг снабжения | [Russ Murray](https://unsplash.com/photos/M7G_m5XJ-go) | [Unsplash License](https://unsplash.com/license) |
+| `catering.webp` | Профессиональная кухня, иллюстрация услуги питания | [Amos K](https://unsplash.com/photos/MBIuvUxLsrc) | [Unsplash License](https://unsplash.com/license) |
 
 Обработка включает кадрирование, изменение размера и сжатие WebP. Для части архивных изображений применена цветокоррекция. Открытые лицензии внешних фотографий и авторство указаны также на [странице источников](../public/images/credits.html).
 

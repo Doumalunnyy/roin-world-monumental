@@ -323,5 +323,10 @@
     "ru": "Организации в каталоге ROIN WORLD",
     "en": "Organisations in the ROIN WORLD directory",
     "ar": "الجهات في دليل ROIN WORLD"
+  },
+  "issuer": {
+    "ru": "Орган выдачи",
+    "en": "Issuing body",
+    "ar": "جهة الإصدار"
   }
 }

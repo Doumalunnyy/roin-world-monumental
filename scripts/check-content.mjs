@@ -55,6 +55,13 @@ for (const person of read("company").people) {
   )
     errors.push("Unknown interview: " + person.interviewSlug);
 }
+const frames = read("home").heroFrames;
+if (frames && (!Array.isArray(frames) || frames.length < 4 || frames.length > 6))
+  errors.push("The homepage requires 4–6 archive frames");
+for (const frame of frames || []) {
+  if (!frame.image || !frame.mobile || !frame.alt || !/^https:\/\//.test(frame.source || ""))
+    errors.push("A homepage frame is missing its image, mobile crop, description or source");
+}
 const coverProject = read("home").heroProject;
 if (coverProject && !read("projects").items.some((p) => p.slug === coverProject))
   errors.push("Unknown homepage cover project");

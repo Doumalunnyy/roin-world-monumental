@@ -49,7 +49,7 @@ export type Project = {
   context?: Local;
   contextSource?: string;
   gallery: { image: string; caption: Local }[];
-  videos: { url: string; title: Local; poster?: string }[];
+  videos: { url: string; title: Local; poster?: string; external?: boolean }[];
   stages: { title: Local; body: Local }[];
   stories: { person: string }[];
 };
@@ -82,6 +82,7 @@ export const certificates = recordsFile.certificates as {
   expires?: string;
   source?: string;
   holder?: string;
+  issuer?: string;
 }[];
 export const vacancies = recordsFile.vacancies as {
   slug: string;

@@ -28,7 +28,8 @@
         "ru": "Последовательность работ начинается с чертежей. Инженерная подготовка связывает задачи бригад с готовностью участка и очередностью строительных операций.",
         "en": "Work sequencing begins with the drawings. Engineering preparation connects crew assignments with site readiness and the order in which construction can proceed.",
         "ar": "يبدأ ترتيب الأعمال من المخططات. ويربط التحضير الهندسي بين مهام الفرق وجاهزية الموقع وترتيب عمليات البناء."
-      }
+      },
+      "illustrative": false
     },
     {
       "slug": "logistics",
@@ -58,7 +59,8 @@
         "ru": "Планирование ведётся от момента, когда груз понадобится на объекте. От этой даты зависят маршрут, очередность отгрузок и время приёмки на площадке.",
         "en": "Transport planning works back from the date a load is needed on site. That date shapes the route, dispatch sequence and delivery window.",
         "ar": "ينطلق تخطيط النقل من موعد الحاجة إلى الشحنة في الموقع. وعلى أساسه يُحدَّد المسار وترتيب الشحنات ووقت الاستلام."
-      }
+      },
+      "illustrative": false
     },
     {
       "slug": "supply",
@@ -88,7 +90,8 @@
         "ru": "Потребность в материалах задаёт состав поставки. При комплектации важно сверить перечень позиций со спецификацией и подготовить их к передаче строительной команде.",
         "en": "Material requirements define each delivery. The procurement team checks the package against the specification and prepares it for handover to the construction team.",
         "ar": "تحدد احتياجات المواد محتوى كل توريد. وتُراجع بنود الشحنة وفق المواصفات قبل تجهيزها للتسليم إلى فريق البناء."
-      }
+      },
+      "illustrative": true
     },
     {
       "slug": "catering",
@@ -118,7 +121,8 @@
         "ru": "График смен определяет время и место обслуживания. Расположение рабочих зон и численность смены помогают рассчитать потребность в питании и повседневных сервисах.",
         "en": "Shift patterns determine where and when services are needed. The layout of work areas and the size of each shift inform catering and daily service needs.",
         "ar": "تحدد جداول المناوبات وقت تقديم الخدمات ومكانها. ويساعد توزيع مناطق العمل وعدد أفراد كل مناوبة على تقدير احتياجات الوجبات والخدمات اليومية."
-      }
+      },
+      "illustrative": true
     }
   ]
 }

@@ -107,7 +107,7 @@ function ServiceOverview({ lang }: { lang: Lang }) {
                 ))}
             </ul>
             <Action to={href(lang, "services/" + s.slug)}>
-              {txt(lang, "details")}
+              {txt(lang, "more")}
             </Action>
           </div>
         </article>
@@ -254,7 +254,11 @@ function CaseStudy({ lang, project: p }: { lang: Lang; project: Project }) {
           {p.videos.length > 0 && (
             <div className="case-videos">
               <h3>{t("video")}</h3>
-              {p.videos.map((v) => (
+              {p.videos.map((v) => v.external ? (
+                <a className="text-link" key={v.url} href={v.url} target="_blank" rel="noreferrer">
+                  {v.title[lang]} <Icon name="diagonal" size={16} />
+                </a>
+              ) : (
                 <MediaButton
                   key={v.url}
                   url={v.url}

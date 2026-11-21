@@ -183,7 +183,8 @@
       "preview": "/documents/iso-9001-preview.webp",
       "issued": "2024-07-19",
       "expires": "2027-07-19",
-      "holder": "ROIN WORLD, FZE"
+      "holder": "ROIN WORLD, FZE",
+      "issuer": "COMPECER"
     },
     {
       "slug": "iso-14001",
@@ -198,7 +199,8 @@
       "preview": "/documents/iso-14001-preview.webp",
       "issued": "2024-07-19",
       "expires": "2027-07-19",
-      "holder": "ROIN WORLD, FZE"
+      "holder": "ROIN WORLD, FZE",
+      "issuer": "COMPECER"
     },
     {
       "slug": "iso-45001",
@@ -213,7 +215,8 @@
       "preview": "/documents/iso-45001-preview.webp",
       "issued": "2024-07-19",
       "expires": "2027-07-19",
-      "holder": "ROIN WORLD, FZE"
+      "holder": "ROIN WORLD, FZE",
+      "issuer": "COMPECER"
     }
   ]
 }

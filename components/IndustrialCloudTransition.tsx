@@ -5,11 +5,11 @@ import { basePath, publicUrl } from "@/lib/urls";
 import { handoffKey, reducedQuery } from "@/lib/industrial-transition";
 
 const textures = {
-  towers: ["towers.webp", 1600, 423],
-  cranes: ["cranes.webp", 1600, 600],
-  middle: ["fog-mid.webp", 800, 333],
-  front: ["fog-front.webp", 1024, 394],
-  steam: ["steam.webp", 288, 432],
+  towers: ["towers.webp", 1568, 882],
+  cranes: ["cranes.webp", 1160, 653],
+  middle: ["fog-mid.webp", 635, 372],
+  front: ["fog-front.webp", 945, 394],
+  steam: ["steam.webp", 385, 267],
 } as const;
 
 const transparentPixel = "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=";
@@ -18,10 +18,9 @@ function SceneImage({ asset, className }: { asset: keyof typeof textures; classN
   const [file, width, height] = textures[asset];
   return (
     <picture className={className}>
-      <source media="(max-width: 700px) and (prefers-reduced-motion: no-preference)" srcSet={publicUrl("/transition/compact/" + file)} />
+      <source media="(max-width: 700px) and (orientation: portrait) and (prefers-reduced-motion: no-preference)" srcSet={publicUrl("/transition/compact/" + file)} />
       <source media="(prefers-reduced-motion: no-preference)" srcSet={publicUrl("/transition/" + file)} />
-      {/* The baked alpha texture is shared by all copies and both deployment modes. */}
-      <img src={transparentPixel} width={width} height={height} alt="" decoding="async" loading="eager" fetchPriority="low" />
+      <img src={transparentPixel} width={width} height={height} alt="" decoding="sync" loading="eager" fetchPriority="low" />
     </picture>
   );
 }
@@ -36,7 +35,7 @@ export function IndustrialCloudTransition({ languages }: { languages: readonly s
     const veil = scene.querySelector<HTMLElement>('[data-layer="veil"]');
     if (!veil || !("getAnimations" in veil) || !CSS.supports("mask-image", "linear-gradient(black, transparent)")) return;
     const reduced = matchMedia(reducedQuery);
-    const compact = matchMedia("(max-width: 700px)");
+    const compact = matchMedia("(max-width: 700px) and (orientation: portrait)");
     const navigation = (window as Window & { navigation?: EventTarget }).navigation;
     const isPage = (url: URL) => url.origin === location.origin && url.protocol === location.protocol &&
       languages.some((lang) => url.pathname === basePath + "/" + lang || url.pathname.startsWith(basePath + "/" + lang + "/"));
@@ -205,19 +204,22 @@ export function IndustrialCloudTransition({ languages }: { languages: readonly s
     <div ref={overlay} className="atmosphere industrial-clouds" data-industrial-clouds="" aria-hidden="true">
       <div data-layer="background">
         <i className="weather-sky weather-west" /><i className="weather-sky weather-east" />
-        <i className="distant-air" />
       </div>
       <div data-layer="towers">
-        <div className="industrial-plane cooling-yard">
-          <SceneImage className="yard-towers" asset="towers" />
+        <div className="industrial-plane">
+          <SceneImage className="industrial-plate" asset="towers" />
           <SceneImage className="vapour plume-west" asset="steam" />
           <SceneImage className="vapour plume-east" asset="steam" />
-          <SceneImage className="vapour plume-far" asset="steam" />
         </div>
       </div>
-      <div data-layer="cranes"><div className="industrial-plane"><SceneImage asset="cranes" className="yard-cranes" /></div></div>
-      <div data-layer="middle"><SceneImage asset="middle" className="bank mid-west" /><SceneImage asset="middle" className="bank mid-east" /></div>
-      <div data-layer="foreground"><SceneImage asset="front" className="bank near-west" /><SceneImage asset="front" className="bank near-east" /></div>
+      <div data-layer="cranes">
+        <div className="industrial-plane"><SceneImage asset="cranes" className="industrial-plate" /></div>
+      </div>
+      <div data-layer="middle"><SceneImage asset="middle" className="bank mid-bank" /></div>
+      <div data-layer="foreground">
+        <SceneImage asset="front" className="bank near-west" />
+        <SceneImage asset="middle" className="bank near-east" />
+      </div>
       <div data-layer="veil" />
     </div>
   );

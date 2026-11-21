@@ -1,14 +1,14 @@
 {
   "about": "/images/engineering.webp",
-  "services": "/images/supply.webp",
+  "services": "/images/engineering.webp",
   "projects": "/images/hero-dusk.webp",
   "team": "/images/team.webp",
-  "careers": "/images/team.webp",
+  "careers": "/images/archive-field-team.webp",
   "contacts": "/images/logistics.webp",
-  "history": "/images/project-bd.webp",
+  "history": "/images/archive-aerial.webp",
   "leadership": "/images/team.webp",
   "geography": "/images/hero-dusk.webp",
   "partners": "/images/project-eg.webp",
   "certificates": "/images/engineering.webp",
-  "news": "/images/project-hu.webp"
+  "news": "/images/hero-3.webp"
 }

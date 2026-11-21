@@ -42,6 +42,9 @@ export function collections({ languages, interfaceKeys, companyInterfaceKeys, ca
         tr('title', 'Заголовок первого экрана', 'text', 'Перенос строки задаёт композицию заголовка.'),
         tr('intro', 'Вводный текст', 'text'), image('hero', 'Обложка для компьютеров'),
         image('heroMobile', 'Обложка для телефонов'), tr('heroAlt', 'Описание обложки для экранного диктора'),
+        list('heroFrames', 'Фотографии первого экрана', [
+          image('image', 'Широкий кадр'), image('mobile', 'Мобильный кадр'), tr('alt', 'Описание снимка'), uri('source','Корпоративный оригинал')
+        ], '{{fields.alt.ru}}'),
         input('heroProject', 'Идентификатор проекта, если объект на обложке подтверждён', 'string', { required: false }), uri('film', 'Корпоративный фильм'), tr('about', 'Заголовок о компании'),
         tr('aboutText', 'О компании', 'text'), tr('expertise', 'Заголовок направлений'),
         tr('projects', 'Заголовок проектов'), tr('team', 'Заголовок команды'), image('teamImage', 'Фото команды'),
@@ -51,6 +54,7 @@ export function collections({ languages, interfaceKeys, companyInterfaceKeys, ca
       ]),
       file('services', 'Направления', [list('items', 'Направления деятельности', [
         slug, input('index', 'Индекс', 'string', { hint: 'Например, 01.' }), title, image(), summary, body,
+        input('illustrative', 'Фото иллюстрирует профессию или услугу', 'boolean', { required: false, default: false }),
         tr('scope', 'Состав работ', 'text', 'Вводите каждый вид работ с новой строки.'),
         tr('approach', 'Подход к реализации', 'text')
       ], heading, true)]),
@@ -68,6 +72,7 @@ export function collections({ languages, interfaceKeys, companyInterfaceKeys, ca
         list('gallery', 'Фотогалерея', [image(), tr('caption', 'Подпись')], '{{fields.caption.ru}}'),
         list('videos', 'Видео и таймлапсы', [
           title, input('url', 'Адрес видео или путь к файлу', 'file', { choose_url: true }),
+          input('external', 'Открывать видеотеку издателя', 'boolean', { required: false, default: false }),
           image('poster', 'Обложка', false)
         ], heading),
         list('stages', 'Этапы проекта', [title, body], heading),
@@ -109,7 +114,7 @@ export function collections({ languages, interfaceKeys, companyInterfaceKeys, ca
           optionalTranslation('requirements', 'Требования к кандидату'), uri('source', 'Официальная публикация', false)], heading),
         list('certificates', 'Сертификаты', [slug, input('title', 'Название'),
           input('file', 'Скан или PDF', 'file', { choose_url: true }), summary, image('preview', 'Миниатюра', false),
-          input('holder', 'Держатель по оригиналу', 'string', { required: false }), date('issued', 'Первичная регистрация'),
+          input('issuer', 'Орган выдачи', 'string', { required: false }), input('holder', 'Держатель по оригиналу', 'string', { required: false }), date('issued', 'Первичная регистрация'),
           date('expires', 'Срок действия по оригиналу'), uri('source', 'Официальный оригинал', false)], '{{fields.title}}')
       ])
     ]

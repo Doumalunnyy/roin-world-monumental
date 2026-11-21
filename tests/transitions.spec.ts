@@ -124,7 +124,7 @@ for (const [width, height] of desktopAndMobile) {
         "aria-hidden",
         "true",
       );
-      const cta = page.locator(".hero-actions a.action");
+      const cta = await menuLink(page, "О компании");
       await expect(cta).toBeInViewport({ ratio: 1 });
       const bounds = await cta.boundingBox();
       expect(bounds && bounds.y + bounds.height).toBeLessThanOrEqual(height);
@@ -134,7 +134,8 @@ for (const [width, height] of desktopAndMobile) {
         "data-atmosphere",
         "leave",
       );
-      await cta.evaluate((el: HTMLAnchorElement) => el.click());
+      await page.locator("footer").getByRole("link", {name:"О компании", exact:true})
+        .evaluate((el: HTMLAnchorElement) => el.click());
       await arrived(page, /\/ru\/about\/?$/);
       expect(await page.evaluate(() => history.length)).toBe(historyLength + 1);
       const recorded = await phases(page);
@@ -206,7 +207,7 @@ test("Escape cancels before departure and a subsequent navigation succeeds", asy
   await page.emulateMedia({ reducedMotion: "no-preference" });
   await open(page, baseURL, "en/");
   await ready(page);
-  const link = page.locator(".hero-actions a.action");
+  const link = page.locator(".topnav").getByRole("link", { name: "Company", exact: true });
   await link.click();
   await expect(page.locator("html")).toHaveAttribute(
     "data-atmosphere",
@@ -257,7 +258,7 @@ test("reduced motion uses ordinary links without a closing or opening overlay", 
   await page.emulateMedia({ reducedMotion: "reduce" });
   await observePhases(page);
   await open(page, baseURL, "en/");
-  await page.locator(".hero-actions a.action").click();
+  await page.locator(".topnav").getByRole("link", { name: "Company", exact: true }).click();
   await expect(page).toHaveURL(/\/en\/about\/?$/);
   await expect(page.locator("main h1")).toBeVisible();
   await expect(page.locator(".atmosphere")).toBeHidden();
@@ -288,7 +289,7 @@ for (const state of ["pending", "failed"] as const) {
         await open(page, baseURL, "en/");
         await request;
         await expect(page.locator("html[data-cloud-ready]")).toHaveCount(0);
-        await page.locator(".hero-actions a.action").click();
+        await page.locator(".topnav").getByRole("link", { name: "Company", exact: true }).click();
         await expect(page).toHaveURL(/\/en\/about\/?$/);
         await expect(page.locator("main h1")).toBeVisible();
         await expect(page.locator(".atmosphere")).toBeHidden();
@@ -305,7 +306,7 @@ test("a delayed document receives focus after the source page is released", asyn
   await observePhases(page);
   await open(page, baseURL, "en/");
   await ready(page);
-  const link = page.locator(".hero-actions a.action");
+  const link = page.locator(".topnav").getByRole("link", { name: "Company", exact: true });
   const target = await link.evaluate((el: HTMLAnchorElement) => el.href);
   let heldNavigation = false;
   await page.route(target, async (route) => {
@@ -329,7 +330,7 @@ test("a navigation cancelled by a 204 response leaves the current page usable", 
   await page.emulateMedia({ reducedMotion: "no-preference" });
   await open(page, baseURL, "en/");
   await ready(page);
-  const link = page.locator(".hero-actions a.action");
+  const link = page.locator(".topnav").getByRole("link", { name: "Company", exact: true });
   const destination = await link.evaluate(
     (element: HTMLAnchorElement) => element.href,
   );

@@ -183,7 +183,8 @@
     "customer",
     "supplier",
     "partner",
-    "partnerList"
+    "partnerList",
+    "issuer"
   ],
   "captionPaths": [
     "/images/project-hu.webp",
@@ -200,7 +201,10 @@
     "/images/hero-3.webp",
     "/images/archive-aerial-mobile.webp",
     "/images/hero.webp",
-    "/images/hero-dusk.webp"
+    "/images/hero-dusk.webp",
+    "/images/archive-roof.webp",
+    "/images/archive-field-team.webp",
+    "/images/archive-rooppur-workshop.webp"
   ],
   "backend": null
 }

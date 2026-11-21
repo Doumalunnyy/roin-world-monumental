@@ -468,6 +468,7 @@ function Certificates({ lang }: LanguageProps) {
             <h3>{doc.title}</h3>
             <p>{doc.summary[lang]}</p>
             <dl>
+              {doc.issuer && <><dt>{copy.issuer[lang]}</dt><dd dir="auto">{doc.issuer}</dd></>}
               {doc.holder && (
                 <>
                   <dt>{copy.holder[lang]}</dt>

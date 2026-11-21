@@ -9,16 +9,16 @@
     "en": "ROIN WORLD is an international construction and engineering company. We contribute to major energy and infrastructure projects through engineering, logistics, procurement and site services.",
     "ar": "ROIN WORLD شركة دولية متخصصة في البناء والهندسة. نساهم في مشاريع كبرى للطاقة والبنية التحتية من خلال الهندسة والنقل والتوريد وخدمات المواقع."
   },
-  "hero": "/images/archive-aerial.webp",
-  "heroMobile": "/images/archive-aerial-mobile.webp",
+  "hero": "/images/hero-3.webp",
+  "heroMobile": "/images/hero-3-mobile.webp",
   "heroAlt": {
-    "ru": "Панорама строительства энергетического комплекса",
-    "en": "Aerial view of an energy construction site",
-    "ar": "منظر جوي لأعمال إنشاء مجمّع للطاقة"
+    "ru": "Панорама стройплощадки с башенными кранами в вечернем свете",
+    "en": "Tower cranes over an industrial construction site in evening light",
+    "ar": "رافعات برجية فوق موقع إنشاء صناعي في ضوء المساء"
   },
   "film": "https://www.youtube.com/watch?v=4KEZoq2ubVE",
   "teamImage": "/images/team.webp",
-  "careerImage": "/images/archive-briefing.webp",
+  "careerImage": "/images/archive-field-team.webp",
   "about": {
     "ru": "Большие задачи.\nСильные решения.",
     "en": "Complex challenges.\nPractical solutions.",
@@ -61,5 +61,57 @@
   },
   "teamCount": "800+",
   "teamCountSource": "https://roinworld.ae/",
-  "heroProject": ""
+  "heroProject": "",
+  "heroFrames": [
+    {
+      "image": "/images/hero-3.webp",
+      "mobile": "/images/hero-3-mobile.webp",
+      "alt": {
+        "ru": "Панорама стройплощадки с башенными кранами в вечернем свете",
+        "en": "Tower cranes over an industrial construction site in evening light",
+        "ar": "رافعات برجية فوق موقع إنشاء صناعي في ضوء المساء"
+      },
+      "source": "https://roinworld.ae/wp-content/uploads/2025/11/WhatsApp-Image-2025-09-30-at-16.28.52-1.jpeg"
+    },
+    {
+      "image": "/images/archive-roof.webp",
+      "mobile": "/images/archive-roof-mobile.webp",
+      "alt": {
+        "ru": "Монтаж кровли над пролётами стального каркаса",
+        "en": "Roof panels over a wide-span steel frame",
+        "ar": "ألواح السقف فوق هيكل فولاذي واسع البحور"
+      },
+      "source": "https://roinworld.ae/wp-content/uploads/2025/11/WhatsApp-Image-2025-09-30-at-16.28.59.jpeg"
+    },
+    {
+      "image": "/images/hero-2.webp",
+      "mobile": "/images/hero-2-mobile.webp",
+      "alt": {
+        "ru": "Промышленные водоёмы и инженерные сооружения с высоты",
+        "en": "Industrial basins and infrastructure seen from the air",
+        "ar": "منظر جوي لأحواض صناعية ومنشآت هندسية"
+      },
+      "source": "https://roinworld.ae/wp-content/uploads/2025/11/WhatsApp-Image-2025-09-30-at-16.28.54-3.jpeg"
+    },
+    {
+      "image": "/images/engineering.webp",
+      "mobile": "/images/engineering-mobile.webp",
+      "alt": {
+        "ru": "Стальные колонны, балки и подъёмная техника на монтажной площадке",
+        "en": "Steel columns, girders and lifting equipment on site",
+        "ar": "أعمدة وعوارض فولاذية ومعدات رفع في موقع التركيب"
+      },
+      "source": "https://roinworld.ae/wp-content/uploads/2025/11/WhatsApp-Image-2025-09-30-at-16.28.52-2.jpeg"
+    },
+    {
+      "image": "/images/archive-aerial.webp",
+      "mobile": "/images/archive-aerial-mobile.webp",
+      "alt": {
+        "ru": "Строящийся купол и краны над корпусами энергетического комплекса",
+        "en": "A dome under construction and cranes over an energy complex",
+        "ar": "قبة قيد الإنشاء ورافعات فوق مباني مجمع للطاقة"
+      },
+      "source": "https://roinworld.ae/wp-content/uploads/2025/11/WhatsApp-Image-2025-09-30-at-16.28.42.jpeg"
+    }
+  ]
 }

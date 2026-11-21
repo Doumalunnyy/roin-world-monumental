@@ -158,3 +158,7 @@
     gap: 1.35rem;
   }
 }
+
+.contact-form .contact-draft { display:table; margin-block-start:.7rem; padding:.7rem 1rem; border:1px solid currentColor; color:white; font-weight:650; text-decoration:none; }
+.contact-form .contact-form__feedback[data-result="success"] {color:#d7e0d9;}
+.contact-form button:hover {background:#dee5df;border-color:#dee5df;}

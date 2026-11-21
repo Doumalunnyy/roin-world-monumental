@@ -2,7 +2,6 @@ import {
   home,
   services,
   projects,
-  certificates,
   company,
   txt,
   href,
@@ -14,40 +13,20 @@ import { Action, Tag } from "./Shared";
 import { ExpertiseGrid } from "./Expertise";
 import { Featured, GeographyMap, Hero } from "./Showcases";
 import { Photo } from "./Media";
+import { DocumentRegister } from "./DocumentRegister";
+import { CorporatePartnersMarquee } from "./CorporatePartnersMarquee";
+import "./corporate-evidence.css";
 import { Icon } from "./Icons";
 import { ContactForm } from "./ContactForm";
 import { contactEnabled } from "@/lib/contact";
 export function Home({ lang }: { lang: Lang }) {
   const t = (key: Parameters<typeof txt>[1]) => txt(lang, key);
   const items = features(lang);
-  const coverProject = items.find((p) => p.slug === home.heroProject);
-  const heroItems = coverProject
-    ? [coverProject, ...items.filter((p) => p !== coverProject)]
-    : items;
-  const labels = { prev: t("prev"), next: t("next"), more: t("more") };
   const office = company.offices.find((o) => o.email);
   return (
     <>
-      <Hero
-        title={home.title[lang]}
-        intro={home.intro[lang]}
-        tag={t("expertTag")}
-        aboutLabel={t("about")}
-        aboutUrl={href(lang, "about")}
-        film={home.film}
-        filmTitle={t("filmTitle")}
-        playLabel={t("film")}
-        close={t("close")}
-        external={t("externalVideo")}
-        scroll={t("scroll")}
-        hero={home.hero}
-        heroMobile={home.heroMobile}
-        alt={home.heroAlt[lang]}
-        archiveFirst={!coverProject}
-        archiveLabel={t("corporateArchive")}
-        items={heroItems}
-        labels={labels}
-      />
+      <Hero lang={lang} title={home.title[lang]} intro={home.intro[lang]} tag={t("expertTag")}
+        film={home.film} filmTitle={t("filmTitle")} close={t("close")} external={t("externalVideo")} scroll={t("scroll")} />
       <section id="geography" className="home-geo section-space">
         <div className="shell">
           <div className="section-heading">
@@ -74,7 +53,7 @@ export function Home({ lang }: { lang: Lang }) {
             <h2>{home.projects[lang]}</h2>
             <Action to={href(lang, "projects")}>{t("allProjects")}</Action>
           </div>
-          <Featured items={items} labels={labels} />
+          <Featured lang={lang} items={items} labels={{ more: t("more") }} />
         </div>
       </section>
       <section className="experience section-space">
@@ -124,18 +103,16 @@ export function Home({ lang }: { lang: Lang }) {
           </div>
         </div>
       </section>
-      <section className="credentials section-space">
-        <div className="shell credentials-layout">
-          <div>
-            <h2>{t("partners")}</h2>
-            <ul>{company.partners.slice(0, 3).map((p) => <li key={p.name}>{p.name}</li>)}</ul>
-            <Action to={href(lang, "partners")}>{t("partnersLink")}</Action>
-          </div>
-          <div>
-            <h2>{t("certificates")}</h2>
-            <ul>{certificates.slice(0, 3).map((c) => <li key={c.slug}><bdi>{c.title}</bdi><small>{c.summary[lang]}</small></li>)}</ul>
-            <Action to={href(lang, "certificates")}>{t("documentLibrary")}</Action>
-          </div>
+      <section className="partners-band section-space">
+        <div className="shell">
+          <div className="section-heading"><h2>{t("partners")}</h2><Action to={href(lang,"partners")}>{t("partnersLink")}</Action></div>
+          <CorporatePartnersMarquee lang={lang} logos={company.partnerDirectory} />
+        </div>
+      </section>
+      <section className="certificate-band section-space">
+        <div className="shell">
+          <div className="section-heading"><h2>{t("certificates")}</h2><Action to={href(lang,"certificates")}>{t("documentLibrary")}</Action></div>
+          <DocumentRegister lang={lang} />
         </div>
       </section>
       <section className="career-band">

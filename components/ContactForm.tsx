@@ -1,6 +1,6 @@
 "use client";
 
-import { useId, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import type { FormEvent } from "react";
 import { contactCopy } from "@/lib/contact-copy";
 import { localeUrl, publicUrl } from "@/lib/urls";
@@ -30,6 +30,8 @@ export function ContactForm({ lang, enabled }: Props) {
   const [busy, setBusy] = useState(false);
   const [draft, setDraft] = useState("");
   const [feedback, setFeedback] = useState<Feedback | null>(null);
+  const draftLink = useRef<HTMLAnchorElement>(null);
+  useEffect(() => { if (draft) draftLink.current?.focus({preventScroll:true}); }, [draft]);
   const lastSubmission = useRef<{ signature: string; id: string } | null>(null);
 
   async function submit(event: FormEvent<HTMLFormElement>) {
@@ -223,7 +225,7 @@ export function ContactForm({ lang, enabled }: Props) {
         data-result={feedbackId}
       >
         {feedback && t[feedback]}
-        {feedback === "verified" && draft && <> <a href={draft}>{t.openDraft}</a></>}
+        {feedback === "verified" && draft && <> <a className="contact-draft" ref={draftLink} href={draft}>{t.openDraft} <span aria-hidden="true">↗</span></a></>}
         {feedback && (["closed", "unavailable", "limit"].includes(feedback) || (feedback === "verified" && !draft)) && <> {contactLink}</>}
       </p>
     </form>

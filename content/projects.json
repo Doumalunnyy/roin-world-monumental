@@ -26,13 +26,13 @@
       "services": [
         "engineering"
       ],
-      "image": "/images/project-bd.webp",
+      "image": "/images/archive-rooppur-workshop.webp",
       "role": {
-        "ru": "В корпоративном архиве описаны работы ROIN WORLD на объекте 6.1.1 учебно-производственного корпуса АЭС «Руппур». Опубликованный видеосюжет показывает эту часть строительства.",
-        "en": "The company archive documents ROIN WORLD’s work on facility 6.1.1 of the Rooppur training and production building. A published site video covers this part of construction.",
-        "ar": "يوثق أرشيف الشركة أعمال ROIN WORLD في المنشأة 6.1.1 من مبنى التدريب والإنتاج بمحطة روبور. ويعرض فيديو من الموقع هذا الجزء من أعمال البناء."
+        "ru": "На площадке 4.1 ROIN WORLD завершила работы в цехе предварительной сборки. Площадь производственного корпуса — 4 300 м². В нём установлены пять мостовых кранов.",
+        "en": "At site 4.1, ROIN WORLD completed work on the pre-assembly workshop. The 4,300 m² production building is equipped with five overhead cranes.",
+        "ar": "أنجزت ROIN WORLD أعمال ورشة التجميع المسبق في الموقع 4.1. تبلغ مساحة مبنى الإنتاج 4,300 متر مربع، ويضم خمس رافعات جسرية."
       },
-      "source": "https://roinworld.com/work-at-facility-6-1-1-of-the-training-and-production-building-rooppur-npp-bangladesh/",
+      "source": "https://roinworld.com/roinworld-completed-work-on-site-4-1-rooppur-npp/",
       "gallery": [
         {
           "image": "/images/hero.webp",
@@ -48,6 +48,14 @@
             "ru": "Ночная панорама градирен АЭС «Руппур» в Бангладеш",
             "en": "Cooling towers at Rooppur nuclear power plant in Bangladesh at night",
             "ar": "أبراج التبريد في محطة روبور النووية في بنغلاديش ليلاً"
+          }
+        },
+        {
+          "image": "/images/project-bd.webp",
+          "caption": {
+            "ru": "Градирни АЭС «Руппур»",
+            "en": "Rooppur cooling towers",
+            "ar": "أبراج التبريد في محطة روبور"
           }
         }
       ],
@@ -95,17 +103,28 @@
         "ar": "الطاقة النووية"
       },
       "services": [
-        "engineering"
+        "engineering",
+        "catering"
       ],
       "image": "/images/project-eg.webp",
       "role": {
-        "ru": "Компания указывает этот объект в перечне строящихся АЭС, в которых принимает участие.",
-        "en": "ROIN WORLD lists this plant among the nuclear construction projects in which it participates.",
-        "ar": "تدرج الشركة هذه المحطة ضمن مشاريع البناء النووي التي تشارك فيها."
+        "ru": "ROIN WORLD выполняет подготовительные и строительные работы. С KHNP и Doosan Enerbility компания заключила соглашение о строительстве объектов турбинного острова. На площадке ROIN WORLD также организует питание персонала.",
+        "en": "ROIN WORLD undertakes preparatory and construction work. Its agreement with KHNP and Doosan Enerbility covers turbine island facilities. The company also provides catering for site personnel.",
+        "ar": "تنفذ ROIN WORLD أعمال التحضير والإنشاء. وتشمل اتفاقيتها مع KHNP وDoosan Enerbility منشآت جزيرة التوربينات. كما تقدم خدمات الإعاشة للعاملين في الموقع."
       },
-      "source": "https://roinworld.ae/",
+      "source": "https://roinworld.ae/projects/",
       "gallery": [],
-      "videos": [],
+      "videos": [
+        {
+          "url": "https://nppa.gov.eg/VideoGallery",
+          "title": {
+            "ru": "Видеорепортажи с «Эль-Дабаа» · NPPA",
+            "en": "El Dabaa video reports · NPPA",
+            "ar": "تقارير مصورة من الضبعة · هيئة المحطات النووية"
+          },
+          "external": true
+        }
+      ],
       "stages": [],
       "stories": [],
       "context": {
@@ -149,7 +168,17 @@
       },
       "source": "https://roinworld.ae/",
       "gallery": [],
-      "videos": [],
+      "videos": [
+        {
+          "url": "https://www.paks2.hu/en/web/paks-2-en/videos",
+          "title": {
+            "ru": "Хроника строительства · Paks II Ltd.",
+            "en": "Construction films · Paks II Ltd.",
+            "ar": "أفلام عن البناء · شركة باكش ٢"
+          },
+          "external": true
+        }
+      ],
       "stages": [],
       "stories": [],
       "context": {

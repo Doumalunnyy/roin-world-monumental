@@ -37,7 +37,7 @@ export function SectionHero({ lang, path, title }: { lang: Lang; path: string; t
           {section === "about" && <p className="cover-byline" dir="ltr">ROIN WORLD</p>}
           {project && <p className="cover-byline"><Icon name="pin" size={16} />{project.country[lang]}<span> / </span>{project.sector[lang]}</p>}
           {article && <time className="cover-byline" dateTime={article.date}>{/^\d{4}$/.test(article.date) ? new Intl.NumberFormat(lang, { useGrouping: false }).format(Number(article.date)) : new Intl.DateTimeFormat(lang, { dateStyle: "long", timeZone: "UTC" }).format(new Date(article.date))}</time>}
-          <h1>{title}</h1>
+          <h1 tabIndex={-1}>{title}</h1>
           {intro && <p className="cover-intro">{intro}</p>}
         </div>
         {project && image && <span className="section-photo-credit">{caption(lang, image)}</span>}
