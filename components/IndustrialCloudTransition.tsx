@@ -21,7 +21,7 @@ function SceneImage({ asset, className }: { asset: keyof typeof textures; classN
       <source media="(max-width: 700px) and (prefers-reduced-motion: no-preference)" srcSet={publicUrl("/transition/compact/" + file)} />
       <source media="(prefers-reduced-motion: no-preference)" srcSet={publicUrl("/transition/" + file)} />
       {/* The baked alpha texture is shared by all copies and both deployment modes. */}
-      <img src={transparentPixel} width={width} height={height} alt="" decoding="async" loading="lazy" fetchPriority="low" />
+      <img src={transparentPixel} width={width} height={height} alt="" decoding="async" loading="eager" fetchPriority="low" />
     </picture>
   );
 }
@@ -62,7 +62,6 @@ export function IndustrialCloudTransition({ languages }: { languages: readonly s
         const probe = handoffKey + ":available";
         sessionStorage.setItem(probe, "1");
         sessionStorage.removeItem(probe);
-        images.forEach((img) => { img.loading = "eager"; });
         Promise.all(images.map((img) => img.decode())).then(() => {
           if (disposed || reduced.matches || currentGeneration !== assetGeneration || images.some((img) => img.naturalWidth <= 1)) return;
           ready = true;
@@ -99,10 +98,9 @@ export function IndustrialCloudTransition({ languages }: { languages: readonly s
       }
       // A stopped request or navigation cancelled by another browser handler
       // must never leave the old document covered.
-      recoveryTimer = window.setTimeout(() => {
-        try { sessionStorage.removeItem(handoffKey); } catch { /* Storage can change during navigation. */ }
-        release();
-      }, 2200);
+      // Re-enable the old page on timeout. Its request can still succeed later,
+      // so the destination must retain its one-use focus and animation handoff.
+      recoveryTimer = window.setTimeout(release, 2200);
       try {
         // eslint-disable-next-line @next/next/no-location-assign-relative-destination -- Both hosts use a new document with a pre-paint arrival state.
         window.location.assign(destination);
@@ -172,8 +170,9 @@ export function IndustrialCloudTransition({ languages }: { languages: readonly s
       if (!reduced.matches) mediaFrame = window.requestAnimationFrame(warm);
     }
 
-    if (document.readyState === "complete") scheduleWarm();
-    else window.addEventListener("load", scheduleWarm, { once: true });
+    // Begin during idle time after hydration even if unrelated page photos
+    // are still downloading over a slow connection.
+    scheduleWarm();
     document.addEventListener("pointerover", warm, { once: true, passive: true });
     document.addEventListener("focusin", warm, { once: true });
     document.addEventListener("click", click);
@@ -189,7 +188,6 @@ export function IndustrialCloudTransition({ languages }: { languages: readonly s
       document.removeEventListener("focusin", warm);
       document.removeEventListener("click", click);
       document.removeEventListener("keydown", keydown);
-      window.removeEventListener("load", scheduleWarm);
       navigation?.removeEventListener("navigate", traverse);
       window.removeEventListener("pagehide", release);
       window.removeEventListener("pageshow", restore);

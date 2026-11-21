@@ -12,25 +12,29 @@ export const arrivalScript = `
     sessionStorage.removeItem(key);
     const navigation = performance.getEntriesByType("navigation")[0];
     const historyEntry = navigation?.type === "back_forward";
-    const fresh = travel && travel.href === location.href && Date.now() - travel.time < 12000;
+    const fresh = travel && travel.href === location.href && Date.now() - travel.time < 120000 &&
+      (historyEntry || (document.referrer && new URL(document.referrer).origin === location.origin));
     if (!fresh || navigation?.type === "reload" ||
         matchMedia(${JSON.stringify(reducedQuery)}).matches) return;
 
     root.dataset.atmosphere = "arrive";
     let timer;
+    function focusContent() {
+      if (historyEntry || location.hash || document.activeElement !== document.body) return;
+      const heading = document.querySelector("main h1");
+      if (heading) {
+        heading.tabIndex = -1;
+        heading.focus({ preventScroll: true });
+      }
+    }
     function finish() {
       clearTimeout(timer);
       document.removeEventListener("animationend", ended, true);
       window.removeEventListener("pagehide", finish);
       if (root.dataset.atmosphere !== "arrive") return;
       delete root.dataset.atmosphere;
-      if (fresh && !historyEntry && !location.hash && document.activeElement === document.body) {
-        const heading = document.querySelector("main h1");
-        if (heading) {
-          heading.tabIndex = -1;
-          heading.focus({ preventScroll: true });
-        }
-      }
+      if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", focusContent, {once: true});
+      else focusContent();
     }
     function ended(event) {
       if (event.animationName === "industrial-seal" && event.target.matches("[data-layer=veil]")) finish();

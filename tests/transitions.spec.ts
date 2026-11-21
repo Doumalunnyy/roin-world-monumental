@@ -300,6 +300,28 @@ for (const state of ["pending", "failed"] as const) {
   );
 }
 
+test("a delayed document receives focus after the source page is released", async ({ page, baseURL }) => {
+  await page.emulateMedia({ reducedMotion: "no-preference" });
+  await observePhases(page);
+  await open(page, baseURL, "en/");
+  await ready(page);
+  const link = page.locator(".hero-actions a.action");
+  const target = await link.evaluate((el: HTMLAnchorElement) => el.href);
+  let heldNavigation = false;
+  await page.route(target, async (route) => {
+    if (route.request().isNavigationRequest()) {
+      // Keep the real document request pending beyond the source watchdog.
+      await new Promise((resolve) => setTimeout(resolve, 3200));
+      heldNavigation = true;
+    }
+    await route.continue();
+  });
+  await link.evaluate((el: HTMLAnchorElement) => el.click());
+  await arrived(page, /\/en\/about\/?$/);
+  expect(heldNavigation).toBe(true);
+  expect((await phases(page)).some((value) => value.endsWith("/en/about arrive"))).toBe(true);
+});
+
 test("a navigation cancelled by a 204 response leaves the current page usable", async ({
   page,
   baseURL,
