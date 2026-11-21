@@ -1,0 +1,94 @@
+/* Home chapters share a baseline, while the photographs set their own pace. */
+.home-geo.section-space { padding-bottom: 0; padding-top: clamp(42px,5vw,82px); }
+.home-geo > .shell { max-width: none; padding-inline: 0; }
+.home-geo > .shell > .section-heading { max-width: 1680px; padding-inline: var(--gutter); margin-inline: auto; }
+.home-geo .atlas-engineering { max-width: 2080px; margin-inline: auto; }
+.home-geo .ae-register { padding-inline: max(0px,calc((100vw - 1680px)/2)); }
+.home-expertise {
+  background: #f6f5f0;
+  color: #18272b;
+}
+.discipline-spread {
+  display: grid;
+  grid-template-columns: minmax(0, 1.22fr) minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(28px, 5.5vw, 96px);
+}
+.discipline-image, .discipline-thumbnail, .hiring-photo { position: relative; overflow: hidden; }
+.discipline-image { aspect-ratio: 1.68; }
+.discipline-spread img, .hiring-photo img { object-fit: cover; }
+.discipline-major h3, .discipline-description h3 { margin: 0; font-weight: 580; line-height: 1.12; }
+.discipline-major h3 { font-size: clamp(1.55rem, 2.65vw, 3.1rem); letter-spacing: -.045em; max-width: 23ch; }
+.discipline-caption { display: flex; justify-content: space-between; align-items: baseline; gap: 1.25rem; padding-top: 1.3rem; }
+.discipline-spread p { margin: .55rem 0 0; color: #415456; line-height: 1.5; }
+.discipline-spread small { display: block; color: #536260; font-size: .72rem; margin-top: .4rem; }
+.discipline-index { border-top: 1px solid #93a19e; }
+.discipline-index a { display: grid; grid-template-columns: minmax(70px, 22%) 1fr auto; align-items: center; gap: clamp(1rem, 1.5vw, 1.8rem); padding-block: clamp(1rem, 1.8vw, 2rem); border-bottom: 1px solid #c2c9c3; }
+.discipline-index a:first-child { padding-top: 1rem; }
+.discipline-thumbnail { aspect-ratio: 1 / 1.03; background: #d6dad6; }
+.discipline-description h3 { font-size: clamp(1.13rem, 1.7vw, 2rem); letter-spacing: -.03em; }
+.discipline-description p { font-size: .94rem; }
+.discipline-spread a:hover h3, .discipline-spread a:focus-visible h3 { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .16em; }
+html[dir=rtl] .discipline-spread svg { transform: scaleX(-1); }
+
+section.experience { background: #f6f5f0; color: #15272b; }
+section.experience .shell { display: grid; grid-template-columns: minmax(130px, .65fr) minmax(0, 2.6fr); align-items: baseline; column-gap: 5vw; }
+section.experience h2 { font-size: clamp(1.2rem, 2vw, 2rem); letter-spacing: -.03em; }
+section.experience .facts { margin: 0; padding: 0; border: 0; gap: 2vw; }
+section.experience .facts > a { display: block; padding: .6rem 0 0; border: 0; border-top: 1px solid #899995; }
+section.experience .facts strong { font-size: clamp(3.2rem, 6vw, 6.5rem); font-weight: 510; letter-spacing: -.075em; }
+section.experience .facts strong span { font-size: .5em; vertical-align: top; color: #825c38; }
+section.experience .facts a > span { display: block; margin: .65rem 0 0; color: #425456; }
+
+section.people-story {
+  display: grid;
+  grid-template-columns: minmax(0, 1.18fr) minmax(0, .82fr);
+  align-items: center;
+  gap: clamp(32px, 6vw, 105px);
+  padding: clamp(1rem, 2vw, 2.5rem) max(var(--gutter), calc((100vw - 1680px)/2 + var(--gutter))) clamp(66px, 8vw, 130px);
+  background: #f6f5f0;
+}
+.people-figure { margin: 0; min-width: 0; }
+.people-story .team-view { min-height: 0; aspect-ratio: 1.5; }
+.people-figure figcaption { padding-block-start: .75rem; color: #57665f; font-size: .8rem; line-height: 1.45; }
+.people-story .team-copy { padding: 0; }
+.people-story .team-copy h2, .hiring-copy h2 { font-size: clamp(2.6rem, 4.7vw, 5.5rem); line-height: 1.02; letter-spacing: -.055em; font-weight: 550; text-transform: none; }
+.people-story .team-copy p { max-width: 34em; }
+section.hiring-story { padding: 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.04fr); background: #24393c; color: #fff; }
+.hiring-copy { grid-area: 1/1; align-self: center; padding: clamp(2.5rem, 6vw, 7rem) max(var(--gutter),calc((100vw - 1680px)/2 + var(--gutter))); padding-inline-end: clamp(2rem, 3vw, 4rem); }
+.hiring-photo { grid-area: 1/2; min-height: clamp(330px, 34vw, 600px); }
+.hiring-copy p { max-width: 32em; }
+section.contact-section .contact-layout h2 { max-width: 12ch; line-height: 1.04; }
+section.certificate-band { background: #e5ebe7; }
+section.certificate-band .shell { display: grid; grid-template-columns: minmax(0, .74fr) minmax(0, 1.5fr); gap: 4vw; }
+section.certificate-band .section-heading { align-items: flex-start; justify-content: start; flex-direction: column; gap: 1.3rem; }
+section.certificate-band .section-heading h2 { font-size: clamp(2rem, 3.4vw, 3.8rem); }
+section.certificate-band .document-entry { grid-template-columns: 3.6rem minmax(0,1fr) auto; gap: 1rem; }
+section.certificate-band .doc-metadata { grid-column: 2; }
+section.certificate-band .doc-actions { grid-column: 3; grid-row: 1 / 3; flex-direction: column; gap: 0; }
+section.certificate-band .doc-scan { grid-row: 1 / 3; height: 5rem; }
+@media (max-width: 880px) {
+  section.certificate-band .shell { display: block; }
+  section.experience .shell { display: block; }
+  section.experience h2 { margin-bottom: 1.5rem; }
+}
+@media (max-width: 780px) {
+  .discipline-spread { grid-template-columns: 1fr; gap: 2rem; }
+  .discipline-index a { grid-template-columns: minmax(65px, 19%) 1fr auto; }
+  .discipline-thumbnail { aspect-ratio: 1.15; }
+  .discipline-description p { font-size: .87rem; }
+  section.people-story, section.hiring-story { grid-template-columns: 1fr; }
+  section.people-story { padding-top: 0; gap: 1.6rem; }
+  .people-story .team-copy h2, .hiring-copy h2 { max-width: 16ch; }
+  .hiring-copy, .hiring-photo { grid-area: auto; }
+  .hiring-photo { min-height: 0; aspect-ratio: 1.8; }
+  .hiring-copy { padding: 2.4rem var(--gutter) 3rem; }
+  section.experience .facts { grid-template-columns: repeat(3,minmax(0,1fr)); gap: .75rem; }
+  section.experience .facts strong { font-size: clamp(2.5rem, 8.5vw, 4rem); }
+  section.experience .facts a > span { font-size: .8rem; }
+}
+@media (max-width: 500px) {
+  section.certificate-band .document-entry { grid-template-columns: 3.2rem 1fr; }
+  section.certificate-band .doc-actions { grid-column: 2; grid-row: auto; flex-direction: row; gap: 1.1rem; }
+}
+html[dir=rtl] :is(.discipline-spread, .people-story, .hiring-story, .experience) :is(h2,h3,strong) { letter-spacing: normal; line-height: 1.35; }

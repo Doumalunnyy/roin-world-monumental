@@ -16,6 +16,7 @@ import { Action, Tag } from "./Shared";
 import { Icon } from "./Icons";
 import { ProjectGallery } from "./ProjectGallery";
 import "./project-pages.css";
+import "./project-editorial.css";
 
 function ProjectLinks({ lang, list }: { lang: Lang; list: Project[] }) {
   if (!list.length) return null;
@@ -43,7 +44,7 @@ function CountryRegister({ lang }: { lang: Lang }) {
     (p, i) => projects.findIndex((x) => x.region === p.region) === i,
   );
   return (
-    <section className="shell section-space register-section">
+    <section className="shell section-space register-section territorial-index">
       <h2>{words.regionRegister[lang]}</h2>
       <div className="region-register">
         {countries.map((region) => {
@@ -83,9 +84,14 @@ function CountryRegister({ lang }: { lang: Lang }) {
 
 function ServiceOverview({ lang }: { lang: Lang }) {
   return (
-    <section className="shell section-space discipline-overview">
+    <section className="shell section-space discipline-overview engineering-index">
+      <nav className="discipline-jump-list" aria-label={txt(lang, "services")}>
+        {services.map((service) => <a href={"#discipline-"+service.slug} key={service.slug}>
+          <bdi>{service.index}</bdi> {service.title[lang]}
+        </a>)}
+      </nav>
       {services.map((s) => (
-        <article key={s.slug}>
+        <article key={s.slug} id={"discipline-"+s.slug}>
           <div className="discipline-visual">
             <Photo
               src={s.image}
@@ -98,14 +104,17 @@ function ServiceOverview({ lang }: { lang: Lang }) {
               <a href={href(lang, "services/" + s.slug)}>{s.title[lang]}</a>
             </h2>
             <p>{s.body[lang]}</p>
-            <ul>
+            <details className="discipline-scope">
+              <summary>{txt(lang, "scope")}</summary>
+              <ul>
               {s.scope[lang]
                 .split("\n")
                 .filter(Boolean)
                 .map((task) => (
                   <li key={task}>{task}</li>
                 ))}
-            </ul>
+              </ul>
+            </details>
             <Action to={href(lang, "services/" + s.slug)}>
               {txt(lang, "more")}
             </Action>
@@ -122,8 +131,7 @@ function ServiceDetail({ lang, service }: { lang: Lang; service: Service }) {
     <>
       <section className="shell section-space discipline-detail">
         <div>
-          <Tag>{txt(lang, "scope")}</Tag>
-          <h2>{service.title[lang]}</h2>
+          <h2>{txt(lang,"scope")}</h2>
           <p>{service.body[lang]}</p>
         </div>
         <ol>
@@ -185,7 +193,13 @@ function CaseStudy({ lang, project: p }: { lang: Lang; project: Project }) {
   ].filter((f, i, all) => all.findIndex((x) => x.image === f.image) === i);
   return (
     <>
-      <section className="shell section-space case-intro">
+      <nav className="shell case-contents" aria-label={t("navigation")}>
+        <a href="#case-record">{words.projectRecord[lang]}</a>
+        <a href="#case-scope">{t("role")}</a>
+        <a href="#case-media">{words.siteMedia[lang]}</a>
+        <a href="#case-cooperation">{words.cooperation[lang]}</a>
+      </nav>
+      <section id="case-record" className="shell section-space case-intro case-register">
         <dl className="record-facts">
           <div>
             <dt>{t("country")}</dt>
@@ -220,7 +234,7 @@ function CaseStudy({ lang, project: p }: { lang: Lang; project: Project }) {
               )}
             </section>
           )}
-          <section>
+          <section id="case-scope">
             <h2>{t("role")}</h2>
             <p>{p.role[lang]}</p>
             <Action to={p.source}>{t("source")} · ROIN WORLD</Action>
@@ -239,7 +253,7 @@ function CaseStudy({ lang, project: p }: { lang: Lang; project: Project }) {
         </section>
       )}
       <section className="technical-band">
-        <div className="shell section-space field-report">
+        <div id="case-media" className="shell section-space field-report">
           <Tag>{p.title[lang]}</Tag>
           <h2>{words.siteMedia[lang]}</h2>
           <ProjectGallery
@@ -286,7 +300,7 @@ function CaseStudy({ lang, project: p }: { lang: Lang; project: Project }) {
           })}
         </section>
       )}
-      <section className="shell section-space case-bottom">
+      <section id="case-cooperation" className="shell section-space case-bottom">
         <div>
           <h2>{words.cooperation[lang]}</h2>
           <Action to={href(lang, "contacts")}>{t("contactUs")}</Action>
@@ -324,7 +338,7 @@ export function ProjectPages({ lang, path }: { lang: Lang; path: string }) {
   if (path === "services") return <ServiceOverview lang={lang} />;
   if (path === "projects")
     return (
-      <section id="catalogue" className="shell section-space catalogue">
+      <section id="catalogue" className="shell section-space catalogue portfolio-catalog">
         <div className="catalogue-intro">
           <h2>{words.catalogue[lang]}</h2>
           <Action to={href(lang, "geography")}>

@@ -176,37 +176,43 @@
       "name": "Paks II. Zrt.",
       "group": "customer",
       "logo": "/partners/paks-ii.jpg",
-      "source": "https://roinworld.ae/wp-content/uploads/2017/12/logo_7.jpg"
+      "source": "https://roinworld.ae/wp-content/uploads/2017/12/logo_7.jpg",
+      "stripLogo": "/partners/paks-ii-strip.webp"
     },
     {
       "name": "BSRM",
       "group": "supplier",
       "logo": "/partners/bsrm.jpg",
-      "source": "https://roinworld.ae/wp-content/uploads/2017/12/logo_4.jpg"
+      "source": "https://roinworld.ae/wp-content/uploads/2017/12/logo_4.jpg",
+      "stripLogo": "/partners/bsrm-strip.webp"
     },
     {
       "name": "Energypac",
       "group": "supplier",
       "logo": "/partners/energypac.jpg",
-      "source": "https://roinworld.ae/wp-content/uploads/2017/12/logo_5.jpg"
+      "source": "https://roinworld.ae/wp-content/uploads/2017/12/logo_5.jpg",
+      "stripLogo": "/partners/energypac-strip.webp"
     },
     {
       "name": "Felzer",
       "group": "supplier",
       "logo": "/partners/felzer.jpg",
-      "source": "https://roinworld.ae/wp-content/uploads/2017/12/logo_6.jpg"
+      "source": "https://roinworld.ae/wp-content/uploads/2017/12/logo_6.jpg",
+      "stripLogo": "/partners/felzer-strip.webp"
     },
     {
       "name": "Independent Technologies",
       "group": "partner",
       "logo": "/partners/independent-technologies.jpg",
-      "source": "https://roinworld.ae/wp-content/uploads/2017/12/logo_8.jpg"
+      "source": "https://roinworld.ae/wp-content/uploads/2017/12/logo_8.jpg",
+      "stripLogo": "/partners/independent-technologies-strip.webp"
     },
     {
       "name": "Fagun Group",
       "group": "partner",
       "logo": "/partners/fagun-group.jpg",
-      "source": "https://roinworld.ae/wp-content/uploads/2019/05/logo_11.jpg"
+      "source": "https://roinworld.ae/wp-content/uploads/2019/05/logo_11.jpg",
+      "stripLogo": "/partners/fagun-group-strip.webp"
     }
   ]
 }

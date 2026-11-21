@@ -10,6 +10,7 @@ const textures = {
   middle: ["fog-mid.webp", 635, 372],
   front: ["fog-front.webp", 945, 394],
   steam: ["steam.webp", 385, 267],
+  volume: ["steam-bank.webp", 1080, 480],
 } as const;
 
 const transparentPixel = "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=";
@@ -218,7 +219,7 @@ export function IndustrialCloudTransition({ languages }: { languages: readonly s
       <div data-layer="middle"><SceneImage asset="middle" className="bank mid-bank" /></div>
       <div data-layer="foreground">
         <SceneImage asset="front" className="bank near-west" />
-        <SceneImage asset="middle" className="bank near-east" />
+        <SceneImage asset="volume" className="bank near-east" />
       </div>
       <div data-layer="veil" />
     </div>

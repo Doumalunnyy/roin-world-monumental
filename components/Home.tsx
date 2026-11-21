@@ -16,6 +16,8 @@ import { Photo } from "./Media";
 import { DocumentRegister } from "./DocumentRegister";
 import { CorporatePartnersMarquee } from "./CorporatePartnersMarquee";
 import "./corporate-evidence.css";
+import "./home-editorial.css";
+import captions from "@/content/captions.json";
 import { Icon } from "./Icons";
 import { ContactForm } from "./ContactForm";
 import { contactEnabled } from "@/lib/contact";
@@ -38,7 +40,6 @@ export function Home({ lang }: { lang: Lang }) {
       </section>
       <section className="home-expertise section-space">
         <div className="shell">
-          <Tag>{t("servicesHeading")}</Tag>
           <div className="section-heading">
             <h2>{home.expertise[lang]}</h2>
             <Action to={href(lang, "services")}>{t("allServices")}</Action>
@@ -85,14 +86,14 @@ export function Home({ lang }: { lang: Lang }) {
           </div>
         </div>
       </section>
-      <section className="team-band">
-        <div className="team-view">
+      <section className="team-band people-story">
+        <figure className="people-figure"><div className="team-view">
           <Photo
             src={home.teamImage}
             alt=""
             sizes="(max-width:700px) 100vw, 50vw"
           />
-        </div>
+        </div><figcaption>{captions[home.teamImage as keyof typeof captions]?.[lang]}</figcaption></figure>
         <div className="team-copy">
           <Tag>{t("teamTag")}</Tag>
           <h2>{home.team[lang]}</h2>
@@ -106,8 +107,8 @@ export function Home({ lang }: { lang: Lang }) {
       <section className="partners-band section-space">
         <div className="shell">
           <div className="section-heading"><h2>{t("partners")}</h2><Action to={href(lang,"partners")}>{t("partnersLink")}</Action></div>
-          <CorporatePartnersMarquee lang={lang} logos={company.partnerDirectory} />
         </div>
+        <CorporatePartnersMarquee lang={lang} logos={company.partnerDirectory} />
       </section>
       <section className="certificate-band section-space">
         <div className="shell">
@@ -115,10 +116,9 @@ export function Home({ lang }: { lang: Lang }) {
           <DocumentRegister lang={lang} />
         </div>
       </section>
-      <section className="career-band">
-        <Photo src={home.careerImage} alt="" sizes="100vw" />
-        <div className="career-shade" />
-        <div className="shell">
+      <section className="career-band hiring-story">
+        <div className="hiring-photo"><Photo src={home.careerImage} alt={captions[home.careerImage as keyof typeof captions]?.[lang] || ""} sizes="(max-width:700px) 100vw, 52vw" /></div>
+        <div className="hiring-copy">
           <Tag>{t("careers")}</Tag>
           <h2>{home.career[lang]}</h2>
           <p>{t("careerText")}</p>

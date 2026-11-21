@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { publicUrl } from "@/lib/urls";
 import type { Lang } from "@/lib/content";
+import words from "@/content/company-ui.json";
 
 const motionLabels = {
   ru: ["Приостановить ленту", "Продолжить движение"],
@@ -13,7 +14,7 @@ const motionLabels = {
   hu: ["Mozgás szüneteltetése", "Mozgás folytatása"],
 };
 
-export function CorporatePartnersMarquee({ logos, lang }: { logos: { name: string; logo: string }[]; lang: Lang }) {
+export function CorporatePartnersMarquee({ logos, lang }: { logos: { name: string; logo: string; stripLogo?: string; group: string }[]; lang: Lang }) {
   const root = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
   const [paused, setPaused] = useState(false);
@@ -36,7 +37,10 @@ export function CorporatePartnersMarquee({ logos, lang }: { logos: { name: strin
           {[false,true].map((clone) => (
             <ul key={String(clone)} aria-hidden={clone || undefined}>
               {logos.map((item) => <li key={item.name}>
-                <Image src={publicUrl(item.logo)} alt={clone ? "" : item.name} width={200} height={100} unoptimized />
+                <Image src={publicUrl(item.stripLogo || item.logo)} alt={clone ? "" : item.name} width={200} height={100} unoptimized />
+                {(["customer","supplier","partner"] as const).filter((role) => role === item.group).map((role) =>
+                  <span key={role} lang={lang} dir="auto">{words[role][lang]}</span>
+                )}
               </li>)}
             </ul>
           ))}

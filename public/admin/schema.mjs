@@ -96,7 +96,7 @@ export function collections({ languages, interfaceKeys, companyInterfaceKeys, ca
         list('partnerDirectory', 'Организации из официального каталога', [
           input('name', 'Название организации'), input('group', 'Категория по официальному каталогу', 'select', { options: [
             { label: 'Заказчик', value: 'customer' }, { label: 'Поставщик', value: 'supplier' }, { label: 'Партнёр', value: 'partner' }
-          ] }), image('logo', 'Официальный логотип'), source
+          ] }), image('logo', 'Официальный логотип'), image('stripLogo', 'Логотип для ленты без внешних полей', false), source
         ], '{{fields.name}}'),
         list('offices', 'Офисы', [tr('label', 'Название офиса'), tr('address', 'Адрес', 'text'),
           input('email', 'Email', 'string', { required: false }), input('phone', 'Телефон', 'string', { required: false }), source

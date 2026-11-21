@@ -33,39 +33,33 @@ export function ProjectGallery({
     setIndex((i) => (i + direction + frames.length) % frames.length);
   return (
     <>
-      <div className="field-gallery">
-        {frames.map((f, i) => (
-          <figure key={f.image}>
-            <a
-              href={publicUrl(f.image)}
-              aria-label={openLabel + " · " + (f.caption || title)}
-              onClick={(e) => {
-                if (
-                  e.metaKey ||
-                  e.ctrlKey ||
-                  e.shiftKey ||
-                  e.altKey ||
-                  !dialog.current?.showModal
-                )
-                  return;
-                e.preventDefault();
-                setIndex(i);
-                setOpened(true);
-                dialog.current.showModal();
-              }}
-            >
-              <Photo
-                src={f.image}
-                alt={f.caption}
-                sizes="(max-width:700px) 100vw, 44vw"
-              />
-              <span className="field-zoom">
-                <Icon name="plus" />
-              </span>
-            </a>
-            {f.caption && <figcaption>{f.caption}</figcaption>}
-          </figure>
-        ))}
+      <div className="field-gallery field-plate">
+        <figure>
+          <a className="field-large" href={publicUrl(frame.image)} aria-label={openLabel + " · " + (frame.caption || title)}
+            onClick={(event) => {
+              if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || !dialog.current?.showModal) return;
+              event.preventDefault();
+              setOpened(true);
+              dialog.current.showModal();
+            }}>
+            <Photo key={frame.image} src={frame.image} alt={frame.caption} sizes="(max-width:760px) 91vw,72vw" />
+            <span className="field-zoom"><Icon name="plus" /></span>
+          </a>
+          <figcaption aria-live="polite">{frame.caption || title}</figcaption>
+        </figure>
+        {frames.length > 1 && <div className="field-contact-sheet" role="group" aria-label={title}>
+          {frames.map((f,i)=><a key={f.image} href={publicUrl(f.image)}
+            aria-label={String(i+1).padStart(2,"0") + " · " + (f.caption || title)}
+            aria-current={i === index ? "true" : undefined}
+            onClick={(event)=>{
+              if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+              event.preventDefault();
+              setIndex(i);
+            }}>
+            <span className="field-thumb"><Photo src={f.image} alt="" sizes="(max-width:760px) 20vw,110px"/></span>
+            <bdi>{String(i+1).padStart(2,"0")}</bdi>
+          </a>)}
+        </div>}
       </div>
       <dialog
         className="field-viewer"

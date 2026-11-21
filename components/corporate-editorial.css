@@ -1,0 +1,82 @@
+/* Editorial treatments for the corporate register and the reporting pages. */
+.company-pages[data-chapter-body] { --cp-paper:#eeeee7; --cp-graphite:#14262b; --cp-rule:#bdc8c3; }
+.company-pages[data-chapter-body] h2 { letter-spacing:-.055em; }
+.company-pages[data-chapter-body="about"] .cp-introduction { border-block-start:1px solid var(--cp-rule); padding-block-start:clamp(1.5rem,4vw,4.5rem); }
+.company-pages[data-chapter-body="about"] .cp-introduction h2 { font-size:clamp(2.4rem,5.5vw,6rem); font-weight:550; }
+.company-pages[data-chapter-body="about"] .cp-introduction .cp-lede { width:min(100%,38ch); }
+.company-pages[data-chapter-body="about"] .cp-principles { margin-inline:calc((100vw - 100%)/-2); padding-inline:max(4vw,calc((100vw - 100%)/2)); padding-block:clamp(3rem,7vw,8rem); }
+.company-pages[data-chapter-body] .cp-sites { align-items:end; }
+.company-pages[data-chapter-body] .cp-sites a:first-child .cp-site-image { aspect-ratio:1.25; }
+.company-pages[data-chapter-body] .cp-sites a:nth-child(2) .cp-site-image { aspect-ratio:1.5; }
+.archive-timeline { list-style:none; padding:0; }
+.archive-timeline li { display:grid; align-items:start; grid-template-columns:minmax(5.8rem,.46fr) minmax(0,1.1fr) minmax(0,.9fr); gap:clamp(1.5rem,4.5vw,6rem); border-block-start:1px solid var(--cp-rule); padding-block:clamp(1.8rem,4vw,5rem); scroll-margin-top:5.8rem; }
+.archive-date { font-size:clamp(2.5rem,5.3vw,6.6rem); letter-spacing:-.075em; font-weight:550; line-height:.95; }
+.archive-entry { padding-block-start:.25rem; }
+.company-pages .archive-entry h2 { font-size:clamp(1.5rem,2.7vw,3.2rem); }
+.company-pages .archive-entry p { margin:1rem 0; max-width:42ch; }
+.company-pages .archive-entry a { display:flex; width:fit-content; }
+.company-pages .archive-timeline .cp-frame { aspect-ratio:1.7; }
+.company-pages[data-chapter-body="leadership"] .cp-person,
+.company-pages[data-chapter-body="team"] .cp-person { background:none; border-inline:0; border-block:1px solid var(--cp-rule); padding:clamp(1.5rem,4vw,4.5rem) 0; }
+.company-pages[data-chapter-body="leadership"] .cp-person > div:last-child { width:100%; display:grid; align-items:start; grid-template-columns:minmax(0,1.05fr) minmax(0,.8fr); gap:.8rem clamp(1.8rem,6vw,8rem); }
+.company-pages[data-chapter-body="leadership"] .cp-person .cp-meta { grid-column:1/-1; }
+.company-pages[data-chapter-body="leadership"] .cp-person h3 { grid-row:2/4; font-weight:550; font-size:clamp(2.4rem,5vw,6rem); }
+.company-pages[data-chapter-body="leadership"] .cp-person .text-link { justify-self:start; }
+.company-pages[data-chapter-body="team"] .cp-team:first-child { margin-block-start:0; }
+.company-pages[data-chapter-body="team"] .cp-team:first-child .cp-frame { aspect-ratio:1.64; }
+.company-pages[data-chapter-body="team"] .cp-people-section { margin-block:var(--cp-space); }
+.company-pages[data-chapter-body="partners"] .cp-logo-directory { margin-block-start:0; padding-block-end:2rem; }
+.company-pages[data-chapter-body="partners"] .cp-logo-row { padding-block:clamp(1.2rem,3vw,3rem); }
+.company-pages[data-chapter-body="partners"] .cp-logo-row li { display:flex; flex-direction:column; align-items:flex-start; }
+.company-pages[data-chapter-body="partners"] .cp-catalogue-logo { display:block; width:100%; height:clamp(64px,7vw,110px); }
+.company-pages[data-chapter-body="certificates"] .cp-docs-grid { display:block; }
+.company-pages[data-chapter-body="certificates"] .cp-docs-grid article { display:grid; grid-template-columns:minmax(100px,.65fr) minmax(0,1.05fr) minmax(0,.9fr); column-gap:clamp(1.8rem,4.5vw,5rem); align-items:start; border-block-start:1px solid var(--cp-rule); padding-block:clamp(1.5rem,3.5vw,4rem); }
+.company-pages[data-chapter-body="certificates"] .cp-scan { height:100%; min-height:11rem; max-height:17rem; grid-column:1; grid-row:1/6; width:100%; aspect-ratio:auto; margin:0; }
+.company-pages[data-chapter-body="certificates"] .cp-docs-grid h3 { font-size:clamp(1.6rem,2.7vw,3.3rem); grid-column:2; grid-row:1; }
+.company-pages[data-chapter-body="certificates"] .cp-docs-grid article > p { grid-column:2; grid-row:2; margin:0; }
+.company-pages[data-chapter-body="certificates"] .cp-docs-grid dl { grid-column:3; grid-row:1/6; margin:0; }
+.company-pages[data-chapter-body="certificates"] .cp-scan-actions,
+.company-pages[data-chapter-body="certificates"] .cp-docs-grid .cp-source { grid-column:2; }
+.company-pages[data-chapter-body="careers"] .cp-application { border-inline-start:3px solid #a48b5f; }
+.company-pages[data-chapter-body="careers"] .cp-vacancies :is(h3,a) { text-decoration:none; }
+.company-pages[data-chapter-body="careers"] .cp-vacancies article { padding-block:clamp(1.3rem,2.4vw,2.3rem); }
+.company-pages[data-chapter-body="news"] .cp-index .cp-news-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:2.4rem 3vw; }
+.company-pages[data-chapter-body="news"] .cp-index .cp-news-list > div:first-child { grid-column:1/-1; }
+.company-pages[data-chapter-body="news"] .cp-index .cp-news-list article { display:block; position:relative; padding:0; border:none; }
+.company-pages[data-chapter-body="news"] .cp-index .cp-news-list > div:first-child article { display:grid; grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr); align-items:center; gap:3.5vw; border-block-start:1px solid var(--cp-rule); padding-block-start:1.5rem; }
+.company-pages[data-chapter-body="news"] .cp-index .cp-news-list .cp-news-open { display:none; }
+.company-pages[data-chapter-body="news"] .cp-index .cp-news-meta { margin-block-start:.9rem; }
+.company-pages[data-chapter-body="news"] .cp-news-thumb { aspect-ratio:1.98; }
+.company-pages[data-chapter-body="news"] .cp-index .cp-news-list > div:first-child .cp-news-thumb { aspect-ratio:1.6; }
+.company-pages[data-chapter-body="news"] .cp-story-links { border-block-start:1px solid var(--cp-rule); padding-block-start:1rem; }
+.company-pages[data-chapter-body="contacts"] .cp-contact-choices { margin-block-end:2.5rem; }
+.office-entry { border-block-start:1px solid var(--cp-rule); padding-block:.9rem; }
+.office-entry summary { display:flex; align-items:center; justify-content:space-between; gap:.8rem; color:inherit; font-size:clamp(1.15rem,1.7vw,1.85rem); font-weight:600; list-style:none; cursor:pointer; padding:.4rem 0; }
+.office-entry summary::-webkit-details-marker { display:none; }
+.office-entry summary svg { flex-shrink:0; transition:transform .18s ease-out; }
+.office-entry[open] summary svg { transform:rotate(45deg); }
+.office-entry summary:focus-visible { outline:2px solid currentColor; outline-offset:3px; }
+.company-pages[data-chapter-body="contacts"] .cp-contacts > aside { align-self:start; }
+[dir=rtl] .company-pages[data-chapter-body] :is(h2,h3,.archive-date) { letter-spacing:normal; }
+@media(min-width:901px) {
+  .company-pages[data-chapter-body="contacts"] .cp-contacts > aside { position:sticky; top:6.2rem; }
+}
+@media(max-width:760px) {
+  .archive-timeline li { grid-template-columns:5rem minmax(0,1fr); gap:1rem; }
+  .archive-timeline .cp-figure { grid-column:2; }
+  .company-pages[data-chapter-body="certificates"] .cp-docs-grid article { grid-template-columns:minmax(6.5rem,.54fr) minmax(0,1fr); gap:.6rem 1rem; }
+  .company-pages[data-chapter-body="certificates"] .cp-scan { grid-row:1/4; min-height:8rem; }
+  .company-pages[data-chapter-body="certificates"] .cp-docs-grid dl { grid-column:2; grid-row:auto; }
+  .company-pages[data-chapter-body="certificates"] .cp-scan-actions,
+  .company-pages[data-chapter-body="certificates"] .cp-docs-grid .cp-source { grid-column:1/-1; }
+}
+@media(max-width:560px) {
+  .company-pages[data-chapter-body="leadership"] .cp-person > div:last-child,
+  .company-pages[data-chapter-body="news"] .cp-index .cp-news-list,
+  .company-pages[data-chapter-body="news"] .cp-index .cp-news-list > div:first-child article { display:block; }
+  .company-pages[data-chapter-body="news"] .cp-index .cp-news-list > div+div { margin-block-start:2rem; }
+  .company-pages[data-chapter-body="certificates"] .cp-docs-grid article { grid-template-columns:minmax(6.7rem,.57fr) minmax(0,1fr); }
+  .company-pages .archive-date { font-size:2.1rem; }
+  .company-pages[data-chapter-body="contacts"] .cp-contacts > aside { grid-row:auto; }
+}
+@media(prefers-reduced-motion:reduce) { .office-entry summary svg { transition:none; } }

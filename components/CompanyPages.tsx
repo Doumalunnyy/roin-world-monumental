@@ -23,6 +23,7 @@ import { MediaButton, Photo } from "./Media";
 import { Action } from "./Shared";
 import { CorporateDirectory } from "./CorporateDirectory";
 import "./company-pages.css";
+import "./corporate-editorial.css";
 
 type Article = (typeof news)[number];
 type Props = { lang: Lang; path: string };
@@ -215,31 +216,23 @@ function About({ lang }: LanguageProps) {
 
 function History({ lang }: LanguageProps) {
   return (
-    <div className="cp-editorial">
-      <aside>
-        <Figure
-          lang={lang}
-          src={home.hero}
-          alt={home.heroAlt[lang]}
-          caption={home.heroAlt[lang]}
-        />
-      </aside>
-      <ol className="cp-timeline">
-        {company.history.map((event) => {
-          const [year, ...label] = event.title[lang].split(" · ");
-          return (
-            <li key={event.source}>
-              {label.length > 0 && <span className="cp-year">{year}</span>}
-              <div>
-                <h2>{label.length ? label.join(" · ") : year}</h2>
-                <p>{event.body[lang]}</p>
-                <Source lang={lang} url={event.source} />
-              </div>
-            </li>
-          );
-        })}
-      </ol>
-    </div>
+    <ol className="archive-timeline">
+      {company.history.map((event, i) => {
+        const [year, ...label] = event.title[lang].split(" · ");
+        const related = news.find((article) => article.source === event.source);
+        return <li key={event.source} id={"event-" + (i + 1)}>
+          <div className="archive-date">{year}</div>
+          <div className="archive-entry">
+            <h2>{label.join(" · ") || year}</h2><p>{event.body[lang]}</p>
+            {related && <Action to={href(lang,"news/"+related.slug)}>{copy.reports[lang]}</Action>}
+            <Source lang={lang} url={event.source} />
+          </div>
+          {related && <Figure lang={lang} src={related.image}
+            alt={caption(lang,related.image) || related.title[lang]}
+            caption={caption(lang,related.image) || copy.archive[lang]} />}
+        </li>;
+      })}
+    </ol>
   );
 }
 
@@ -298,6 +291,7 @@ function Team({ lang }: LanguageProps) {
   });
   return (
     <>
+      <Culture lang={lang} />
       {(["leadership", "team"] as const).map((group) => {
         const people = company.people.filter(
           (person) => person.group === group,
@@ -317,7 +311,6 @@ function Team({ lang }: LanguageProps) {
           )
         );
       })}
-      <Culture lang={lang} />
       <Sites lang={lang} />
       {reports.length > 0 && (
         <section className="cp-block">
@@ -755,9 +748,9 @@ function Contacts({ lang }: LanguageProps) {
         <section id="offices">
           <h2>{txt(lang, "offices")}</h2>
           <div className="cp-offices">
-            {company.offices.map((office) => (
-              <article key={office.label.en}>
-                <h3>{office.label[lang]}</h3>
+            {company.offices.map((office, index) => (
+              <details key={office.label.en} className="office-entry" name="office-list" open={index === 0}>
+                <summary><span>{office.label[lang]}</span><Icon name="plus" size={21}/></summary>
                 <address>
                   <p>{office.address[lang]}</p>
                   <div>
@@ -773,7 +766,7 @@ function Contacts({ lang }: LanguageProps) {
                     )}
                   </div>
                 </address>
-              </article>
+              </details>
             ))}
           </div>
         </section>
@@ -842,7 +835,7 @@ export function CompanyPages({ lang, path }: Props) {
       notFound();
   }
   return (
-    <div className="company-pages">
+    <div className="company-pages" data-chapter-body={section} data-detail={slug ? "true" : undefined}>
       <div className="shell">{page}</div>
     </div>
   );

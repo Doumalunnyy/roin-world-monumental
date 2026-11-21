@@ -112,24 +112,29 @@ export function Hero({lang,title,intro,tag,film,filmTitle,close,external,scroll}
     <section ref={attach} className="hero cinema-hero" aria-labelledby="hero-title" data-sequence="hero"
       data-active={sequence.state.active} data-running={sequence.running}
       onFocusCapture={sequence.interaction.onFocusCapture} onBlurCapture={sequence.interaction.onBlurCapture}>
-      <Frames frames={frames} sequence={sequence} eager />
-      <div className="hero-shade"/>
-      <div className="shell hero-layout">
-        <div className="hero-copy">
-          <div className="hero-label"><span className="hero-brand" dir="ltr">ROIN WORLD</span><span>{tag}</span></div>
-          <h1 id="hero-title" tabIndex={-1}>{title.split("\n").map(line => <span key={line}>{line}</span>)}</h1>
-          <p>{intro}</p>
-          <div className="hero-actions">
+      <div className="hero-exposure">
+        <Frames frames={frames} sequence={sequence} eager />
+        <div className="shell hero-inscription">
+          <div className="hero-company-line">{tag}</div>
+          <h1 id="hero-title" tabIndex={-1}>
+            {title.split("\n").map(line => <span key={line}>{line}</span>)}
+          </h1>
+        </div>
+      </div>
+      <div className="hero-colophon">
+        <div className="shell hero-colophon-inner">
+          <p className="hero-intro">{intro}</p>
+          <div className="hero-film">
             <MediaButton url={film} title={filmTitle} playLabel={labels.film} closeLabel={close} externalLabel={external} />
           </div>
-        </div>
-        <div className="hero-bottom">
-          <a className="scroll-cue" href="#geography"><span><Icon name="down" size={16}/></span>{scroll}</a>
-          <div className="hero-index" onPointerEnter={sequence.interaction.onPointerEnter} onPointerLeave={sequence.interaction.onPointerLeave}>
-            <a className="frame-caption" href={publicUrl("/images/credits.html") + "?lang=" + lang}>{labels.archive}</a>
-            <Counter active={sequence.state.active} count={frames.length} label={labels.index}/>
-            {frames.length > 1 && <Toggle sequence={sequence} labels={labels}/>}
+          <div className="hero-reel" onPointerEnter={sequence.interaction.onPointerEnter} onPointerLeave={sequence.interaction.onPointerLeave}>
+            <a className="archive-source" href={publicUrl("/images/credits.html") + "?lang=" + lang}>{labels.archive}</a>
+            <div className="reel-controls">
+              <Counter active={sequence.state.active} count={frames.length} label={labels.index}/>
+              {frames.length > 1 && <Toggle sequence={sequence} labels={labels}/>}
+            </div>
           </div>
+          <a className="hero-location-link" href="#geography" aria-label={scroll} title={scroll}><Icon name="down" size={18}/></a>
         </div>
       </div>
     </section>
@@ -146,30 +151,43 @@ export function Featured({ items, labels, lang }: { items: Feature[]; labels: { 
     <section className="featured cinema-projects" ref={attach}
       data-sequence="projects" data-active={sequence.state.active} data-running={sequence.running}
       aria-label={home.projects[lang]} {...sequence.interaction}>
-      <div className="project-scene">
+      <div className="project-exposure" data-project={project.slug}>
         <Frames frames={frames} sequence={sequence}/>
-        <div className="project-scene-shade"/>
-        <div className="project-story">
-          <div className="project-story-stack">
-            {items.map((p,index) => {
-              const active=index===sequence.state.active;
-              return <div key={p.slug} className={"project-story-copy " + (active?"current":"")} aria-hidden={!active} inert={!active}>
-                <div className="project-country"><Icon name="pin" size={17}/>{p.country}<span>{p.sector}</span></div>
-                <h3>{p.title}</h3><p>{p.role || p.summary}</p>
-                <a className="text-link" href={p.url}>{labels.more}<Icon name="arrow"/></a>
-              </div>;
-            })}
+        <div className="shell project-inscription">
+          <div className="project-titles">
+            {items.map((p, index) => <h3 key={p.slug} aria-hidden={index !== sequence.state.active}
+              className={index === sequence.state.active ? "current" : ""}>{p.title}</h3>)}
           </div>
         </div>
-        <span className="scene-credit">{project.caption}</span>
       </div>
-      <div className="sequence-bar">
-        <div className="sequence-tabs" role="group" aria-label={copy.select}>
-          {items.map((p,i) => <button type="button" key={p.slug} aria-pressed={i===sequence.state.active} onClick={()=>sequence.select(i)}>{p.country}</button>)}
+      <div className="shell project-legend">
+        <div className="project-contexts">
+          {items.map((p, index) => <div key={p.slug}
+            className={"project-context" + (index === sequence.state.active ? " current" : "")}
+            aria-hidden={index !== sequence.state.active}>
+            <div className="project-location"><Icon name="pin" size={18}/>{p.country}</div>
+            <span>{p.sector}</span>
+            <span className="scene-credit">{p.caption}</span>
+          </div>)}
         </div>
-        <div className="sequence-controls">
-          <Counter active={sequence.state.active} count={items.length} label={copy.index}/>
-          {items.length>1 && <Toggle sequence={sequence} labels={copy}/>}
+        <div className="project-accounts">
+          {items.map((p, index) => {
+            const active = index === sequence.state.active;
+            return <div key={p.slug} className={"project-account" + (active ? " current" : "")} aria-hidden={!active} inert={!active}>
+              <p>{p.role || p.summary}</p>
+              <a className="text-link" href={p.url}>{labels.more}<Icon name="arrow"/></a>
+            </div>;
+          })}
+        </div>
+        <div className="project-chapters">
+          <div className="reel-controls">
+            <Counter active={sequence.state.active} count={items.length} label={copy.index}/>
+            {items.length > 1 && <Toggle sequence={sequence} labels={copy}/>}
+          </div>
+          <div className="sequence-tabs" role="group" aria-label={copy.select}>
+            {items.map((p,i) => <button type="button" key={p.slug} aria-pressed={i === sequence.state.active}
+              onClick={() => sequence.select(i)}>{p.country}</button>)}
+          </div>
         </div>
       </div>
     </section>
