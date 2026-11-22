@@ -1,4 +1,5 @@
 import sharp from "sharp";
+import projectCatalogue from "../content/projects.json";
 import {
   expect,
   test,
@@ -174,7 +175,7 @@ test("keyboard journey from home through contacts and the catalogue to a case, l
   await arrived(page, /\/ru\/projects\/rooppur\/?$/);
   await page.goBack();
   await expect(page).toHaveURL(/\/ru\/projects\/?$/);
-  await expect(page.locator(".project-card")).toHaveCount(3);
+  await expect(page.locator(".project-card")).toHaveCount(projectCatalogue.items.length);
   await page.goForward();
   await expect(page).toHaveURL(/\/ru\/projects\/rooppur\/?$/);
   await ready(page);
