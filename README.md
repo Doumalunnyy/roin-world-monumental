@@ -80,7 +80,7 @@ npx playwright install chromium
 npm run start
 ```
 
-При запущенной production-версии выполните `npm run e2e` во втором терминале. Для существующего Chrome или Edge задайте `PLAYWRIGHT_CHROMIUM_EXECUTABLE`. Адрес сервера для тестов задаётся переменной `TEST_BASE_URL`. В тестовом окружении приём реальных заявок выключен. [Проверка MONUMENTAL 3.0](docs/monumental-3.md) · [Предыдущие проверки](docs/verification.md)
+При запущенной production-версии выполните `npm run e2e` во втором терминале. Для существующего Chrome или Edge задайте `PLAYWRIGHT_CHROMIUM_EXECUTABLE`. Адрес сервера для тестов задаётся переменной `TEST_BASE_URL`. В тестовом окружении приём реальных заявок выключен. [Визуальная проверка Black & White](docs/VISUAL_QA_REPORT.md) · [Аудит изображений](docs/MEDIA_QUALITY_AUDIT.md) · [Проверка MONUMENTAL 3.0](docs/monumental-3.md) · [Предыдущие проверки](docs/verification.md)
 
 ## К выпуску
 

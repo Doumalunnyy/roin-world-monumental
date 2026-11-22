@@ -4,6 +4,8 @@ import { useRef, useState } from "react";
 import { Icon } from "./Icons";
 import { publicUrl } from "@/lib/urls";
 
+const staticPhotos: Partial<Record<string, number[]>> = JSON.parse(process.env.NEXT_PUBLIC_STATIC_PHOTOS || "{}");
+
 export function Photo({
   src,
   alt,
@@ -17,8 +19,8 @@ export function Photo({
   sizes?: string;
   priority?: boolean;
 }) {
-  const [failed, setFailed] = useState(false);
-  if (failed || !src)
+  const [failed, setFailed] = useState("");
+  if (failed === src || !src)
     return (
       <span
         className={"media-missing " + className}
@@ -28,6 +30,18 @@ export function Photo({
         <Icon name="layers" size={40} />
       </span>
     );
+  const widths = staticPhotos[src];
+  if (widths?.length) {
+    const file = src.slice("/images/".length);
+    const srcSet = widths.map((width, i) => {
+      const url = i === widths.length - 1 ? src : `/media/${width}/${file}`;
+      return publicUrl(url) + " " + width + "w";
+    }).join(", ");
+    // eslint-disable-next-line @next/next/no-img-element -- GitHub Pages serves prebuilt responsive files without a Next image server.
+    return <img className={"photo static-photo " + className} alt={alt} src={publicUrl(src)}
+      sizes={sizes} srcSet={srcSet} loading={priority ? "eager" : "lazy"}
+      fetchPriority={priority ? "high" : "auto"} decoding="async" onError={() => setFailed(src)} />;
+  }
   return (
     <Image
       src={publicUrl(src)}
@@ -37,7 +51,7 @@ export function Photo({
       className={"photo " + className}
       priority={priority}
       unoptimized={!src.startsWith("/")}
-      onError={() => setFailed(true)}
+      onError={() => setFailed(src)}
     />
   );
 }

@@ -1,10 +1,10 @@
 .company-pages {
-  --cp-paper: #f1f1ec;
-  --cp-line: #c1c8c6;
-  --cp-second: #425052;
+  --cp-paper: #fff;
+  --cp-line: #d4d4d4;
+  --cp-second: #525252;
   --cp-space: clamp(2.75rem, 6vw, 6rem);
   background: var(--cp-paper);
-  color: #101718;
+  color: #111;
   padding-block: clamp(2.25rem, 4.5vw, 4.5rem) var(--cp-space);
 }
 
@@ -37,7 +37,7 @@
   min-width: 0;
 }
 .company-pages a:focus-visible {
-  outline: 3px solid #416100;
+  outline: 2px solid currentColor;
   outline-offset: 4px;
 }
 .company-pages .cp-date,
@@ -52,7 +52,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
-  min-height: 2.7rem;
+  min-height: 44px;
   color: var(--cp-second);
   font-size: 0.9rem;
   font-weight: 600;
@@ -77,7 +77,7 @@
   position: relative;
   display: block;
   overflow: hidden;
-  background: #28373b;
+  background: #292929;
 }
 .company-pages .cp-frame {
   aspect-ratio: 1.55;
@@ -118,11 +118,11 @@
   gap: var(--cp-space);
   margin-block-start: var(--cp-space);
   padding: clamp(1.5rem, 4vw, 4rem);
-  background: #172126;
-  color: #f5f5f2;
+  background: #111;
+  color: #f5f5f5;
 }
 .company-pages .cp-principles .cp-source {
-  color: #c8d0d2;
+  color: #d4d4d4;
   margin-block-start: 0.65rem;
 }
 .company-pages .cp-principle-body {
@@ -130,13 +130,13 @@
   gap: 1.5rem;
 }
 .company-pages .cp-principle-body article + article {
-  border-block-start: 1px solid #465458;
+  border-block-start: 1px solid #535353;
   padding-block-start: 1.5rem;
 }
 .company-pages .cp-principle-body p,
 .company-pages .cp-interviews p {
   margin-block-start: 0.65rem;
-  color: #d0d7d9;
+  color: #d4d4d4;
 }
 .company-pages .cp-directory {
   display: grid;
@@ -158,7 +158,8 @@
 }
 .company-pages .cp-directory a:hover,
 .company-pages .cp-news-open:hover {
-  color: #436000;
+  text-decoration:underline;
+  text-underline-offset:.22em;
 }
 .company-pages .cp-editorial {
   grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
@@ -196,8 +197,8 @@
   display: flex;
   align-items: center;
   gap: 2rem;
-  background: #dfe3df;
-  border-inline-start: 0.2rem solid #526561;
+  background: #f5f5f5;
+  border-inline-start: 0.2rem solid #292929;
   padding: clamp(1.5rem, 4.5vw, 4.5rem);
 }
 .company-pages .cp-person .cp-meta {
@@ -279,8 +280,8 @@
   width: 3.65rem;
   aspect-ratio: 1;
   place-items: center;
-  color: #f5f5f2;
-  background: #273437;
+  color: #f5f5f5;
+  background: #292929;
 }
 .company-pages .cp-document-link {
   display: flex;
@@ -343,8 +344,8 @@
   display: flex;
   justify-content: start;
   padding: 1rem 1.5rem;
-  background: #172126;
-  color: #f5f5f2;
+  background: #111;
+  color: #f5f5f5;
 }
 .company-pages .cp-contacts {
   grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
@@ -501,7 +502,7 @@
   color: inherit;
 }
 .company-pages .cp-site-image {
-  background: #263339;
+  background: #292929;
   position: relative;
   display: block;
   aspect-ratio: 1.6;
@@ -551,8 +552,8 @@
   min-height: 2.75rem;
 }
 .company-pages :is(.cp-invitation, .cp-application) {
-  background: #17252b;
-  color: #f3f4ed;
+  background: #111;
+  color: #f5f5f5;
   padding: clamp(1.5rem, 4vw, 3.5rem);
 }
 .company-pages .cp-invitation {
@@ -601,7 +602,7 @@
   display: grid;
   place-items: center;
   aspect-ratio: 1.1;
-  background: #d9dedb;
+  background: #eeeeee;
   margin-block-end: 1.2rem;
   overflow: hidden;
 }
@@ -654,14 +655,19 @@
 .company-pages .cp-filter-toolbar button {
   min-height: 2.85rem;
   font: inherit;
-  color: #1a2428;
+  color: #111;
   background: transparent;
-  border: 1px solid #697572;
+  border: 1px solid #737373;
   border-radius: 0;
   padding: 0.45rem 0.85rem;
 }
 .company-pages .cp-filter-toolbar button {
   cursor: pointer;
+}
+.company-pages .cp-filter-toolbar button:hover {
+  background:#111;
+  color:#fff;
+  border-color:#111;
 }
 .company-pages .cp-filter-toolbar :is(button, select):focus-visible {
   outline: 3px solid currentColor;

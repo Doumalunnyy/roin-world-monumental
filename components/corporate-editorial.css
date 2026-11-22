@@ -1,5 +1,5 @@
 /* Editorial treatments for the corporate register and the reporting pages. */
-.company-pages[data-chapter-body] { --cp-paper:#eeeee7; --cp-graphite:#14262b; --cp-rule:#bdc8c3; }
+.company-pages[data-chapter-body] { --cp-paper:#fff; --cp-graphite:#111; --cp-rule:#d4d4d4; }
 .company-pages[data-chapter-body] h2 { letter-spacing:-.055em; }
 .company-pages[data-chapter-body="about"] .cp-introduction { border-block-start:1px solid var(--cp-rule); padding-block-start:clamp(1.5rem,4vw,4.5rem); }
 .company-pages[data-chapter-body="about"] .cp-introduction h2 { font-size:clamp(2.4rem,5.5vw,6rem); font-weight:550; }
@@ -37,7 +37,9 @@
 .company-pages[data-chapter-body="certificates"] .cp-docs-grid dl { grid-column:3; grid-row:1/6; margin:0; }
 .company-pages[data-chapter-body="certificates"] .cp-scan-actions,
 .company-pages[data-chapter-body="certificates"] .cp-docs-grid .cp-source { grid-column:2; }
-.company-pages[data-chapter-body="careers"] .cp-application { border-inline-start:3px solid #a48b5f; }
+.company-pages[data-chapter-body="careers"] .cp-application { border-inline-start:3px solid #292929; }
+.company-pages[data-chapter-body] :is(.cp-lede,.cp-copy p,.cp-story p,.archive-entry p) { text-wrap:pretty; }
+.company-pages .cp-library dd { overflow-wrap:anywhere; }
 .company-pages[data-chapter-body="careers"] .cp-vacancies :is(h3,a) { text-decoration:none; }
 .company-pages[data-chapter-body="careers"] .cp-vacancies article { padding-block:clamp(1.3rem,2.4vw,2.3rem); }
 .company-pages[data-chapter-body="news"] .cp-index .cp-news-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:2.4rem 3vw; }

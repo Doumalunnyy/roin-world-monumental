@@ -43,7 +43,7 @@ export function collections({ languages, interfaceKeys, companyInterfaceKeys, ca
         tr('intro', 'Вводный текст', 'text'), image('hero', 'Обложка для компьютеров'),
         image('heroMobile', 'Обложка для телефонов'), tr('heroAlt', 'Описание обложки для экранного диктора'),
         list('heroFrames', 'Фотографии первого экрана', [
-          image('image', 'Широкий кадр'), image('mobile', 'Мобильный кадр'), tr('alt', 'Описание снимка'), uri('source','Первоисточник фотографии')
+          image('image', 'Широкий кадр'), image('mobile', 'Мобильный кадр'), image('mobileAvif', 'Мобильный кадр в AVIF', false), tr('alt', 'Описание снимка'), uri('source','Первоисточник фотографии')
         ], '{{fields.alt.ru}}'),
         input('heroProject', 'Идентификатор проекта, если объект на обложке подтверждён', 'string', { required: false }), uri('film', 'Корпоративный фильм'), tr('about', 'Заголовок о компании'),
         tr('aboutText', 'О компании', 'text'), tr('expertise', 'Заголовок направлений'),

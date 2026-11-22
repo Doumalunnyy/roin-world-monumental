@@ -13,6 +13,10 @@
 | Файл | Содержание | Оригинал |
 | --- | --- | --- |
 | archive-rooppur-workshop.webp | Цех предварительной сборки на площадке 4.1 АЭС «Руппур», Бангладеш. Корпоративный репортаж от 22.08.2019 | [Публикация ROIN WORLD](https://roinworld.com/roinworld-completed-work-on-site-4-1-rooppur-npp/) · [Оригинал 1919 × 1074](https://roinworld.com/wp-content/uploads/2019/08/4.1-1.jpg) |
+| crew-reinforcement.webp | Бригада работает с арматурой на строительной площадке | [ROIN WORLD](https://roinworld.ae/wp-content/uploads/2018/08/foto-stroiki-3.jpg) |
+| film-official-poster.webp | Официальная обложка корпоративного фильма ROIN WORLD | [ROIN WORLD · YouTube](https://www.youtube.com/watch?v=4KEZoq2ubVE) |
+| training-foundations-poster.webp | Кадр из ролика ROIN WORLD о строительстве учебного корпуса на АЭС «Руппур» | [ROIN WORLD · YouTube](https://www.youtube.com/watch?v=IlK5G-J8NZA) |
+| fire-drill-poster.webp | Кадр из ролика ROIN WORLD о противопожарных учениях в Руппуре | [ROIN WORLD · YouTube](https://www.youtube.com/watch?v=pP4MUHBQO3I) |
 | archive-aerial.webp и archive-aerial-mobile.webp | Панорама строительства энергетического комплекса | [ROIN WORLD](https://roinworld.ae/wp-content/uploads/2025/11/WhatsApp-Image-2025-09-30-at-16.28.42.jpeg) |
 | archive-briefing.webp | Рабочая встреча на строительной площадке | [ROIN WORLD](https://roinworld.ae/wp-content/uploads/2018/05/DSC_0365.jpg) |
 | engineering.webp | Монтаж металлоконструкций на промышленной площадке | [ROIN WORLD](https://roinworld.ae/wp-content/uploads/2025/11/WhatsApp-Image-2025-09-30-at-16.28.52-2.jpeg) |
@@ -30,7 +34,7 @@
 
 | Файлы WebP | Сюжет | Источник | Лицензия |
 | --- | --- | --- | --- |
-| `rooppur-towers-panorama.webp`, `rooppur-towers-portrait.webp` | Градирни и строительство АЭС «Руппур», Бангладеш, 08.11.2024. Монументальная главная, первый кадр. Два кадрирования, коррекция контраста и резкости, сжатие WebP | [মোঃ সাকিবুল হাসান](https://commons.wikimedia.org/wiki/File:Cooling_Tower_of_Rooppur_Nuclear_Power_Plant.jpg) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| `rooppur-towers-panorama.webp`, `rooppur-towers-portrait.webp`, `rooppur-towers-portrait.avif` | Градирни и строительство АЭС «Руппур», Бангладеш, 08.11.2024. Монументальная главная, первый кадр. Два кадрирования, коррекция контраста и резкости, сжатие WebP | [মোঃ সাকিবুল হাসান](https://commons.wikimedia.org/wiki/File:Cooling_Tower_of_Rooppur_Nuclear_Power_Plant.jpg) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
 | `hero-dusk.webp`, `hero-dusk-mobile.webp` | АЭС «Руппур», четыре освещённые градирни, май 2026 | [ROCKY](https://commons.wikimedia.org/wiki/File:Rooppur_Nuclear_Power_Plant_at_night.jpg) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
 | `hero.webp`, `hero-mobile.webp` | Площадка строительства АЭС «Руппур», 2023 | [Dean Calma / IAEA](https://commons.wikimedia.org/wiki/File:Rooppur_Nuclear_Power_Plant_2023.jpg) | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) |
 | `project-bd.webp` | Градирни АЭС «Руппур» и мост Хардинга | [Jusujon1980](https://commons.wikimedia.org/wiki/File:Ruppur_Nuclear_Power_Plant_2024.jpg) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |

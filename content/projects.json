@@ -45,13 +45,13 @@
       "source": "https://roinworld.com/roinworld-completed-work-on-site-4-1-rooppur-npp/",
       "gallery": [
         {
-          "image": "/images/hero.webp",
+          "image": "/images/rooppur-towers-panorama.webp",
           "caption": {
-            "ru": "Панорама строительства АЭС «Руппур»",
-            "en": "Overview of the Rooppur construction site",
-            "ar": "مشهد عام لموقع بناء محطة روبور",
-            "es": "Vista general de las obras de Rooppur",
-            "hu": "A ruppuri építkezés látképe"
+            "ru": "Строительная площадка и градирни АЭС „Руппур“, Бангладеш",
+            "en": "Construction site and cooling towers at Rooppur nuclear power plant, Bangladesh",
+            "ar": "موقع البناء وأبراج التبريد في محطة روبور النووية، بنغلاديش",
+            "es": "Obras y torres de refrigeración de la central nuclear de Rooppur, Bangladés",
+            "hu": "A ruppuri atomerőmű építési területe és hűtőtornyai, Banglades"
           }
         },
         {
@@ -85,7 +85,7 @@
             "hu": "A ruppuri szimulátorok alapozása"
           },
           "url": "https://www.youtube.com/watch?v=IlK5G-J8NZA",
-          "poster": "/images/hero.webp"
+          "poster": "/images/training-foundations-poster.webp"
         }
       ],
       "stages": [],

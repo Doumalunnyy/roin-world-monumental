@@ -138,5 +138,33 @@
     "ar": "موقع البناء وأبراج التبريد في محطة روبور النووية، بنغلاديش",
     "es": "Obras y torres de refrigeración de la central nuclear de Rooppur, Bangladés",
     "hu": "A ruppuri atomerőmű építési területe és hűtőtornyai, Banglades"
+  },
+  "/images/crew-reinforcement.webp": {
+    "ru": "Бригада работает с арматурой на строительной площадке",
+    "en": "Crew handling reinforcement at the construction site",
+    "ar": "فريق يتعامل مع حديد التسليح في موقع البناء",
+    "es": "Equipo trabajando con armaduras en la obra",
+    "hu": "Munkacsapat betonacéllal dolgozik az építési területen"
+  },
+  "/images/film-official-poster.webp": {
+    "ru": "Официальная обложка корпоративного фильма ROIN WORLD",
+    "en": "Official cover of the ROIN WORLD corporate film",
+    "ar": "الغلاف الرسمي للفيلم التعريفي لشركة ROIN WORLD",
+    "es": "Portada oficial de la película corporativa de ROIN WORLD",
+    "hu": "A ROIN WORLD vállalati filmjének hivatalos borítóképe"
+  },
+  "/images/training-foundations-poster.webp": {
+    "ru": "Кадр из ролика ROIN WORLD о строительстве учебного корпуса на АЭС «Руппур»",
+    "en": "Still from ROIN WORLD’s film on the training building at Rooppur NPP",
+    "ar": "لقطة من فيلم ROIN WORLD عن إنشاء مبنى التدريب في محطة روبور النووية",
+    "es": "Fotograma del vídeo de ROIN WORLD sobre la construcción del edificio de formación en Rooppur",
+    "hu": "Képkocka a ROIN WORLD filmjéből a ruppuri oktatási épület kivitelezéséről"
+  },
+  "/images/fire-drill-poster.webp": {
+    "ru": "Кадр из ролика ROIN WORLD о противопожарных учениях в Руппуре",
+    "en": "Still from ROIN WORLD’s film about a fire drill at Rooppur",
+    "ar": "لقطة من فيلم ROIN WORLD عن تدريب مكافحة الحرائق في روبور",
+    "es": "Fotograma del vídeo de ROIN WORLD sobre un simulacro de incendio en Rooppur",
+    "hu": "Képkocka a ROIN WORLD ruppuri tűzvédelmi gyakorlatáról készült videóból"
   }
 }

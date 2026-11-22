@@ -24,7 +24,7 @@
   },
   "film": "https://www.youtube.com/watch?v=4KEZoq2ubVE",
   "teamImage": "/images/team.webp",
-  "careerImage": "/images/hero-dusk.webp",
+  "careerImage": "/images/crew-reinforcement.webp",
   "about": {
     "ru": "Большие задачи.\nСильные решения.",
     "en": "Complex challenges.\nPractical solutions.",
@@ -88,6 +88,7 @@
     {
       "image": "/images/rooppur-towers-panorama.webp",
       "mobile": "/images/rooppur-towers-portrait.webp",
+      "mobileAvif": "/images/rooppur-towers-portrait.avif",
       "alt": {
         "ru": "Строительная площадка и градирни АЭС „Руппур“, Бангладеш",
         "en": "Construction site and cooling towers at Rooppur nuclear power plant, Bangladesh",

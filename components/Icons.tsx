@@ -88,7 +88,7 @@ export function Wordmark({ surface = "dark" }: { surface?: "dark" | "light" }) {
     <span
       className="wordmark"
       dir="ltr"
-      style={surface === "light" ? { backgroundColor: "#152329", padding: "3px 9px" } : undefined}
+      style={surface === "light" ? { backgroundColor: "#111111", padding: "3px 9px" } : undefined}
     >
       <Image
         src={publicUrl("/brand/roin-world.svg")}

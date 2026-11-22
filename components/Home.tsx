@@ -79,7 +79,7 @@ export function Home({ lang }: { lang: Lang }) {
         <CorporatePartnersMarquee lang={lang} logos={company.partnerDirectory} />
       </section>
       <section className="career-band hiring-story">
-        <div className="hiring-photo"><Photo src={home.careerImage} alt={captions[home.careerImage as keyof typeof captions]?.[lang] || ""} sizes="(max-width:700px) 100vw, 52vw" /></div>
+        <div className="hiring-photo"><Photo src={home.careerImage} alt={captions[home.careerImage as keyof typeof captions]?.[lang] || ""} sizes="100vw" /></div>
         <div className="hiring-copy">
           <Tag>{t("careers")}</Tag>
           <h2>{home.career[lang]}</h2>

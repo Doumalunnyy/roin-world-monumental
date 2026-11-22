@@ -1,6 +1,7 @@
 import { spawnSync } from "node:child_process";
 import { writeFileSync, existsSync, readFileSync } from "node:fs";
 import { createRequire } from "node:module";
+import { exportPhotos, photoManifest } from "./export-photos.mjs";
 
 const require = createRequire(import.meta.url);
 const site = new URL(process.env.PAGES_URL || "https://doumalunnyy.github.io/roin-world-monumental/");
@@ -8,10 +9,12 @@ const basePath = site.pathname.replace(/\/+$/, "");
 if (!["http:", "https:"].includes(site.protocol) || site.search || site.hash) {
   throw new Error("PAGES_URL must be the site's complete public URL.");
 }
+const photos = await photoManifest();
 const env = {
   ...process.env,
   DEPLOY_TARGET: "github-pages",
   NEXT_PUBLIC_BASE_PATH: basePath,
+  NEXT_PUBLIC_STATIC_PHOTOS: JSON.stringify(photos),
   SITE_URL: site.origin,
   CONTACT_ENABLED: "false",
   NEXT_TELEMETRY_DISABLED: "1",
@@ -26,6 +29,7 @@ function run(...args) {
 run("scripts/cms-config.mjs");
 run("scripts/check-content.mjs");
 run(require.resolve("next/dist/bin/next"), "build", "--webpack");
+await exportPhotos(photos, "out");
 
 const { active } = JSON.parse(readFileSync(new URL("../content/locales.json", import.meta.url), "utf8"));
 for (const route of active.flatMap((lang) => [lang, lang + "/contacts", lang + "/projects"])) {

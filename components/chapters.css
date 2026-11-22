@@ -1,15 +1,15 @@
 /* The entry treatment follows the material: company story, project plate or working register. */
 .chapter {
-  --paper: #eeeee7;
-  --ink: #142127;
-  --muted: #47575a;
+  --paper: #f5f5f5;
+  --ink: #111;
+  --muted: #525252;
   position: relative;
   background: var(--paper);
   color: var(--ink);
   padding-block-start: 88px;
 }
 .chapter :is(figure,h1,p) { margin:0; }
-.mast.inner-mast:not(.solid) { background:#16262b; }
+.mast.inner-mast:not(.solid) { background:#111; }
 .chapter .chapter-shell { padding-block: 25px clamp(34px,5.5vw,88px); }
 .chapter-crumbs { display:flex; align-items:center; flex-wrap:wrap; gap:7px; font-size:12px; line-height:1.4; color:var(--muted); }
 .chapter-crumbs a { color:inherit; text-decoration:underline; text-underline-offset:.23em; }
@@ -17,7 +17,7 @@
 .chapter-stage { position:relative; padding-block-start: clamp(36px,5vw,85px); }
 .chapter h1 {
   color:inherit; font-weight:600; font-size:clamp(3.1rem,7.5vw,8.5rem);
-  line-height:.94; letter-spacing:-.065em; text-transform:none; overflow-wrap:anywhere;
+  line-height:1.01; letter-spacing:-.055em; text-transform:none; overflow-wrap:anywhere;
   text-wrap:balance; max-width:18ch;
 }
 .chapter h1:focus { outline:none; }
@@ -25,9 +25,9 @@
   line-height:1.5; max-width:55ch; color:var(--muted); }
 .chapter .chapter-place, .chapter .chapter-issue-label { display:flex; align-items:center; gap:.55rem; margin-block-end:1.15rem; color:var(--muted); font-size:clamp(.83rem,.95vw,1.02rem); line-height:1.5; }
 .chapter-art { position:relative; min-width:0; }
-.chapter-image,.chapter-issue-photo { position:relative; display:block; overflow:hidden; background:#29363a; }
+.chapter-image,.chapter-issue-photo { position:relative; display:block; overflow:hidden; background:#292929; }
 .chapter-image img,.chapter-issue-photo img { object-fit:cover; }
-.chapter-art figcaption { color:var(--muted); font-size:.75rem; line-height:1.45; margin-block-start:.55rem; }
+.chapter-art figcaption { max-width:76ch; color:var(--muted); font-size:clamp(.8rem,.88vw,.92rem); line-height:1.5; margin-block-start:.55rem; }
 .chapter-jump, .chapter-index-action, .chapter-register a, .chapter-years a { color:inherit; }
 .chapter-jump { display:inline-flex; gap:.75rem; align-items:center; margin-block-start:1.3rem; text-underline-offset:.3em; font-weight:650; }
 .chapter--spread .chapter-stage,.chapter--discipline .chapter-stage,.chapter--workforce .chapter-stage,
@@ -37,44 +37,48 @@
 .chapter--disciplines .chapter-image { aspect-ratio:2.4; }
 .chapter--disciplines h1 { font-size:clamp(2.8rem,6.1vw,7.2rem); }
 .chapter--discipline h1, .chapter--story h1 { font-size:clamp(2.5rem,4.9vw,6.2rem); }
-.chapter--workforce { background:#dfe3de; }
+.chapter--workforce { background:#f5f5f5; }
 .chapter--workforce .chapter-stage { grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); }
 .chapter--workforce .chapter-image { aspect-ratio:1.5; }
-.chapter--profile,.chapter--atlas,.chapter--scene { --paper:#16262b; --ink:#f5f3e9; --muted:#c0cdce; }
+.chapter--profile,.chapter--atlas,.chapter--scene { --paper:#111; --ink:#fff; --muted:#d4d4d4; }
 .chapter--scene .chapter-shell { padding-block-end:0; }
 .chapter--scene .chapter-stage { display:grid; grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr); gap:4vw; align-items:end; }
 .chapter--scene .chapter-type { padding-block-end:clamp(34px,5vw,80px); }
 .chapter--scene .chapter-image { aspect-ratio:1.9; }
-.chapter--scene .chapter-art figcaption,.chapter--case .chapter-art figcaption { position:absolute; inset-inline-start:.6rem; inset-block-end:.5rem; margin:0; padding:.22rem .4rem; background:#121b20e8; color:white; }
+.chapter--scene .chapter-art figcaption,.chapter--case .chapter-art figcaption { padding-block-end:.9rem; }
 .chapter--case .chapter-stage { display:grid; grid-template-columns:1fr; gap:2rem; }
+.chapter--case h1 { font-size:clamp(2.65rem,6.2vw,7rem); }
 .chapter--case .chapter-type { display:grid; grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr); gap:0 6vw; align-items:end; }
 .chapter--case .chapter-place { grid-column:1/-1; }
 .chapter--case .chapter-deck { margin-block:0 .2rem; }
 .chapter--case .chapter-image { height:clamp(18rem,42vw,37rem); }
 .chapter--case .chapter-shell { padding-block-end:0; }
 .chapter--story .chapter-image { aspect-ratio:1.9; }
-.chapter--chronicle { --paper:#e0e5df; }
+.chapter--chronicle { --paper:#f5f5f5; }
 .chapter--chronicle .chapter-stage,.chapter--press .chapter-stage { display:grid; grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr); align-items:end; gap:3vw; }
-.chapter-years { display:flex; flex-wrap:wrap; align-items:baseline; gap:.6rem 1.4rem; padding-block:.8rem; border-block:1px solid #778481; }
+.chapter-years { display:flex; flex-wrap:wrap; align-items:baseline; gap:.6rem 1.4rem; padding-block:.8rem; border-block:1px solid #a3a3a3; }
 .chapter-years a { font-size:clamp(1.15rem,2.3vw,2.5rem); letter-spacing:-.045em; text-underline-offset:.22em; }
 .chapter--profile .chapter-type,.chapter--atlas .chapter-type,.chapter--register .chapter-type,
 .chapter--catalog .chapter-type { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,.55fr); align-items:end; gap:4vw; }
 .chapter--profile .chapter-deck,.chapter--atlas .chapter-deck,.chapter--register .chapter-deck,.chapter--catalog .chapter-deck { margin:0; }
+.chapter[data-section="privacy"] .chapter-type { display:block; }
+.chapter[data-section="privacy"] h1 { max-width:none; font-size:clamp(2.3rem,6.4vw,7rem); }
+.chapter[data-section="privacy"] .chapter-deck { margin-block-start:1.25rem; }
 .chapter--atlas .chapter-shell { padding-block-end:clamp(20px,3vw,48px); }
 .chapter--atlas h1 { font-size:clamp(3.25rem,7.5vw,7.8rem); }
 .chapter--catalog .chapter-index-action { display:inline-flex; align-items:center; gap:.6rem; margin-block-start:1.5rem; font-weight:650; }
 .chapter--documents .chapter-stage,.chapter--contact .chapter-stage { display:grid; grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr); align-items:end; gap:4vw; }
-.chapter-register,.chapter-mail { border-block-start:1px solid #80918d; }
-.chapter-register a { display:flex; gap:.6rem; align-items:center; padding:.6rem 0; border-block-end:1px solid #b2bbb5; }
+.chapter-register,.chapter-mail { border-block-start:1px solid #737373; }
+.chapter-register a { display:flex; gap:.6rem; align-items:center; padding:.6rem 0; border-block-end:1px solid #d4d4d4; }
 .chapter-mail { display:grid; grid-template-columns:1fr auto; align-items:center; gap:.65rem; color:inherit; padding-block:1.3rem; }
 .chapter-mail span { grid-column:1/-1; color:var(--muted); font-size:.9rem; }
 .chapter-mail bdi { font-size:clamp(1.15rem,2.2vw,2.65rem); font-weight:550; letter-spacing:-.045em; overflow-wrap:anywhere; }
-.chapter--contact { --paper:#dce4e0; }
+.chapter--contact { --paper:#f5f5f5; }
 .chapter--press .chapter-stage { grid-template-columns:minmax(0,1fr) minmax(0,.8fr); align-items:center; }
 .chapter-issue { position:relative; display:grid; grid-template-columns:minmax(6.8rem,.75fr) minmax(0,1fr) auto; align-items:center; gap:.35rem .9rem; color:inherit; }
 .chapter-issue-photo { grid-row:1/3; aspect-ratio:1.2; }
 .chapter .chapter-issue-label { display:block; margin:0; align-self:end; grid-column:2/4; }
-.chapter-issue strong { font-size:clamp(1rem,1.55vw,1.7rem); line-height:1.2; align-self:start; }
+.chapter-issue strong { font-size:clamp(1rem,1.55vw,1.7rem); line-height:1.25; align-self:start; }
 .chapter-issue > svg { align-self:start; }
 .chapter--profile:has(.chapter-art) .chapter-image { max-width:26rem; aspect-ratio:4/5; margin-block-start:2rem; }
 [dir=rtl] .chapter h1 { letter-spacing:0; line-height:1.18; }
@@ -85,6 +89,7 @@
   .chapter-stage { padding-block-start:37px; }
   .chapter h1 { font-size:clamp(2.64rem,11.2vw,4.8rem); line-height:1.01; max-width:none; }
   .chapter--discipline h1,.chapter--story h1,.chapter--job h1 { font-size:clamp(2.25rem,9vw,4.4rem); }
+  .chapter[data-section="privacy"] h1 { font-size:clamp(1.8rem,7.8vw,3.75rem); }
   .chapter .chapter-deck { margin-block-start:1rem; font-size:1rem; }
   .chapter-crumbs { font-size:.73rem; }
   .chapter-art,.chapter-register,.chapter-mail,.chapter-years,.chapter-issue { margin-block-start:1.6rem !important; }
@@ -92,10 +97,10 @@
   .chapter--case .chapter-image { height:auto; aspect-ratio:1.48; }
   .chapter--scene .chapter-type { padding-block-end:0; }
   .chapter--scene .chapter-image,.chapter--spread .chapter-image,.chapter--discipline .chapter-image,.chapter--workforce .chapter-image { aspect-ratio:1.8; }
+  .chapter--scene .chapter-image { aspect-ratio:1.6; }
   .chapter--atlas .chapter-shell { padding-block-end:0; }
   .chapter--press .chapter-issue { grid-template-columns:minmax(6.6rem,.6fr) minmax(0,1.1fr) auto; }
 }
-@media(prefers-reduced-motion:no-preference) {
-  .chapter-image img,.chapter-issue-photo img { animation:chapter-exposure .62s ease-out both; }
-  @keyframes chapter-exposure { from { opacity:.7; transform:scale(1.02); } }
-}
+.chapter-register a,.chapter-jump,.chapter-index-action { min-block-size:44px; }
+.chapter-register a:hover,.chapter-years a:hover,.chapter-mail:hover bdi,.chapter-issue:hover strong { text-decoration:underline; text-underline-offset:.18em; }
+.chapter a:focus-visible { outline:2px solid currentColor; outline-offset:4px; }

@@ -1,36 +1,36 @@
 /* Project records open as a photographic plate, with services, facts and media kept on separate reading paths. */
 .case-contents,.discipline-jump-list { display:flex; flex-wrap:wrap; align-items:center; gap:.5rem clamp(1.2rem,3vw,3rem); }
-.case-contents { padding-block:1.25rem; border-block-end:1px solid #b4bfba; }
-.case-contents a,.discipline-jump-list a { display:inline-flex; align-items:baseline; gap:.4rem; padding-block:.35rem; color:inherit; font-size:.91rem; font-weight:600; text-decoration:underline; text-underline-offset:.24em; }
+.case-contents { padding-block:1.25rem; border-block-end:1px solid #d4d4d4; }
+.case-contents a,.discipline-jump-list a { display:inline-flex; align-items:center; min-block-size:44px; gap:.4rem; padding-block:.35rem; color:inherit; font-size:.94rem; font-weight:600; text-decoration:underline; text-underline-offset:.24em; }
 .case-register,.field-report,.case-bottom,[id^="discipline-"] { scroll-margin-top:5.8rem; }
-.case-register .record-facts { align-self:start; padding-inline-end:clamp(1rem,3vw,3rem); border-inline-end:1px solid #b9c3bf; }
+.case-register .record-facts { align-self:start; padding-inline-end:clamp(1rem,3vw,3rem); border-inline-end:1px solid #d4d4d4; }
 .case-register .record-facts div { border-block:0; }
 .case-register .record-prose section { padding-block-end:1.3rem; }
 .case-register .record-prose section h2 { font-size:clamp(2.2rem,4.8vw,5.4rem); letter-spacing:-.06em; }
 .case-register .record-prose section p { max-width:46ch; margin-block:.9rem; }
 .case-register #case-scope { scroll-margin-top:6rem; }
 .engineering-index { padding-block-start:0; }
-.discipline-jump-list { border-block:1px solid #a8b5ae; padding-block:1rem; }
-.discipline-jump-list bdi { font-size:.77em; color:#516464; }
-.engineering-index article { padding-block:clamp(2rem,4.5vw,5rem); border-block-end:1px solid #bac4be; }
+.discipline-jump-list { border-block:1px solid #a3a3a3; padding-block:1rem; }
+.discipline-jump-list bdi { font-size:.77em; color:#525252; }
+.engineering-index article { padding-block:clamp(2rem,4.5vw,5rem); border-block-end:1px solid #d4d4d4; }
 .engineering-index article:nth-of-type(odd) { grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr); }
 .engineering-index article:nth-of-type(even) { grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); }
 .engineering-index article:nth-of-type(odd) .discipline-visual { order:0; aspect-ratio:1.8; }
 .engineering-index article:nth-of-type(even) .discipline-visual { order:2; aspect-ratio:2; }
 .engineering-index .discipline-entry h2 { font-size:clamp(1.8rem,3.5vw,4.2rem); letter-spacing:-.055em; }
-.discipline-scope { margin-block:1.25rem 1.5rem; border-block:1px solid #bdc5bf; }
+.discipline-scope { margin-block:1.25rem 1.5rem; border-block:1px solid #d4d4d4; }
 .discipline-scope summary { padding-block:.8rem; cursor:pointer; font-weight:650; }
 .discipline-scope summary:focus-visible { outline:2px solid currentColor; outline-offset:3px; }
 .discipline-scope ul { margin-block:.2rem 1rem; }
 .discipline-detail ol { counter-reset:work; list-style:none; padding:0; }
-.discipline-detail ol li { counter-increment:work; display:grid; grid-template-columns:2rem 1fr; gap:1rem; border-block-start:1px solid #aebbb6; padding-block:1rem; }
-.discipline-detail ol li::before { content:counter(work,decimal-leading-zero); font-size:.85rem; color:#526463; }
+.discipline-detail ol li { counter-increment:work; display:grid; grid-template-columns:2rem 1fr; gap:1rem; border-block-start:1px solid #d4d4d4; padding-block:1rem; }
+.discipline-detail ol li::before { content:counter(work,decimal-leading-zero); font-size:.85rem; color:#525252; }
 .territorial-index .region-register { display:block; }
-.territorial-index .region-register article { display:grid; grid-template-columns:minmax(10rem,.65fr) minmax(0,.9fr) minmax(0,.8fr); align-items:center; gap:.45rem clamp(1rem,3vw,3.3rem); border-block-start:1px solid #9aa9a4; padding-block:1.6rem; }
+.territorial-index .region-register article { display:grid; grid-template-columns:minmax(10rem,.65fr) minmax(0,.9fr) minmax(0,.8fr); align-items:center; gap:.45rem clamp(1rem,3vw,3.3rem); border-block-start:1px solid #a3a3a3; padding-block:1.6rem; }
 .territorial-index .register-image { grid-column:1; grid-row:1/4; aspect-ratio:1.85; }
 .territorial-index .region-register h3 { grid-column:2; grid-row:1/4; font-size:clamp(1.8rem,3.6vw,4.2rem); margin:0; }
 .territorial-index .region-register p,.territorial-index .region-register a { grid-column:3; }
-.territorial-index .site-caption { padding:.2rem; font-size:.63rem; }
+.territorial-index .site-caption { padding:.25rem .5rem; font-size:.8rem; }
 .portfolio-catalog .catalogue-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(2rem,4vw,4.5rem) clamp(1.2rem,3.4vw,4rem); }
 .portfolio-catalog .portfolio-entry { display:block; color:inherit; padding:0; margin:0; border:0; }
 .portfolio-catalog .portfolio-entry .project-image { aspect-ratio:1.78; min-height:0; }
@@ -46,9 +46,10 @@
 .field-plate figcaption { padding-top:.7rem; max-width:77ch; line-height:1.45; }
 .field-contact-sheet { display:grid; gap:.7rem; }
 .field-plate .field-contact-sheet a { position:relative; display:block; border:1px solid transparent; aspect-ratio:auto; overflow:visible; }
-.field-plate .field-contact-sheet [aria-current="true"] { outline:2px solid #e3bb75; outline-offset:3px; }
+.field-plate .field-contact-sheet [aria-current="true"] { border-color:#fff; box-shadow:0 0 0 1px #fff; }
+.field-plate :is(.field-large,.field-contact-sheet a):focus-visible,.field-viewer button:focus-visible { outline:2px solid #fff; outline-offset:4px; }
 .field-thumb { position:relative; display:block; aspect-ratio:1.6; overflow:hidden; }
-.field-contact-sheet bdi { position:absolute; inset-inline-start:3px; inset-block-end:3px; background:#162326e8; color:#fff; font-size:.72rem; padding:.1rem .3rem; }
+.field-contact-sheet bdi { position:absolute; inset-inline-start:3px; inset-block-end:3px; background:#080808e8; color:#fff; font-size:.72rem; padding:.1rem .3rem; }
 .field-report .field-large img { object-fit:cover; }
 .field-plate .field-contact-sheet img { object-fit:cover; }
 [dir=rtl] :is(.case-register .record-prose section h2,.engineering-index .discipline-entry h2,.portfolio-catalog .portfolio-entry:first-child .portfolio-text h2) { letter-spacing:0; }

@@ -26,8 +26,8 @@ export type Feature = {
   url: string;
   areas: string[];
 };
-type Frame = { image: string; mobile?: string; alt: string };
-type ArchiveFrame = { image: string; mobile?: string; alt: Record<Lang, string> };
+type Frame = { image: string; mobile?: string; mobileAvif?: string; alt: string };
+type ArchiveFrame = Omit<Frame, "alt"> & { alt: Record<Lang, string> };
 type Sequence = Omit<ReturnType<typeof usePhotoSequence<HTMLElement>>, "attach">;
 
 function ArchiveImage({ frame, current, first, eager, ready, failed }: {
@@ -75,6 +75,7 @@ function Frames({ frames, sequence, eager = false }: { frames: Frame[]; sequence
         return (
           <picture key={frame.image + index} className={"sequence-layer " + (current ? "current" : previous ? "previous" : "buffer")}
             data-transition={current && sequence.state.moves > 0}>
+            {frame.mobileAvif && <source type="image/avif" media="(max-width: 640px)" srcSet={publicUrl(frame.mobileAvif)} />}
             {frame.mobile && <source media="(max-width: 640px)" srcSet={publicUrl(frame.mobile)} />}
             {/* Local archive WebPs are art-directed and sized independently for phones. */}
             <ArchiveImage frame={frame} current={current} first={index === 0} eager={eager}
@@ -124,8 +125,8 @@ type HeroProps = {
 
 export function Hero({ lang, title, intro, tag, film, filmTitle, close, external }: HeroProps) {
   const gallery: { heroFrames?: ArchiveFrame[]; hero: string } = home;
-  const frames = gallery.heroFrames?.length
-    ? gallery.heroFrames.map(frame => ({ image: frame.image, mobile: frame.mobile, alt: frame.alt[lang] }))
+  const frames: Frame[] = gallery.heroFrames?.length
+    ? gallery.heroFrames.map(frame => ({ image: frame.image, mobile: frame.mobile, mobileAvif: frame.mobileAvif, alt: frame.alt[lang] }))
     : [{ image: home.hero, mobile: home.heroMobile, alt: home.heroAlt[lang] }];
   const { attach, ...sequence } = usePhotoSequence<HTMLElement>(frames.length);
   return (
@@ -135,7 +136,8 @@ export function Hero({ lang, title, intro, tag, film, filmTitle, close, external
       data-active={sequence.state.active} data-running={sequence.running} data-paused={sequence.paused}
       onFocusCapture={sequence.interaction.onFocusCapture} onBlurCapture={sequence.interaction.onBlurCapture}>
       {frames[0].mobile && <link rel="preload" as="image" fetchPriority="high"
-        media="(max-width: 640px)" href={publicUrl(frames[0].mobile)} />}
+        media="(max-width: 640px)" type={frames[0].mobileAvif ? "image/avif" : undefined}
+        href={publicUrl(frames[0].mobileAvif || frames[0].mobile)} />}
       <link rel="preload" as="image" fetchPriority="high"
         media={frames[0].mobile ? "(width > 640px)" : undefined} href={publicUrl(frames[0].image)} />
       <div className="hero-exposure">
@@ -145,7 +147,7 @@ export function Hero({ lang, title, intro, tag, film, filmTitle, close, external
             <div className="cinema-kicker hero-company-line">{tag}</div>
             <h1 id="hero-title" tabIndex={-1}>{title.split("\n").map(line => <span key={line}>{line}</span>)}</h1>
             <p className="hero-intro">{intro}</p>
-            <div className="hero-film">
+            <div className="hero-film" onPointerEnter={sequence.interaction.onPointerEnter} onPointerLeave={sequence.interaction.onPointerLeave}>
               <MediaButton url={film} title={filmTitle} playLabel={messages[lang].film} closeLabel={close} externalLabel={external} />
             </div>
           </div>
