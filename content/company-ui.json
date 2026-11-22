@@ -14,11 +14,11 @@
     "hu": "Minőség"
   },
   "qualityText": {
-    "ru": "Компания относит качество работ и услуг к обязанностям каждого участника проекта.",
-    "en": "The company describes the quality of its work and services as a responsibility shared by everyone on a project.",
-    "ar": "تعتبر الشركة جودة الأعمال والخدمات مسؤولية مشتركة بين جميع المشاركين في المشروع.",
-    "es": "La empresa considera que todas las personas que participan en un proyecto comparten la responsabilidad por la calidad de los trabajos y servicios.",
-    "hu": "A vállalat álláspontja szerint a munka és a szolgáltatások minőségéért a projekt minden résztvevője felel."
+    "ru": "За качество работ и услуг отвечает каждый участник проекта.",
+    "en": "Everyone working on a project shares responsibility for the quality of the work and services delivered.",
+    "ar": "يتحمّل كل من يعمل في المشروع نصيبه من المسؤولية عن جودة الأعمال والخدمات.",
+    "es": "Todas las personas que participan en un proyecto comparten la responsabilidad por la calidad de las obras y los servicios.",
+    "hu": "A munka és a szolgáltatások minőségéért a projekt minden résztvevője felel."
   },
   "partnership": {
     "ru": "Партнёрство",
@@ -28,11 +28,11 @@
     "hu": "Együttműködés"
   },
   "partnershipText": {
-    "ru": "В основе отношений с заказчиками компания называет прозрачность, добросовестность и ответственность.",
-    "en": "Transparency, integrity and responsibility guide how the company works with its clients.",
-    "ar": "تسترشد الشركة بالشفافية والنزاهة وتحمل المسؤولية في تعاملها مع عملائها.",
-    "es": "La transparencia, la integridad y la responsabilidad guían la relación con nuestros clientes.",
-    "hu": "Az ügyfeleinkkel való együttműködés átláthatóságon, tisztességen és felelősségvállaláson alapul."
+    "ru": "В отношениях с заказчиками ROIN WORLD придерживается принципов открытости, добросовестности и ответственности.",
+    "en": "ROIN WORLD values openness, integrity and accountability in its work with clients.",
+    "ar": "تعتمد ROIN WORLD في تعاملها مع عملائها على الشفافية والنزاهة وتحمل المسؤولية.",
+    "es": "ROIN WORLD basa su relación con los clientes en la transparencia, la integridad y la responsabilidad.",
+    "hu": "A ROIN WORLD számára a megrendelőkkel végzett közös munka alapja az átláthatóság, a tisztesség és a felelősségvállalás."
   },
   "siteArchive": {
     "ru": "Из архива площадки",
@@ -49,18 +49,18 @@
     "hu": "Ismerje meg vállalatunkat"
   },
   "archiveMore": {
-    "ru": "Ещё из архива",
+    "ru": "Другие публикации",
     "en": "More from the archive",
-    "ar": "المزيد من الأرشيف",
-    "es": "Más del archivo",
-    "hu": "További archív anyagok"
+    "ar": "مواد أخرى من الأرشيف",
+    "es": "Otras publicaciones",
+    "hu": "További írások"
   },
   "imageCredit": {
-    "ru": "Сведения о фотографии",
-    "en": "Photography credits",
-    "ar": "بيانات الصورة",
-    "es": "Créditos fotográficos",
-    "hu": "Fotók forrásai"
+    "ru": "Источники фотографий",
+    "en": "Photo credits",
+    "ar": "مصادر الصور",
+    "es": "Créditos de las fotografías",
+    "hu": "A fényképek forrásai"
   },
   "siteImage": {
     "ru": "Панорама промышленного объекта",
@@ -84,11 +84,11 @@
     "hu": "Munkavégzés az építési területen"
   },
   "policyStatus": {
-    "ru": "Статус политики",
-    "en": "Policy status",
-    "ar": "حالة السياسة",
-    "es": "Estado de la política de privacidad",
-    "hu": "Az adatkezelési tájékoztató állapota"
+    "ru": "Публикация политики конфиденциальности",
+    "en": "Publication of the privacy policy",
+    "ar": "نشر سياسة الخصوصية",
+    "es": "Publicación de la política de privacidad",
+    "hu": "Az adatkezelési tájékoztató közzététele"
   },
   "requests": {
     "ru": "Обращения и внешние сервисы",
@@ -112,11 +112,11 @@
     "hu": "Érdeklődés álláslehetőségről a ROIN WORLD-nél"
   },
   "documentsEmpty": {
-    "ru": "Запросите у офиса актуальные документы для вашей закупки или проекта.",
-    "en": "Contact an office to request current documents for your procurement process or project.",
-    "ar": "تواصل مع أحد المكاتب لطلب الوثائق الحالية الخاصة بالمشتريات أو المشروع.",
-    "es": "Contacta con una oficina para solicitar los documentos vigentes que necesites para una compra o un proyecto.",
-    "hu": "Beszerzéshez vagy projekthez szükséges hatályos dokumentumokért forduljon valamelyik irodánkhoz."
+    "ru": "Обратитесь в офис ROIN WORLD за действующими документами для закупки или проекта.",
+    "en": "Contact a ROIN WORLD office for the current documents you need for procurement or a project.",
+    "ar": "يمكن طلب الوثائق السارية اللازمة للمشتريات أو للمشروع من أحد مكاتب ROIN WORLD.",
+    "es": "Para solicitar la documentación vigente para una compra o un proyecto, contacta con una oficina de ROIN WORLD.",
+    "hu": "Az adott beszerzéshez vagy projekthez szükséges érvényes dokumentumokat a ROIN WORLD irodáitól kérheti."
   },
   "mission": {
     "ru": "Наша задача",
@@ -126,11 +126,11 @@
     "hu": "Küldetésünk"
   },
   "missionText": {
-    "ru": "Связать подготовку площадки, строительные работы и ввод объекта в эксплуатацию. ROIN WORLD выстраивает работу вокруг требований проекта к качеству, срокам и стоимости.",
-    "en": "Connect site preparation, construction and commissioning. ROIN WORLD organises its work around the project’s quality, schedule and cost requirements.",
-    "ar": "نربط بين تهيئة الموقع والبناء والتشغيل، وننظّم العمل وفق متطلبات المشروع للجودة والجدول الزمني والتكلفة.",
-    "es": "Coordinar la preparación de la obra, la construcción y la puesta en marcha. ROIN WORLD organiza su trabajo de acuerdo con los requisitos de calidad, plazo y coste de cada proyecto.",
-    "hu": "Összehangoljuk a helyszín előkészítését, a kivitelezést és az üzembe helyezést. A ROIN WORLD a munkát a projekt minőségi, ütemezési és költségkövetelményeihez igazítja."
+    "ru": "ROIN WORLD координирует работы от подготовки площадки до ввода объекта в эксплуатацию. При планировании компания учитывает требования к качеству, срокам и бюджету проекта.",
+    "en": "ROIN WORLD coordinates work from site preparation through construction to commissioning. It plans around each project’s quality requirements, schedule and budget.",
+    "ar": "تنسّق ROIN WORLD العمل من تهيئة الموقع مروراً بالبناء وحتى وضع المنشأة في الخدمة. وتراعي في التخطيط متطلبات الجودة والجدول الزمني وميزانية كل مشروع.",
+    "es": "ROIN WORLD coordina las obras desde la preparación del terreno hasta la puesta en marcha de las instalaciones. Planifica cada proyecto en función de sus requisitos de calidad, plazos y presupuesto.",
+    "hu": "A ROIN WORLD a helyszín előkészítésétől az építésen át az üzembe helyezésig összehangolja a munkát. A tervezés során figyelembe veszi a minőségi követelményeket, a határidőket és a költségkeretet."
   },
   "companyProfile": {
     "ru": "ROIN WORLD FZE",
@@ -140,39 +140,39 @@
     "hu": "ROIN WORLD FZE"
   },
   "historyLead": {
-    "ru": "Из истории компании",
-    "en": "From the company’s history",
-    "ar": "من تاريخ الشركة",
-    "es": "De la historia de la empresa",
-    "hu": "Vállalatunk történetéből"
+    "ru": "История компании",
+    "en": "Company history",
+    "ar": "تاريخ الشركة",
+    "es": "Historia de la empresa",
+    "hu": "A vállalat története"
   },
   "internationalWork": {
-    "ru": "Наши проектные площадки",
-    "en": "Our project sites",
-    "ar": "مواقع مشاريعنا",
-    "es": "Dónde se desarrollan nuestros proyectos",
-    "hu": "Projektjeink helyszínei"
+    "ru": "Объекты, на которых мы работаем",
+    "en": "Where we work",
+    "ar": "المواقع التي نعمل فيها",
+    "es": "Dónde trabajamos",
+    "hu": "Ahol dolgozunk"
   },
   "workInCompany": {
-    "ru": "Работа на международной площадке",
-    "en": "Working on an international site",
-    "ar": "العمل في موقع دولي",
+    "ru": "Работа на международной стройке",
+    "en": "Working on an international construction site",
+    "ar": "العمل في مشروع إنشاءات دولي",
     "es": "Trabajar en una obra internacional",
     "hu": "Munka nemzetközi építkezésen"
   },
   "culture": {
-    "ru": "Профессиональная культура",
-    "en": "Working culture",
-    "ar": "ثقافة العمل",
-    "es": "Cultura de trabajo",
-    "hu": "Munkakultúránk"
+    "ru": "Работа бригад на площадке",
+    "en": "Teams on site",
+    "ar": "الفرق في مواقع العمل",
+    "es": "Los equipos en la obra",
+    "hu": "Csapataink az építkezésen"
   },
   "cultureText": {
-    "ru": "На «Руппуре» местные строительные бригады работали под руководством мастеров участка. В архиве компании — репортажи об устройстве оснований и совместных учениях по пожарной безопасности.",
-    "en": "At Rooppur, local construction crews worked under site foremen. The company archive documents foundation works and a joint fire drill.",
-    "ar": "في روبور عملت فرق بناء محلية بإشراف مراقبي الموقع. ويوثّق أرشيف الشركة أعمال الأساسات وتدريباً مشتركاً على مكافحة الحرائق.",
-    "es": "En Rooppur, los equipos de construcción locales trabajaron bajo la dirección de los encargados de obra. El archivo de la empresa recoge los trabajos de cimentación y un simulacro de incendio conjunto.",
-    "hu": "Ruppurban helyi építőcsapatok dolgoztak az építésvezetők irányításával. A vállalati archívum az alapozási munkákat és egy közös tűzvédelmi gyakorlatot is dokumentál."
+    "ru": "На стройке АЭС «Руппур» местная бригада под руководством прорабов бетонировала основания для тренажёров. В репортажах с площадки можно увидеть эти работы и совместные противопожарные учения.",
+    "en": "At Rooppur, local workers and their foremen cast the foundations for training simulators. Reports from the site show this work and a joint fire drill.",
+    "ar": "في موقع محطة روبور، صبّ العمال المحليون بإشراف مراقبي البناء أساسات أجهزة المحاكاة. وتعرض التقارير المصورة من الموقع هذه الأعمال وتدريباً مشتركاً على مكافحة الحرائق.",
+    "es": "En Rooppur, un equipo local construyó los cimientos de los simuladores bajo la dirección de los encargados de obra. Los reportajes muestran esos trabajos y un simulacro de incendio conjunto en la misma obra.",
+    "hu": "A ruppuri építkezésen a helyi munkások művezetők irányításával betonozták a szimulátorok alapjait. A helyszíni beszámolók az alapozást és egy közös tűzvédelmi gyakorlatot mutatnak be."
   },
   "capabilityDocs": {
     "ru": "Системы менеджмента",
@@ -217,11 +217,11 @@
     "hu": "Projekt"
   },
   "directoryOfPartners": {
-    "ru": "Организации и совместные работы",
-    "en": "Organisations and shared work",
-    "ar": "الجهات والأعمال المشتركة",
-    "es": "Organizaciones y trabajos conjuntos",
-    "hu": "Szervezetek és közös munkák"
+    "ru": "Совместная работа на объектах",
+    "en": "Working with partners on site",
+    "ar": "العمل مع الشركاء في المواقع",
+    "es": "Colaboración en las obras",
+    "hu": "Közös munka a helyszínen"
   },
   "issued": {
     "ru": "Первичная регистрация",
@@ -231,11 +231,11 @@
     "hu": "Első nyilvántartásba vétel"
   },
   "expires": {
-    "ru": "Срок действия по документу",
-    "en": "Expiry stated on document",
-    "ar": "تاريخ الانتهاء الوارد في الوثيقة",
-    "es": "Vencimiento indicado en el documento",
-    "hu": "A dokumentumban megjelölt lejárat"
+    "ru": "Действителен до",
+    "en": "Valid until",
+    "ar": "ساري المفعول حتى",
+    "es": "Válido hasta",
+    "hu": "Érvényesség vége"
   },
   "download": {
     "ru": "Скачать оригинал",
@@ -245,7 +245,7 @@
     "hu": "Eredeti dokumentum letöltése"
   },
   "holder": {
-    "ru": "Организация",
+    "ru": "Держатель сертификата",
     "en": "Certificate holder",
     "ar": "الجهة الحاصلة على الشهادة",
     "es": "Titular del certificado",
@@ -280,11 +280,11 @@
     "hu": "Szakterület"
   },
   "noMatches": {
-    "ru": "По выбранным параметрам ничего не найдено.",
-    "en": "No matches for these filters.",
-    "ar": "لا توجد نتائج تطابق هذه الخيارات.",
-    "es": "No hay resultados para estos filtros.",
-    "hu": "Nincs a szűrőknek megfelelő találat."
+    "ru": "Совпадений нет. Измените фильтры.",
+    "en": "No matches. Try a different filter.",
+    "ar": "لا توجد نتائج مطابقة. جرّب تغيير خيارات البحث.",
+    "es": "No hay coincidencias. Prueba con otro filtro.",
+    "hu": "Nincs találat. Módosítsa a szűrőket."
   },
   "clear": {
     "ru": "Сбросить фильтры",
@@ -301,18 +301,18 @@
     "hu": "Önéletrajz küldése"
   },
   "application": {
-    "ru": "Порядок отклика",
+    "ru": "Как откликнуться",
     "en": "How to apply",
-    "ar": "طريقة التقدم",
-    "es": "Cómo presentar tu candidatura",
-    "hu": "Jelentkezés"
+    "ar": "كيفية التقدّم للوظيفة",
+    "es": "Cómo enviar tu candidatura",
+    "hu": "Hogyan jelentkezhet?"
   },
   "applicationText": {
-    "ru": "Направьте резюме в ROIN WORLD по электронной почте. Укажите название позиции в теме письма и уточните у команды подбора актуальность вакансии и условия работы.",
-    "en": "Email your CV to ROIN WORLD and include the role in the subject. Ask the recruitment team to confirm availability and employment terms.",
-    "ar": "أرسل سيرتك الذاتية إلى ROIN WORLD بالبريد الإلكتروني مع ذكر اسم الوظيفة في عنوان الرسالة. يرجى التأكد من توافر الشاغر وشروط العمل لدى فريق التوظيف.",
-    "es": "Envía tu currículum por correo electrónico a ROIN WORLD e indica el puesto en el asunto. Consulta al equipo de selección la disponibilidad y las condiciones de contratación.",
-    "hu": "Önéletrajzát e-mailben küldje el a ROIN WORLD részére, a tárgymezőben jelölje meg a pozíciót. Az állás elérhetőségéről és a foglalkoztatás feltételeiről a toborzási csapat ad tájékoztatást."
+    "ru": "Отправьте резюме по электронной почте и укажите вакансию в теме письма. У отдела подбора можно уточнить, открыт ли набор и каковы условия работы.",
+    "en": "Email your CV with the job title in the subject line. The recruitment team can confirm whether the position is still open and explain the terms of employment.",
+    "ar": "أرسل سيرتك الذاتية بالبريد الإلكتروني واكتب اسم الوظيفة في عنوان الرسالة. يمكنك سؤال فريق التوظيف عمّا إذا كانت الوظيفة ما زالت شاغرة وعن شروط العمل.",
+    "es": "Envía tu currículum por correo electrónico e indica el puesto en el asunto. El equipo de selección puede confirmarte si sigue vacante y explicarte las condiciones de contratación.",
+    "hu": "Küldje el önéletrajzát e-mailben, és a tárgyban adja meg a munkakör nevét. A toborzási csapattól megtudhatja, hogy lehet-e még jelentkezni, és milyen feltételekkel jár az állás."
   },
   "responsibilities": {
     "ru": "Обязанности",
@@ -329,25 +329,25 @@
     "hu": "Követelmények"
   },
   "officialRecruitment": {
-    "ru": "Страница подбора ROIN WORLD",
-    "en": "ROIN WORLD recruitment page",
-    "ar": "صفحة التوظيف في ROIN WORLD",
-    "es": "Página de empleo de ROIN WORLD",
-    "hu": "A ROIN WORLD karrieroldala"
+    "ru": "Вакансии на сайте ROIN WORLD",
+    "en": "Jobs on the ROIN WORLD website",
+    "ar": "الوظائف على موقع ROIN WORLD",
+    "es": "Ofertas de empleo en ROIN WORLD",
+    "hu": "Állásajánlatok a ROIN WORLD honlapján"
   },
   "vacancySource": {
-    "ru": "Позиции, опубликованные компанией",
-    "en": "Positions listed by the company",
-    "ar": "الوظائف المنشورة من الشركة",
-    "es": "Puestos publicados por la empresa",
-    "hu": "A vállalat által meghirdetett állások"
+    "ru": "Вакансии ROIN WORLD",
+    "en": "ROIN WORLD vacancies",
+    "ar": "وظائف ROIN WORLD",
+    "es": "Vacantes de ROIN WORLD",
+    "hu": "A ROIN WORLD állásajánlatai"
   },
   "viewAll": {
     "ru": "Все публикации",
     "en": "All publications",
-    "ar": "جميع المنشورات",
+    "ar": "جميع المواد المنشورة",
     "es": "Todas las publicaciones",
-    "hu": "Összes kiadvány"
+    "hu": "Összes közlemény"
   },
   "contactTopics": {
     "ru": "С чем вы обращаетесь?",
@@ -364,11 +364,11 @@
     "hu": "Címek és telefonszámok"
   },
   "generalMail": {
-    "ru": "Общая почта офиса",
-    "en": "General office mailbox",
-    "ar": "البريد العام للمكتب",
-    "es": "Correo general de la oficina",
-    "hu": "Az iroda központi e-mail-címe"
+    "ru": "Электронная почта офиса",
+    "en": "Office email",
+    "ar": "البريد الإلكتروني للمكتب",
+    "es": "Correo electrónico de la oficina",
+    "hu": "Az iroda e-mail-címe"
   },
   "write": {
     "ru": "Написать сообщение",
@@ -420,11 +420,11 @@
     "hu": "A ROIN WORLD archívuma"
   },
   "companyProfileText": {
-    "ru": "На «Руппуре» в Бангладеш бригада выполнила железобетонные основания под тренажёры учебного корпуса. В египетском Эль-Дабаа ROIN WORLD сотрудничает с KHNP и Doosan Enerbility на объектах турбинного острова.",
-    "en": "At Rooppur in Bangladesh, the construction crew built reinforced concrete foundations for simulators in the training building. At El Dabaa in Egypt, ROIN WORLD works with KHNP and Doosan Enerbility on the turbine island facilities.",
-    "ar": "في روبور ببنغلاديش، نفّذ فريق البناء الأساسات الخرسانية المسلحة لأجهزة المحاكاة في مبنى التدريب. وفي الضبعة بمصر، تتعاون ROIN WORLD مع شركتي KHNP ودوسان إنربيليتي في منشآت جزيرة التوربينات.",
-    "es": "En Rooppur, Bangladés, el equipo de construcción ejecutó las cimentaciones de hormigón armado de los simuladores del edificio de formación. En El Dabaa, Egipto, ROIN WORLD trabaja con KHNP y Doosan Enerbility en las instalaciones de la isla de turbinas.",
-    "hu": "A bangladesi Ruppurban az építőcsapat elkészítette az oktatóépület szimulátorainak vasbeton alapjait. Az egyiptomi El-Dabaában a ROIN WORLD a KHNP-vel és a Doosan Enerbilityvel együtt dolgozik a turbinasziget létesítményein."
+    "ru": "На АЭС «Руппур» в Бангладеш бригада ROIN WORLD построила железобетонные основания под тренажёры учебного корпуса. В Египте компания работает с KHNP и Doosan Enerbility на объектах турбинного острова АЭС «Эль-Дабаа».",
+    "en": "At the Rooppur nuclear power plant in Bangladesh, a ROIN WORLD crew built reinforced concrete foundations for simulators in the training building. In Egypt, the company works with KHNP and Doosan Enerbility on the turbine island at El Dabaa.",
+    "ar": "في محطة روبور النووية في بنغلاديش، أنشأ فريق ROIN WORLD أساسات خرسانية مسلّحة لأجهزة المحاكاة في مبنى التدريب. وفي مصر تعمل الشركة مع KHNP ودوسان إنربيليتي على منشآت جزيرة التوربينات بمحطة الضبعة.",
+    "es": "En la central nuclear de Rooppur, en Bangladés, un equipo de ROIN WORLD construyó las cimentaciones de hormigón armado para los simuladores del edificio de formación. En Egipto, la empresa trabaja con KHNP y Doosan Enerbility en la isla de turbinas de la central de El Dabaa.",
+    "hu": "A bangladesi ruppuri atomerőműben a ROIN WORLD csapata készítette el az oktatóépület szimulátorainak vasbeton alapjait. Egyiptomban a vállalat a KHNP-vel és a Doosan Enerbilityvel dolgozik együtt az El-Dabaa atomerőmű turbinaszigetén."
   },
   "customer": {
     "ru": "Заказчики",
@@ -455,9 +455,9 @@
     "hu": "A ROIN WORLD jegyzékében szereplő szervezetek"
   },
   "issuer": {
-    "ru": "Орган выдачи",
-    "en": "Issuing body",
-    "ar": "جهة الإصدار",
+    "ru": "Кем выдан",
+    "en": "Issued by",
+    "ar": "الجهة المانحة",
     "es": "Entidad emisora",
     "hu": "Kiállító szervezet"
   },
@@ -469,11 +469,11 @@
     "hu": "A környék térképe"
   },
   "loadMap": {
-    "ru": "Показать Google Maps",
-    "en": "Show Google Maps",
-    "ar": "عرض خرائط Google",
-    "es": "Mostrar Google Maps",
-    "hu": "Google Térkép megjelenítése"
+    "ru": "Показать карту Google",
+    "en": "Show Google map",
+    "ar": "عرض خريطة Google",
+    "es": "Mostrar el mapa de Google",
+    "hu": "Google-térkép megjelenítése"
   },
   "hideMap": {
     "ru": "Закрыть карту",
@@ -504,10 +504,10 @@
     "hu": "A munkakörről"
   },
   "mapPrivacy": {
-    "ru": "Карта в разделе контактов загружается с Google Maps после нажатия кнопки показа.",
-    "en": "The contact page loads a map from Google Maps when you choose to view it.",
-    "ar": "لا تُحمَّل الخريطة من خرائط Google في صفحة التواصل إلا عندما تختار عرضها.",
-    "es": "La página de contacto carga el mapa de Google Maps cuando eliges mostrarlo.",
-    "hu": "A kapcsolati oldal akkor tölti be a Google Térképet, amikor megnyitja a térképet."
+    "ru": "На странице контактов карта загружается с Google Maps, когда вы нажимаете «Показать карту Google».",
+    "en": "The contact page connects to Google Maps when you choose to show a map.",
+    "ar": "تتصل صفحة التواصل بخدمة خرائط Google عندما تختار عرض الخريطة.",
+    "es": "La página de contacto se conecta a Google Maps cuando eliges mostrar un mapa.",
+    "hu": "A kapcsolati oldal akkor kapcsolódik a Google Térképhez, amikor Ön megnyit egy térképet."
   }
 }

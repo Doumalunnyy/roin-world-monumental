@@ -18,11 +18,11 @@
         "hu": "Ruppuri Atomerőmű"
       },
       "summary": {
-        "ru": "Строительство АЭС «Руппур» в Бангладеш входит в число международных проектов ROIN WORLD в атомной энергетике.",
-        "en": "Construction of the Rooppur nuclear power plant in Bangladesh is among ROIN WORLD’s international energy projects.",
-        "ar": "يُعد بناء محطة روبور للطاقة النووية في بنغلاديش أحد مشاريع الطاقة الدولية التي تشارك فيها ROIN WORLD.",
-        "es": "La construcción de la central nuclear de Rooppur, en Bangladés, forma parte de los proyectos energéticos internacionales de ROIN WORLD.",
-        "hu": "A bangladesi Ruppuri Atomerőmű építése a ROIN WORLD nemzetközi energetikai projektjei közé tartozik."
+        "ru": "В Бангладеш ROIN WORLD участвовала в строительстве цеха предварительной сборки для АЭС «Руппур».",
+        "en": "ROIN WORLD worked on the pre-assembly workshop at the Rooppur nuclear power plant in Bangladesh.",
+        "ar": "نفذت شركة ROIN WORLD أعمالاً في ورشة التجميع المسبق بمحطة روبور النووية في بنغلاديش.",
+        "es": "ROIN WORLD participó en las obras del taller de premontaje de la central nuclear de Rooppur, en Bangladés.",
+        "hu": "A ROIN WORLD a bangladesi Ruppuri Atomerőmű előszerelő csarnokán dolgozott."
       },
       "sector": {
         "ru": "Атомная энергетика",
@@ -37,41 +37,41 @@
       "image": "/images/archive-rooppur-workshop.webp",
       "coverImage": "/images/hero.webp",
       "role": {
-        "ru": "На площадке 4.1 ROIN WORLD завершила работы в цехе предварительной сборки. Площадь производственного корпуса — 4 300 м². В нём установлены пять мостовых кранов.",
-        "en": "At site 4.1, ROIN WORLD completed work on the pre-assembly workshop. The 4,300 m² production building is equipped with five overhead cranes.",
-        "ar": "أنجزت ROIN WORLD أعمال ورشة التجميع المسبق في الموقع 4.1. تبلغ مساحة مبنى الإنتاج 4,300 متر مربع، ويضم خمس رافعات جسرية.",
-        "es": "En la zona 4.1, ROIN WORLD terminó los trabajos del taller de premontaje. La nave de 4.300 m² está equipada con cinco puentes grúa.",
-        "hu": "A ROIN WORLD a 4.1-es területen befejezte az előszerelő műhely munkálatait. A 4300 m²-es üzemcsarnokban öt híddaru működik."
+        "ru": "На участке 4.1 ROIN WORLD завершила работы в цехе предварительной сборки. В здании площадью 4 300 м² установлены пять мостовых кранов.",
+        "en": "ROIN WORLD completed work on the pre-assembly workshop at site 4.1. The 4,300 m² building has five overhead cranes.",
+        "ar": "أنهت شركة ROIN WORLD أعمالها في ورشة التجميع المسبق بالموقع 4.1. تبلغ مساحة المبنى ٤٣٠٠ متر مربع ويضم خمس رافعات جسرية.",
+        "es": "ROIN WORLD terminó los trabajos en el taller de premontaje de la zona 4.1. La nave tiene una superficie de 4300 m² y cuenta con cinco puentes grúa.",
+        "hu": "A ROIN WORLD a 4.1-es építési területen befejezte az előszerelő csarnokban végzett munkáit. A 4300 m²-es csarnokban öt híddaru található."
       },
       "source": "https://roinworld.com/roinworld-completed-work-on-site-4-1-rooppur-npp/",
       "gallery": [
         {
           "image": "/images/rooppur-towers-panorama.webp",
           "caption": {
-            "ru": "Строительная площадка и градирни АЭС „Руппур“, Бангладеш",
-            "en": "Construction site and cooling towers at Rooppur nuclear power plant, Bangladesh",
-            "ar": "موقع البناء وأبراج التبريد في محطة روبور النووية، بنغلاديش",
-            "es": "Obras y torres de refrigeración de la central nuclear de Rooppur, Bangladés",
-            "hu": "A ruppuri atomerőmű építési területe és hűtőtornyai, Banglades"
+            "ru": "Строительная площадка и градирни АЭС «Руппур» в Бангладеш",
+            "en": "Construction site and cooling towers at Rooppur nuclear power plant in Bangladesh",
+            "ar": "موقع البناء وأبراج التبريد في محطة روبور النووية في بنغلاديش",
+            "es": "Obras y torres de refrigeración de la central nuclear de Rooppur en Bangladés",
+            "hu": "A Ruppuri Atomerőmű építési területe és hűtőtornyai Bangladesben"
           }
         },
         {
           "image": "/images/hero-dusk.webp",
           "caption": {
-            "ru": "Ночная панорама градирен АЭС «Руппур» в Бангладеш",
-            "en": "Cooling towers at Rooppur nuclear power plant in Bangladesh at night",
-            "ar": "أبراج التبريد في محطة روبور النووية في بنغلاديش ليلاً",
-            "es": "Torres de refrigeración de la central de Rooppur en Bangladés, de noche",
-            "hu": "A bangladesi Ruppuri Atomerőmű hűtőtornyai éjszaka"
+            "ru": "Градирни АЭС «Руппур» после заката",
+            "en": "Cooling towers at Rooppur nuclear power plant after sunset",
+            "ar": "أبراج التبريد في محطة روبور النووية بعد غروب الشمس",
+            "es": "Torres de refrigeración de la central nuclear de Rooppur tras la puesta de sol",
+            "hu": "A Ruppuri Atomerőmű hűtőtornyai napnyugta után"
           }
         },
         {
           "image": "/images/project-bd.webp",
           "caption": {
             "ru": "Градирни АЭС «Руппур»",
-            "en": "Rooppur cooling towers",
-            "ar": "أبراج التبريد في محطة روبور",
-            "es": "Torres de refrigeración de Rooppur",
+            "en": "Cooling towers at Rooppur nuclear power plant",
+            "ar": "أبراج التبريد في محطة روبور النووية",
+            "es": "Torres de refrigeración de la central nuclear de Rooppur",
             "hu": "A Ruppuri Atomerőmű hűtőtornyai"
           }
         }
@@ -79,11 +79,11 @@
       "videos": [
         {
           "title": {
-            "ru": "Основания для тренажёров на «Руппуре»",
-            "en": "Foundations for the Rooppur simulators",
-            "ar": "أساسات أجهزة المحاكاة في روبور",
-            "es": "Cimentaciones para los simuladores de Rooppur",
-            "hu": "A ruppuri szimulátorok alapozása"
+            "ru": "Фундаменты для тренажёров на АЭС «Руппур»",
+            "en": "Foundations for training simulators at Rooppur",
+            "ar": "أساسات لأجهزة المحاكاة في محطة روبور",
+            "es": "Cimentaciones para los simuladores de la central de Rooppur",
+            "hu": "A szimulátorok alapozása a ruppuri atomerőműben"
           },
           "url": "https://www.youtube.com/watch?v=IlK5G-J8NZA",
           "poster": "/images/training-foundations-poster.webp"
@@ -92,11 +92,11 @@
       "stages": [],
       "stories": [],
       "context": {
-        "ru": "«Руппур» — первая атомная электростанция Бангладеш. Национальный доклад страны для МАГАТЭ описывает проект из двух энергоблоков.",
-        "en": "Rooppur is Bangladesh’s first nuclear power plant. The country’s national report to the IAEA describes a two-unit project.",
-        "ar": "روبور هي أول محطة للطاقة النووية في بنغلاديش. ويصف التقرير الوطني المقدم إلى الوكالة الدولية للطاقة الذرية مشروعاً يضم وحدتين لتوليد الكهرباء.",
-        "es": "Rooppur es la primera central nuclear de Bangladés. El informe nacional presentado al OIEA describe un proyecto de dos unidades.",
-        "hu": "A ruppuri létesítmény Banglades első atomerőműve. Az ország a NAÜ-nek benyújtott nemzeti jelentésében kétblokkos beruházást ismertet."
+        "ru": "«Руппур» — первая атомная электростанция Бангладеш. Проект предусматривает два энергоблока.",
+        "en": "Rooppur is Bangladesh’s first nuclear power plant. The project calls for two reactor units.",
+        "ar": "روبور أول محطة للطاقة النووية في بنغلاديش. ويتضمن المشروع إنشاء وحدتين لتوليد الكهرباء.",
+        "es": "Rooppur es la primera central nuclear de Bangladés. El proyecto contempla la construcción de dos unidades.",
+        "hu": "A Ruppuri Atomerőmű Banglades első atomerőműve. A tervek szerint két blokk épül."
       },
       "contextSource": "https://www.iaea.org/sites/default/files/24/02/cns_bangladesh_national_report_2022.pdf",
       "featuredImage": "/images/project-bd.webp"
@@ -119,11 +119,11 @@
         "hu": "El-Dabaa Atomerőmű"
       },
       "summary": {
-        "ru": "В Египте компания участвует в проекте строительства АЭС «Эль-Дабаа» на побережье Средиземного моря.",
-        "en": "In Egypt, the company participates in the El Dabaa nuclear power plant project on the Mediterranean coast.",
-        "ar": "تشارك الشركة في مصر في مشروع بناء محطة الضبعة للطاقة النووية على ساحل البحر المتوسط.",
-        "es": "En Egipto, la empresa participa en el proyecto de la central nuclear de El Dabaa, en la costa mediterránea.",
-        "hu": "A vállalat Egyiptomban részt vesz a Földközi-tenger partján épülő El-Dabaa Atomerőmű beruházásában."
+        "ru": "На площадке АЭС «Эль-Дабаа» в Египте ROIN WORLD участвует в строительстве и организует питание персонала.",
+        "en": "ROIN WORLD carries out construction work and provides meals for workers at Egypt’s El Dabaa nuclear power plant.",
+        "ar": "تشارك شركة ROIN WORLD في أعمال البناء وتقدم الوجبات للعاملين في موقع محطة الضبعة النووية في مصر.",
+        "es": "ROIN WORLD participa en la construcción de la central nuclear de El Dabaa, en Egipto, y se encarga de la alimentación del personal de obra.",
+        "hu": "A ROIN WORLD részt vesz az egyiptomi El-Dabaa Atomerőmű építésében, és gondoskodik az építkezésen dolgozók étkeztetéséről."
       },
       "sector": {
         "ru": "Атомная энергетика",
@@ -138,11 +138,11 @@
       ],
       "image": "/images/project-eg.webp",
       "role": {
-        "ru": "ROIN WORLD выполняет подготовительные и строительные работы. С KHNP и Doosan Enerbility компания заключила соглашение о строительстве объектов турбинного острова. На площадке ROIN WORLD также организует питание персонала.",
-        "en": "ROIN WORLD undertakes preparatory and construction work. Its agreement with KHNP and Doosan Enerbility covers turbine island facilities. The company also provides catering for site personnel.",
-        "ar": "تنفذ ROIN WORLD أعمال التحضير والإنشاء. وتشمل اتفاقيتها مع KHNP وDoosan Enerbility منشآت جزيرة التوربينات. كما تقدم خدمات الإعاشة للعاملين في الموقع.",
-        "es": "ROIN WORLD realiza trabajos de preparación y construcción. Su acuerdo con KHNP y Doosan Enerbility abarca las instalaciones de la isla de turbinas. La empresa también presta servicios de alimentación al personal de obra.",
-        "hu": "A ROIN WORLD előkészítési és kivitelezési munkákat végez. A KHNP-vel és a Doosan Enerbilityvel kötött megállapodása a turbinasziget létesítményeire terjed ki. A vállalat a helyszíni személyzet étkeztetéséről is gondoskodik."
+        "ru": "ROIN WORLD выполняет подготовительные и строительные работы на площадке станции. Соглашение с KHNP и Doosan Enerbility охватывает строительство объектов турбинного острова. Компания также организует питание работников площадки.",
+        "en": "ROIN WORLD carries out site preparation and construction work. Its agreement with KHNP and Doosan Enerbility covers construction of turbine island facilities. The company also provides meals for site workers.",
+        "ar": "تتولى شركة ROIN WORLD أعمال تهيئة الموقع وتشارك في أعمال البناء. ويشمل اتفاقها مع KHNP وDoosan Enerbility إنشاء مرافق جزيرة التوربينات. كما تقدم الوجبات للعاملين في الموقع.",
+        "es": "ROIN WORLD realiza trabajos de preparación del terreno y de construcción. Su acuerdo con KHNP y Doosan Enerbility abarca la construcción de instalaciones en la isla de turbinas. La empresa también se encarga de las comidas del personal de obra.",
+        "hu": "A ROIN WORLD részt vesz a terület előkészítésében és a kivitelezésben. A KHNP-vel és a Doosan Enerbilityvel kötött megállapodása a turbinasziget létesítményeinek építésére vonatkozik. A vállalat a helyszínen dolgozók étkeztetéséről is gondoskodik."
       },
       "source": "https://roinworld.ae/projects/",
       "gallery": [],
@@ -150,11 +150,11 @@
         {
           "url": "https://nppa.gov.eg/VideoGallery",
           "title": {
-            "ru": "Видеорепортажи с «Эль-Дабаа» · NPPA",
-            "en": "El Dabaa video reports · NPPA",
-            "ar": "تقارير مصورة من الضبعة · هيئة المحطات النووية",
-            "es": "Vídeos de El Dabaa · NPPA",
-            "hu": "Videóbeszámolók El-Dabaából · NPPA"
+            "ru": "Видеорепортажи о строительстве «Эль-Дабаа» от NPPA",
+            "en": "El Dabaa construction videos from Egypt’s Nuclear Power Plants Authority",
+            "ar": "فيديوهات هيئة المحطات النووية عن أعمال البناء في الضبعة",
+            "es": "Vídeos de la autoridad nuclear egipcia (NPPA) sobre las obras de El Dabaa",
+            "hu": "Az egyiptomi atomerőmű-hatóság (NPPA) videói az El-Dabaa építéséről"
           },
           "external": true
         }
@@ -162,13 +162,13 @@
       "stages": [],
       "stories": [],
       "context": {
-        "ru": "«Эль-Дабаа» строится на средиземноморском побережье Египта. По данным египетского Управления атомных электростанций, проект предусматривает четыре энергоблока общей мощностью 4,8 ГВт.",
-        "en": "El Dabaa is on Egypt’s Mediterranean coast. The Egyptian Nuclear Power Plants Authority describes a four-unit project with a combined capacity of 4.8 GW.",
-        "ar": "تقع الضبعة على ساحل مصر المطل على البحر المتوسط. ووفقاً لهيئة المحطات النووية لتوليد الكهرباء، يضم المشروع أربع وحدات بقدرة إجمالية تبلغ ٤٫٨ غيغاواط.",
-        "es": "El Dabaa se encuentra en la costa mediterránea de Egipto. Según la Autoridad Egipcia de Centrales Nucleares, el proyecto consta de cuatro unidades con una potencia total de 4,8 GW.",
-        "hu": "El-Dabaa Egyiptom földközi-tengeri partvidékén található. Az egyiptomi atomerőmű-hatóság tájékoztatása szerint a projekt négy, együttesen 4,8 GW teljesítményű blokkból áll."
+        "ru": "АЭС «Эль-Дабаа» строится на средиземноморском побережье Египта. Проект предусматривает четыре энергоблока общей мощностью 4,8 ГВт.",
+        "en": "El Dabaa is under construction on Egypt’s Mediterranean coast. The plant is designed to have four reactor units with a combined capacity of 4.8 GW.",
+        "ar": "تُبنى محطة الضبعة النووية على ساحل البحر المتوسط في مصر. ويشمل المشروع أربع وحدات بقدرة إجمالية تبلغ ٤٫٨ غيغاواط.",
+        "es": "La central nuclear de El Dabaa se construye en la costa mediterránea de Egipto. El proyecto prevé cuatro unidades con una potencia total de 4,8 GW.",
+        "hu": "Az El-Dabaa Atomerőmű Egyiptom földközi-tengeri partvidékén épül. A tervek szerint a négy blokk együttes teljesítménye 4,8 GW lesz."
       },
-      "contextSource": "https://nppa.gov.eg/News/Details?id=2091"
+      "contextSource": "https://nppa.gov.eg/FAQs/aboutus"
     },
     {
       "slug": "paks-ii",
@@ -188,11 +188,11 @@
         "hu": "Paks II. Atomerőmű"
       },
       "summary": {
-        "ru": "Венгерский проект «Пакш II» входит в географию участия ROIN WORLD в международном атомном строительстве.",
-        "en": "The Paks II project in Hungary is part of ROIN WORLD’s international nuclear construction portfolio.",
-        "ar": "يندرج مشروع باكس ٢ في المجر ضمن المشاريع الدولية التي تشارك فيها ROIN WORLD في قطاع البناء النووي.",
-        "es": "El proyecto de Paks II, en Hungría, forma parte de la cartera internacional de construcción nuclear de ROIN WORLD.",
-        "hu": "A magyarországi Paks II. a ROIN WORLD nemzetközi atomerőmű-építési projektjei közé tartozik."
+        "ru": "«Пакш II» — проект расширения действующей АЭС «Пакш» в Венгрии, в котором участвует ROIN WORLD.",
+        "en": "ROIN WORLD is involved in Paks II, the expansion of Hungary’s Paks nuclear power plant.",
+        "ar": "تشارك شركة ROIN WORLD في مشروع باكس ٢ لتوسعة محطة باكس النووية القائمة في المجر.",
+        "es": "ROIN WORLD participa en Paks II, el proyecto de ampliación de la central nuclear de Paks, en Hungría.",
+        "hu": "A ROIN WORLD részt vesz a Paksi Atomerőmű bővítésében, a Paks II. beruházásban."
       },
       "sector": {
         "ru": "Атомная энергетика",
@@ -206,11 +206,11 @@
       ],
       "image": "/images/project-hu.webp",
       "role": {
-        "ru": "Компания указывает этот объект в перечне строящихся АЭС, в которых принимает участие.",
-        "en": "ROIN WORLD lists this plant among the nuclear construction projects in which it participates.",
-        "ar": "تدرج الشركة هذه المحطة ضمن مشاريع البناء النووي التي تشارك فيها.",
-        "es": "ROIN WORLD incluye esta central entre los proyectos de construcción nuclear en los que participa.",
-        "hu": "A ROIN WORLD saját tájékoztatása szerint részt vesz az atomerőmű építésében."
+        "ru": "ROIN WORLD указывает «Пакш II» среди атомных электростанций, в строительстве которых участвует.",
+        "en": "ROIN WORLD identifies Paks II as one of the nuclear power plants it is helping to build.",
+        "ar": "تذكر شركة ROIN WORLD مشروع باكس ٢ ضمن مشروعات المحطات النووية التي تشارك في بنائها.",
+        "es": "ROIN WORLD incluye Paks II entre las centrales nucleares en cuya construcción participa.",
+        "hu": "A ROIN WORLD tájékoztatása szerint részt vesz a Paks II. beruházás kivitelezésében."
       },
       "source": "https://roinworld.ae/",
       "gallery": [],
@@ -218,11 +218,11 @@
         {
           "url": "https://www.paks2.hu/en/web/paks-2-en/videos",
           "title": {
-            "ru": "Хроника строительства · Paks II Ltd.",
-            "en": "Construction films · Paks II Ltd.",
-            "ar": "أفلام عن البناء · شركة باكش ٢",
-            "es": "Vídeos de la construcción · Paks II Ltd.",
-            "hu": "Építési filmek · Paks II. Zrt."
+            "ru": "Видеохроника строительства от Paks II Ltd.",
+            "en": "Construction updates from Paks II Ltd.",
+            "ar": "فيديوهات شركة باكس ٢ عن تقدم أعمال البناء",
+            "es": "Vídeos de Paks II Ltd. sobre el avance de las obras",
+            "hu": "A Paks II. Zrt. videói az építkezésről"
           },
           "external": true
         }
@@ -230,11 +230,11 @@
       "stages": [],
       "stories": [],
       "context": {
-        "ru": "Проект «Пакш II» расширяет площадку существующей АЭС «Пакш». Соглашения о строительстве предусматривают два новых энергоблока мощностью 1 200 МВт каждый.",
-        "en": "Paks II extends the existing Paks nuclear power site. The construction agreements provide for two new units rated at 1,200 MW each.",
-        "ar": "يوسّع مشروع باكس ٢ موقع محطة باكس القائمة. وتنص اتفاقيات الإنشاء على إضافة وحدتين جديدتين بقدرة ١٢٠٠ ميغاواط لكل منهما.",
-        "es": "Paks II amplía el emplazamiento nuclear existente en Paks. Los contratos de construcción prevén dos nuevas unidades de 1.200 MW cada una.",
-        "hu": "A Paks II. beruházás a meglévő paksi atomerőmű telephelyének bővítése. A kivitelezési megállapodások két új, egyenként 1200 MW teljesítményű blokkról szólnak."
+        "ru": "На площадке действующей АЭС «Пакш» проект предусматривает строительство двух новых энергоблоков мощностью по 1 200 МВт.",
+        "en": "The expansion plan for Paks nuclear power plant includes two new reactor units with a capacity of 1,200 MW each.",
+        "ar": "ينص مشروع باكس ٢ على بناء وحدتين جديدتين في موقع محطة باكس القائمة، بقدرة ١٢٠٠ ميغاواط لكل منهما.",
+        "es": "Paks II prevé añadir dos unidades de 1200 MW cada una en el emplazamiento de la central nuclear de Paks.",
+        "hu": "A Paks II. beruházásban két új, egyenként 1200 MW teljesítményű blokkot terveznek a Paksi Atomerőmű telephelyére."
       },
       "contextSource": "https://paks2.hu/web/paks-2-en/w/contracts-signed-on-implementation-of-new-reactor-units-at-the-paks-nuclear-power-plant"
     }

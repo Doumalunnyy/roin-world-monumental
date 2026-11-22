@@ -1,45 +1,45 @@
 {
   "countryProjects": {
-    "ru": "Проекты страны",
+    "ru": "Проекты в этой стране",
     "en": "Projects in this country",
-    "ar": "مشاريع هذا البلد",
+    "ar": "المشاريع في هذا البلد",
     "es": "Proyectos en este país",
-    "hu": "Projektek az országban"
+    "hu": "Projektek ebben az országban"
   },
   "regionRegister": {
     "ru": "Страны и объекты",
-    "en": "Countries and sites",
-    "ar": "البلدان والمواقع",
-    "es": "Países y emplazamientos",
-    "hu": "Országok és helyszínek"
+    "en": "Projects by country",
+    "ar": "المشاريع حسب البلد",
+    "es": "Proyectos por país",
+    "hu": "Projektek országonként"
   },
   "exploreGeography": {
-    "ru": "География проектов",
-    "en": "Explore project locations",
-    "ar": "استكشف مواقع المشاريع",
-    "es": "Ver dónde se ubican los proyectos",
-    "hu": "A projektek helyszínei"
+    "ru": "Показать проекты на карте",
+    "en": "View projects on the map",
+    "ar": "عرض المشاريع على الخريطة",
+    "es": "Ver los proyectos en el mapa",
+    "hu": "Projektek a térképen"
   },
   "serviceApproach": {
-    "ru": "Подход к работе",
-    "en": "Delivery approach",
-    "ar": "نهج التنفيذ",
+    "ru": "Как мы работаем",
+    "en": "How we work",
+    "ar": "كيف نعمل",
     "es": "Cómo trabajamos",
-    "hu": "Így dolgozunk"
+    "hu": "Hogyan dolgozunk"
   },
   "projectRecord": {
     "ru": "Об объекте",
-    "en": "The site",
-    "ar": "عن الموقع",
-    "es": "El emplazamiento",
-    "hu": "A létesítmény"
+    "en": "Project overview",
+    "ar": "نبذة عن المشروع",
+    "es": "Descripción del proyecto",
+    "hu": "A beruházásról"
   },
   "cooperation": {
-    "ru": "Обсудить сотрудничество",
-    "en": "Discuss working together",
-    "ar": "تواصل بشأن التعاون",
-    "es": "Hablemos de colaboración",
-    "hu": "Együttműködési lehetőségek"
+    "ru": "Обсудить проект",
+    "en": "Discuss a project",
+    "ar": "للتواصل بشأن مشروع",
+    "es": "Hablemos de su proyecto",
+    "hu": "Kapcsolatfelvétel"
   },
   "catalogue": {
     "ru": "Каталог проектов",
@@ -49,15 +49,15 @@
     "hu": "Projektjeink"
   },
   "siteMedia": {
-    "ru": "Съёмка на площадке",
-    "en": "From the site",
-    "ar": "من موقع العمل",
-    "es": "Imágenes de la obra",
-    "hu": "Képek az építkezésről"
+    "ru": "Фотографии и видео",
+    "en": "Photos and videos",
+    "ar": "الصور ومقاطع الفيديو",
+    "es": "Fotografías y vídeos",
+    "hu": "Fényképek és videók"
   },
   "openImage": {
     "ru": "Открыть фотографию",
-    "en": "Open photograph",
+    "en": "Open photo",
     "ar": "فتح الصورة",
     "es": "Abrir fotografía",
     "hu": "Fénykép megnyitása"

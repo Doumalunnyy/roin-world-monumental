@@ -9,14 +9,6 @@ import {
   company,
   type Lang,
 } from "@/lib/content";
-export function Tag({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="tag">
-      <i />
-      {children}
-    </div>
-  );
-}
 export function Action({
   to,
   children,

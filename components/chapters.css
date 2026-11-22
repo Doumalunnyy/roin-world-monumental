@@ -66,6 +66,7 @@
 .chapter--company .chapter-stage { align-items:end; }
 .chapter--company .chapter-type { padding-block-end:2rem; }
 .chapter--practice .chapter-frame { aspect-ratio:2.45; }
+:is(.chapter--practice,.chapter--chronicle) .chapter-stage { grid-template-columns:minmax(0,1fr) minmax(0,1.08fr); }
 .chapter--practice h1,.chapter--documents h1,.chapter--partners h1 { font-size:clamp(3rem,5.9vw,6.7rem); }
 .chapter--practice .chapter-deck { max-width:39ch; }
 .chapter--leadership .chapter-deck,.chapter--person .chapter-deck { font-size:clamp(1.15rem,1.7vw,1.65rem); }
@@ -109,6 +110,7 @@
   .chapter h1 { max-width:none; font-size:clamp(2.6rem,10.8vw,4.7rem); }
   .chapter--portfolio h1 { font-size:clamp(3.55rem,14vw,5.8rem); }
   :is(.chapter--case,.chapter--discipline,.chapter--job,.chapter--story,.chapter--notice,.chapter--person) h1 { font-size:clamp(2.2rem,8.6vw,4.1rem); }
+  .chapter--notice h1 { font-size:clamp(1.875rem,8.6vw,4.1rem); }
   .chapter .chapter-deck { margin-block-start:.8rem; max-width:42ch; }
   .chapter .chapter-place { margin-block-end:.65rem; }
   .chapter-crumbs { font-size:.76rem; }

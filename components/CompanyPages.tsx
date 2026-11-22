@@ -424,29 +424,32 @@ function Biography({ lang, person }: LanguageProps & { person: Person }) {
           )}
           <Source lang={lang} url={person.source} />
         </section>
-        <aside>
-          {person.photo && (
-            <div className="cp-portrait">
-              <Photo
-                src={person.photo}
-                alt={person.name[lang]}
-                sizes="(max-width:760px) 90vw, 28vw"
-              />
-            </div>
-          )}
-          <p className="cp-meta">{txt(lang, "leadership")}</p>
-          <strong>{person.role[lang]}</strong>
-          {firstEvent && (
-            <div>
-              <p className="cp-meta">{copy.historyLead[lang]}</p>
-              <span className="bio-year">
-                <bdi>{firstEvent.title[lang].split(" · ")[0]}</bdi>
-              </span>
-              <p>{firstEvent.title[lang].split(" · ").slice(1).join(" · ")}</p>
-              <Action to={href(lang, "history")}>{txt(lang, "history")}</Action>
-            </div>
-          )}
-        </aside>
+        {(person.photo || firstEvent) && (
+          <aside>
+            {person.photo && (
+              <div className="cp-portrait">
+                <Photo
+                  src={person.photo}
+                  alt={person.name[lang]}
+                  sizes="(max-width:760px) 90vw, 28vw"
+                />
+              </div>
+            )}
+            {firstEvent && (
+              <>
+                <span className="bio-year">
+                  <bdi>{firstEvent.title[lang].split(" · ")[0]}</bdi>
+                </span>
+                <p>
+                  {firstEvent.title[lang].split(" · ").slice(1).join(" · ")}
+                </p>
+                <Action to={href(lang, "history")}>
+                  {txt(lang, "history")}
+                </Action>
+              </>
+            )}
+          </aside>
+        )}
       </article>
       <RelatedSections lang={lang} entries={["leadership", "team"]} />
     </>
@@ -682,6 +685,7 @@ function Careers({ lang, slug }: LanguageProps & { slug?: string }) {
         <h2>{txt(lang, "vacancies")}</h2>
         {vacancies.length ? (
           <CorporateDirectory
+            lang={lang}
             layout="jobs"
             labels={{
               category: copy.department[lang],
@@ -775,7 +779,7 @@ function NewsCard({ lang, article }: LanguageProps & { article: Article }) {
         <h3>
           <a href={to}>{article.title[lang]}</a>
         </h3>
-        <p>{article.body[lang]}</p>
+        <p>{article.summary?.[lang] || article.body[lang]}</p>
       </div>
       <a href={to} className="cp-news-open" aria-label={article.title[lang]}>
         <Icon name="arrow" size={23} />
@@ -803,6 +807,7 @@ function News({ lang, slug }: LanguageProps & { slug?: string }) {
       <section>
         <h2>{copy.viewAll[lang]}</h2>
         <CorporateDirectory
+          lang={lang}
           layout="news"
           labels={{
             category: copy.category[lang],
@@ -826,10 +831,6 @@ function News({ lang, slug }: LanguageProps & { slug?: string }) {
     <>
       <article className="cp-story publication-story">
         <div className="cp-body">
-          <div className="cp-news-meta">
-            <ArticleDate lang={lang} date={article.date} />
-            {article.category?.[lang]}
-          </div>
           <p className="cp-lede">{article.body[lang]}</p>
           <Source lang={lang} url={article.source} />
         </div>

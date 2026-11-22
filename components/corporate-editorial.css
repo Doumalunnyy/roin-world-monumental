@@ -82,8 +82,6 @@
 .company-pages .biography-profile > section { border-block-start:1px solid #292929; padding-block-start:1.3rem; }
 .company-pages .biography-profile .cp-lede { margin-block:1rem; max-width:43ch; font-size:var(--cp-reading); }
 .biography-profile aside { background:var(--cp-ground); padding:clamp(1.3rem,3vw,3rem); }
-.biography-profile aside > strong { display:block; line-height:1.2; font-size:var(--cp-subtitle); font-weight:550; margin-block:.45rem 1.3rem; }
-.biography-profile aside > div:not(.cp-portrait) { padding-block-start:1.35rem; border-block-start:1px solid #bdbdbd; }
 .bio-year { display:block; font-size:clamp(2.7rem,4.9vw,5rem); line-height:1; letter-spacing:-.06em; }
 .biography-profile .cp-portrait { aspect-ratio:4/5; margin-block-end:1.2rem; }
 .company-pages .biography-profile aside .text-link { margin-block-start:.65rem; }
@@ -157,7 +155,7 @@
 .company-pages .cp-news-list :is(h3,p) { max-width:50ch; }
 .company-pages .cp-news-list h3 { margin-block:.45rem; font-size:var(--cp-subtitle); }
 .company-pages .cp-news-list h3 a { text-decoration:none; }
-.company-pages .cp-news-list p { display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; color:var(--cp-muted); }
+.company-pages .cp-news-list p { color:var(--cp-muted); }
 .company-pages .cp-news-thumb { aspect-ratio:1.78; }
 .company-pages .cp-related-news, .company-pages .cp-people-section { margin-block:var(--cp-space); }
 .company-pages .cp-related-news h2 { margin-block-end:1.5rem; }
@@ -185,6 +183,7 @@
 .office-entry:last-child { border-block-end:1px solid var(--cp-rule); }
 .office-entry summary { list-style:none; display:flex; justify-content:space-between; align-items:center; gap:.8rem; cursor:pointer; min-height:3.5rem; padding:.45rem 0; font-size:clamp(1.11rem,1.5vw,1.55rem); line-height:1.25; font-weight:550; }
 .office-entry summary::-webkit-details-marker { display:none; }
+.office-entry summary { padding-inline-end:.35rem; }
 .office-entry summary svg { flex-shrink:0; transition:transform .16s ease-out; }
 .office-entry[open] summary svg { transform:rotate(45deg); }
 .office-entry summary:focus-visible,.office-map button:focus-visible { outline:2px solid currentColor; outline-offset:3px; }
@@ -277,7 +276,7 @@
   .company-pages[data-chapter-body="news"] .cp-index .cp-news-list article { grid-template-columns:minmax(5.7rem,.56fr) minmax(0,1fr); gap:1rem; }
   .company-pages[data-chapter-body="news"] .cp-index .cp-news-list .cp-news-open { display:none; }
   .company-pages[data-chapter-body="news"] .cp-index .cp-news-list h3 { font-size:1.21rem; }
-  .company-pages[data-chapter-body="news"] .cp-index .cp-news-list p { -webkit-line-clamp:2; font-size:.9rem; }
+  .company-pages[data-chapter-body="news"] .cp-index .cp-news-list p { font-size:.9rem; }
   .company-pages .team-field-reports .cp-news-list,.company-pages .cp-related-news .cp-news-list { grid-template-columns:1fr; gap:1rem; }
   .company-pages .team-field-reports .cp-news-list article,.company-pages .cp-related-news .cp-news-list article { display:grid; grid-template-columns:minmax(5rem,.58fr) minmax(0,1fr); }
   .company-pages .cp-contact-choices { gap:0 1rem; }

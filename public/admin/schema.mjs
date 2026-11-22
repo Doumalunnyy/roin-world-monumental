@@ -108,7 +108,7 @@ export function collections({ languages, interfaceKeys, companyInterfaceKeys, ca
       file('news', 'Новости и медиа', [list('items', 'Публикации', [
         slug, title, input('date', 'Дата или год', 'string', {
           pattern: ['^\\d{4}(-\\d{2}-\\d{2})?$', 'Введите год или дату в формате ГГГГ-ММ-ДД']
-        }), body, image(), optionalTranslation('category', 'Категория'),
+        }), optionalTranslation('summary', 'Краткий анонс и описание для поиска'), body, image(), optionalTranslation('category', 'Категория'),
         input('project', 'Связанный проект (slug)', 'string', { required: false }), uri('video', 'Ссылка на видео', false), source
       ], heading)]),
       file('records', 'Вакансии и сертификаты', [

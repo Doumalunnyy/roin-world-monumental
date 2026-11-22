@@ -9,6 +9,7 @@ type Entry = {
   card: ReactNode;
 };
 type Props = {
+  lang: string;
   entries: Entry[];
   labels: {
     category: string;
@@ -25,7 +26,7 @@ const subscribe = () => () => {};
 const browserReady = () => true;
 const serverReady = () => false;
 
-export function CorporateDirectory({ entries, labels, layout }: Props) {
+export function CorporateDirectory({ entries, labels, layout, lang }: Props) {
   const listId = useId();
   const interactive = useSyncExternalStore(
     subscribe,
@@ -52,7 +53,8 @@ export function CorporateDirectory({ entries, labels, layout }: Props) {
     <div className="cp-index" data-directory={layout}>
       <div className="cp-filter-toolbar">
         <span className="cp-match-count" role="status" aria-live="polite">
-          {labels.results} <bdi>{visible.length}</bdi>
+          {labels.results}{" "}
+          <bdi>{new Intl.NumberFormat(lang).format(visible.length)}</bdi>
         </span>
         {categories.length > 0 && (
           <label>

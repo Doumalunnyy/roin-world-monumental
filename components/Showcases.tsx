@@ -120,11 +120,11 @@ function SequenceNavigation({ lang, count, sequence }: { lang: Lang; count: numb
 }
 
 type HeroProps = {
-  lang: Lang; title: string; intro: string; tag: string; film: string; filmTitle: string;
-  close: string; external: string; scroll: string;
+  lang: Lang; title: string; intro: string; film: string; filmTitle: string;
+  close: string; external: string;
 };
 
-export function Hero({ lang, title, intro, tag, film, filmTitle, close, external }: HeroProps) {
+export function Hero({ lang, title, intro, film, filmTitle, close, external }: HeroProps) {
   const gallery: { heroFrames?: ArchiveFrame[]; hero: string } = home;
   const frames: Frame[] = gallery.heroFrames?.length
     ? gallery.heroFrames.map(frame => ({ image: frame.image, wideAvif: frame.wideAvif, mobile: frame.mobile, mobileAvif: frame.mobileAvif, alt: frame.alt[lang] }))
@@ -146,8 +146,7 @@ export function Hero({ lang, title, intro, tag, film, filmTitle, close, external
         <Frames frames={frames} sequence={sequence} eager />
         <div className="shell hero-film-layout">
           <div className="hero-inscription">
-            <div className="cinema-kicker hero-company-line">{tag}</div>
-            <h1 id="hero-title" tabIndex={-1}>{title.split("\n").map(line => <span key={line}>{line}</span>)}</h1>
+            <h1 id="hero-title" tabIndex={-1}>{title}</h1>
             <p className="hero-intro">{intro}</p>
             <div className="hero-film" onPointerEnter={sequence.interaction.onPointerEnter} onPointerLeave={sequence.interaction.onPointerLeave}>
               <MediaButton url={film} title={filmTitle} playLabel={messages[lang].film} closeLabel={close} externalLabel={external} />
@@ -186,7 +185,6 @@ export function Featured({ items, labels, lang }: { items: Feature[]; labels: { 
         </div>
         <div className="shell project-edition">
           <div className="project-preface">
-            <div className="cinema-kicker">{ui.projectHeading[lang]}</div>
             <h2 id="featured-title">{home.projects[lang]}</h2>
             <a className="cinema-project-link all-projects" href={localeUrl(lang,"projects")}>{ui.allProjects[lang]}<Icon name="arrow" size={17}/></a>
           </div>

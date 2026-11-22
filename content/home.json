@@ -1,17 +1,17 @@
 {
   "title": {
-    "ru": "СОЗДАЁМ МАСШТАБ.\nСТРОИМ БУДУЩЕЕ.",
-    "en": "CREATING SCALE.\nBUILDING THE FUTURE.",
-    "ar": "نصنع الفارق.\nونبني المستقبل.",
-    "es": "PROYECTOS DE GRAN ESCALA.\nCONSTRUIMOS EL FUTURO.",
-    "hu": "NAGY LÉPTÉKBEN DOLGOZUNK.\nA JÖVŐT ÉPÍTJÜK."
+    "ru": "СОЗДАЁМ МАСШТАБ. СТРОИМ БУДУЩЕЕ.",
+    "en": "CREATING SCALE. BUILDING THE FUTURE.",
+    "ar": "نصنع الفارق. ونبني المستقبل.",
+    "es": "PROYECTOS DE GRAN ESCALA. CONSTRUIMOS EL FUTURO.",
+    "hu": "NAGY LÉPTÉKBEN DOLGOZUNK. A JÖVŐT ÉPÍTJÜK."
   },
   "intro": {
-    "ru": "ROIN WORLD ведёт строительные и инженерные работы на международных проектах в энергетике и инфраструктуре.",
-    "en": "ROIN WORLD provides construction and engineering services for energy and infrastructure projects worldwide.",
-    "ar": "تتولى ROIN WORLD أعمال البناء والهندسة في مشاريع الطاقة والبنية التحتية حول العالم.",
-    "es": "ROIN WORLD presta servicios de construcción e ingeniería en proyectos de energía e infraestructura a escala internacional.",
-    "hu": "A ROIN WORLD nemzetközi energetikai és infrastrukturális projektekben végez építési és mérnöki munkát."
+    "ru": "ROIN WORLD выполняет строительные и инженерные работы на объектах энергетики и инфраструктуры в разных странах.",
+    "en": "ROIN WORLD provides construction and engineering services for energy and infrastructure projects in several countries.",
+    "ar": "تنفّذ ROIN WORLD أعمال البناء والهندسة في مشاريع الطاقة والبنية التحتية في عدد من البلدان.",
+    "es": "ROIN WORLD presta servicios de construcción e ingeniería para proyectos de energía e infraestructuras en varios países.",
+    "hu": "A ROIN WORLD több országban végez építési és mérnöki munkát energetikai és infrastrukturális beruházásokon."
   },
   "hero": "/images/industrial-sunset.webp",
   "heroMobile": "/images/industrial-sunset-portrait.webp",
@@ -26,18 +26,18 @@
   "teamImage": "/images/team.webp",
   "careerImage": "/images/crew-reinforcement.webp",
   "about": {
-    "ru": "Большие задачи.\nСильные решения.",
-    "en": "Complex challenges.\nPractical solutions.",
-    "ar": "تحديات كبيرة.\nوحلول عملية.",
-    "es": "Retos complejos.\nSoluciones prácticas.",
-    "hu": "Összetett feladatok.\nGyakorlati megoldások."
+    "ru": "Как мы работаем на стройплощадке",
+    "en": "How we work on site",
+    "ar": "كيف نعمل في مواقع البناء",
+    "es": "Cómo trabajamos en obra",
+    "hu": "Hogyan dolgozunk az építkezéseken?"
   },
   "aboutText": {
-    "ru": "Мы работаем там, где решения инженеров становятся промышленными объектами. На одной площадке сходятся строительные команды, поставки материалов и сервисы для людей. ROIN WORLD объединяет эти направления в международных проектах.",
-    "en": "We work where engineering decisions become industrial facilities. Construction crews, material deliveries and site services come together on every site. ROIN WORLD connects these disciplines on international projects.",
-    "ar": "نعمل حيث تتحول القرارات الهندسية إلى منشآت صناعية. تجمع مواقع البناء فرق التنفيذ وتوريد المواد وخدمات الأفراد، وتربط ROIN WORLD بين هذه الأعمال في المشاريع الدولية.",
-    "es": "Trabajamos allí donde los proyectos de ingeniería se convierten en instalaciones industriales. En cada obra coinciden los equipos de construcción, el suministro de materiales y los servicios de apoyo. ROIN WORLD coordina estas actividades en proyectos internacionales.",
-    "hu": "Ott dolgozunk, ahol a mérnöki tervekből ipari létesítmények születnek. Minden építkezésen össze kell hangolni a kivitelezőcsapatok munkáját, az anyagszállítást és a helyszíni szolgáltatásokat. A ROIN WORLD ezt a feladatot nemzetközi projektekben végzi."
+    "ru": "ROIN WORLD координирует строительные работы, поставки материалов и обслуживание персонала на международных площадках.",
+    "en": "ROIN WORLD coordinates construction work, material deliveries and services for site personnel on international projects.",
+    "ar": "تنسّق ROIN WORLD أعمال البناء وتوريد المواد والخدمات المقدّمة للعاملين في مواقع مشاريعها الدولية.",
+    "es": "En sus proyectos internacionales, ROIN WORLD coordina los trabajos de construcción, el suministro de materiales y los servicios al personal de obra.",
+    "hu": "Nemzetközi beruházásain a ROIN WORLD összehangolja a kivitelezést, az anyagellátást és a helyszínen dolgozók ellátását."
   },
   "expertise": {
     "ru": "Направления деятельности",
@@ -47,18 +47,18 @@
     "hu": "Szakterületeink"
   },
   "projects": {
-    "ru": "Ключевые международные проекты",
-    "en": "Key international projects",
-    "ar": "أبرز مشاريعنا الدولية",
-    "es": "Proyectos internacionales clave",
-    "hu": "Kiemelt nemzetközi projektek"
+    "ru": "Проекты в атомной энергетике",
+    "en": "Nuclear energy projects",
+    "ar": "مشاريع الطاقة النووية",
+    "es": "Proyectos de energía nuclear",
+    "hu": "Atomerőművi projektek"
   },
   "team": {
-    "ru": "За каждым проектом —\nнаша команда.",
-    "en": "Behind every project\nis our team.",
-    "ar": "وراء كل مشروع\nفريقنا.",
-    "es": "Detrás de cada proyecto\nestá nuestro equipo.",
-    "hu": "Minden projektünk mögött\negy csapat áll."
+    "ru": "Команда на стройплощадке",
+    "en": "Our teams on site",
+    "ar": "فرقنا في مواقع البناء",
+    "es": "Nuestros equipos en obra",
+    "hu": "Csapataink az építkezéseken"
   },
   "geo": {
     "ru": "География проектов",
@@ -68,18 +68,18 @@
     "hu": "Hol dolgozunk?"
   },
   "career": {
-    "ru": "Развивайтесь вместе с ROIN WORLD",
-    "en": "Grow with ROIN WORLD",
-    "ar": "تطوّر مهنياً مع ROIN WORLD",
-    "es": "Crece con ROIN WORLD",
-    "hu": "Fejlődjön a ROIN WORLD csapatában"
+    "ru": "Работа в ROIN WORLD",
+    "en": "Careers at ROIN WORLD",
+    "ar": "العمل في ROIN WORLD",
+    "es": "Trabajar en ROIN WORLD",
+    "hu": "Álláslehetőségek a ROIN WORLD-nél"
   },
   "contact": {
-    "ru": "Обсудить сотрудничество",
-    "en": "Discuss a project",
-    "ar": "لنتحدث عن مشروعكم",
-    "es": "Hablemos de tu proyecto",
-    "hu": "Beszéljünk a projektjéről"
+    "ru": "Свяжитесь с ROIN WORLD",
+    "en": "Contact ROIN WORLD",
+    "ar": "تواصلوا مع ROIN WORLD",
+    "es": "Contacto con ROIN WORLD",
+    "hu": "Kapcsolat a ROIN WORLD munkatársaival"
   },
   "teamCount": "800+",
   "teamCountSource": "https://roinworld.ae/",

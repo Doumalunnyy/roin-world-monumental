@@ -1,23 +1,23 @@
 {
   "/images/project-hu.webp": {
-    "ru": "Действующая АЭС «Пакш». Архив МАГАТЭ, 2012",
-    "en": "Operating Paks NPP. IAEA archive, 2012",
-    "ar": "محطة باكس العاملة. أرشيف الوكالة الدولية للطاقة الذرية، ٢٠١٢",
-    "es": "Central nuclear de Paks en funcionamiento. Archivo del OIEA, 2012",
-    "hu": "A működő Paksi Atomerőmű. A NAÜ archívuma, 2012"
+    "ru": "Действующая АЭС «Пакш», Венгрия. Фото МАГАТЭ, 2012 год",
+    "en": "The existing Paks nuclear power plant in Hungary. IAEA archive, 2012",
+    "ar": "محطة باكس النووية القائمة في المجر. صورة من أرشيف الوكالة الدولية للطاقة الذرية، ٢٠١٢",
+    "es": "La central nuclear de Paks en servicio, Hungría. Archivo del OIEA, 2012",
+    "hu": "A már működő Paksi Atomerőmű a NAÜ 2012-es archív felvételén"
   },
   "/images/project-eg.webp": {
-    "ru": "Площадка АЭС «Эль-Дабаа»",
-    "en": "El Dabaa nuclear construction site",
+    "ru": "Строительная площадка АЭС «Эль-Дабаа»",
+    "en": "Construction site at El Dabaa nuclear power plant",
     "ar": "موقع بناء محطة الضبعة النووية",
     "es": "Obras de la central nuclear de El Dabaa",
     "hu": "Az El-Dabaa Atomerőmű építési területe"
   },
   "/images/project-bd.webp": {
     "ru": "Градирни АЭС «Руппур»",
-    "en": "Rooppur cooling towers",
-    "ar": "أبراج التبريد في محطة روبور",
-    "es": "Torres de refrigeración de Rooppur",
+    "en": "Cooling towers at Rooppur nuclear power plant",
+    "ar": "أبراج التبريد في محطة روبور النووية",
+    "es": "Torres de refrigeración de la central nuclear de Rooppur",
     "hu": "A Ruppuri Atomerőmű hűtőtornyai"
   },
   "/images/archive-aerial.webp": {
@@ -28,11 +28,11 @@
     "hu": "Épülő kupola és daruk egy energetikai létesítmény felett"
   },
   "/images/archive-briefing.webp": {
-    "ru": "Рабочая встреча на строительной площадке",
-    "en": "A team briefing on site",
-    "ar": "اجتماع فريق العمل في الموقع",
-    "es": "Reunión de trabajo en la obra",
-    "hu": "Helyszíni munkaértekezlet"
+    "ru": "Совещание на строительной площадке",
+    "en": "Team briefing at the construction site",
+    "ar": "اجتماع الفريق في موقع البناء",
+    "es": "Reunión del equipo en la obra",
+    "hu": "Munkamegbeszélés az építkezésen"
   },
   "/images/engineering.webp": {
     "ru": "Стальные колонны, балки и подъёмная техника на монтажной площадке",
@@ -49,39 +49,39 @@
     "hu": "Csövek kirakodása az építkezésen"
   },
   "/images/supply.webp": {
-    "ru": "Хранение материалов на складских стеллажах. Иллюстративное фото",
-    "en": "Goods on warehouse racks. Illustrative photograph",
-    "ar": "بضائع على رفوف مستودع. صورة توضيحية",
-    "es": "Mercancía en estanterías de almacén. Fotografía ilustrativa",
-    "hu": "Áru a raktári polcokon. Illusztráció"
+    "ru": "Материалы на складских стеллажах (иллюстративное фото)",
+    "en": "Materials on warehouse shelves (illustrative photo)",
+    "ar": "مواد على رفوف مستودع (صورة توضيحية)",
+    "es": "Materiales en las estanterías de un almacén (fotografía ilustrativa)",
+    "hu": "Anyagok a raktári polcokon (illusztráció)"
   },
   "/images/catering.webp": {
-    "ru": "Приготовление пищи на профессиональной кухне. Иллюстративное фото",
-    "en": "Food preparation in a professional kitchen. Illustrative photograph",
-    "ar": "إعداد الطعام في مطبخ مهني. صورة توضيحية",
-    "es": "Preparación de alimentos en una cocina profesional. Fotografía ilustrativa",
-    "hu": "Ételkészítés üzemi konyhában. Illusztráció"
+    "ru": "Приготовление блюд на профессиональной кухне (иллюстративное фото)",
+    "en": "Food preparation in a professional kitchen (illustrative photo)",
+    "ar": "إعداد الطعام في مطبخ مهني (صورة توضيحية)",
+    "es": "Preparación de alimentos en una cocina profesional (fotografía ilustrativa)",
+    "hu": "Ételkészítés üzemi konyhában (illusztráció)"
   },
   "/images/team.webp": {
-    "ru": "Специалисты за совместной работой на площадке",
-    "en": "Site personnel working together",
-    "ar": "متخصصون يعملون معاً في الموقع",
-    "es": "Personal de obra trabajando en equipo",
-    "hu": "Közös munka az építési területen"
+    "ru": "Сотрудники на строительной площадке",
+    "en": "Team members at the construction site",
+    "ar": "أفراد الفريق في موقع البناء",
+    "es": "Personal en la obra",
+    "hu": "Munkatársak az építkezésen"
   },
   "/images/hero-2.webp": {
-    "ru": "Промышленные водоёмы и инженерные сооружения с высоты",
-    "en": "Industrial basins and infrastructure seen from the air",
+    "ru": "Промышленные водоёмы и инженерные сооружения, вид с воздуха",
+    "en": "Aerial view of industrial basins and infrastructure",
     "ar": "منظر جوي لأحواض صناعية ومنشآت هندسية",
-    "es": "Vista aérea de balsas industriales e infraestructuras",
-    "hu": "Ipari medencék és infrastruktúra madártávlatból"
+    "es": "Vista aérea de balsas e instalaciones industriales",
+    "hu": "Ipari medencék és műszaki létesítmények madártávlatból"
   },
   "/images/hero-3.webp": {
-    "ru": "Панорама стройплощадки с башенными кранами в вечернем свете",
-    "en": "Tower cranes over an industrial construction site in evening light",
-    "ar": "رافعات برجية فوق موقع إنشاء صناعي في ضوء المساء",
-    "es": "Grúas torre en una obra industrial al atardecer",
-    "hu": "Toronydaruk egy ipari építkezésen az alkonyi fényben"
+    "ru": "Башенные краны на стройплощадке в вечернем свете",
+    "en": "Tower cranes at a construction site at dusk",
+    "ar": "رافعات برجية في موقع بناء عند الغروب",
+    "es": "Grúas torre en una obra al atardecer",
+    "hu": "Toronydaruk az építkezésen alkonyatkor"
   },
   "/images/archive-aerial-mobile.webp": {
     "ru": "Панорама строительства энергетического комплекса",
@@ -91,67 +91,67 @@
     "hu": "Energetikai létesítmény építése madártávlatból"
   },
   "/images/hero.webp": {
-    "ru": "Площадка АЭС «Руппур», Бангладеш. Архив МАГАТЭ, 2023",
-    "en": "Rooppur NPP site, Bangladesh. IAEA archive, 2023",
-    "ar": "موقع محطة روبور في بنغلاديش. أرشيف الوكالة الدولية للطاقة الذرية، ٢٠٢٣",
-    "es": "Obras de la central nuclear de Rooppur, Bangladés. Archivo del OIEA, 2023",
-    "hu": "A Ruppuri Atomerőmű építkezése Bangladesben. A NAÜ archívuma, 2023"
+    "ru": "Площадка АЭС «Руппур» в Бангладеш. Архив МАГАТЭ, 2023 год",
+    "en": "Rooppur nuclear power plant site in Bangladesh. IAEA archive, 2023",
+    "ar": "موقع محطة روبور النووية في بنغلاديش. أرشيف الوكالة الدولية للطاقة الذرية، ٢٠٢٣",
+    "es": "Obras de la central nuclear de Rooppur en Bangladés. Archivo del OIEA, 2023",
+    "hu": "A Ruppuri Atomerőmű építési területe Bangladesben. A NAÜ archívuma, 2023"
   },
   "/images/hero-dusk.webp": {
     "ru": "Градирни АЭС «Руппур» после заката",
-    "en": "Cooling towers at Rooppur NPP after sunset",
-    "ar": "أبراج تبريد محطة روبور بعد غروب الشمس",
-    "es": "Torres de refrigeración de la central de Rooppur después del atardecer",
+    "en": "Cooling towers at Rooppur nuclear power plant after sunset",
+    "ar": "أبراج التبريد في محطة روبور النووية بعد غروب الشمس",
+    "es": "Torres de refrigeración de la central nuclear de Rooppur tras la puesta de sol",
     "hu": "A Ruppuri Atomerőmű hűtőtornyai napnyugta után"
   },
   "/images/archive-roof.webp": {
-    "ru": "Монтаж кровли над пролётами стального каркаса",
-    "en": "Roof panels over a wide-span steel frame",
-    "ar": "ألواح السقف فوق هيكل فولاذي واسع البحور",
+    "ru": "Кровельные панели на стальном каркасе здания",
+    "en": "Roof panels on a wide-span steel frame",
+    "ar": "ألواح سقف على هيكل فولاذي واسع البحور",
     "es": "Paneles de cubierta sobre una estructura de acero de gran luz",
     "hu": "Tetőpanelek egy nagy fesztávú acélszerkezeten"
   },
   "/images/archive-field-team.webp": {
-    "ru": "Бригада укладывает бетон на армированную плиту",
-    "en": "Crew placing concrete on a reinforced slab",
-    "ar": "فريق يصب الخرسانة على بلاطة مسلحة",
-    "es": "Equipo de obra vertiendo hormigón en una losa armada",
-    "hu": "Egy vasalt lemez betonozása"
+    "ru": "Бригада бетонирует армированную плиту",
+    "en": "A crew pours concrete for a reinforced slab",
+    "ar": "فريق يصب الخرسانة لبلاطة مسلحة",
+    "es": "Una cuadrilla hormigona una losa armada",
+    "hu": "A kivitelezők egy vasalt lemezt betonoznak"
   },
   "/images/archive-rooppur-workshop.webp": {
-    "ru": "Цех предварительной сборки на площадке 4.1 АЭС «Руппур», 2019",
-    "en": "Pre-assembly workshop at Rooppur NPP site 4.1, 2019",
-    "ar": "ورشة التجميع المسبق في الموقع 4.1 بمحطة روبور، 2019",
-    "es": "Taller de premontaje en la zona 4.1 de las obras de la central de Rooppur, 2019",
-    "hu": "Előszerelő műhely a Ruppuri Atomerőmű 4.1-es építési területén, 2019"
+    "ru": "Цех предварительной сборки на участке 4.1 АЭС «Руппур», 2019 год",
+    "en": "Pre-assembly workshop at site 4.1 of Rooppur nuclear power plant, 2019",
+    "ar": "ورشة التجميع المسبق في الموقع 4.1 بمحطة روبور النووية، ٢٠١٩",
+    "es": "Taller de premontaje en la zona 4.1 de la central nuclear de Rooppur, 2019",
+    "hu": "Előszerelő csarnok a Ruppuri Atomerőmű 4.1-es építési területén, 2019"
   },
   "/images/rooppur-towers-panorama.webp": {
-    "ru": "Строительная площадка и градирни АЭС „Руппур“, Бангладеш",
-    "en": "Construction site and cooling towers at Rooppur nuclear power plant, Bangladesh",
-    "ar": "موقع البناء وأبراج التبريد في محطة روبور النووية، بنغلاديش",
-    "es": "Obras y torres de refrigeración de la central nuclear de Rooppur, Bangladés",
-    "hu": "A ruppuri atomerőmű építési területe és hűtőtornyai, Banglades"
+    "ru": "Строительная площадка и градирни АЭС «Руппур» в Бангладеш",
+    "en": "Construction site and cooling towers at Rooppur nuclear power plant in Bangladesh",
+    "ar": "موقع البناء وأبراج التبريد في محطة روبور النووية في بنغلاديش",
+    "es": "Obras y torres de refrigeración de la central nuclear de Rooppur en Bangladés",
+    "hu": "A Ruppuri Atomerőmű építési területe és hűtőtornyai Bangladesben"
   },
   "/images/rooppur-towers-portrait.webp": {
-    "ru": "Строительная площадка и градирни АЭС „Руппур“, Бангладеш",
-    "en": "Construction site and cooling towers at Rooppur nuclear power plant, Bangladesh",
-    "ar": "موقع البناء وأبراج التبريد في محطة روبور النووية، بنغلاديش",
-    "es": "Obras y torres de refrigeración de la central nuclear de Rooppur, Bangladés",
-    "hu": "A ruppuri atomerőmű építési területe és hűtőtornyai, Banglades"
+    "ru": "Строительная площадка и градирни АЭС «Руппур» в Бангладеш",
+    "en": "Construction site and cooling towers at Rooppur nuclear power plant in Bangladesh",
+    "ar": "موقع البناء وأبراج التبريد في محطة روبور النووية في بنغلاديش",
+    "es": "Obras y torres de refrigeración de la central nuclear de Rooppur en Bangladés",
+    "hu": "A Ruppuri Atomerőmű építési területe és hűtőtornyai Bangladesben"
   },
   "/images/crew-reinforcement.webp": {
-    "ru": "Бригада работает с арматурой на строительной площадке",
-    "en": "Crew handling reinforcement at the construction site",
-    "ar": "فريق يتعامل مع حديد التسليح في موقع البناء",
-    "es": "Equipo trabajando con armaduras en la obra",
-    "hu": "Munkacsapat betonacéllal dolgozik az építési területen"
+    "ru": "Рабочие с арматурой на строительной площадке",
+    "en": "Workers handling reinforcing steel on site",
+    "ar": "عمّال يحملون قضبان التسليح في موقع البناء",
+    "es": "Trabajadores manipulando barras de armadura en la obra",
+    "hu": "A munkások betonacéllal dolgoznak az építkezésen"
   },
   "/images/film-official-poster.webp": {
-    "ru": "Официальная обложка корпоративного фильма ROIN WORLD",
-    "en": "Official cover of the ROIN WORLD corporate film",
-    "ar": "الغلاف الرسمي للفيلم التعريفي لشركة ROIN WORLD",
-    "es": "Portada oficial de la película corporativa de ROIN WORLD",
-    "hu": "A ROIN WORLD vállalati filmjének hivatalos borítóképe"
+    "ru": "Обложка корпоративного фильма ROIN WORLD",
+    "en": "Cover image for ROIN WORLD’s corporate film",
+    "ar": "صورة غلاف الفيلم التعريفي لشركة ROIN WORLD",
+    "es": "Imagen de portada del vídeo corporativo de ROIN WORLD",
+    "hu": "A ROIN WORLD vállalati filmjének borítóképe"
   },
   "/images/training-foundations-poster.webp": {
     "ru": "Кадр из ролика ROIN WORLD о строительстве учебного корпуса на АЭС «Руппур»",

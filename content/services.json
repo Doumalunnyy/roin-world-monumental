@@ -10,34 +10,34 @@
         "hu": "Építőipari és mérnöki munkák"
       },
       "summary": {
-        "ru": "Инженерная подготовка и организация строительных работ.",
-        "en": "Engineering preparation and construction operations.",
-        "ar": "التحضير الهندسي وتنظيم أعمال البناء.",
-        "es": "Preparación técnica y ejecución de obras.",
-        "hu": "Műszaki előkészítés és kivitelezés."
+        "ru": "Планируем строительные работы и координируем бригады на площадке.",
+        "en": "We plan construction work and coordinate crews on site.",
+        "ar": "نخطط لأعمال البناء وننسق عمل الفرق في الموقع.",
+        "es": "Planificamos la ejecución de la obra y coordinamos el trabajo de las cuadrillas.",
+        "hu": "Megtervezzük a kivitelezés menetét, és összehangoljuk a helyszíni csapatok munkáját."
       },
       "body": {
-        "ru": "На крупном объекте проектные решения проходят через десятки рабочих групп. Инженеры связывают чертежи, последовательность работ и задачи строительных бригад.",
-        "en": "On a large site, design decisions pass through many teams. Engineers connect drawings and work sequences with the tasks of construction crews.",
-        "ar": "في المواقع الكبرى تتشارك فرق عديدة في تنفيذ التصاميم. ويربط المهندسون المخططات وتسلسل الأعمال بمهام فرق البناء.",
-        "es": "En una obra de gran escala, las decisiones de diseño pasan por varios equipos. Los ingenieros relacionan los planos y la secuencia de ejecución con las tareas de las cuadrillas de obra.",
-        "hu": "Egy nagy építkezésen a tervezői döntések több csapat munkáját is érintik. A mérnökök a kiviteli terveket és a munkafolyamatok sorrendjét a kivitelezőcsapatok feladataival hangolják össze."
+        "ru": "Инженеры изучают чертежи, определяют последовательность работ и согласуют задачи строительных бригад.",
+        "en": "Our engineers use the drawings to plan the sequence of work and coordinate the crews carrying it out.",
+        "ar": "يدرس المهندسون المخططات لتحديد تسلسل الأعمال وتنسيق مهام فرق البناء.",
+        "es": "Los ingenieros estudian los planos para definir el orden de los trabajos y coordinar las tareas de las cuadrillas.",
+        "hu": "Mérnökeink a kiviteli tervek alapján határozzák meg a munkák sorrendjét és hangolják össze a kivitelezőcsapatok feladatait."
       },
       "scope": {
-        "ru": "Инженерная подготовка\nКоординация на площадке\nСтроительные работы",
-        "en": "Engineering preparation\nSite coordination\nConstruction work",
-        "ar": "الإعداد الهندسي\nتنسيق الموقع\nأعمال البناء",
-        "es": "Preparación técnica\nCoordinación en obra\nEjecución de obras",
-        "hu": "Műszaki előkészítés\nHelyszíni koordináció\nKivitelezés"
+        "ru": "Инженерная подготовка\nКоординация работ на площадке\nСтроительные работы",
+        "en": "Construction planning\nSite coordination\nConstruction work",
+        "ar": "الإعداد الهندسي\nتنسيق الأعمال في الموقع\nتنفيذ أعمال البناء",
+        "es": "Preparación técnica\nCoordinación de los trabajos en obra\nEjecución de obras",
+        "hu": "Műszaki előkészítés\nA helyszíni munkák összehangolása\nKivitelezés"
       },
       "image": "/images/engineering.webp",
       "index": "01",
       "approach": {
-        "ru": "Последовательность работ начинается с чертежей. Инженерная подготовка связывает задачи бригад с готовностью участка и очередностью строительных операций.",
-        "en": "Work sequencing begins with the drawings. Engineering preparation connects crew assignments with site readiness and the order in which construction can proceed.",
-        "ar": "يبدأ ترتيب الأعمال من المخططات. ويربط التحضير الهندسي بين مهام الفرق وجاهزية الموقع وترتيب عمليات البناء.",
-        "es": "La secuencia de ejecución se define a partir de los planos. Durante la preparación técnica se asignan tareas a las cuadrillas según el estado de la obra y el orden en que pueden realizarse los trabajos.",
-        "hu": "A munkafolyamatok sorrendjét a tervek alapján határozzuk meg. A műszaki előkészítés során a csapatok feladatait a terület készültségéhez és a kivitelezés lehetséges sorrendjéhez igazítjuk."
+        "ru": "При планировании очередного этапа инженеры проверяют, какие участки готовы к работе и какие операции нужно выполнить в первую очередь.",
+        "en": "Before scheduling the next stage, engineers check which work areas are ready and which tasks need to happen first.",
+        "ar": "قبل تحديد جدول المرحلة التالية، يتحقق المهندسون من جاهزية مناطق العمل ويحددون المهام التي ينبغي إنجازها أولاً.",
+        "es": "Antes de programar la siguiente fase, los ingenieros comprueban qué zonas están listas y qué trabajos deben hacerse primero.",
+        "hu": "A következő szakasz ütemezésekor a mérnökök felmérik, mely munkaterületek állnak készen, és mely feladatokat kell először elvégezni."
       },
       "illustrative": false
     },
@@ -51,34 +51,34 @@
         "hu": "Logisztika és szállítás"
       },
       "summary": {
-        "ru": "Доставка оборудования и материалов на площадку.",
-        "en": "Moving equipment and materials to site.",
-        "ar": "نقل المعدات والمواد إلى الموقع.",
-        "es": "Transporte de equipos y materiales hasta la obra.",
-        "hu": "Berendezések és anyagok helyszínre szállítása."
+        "ru": "Организуем доставку оборудования и материалов на стройплощадку.",
+        "en": "We arrange delivery of equipment and materials to construction sites.",
+        "ar": "ننظم نقل المعدات والمواد إلى مواقع البناء.",
+        "es": "Organizamos el transporte de equipos y materiales hasta la obra.",
+        "hu": "Megszervezzük a berendezések és az anyagok szállítását az építkezésre."
       },
       "body": {
-        "ru": "Доставка материалов связана с графиком строительства. Маршрут, порядок отгрузки и приёмка требуют согласования между поставщиками, перевозчиками и командой на объекте.",
-        "en": "Deliveries follow the construction programme. Routes, dispatch and site reception depend on coordination between suppliers, carriers and the site team.",
-        "ar": "تتبع عمليات التسليم برنامج البناء. ويتطلب الشحن والاستلام التنسيق بين الموردين والناقلين وفريق الموقع.",
-        "es": "Las entregas siguen el programa de construcción. Para organizar rutas, expediciones y recepción en obra, los proveedores, los transportistas y el equipo de obra coordinan sus tareas.",
-        "hu": "A szállítások a kivitelezés ütemtervéhez igazodnak. Az útvonalakról, az indításról és a helyszíni átvételről a beszállítók, a fuvarozók és a kivitelezőcsapat egyeztetnek."
+        "ru": "Поставщики, перевозчики и сотрудники площадки согласуют маршрут, время отгрузки и приёмку груза с учётом графика строительства.",
+        "en": "Suppliers, carriers and site teams coordinate routes, dispatch and unloading to fit the construction schedule.",
+        "ar": "ينسق الموردون والناقلون وفريق الموقع مسارات الشحن ومواعيد الإرسال والاستلام وفقاً لجدول البناء.",
+        "es": "Los proveedores, los transportistas y el personal de obra acuerdan las rutas, las fechas de expedición y la recepción de los materiales según el calendario de construcción.",
+        "hu": "A beszállítók, a fuvarozók és a helyszíni csapat a kivitelezés ütemtervéhez igazítja az útvonalat, a feladást és az áru átvételét."
       },
       "scope": {
-        "ru": "Планирование перевозок\nМеждународная доставка\nКоординация отгрузок",
-        "en": "Transport planning\nInternational delivery\nDispatch coordination",
-        "ar": "تخطيط النقل\nالتوصيل الدولي\nتنسيق الشحنات",
-        "es": "Planificación del transporte\nEntregas internacionales\nCoordinación de expediciones",
-        "hu": "Szállítástervezés\nNemzetközi szállítás\nA fuvarindítások összehangolása"
+        "ru": "Планирование перевозок\nМеждународные перевозки\nКоординация отгрузок",
+        "en": "Transport planning\nInternational freight\nDispatch coordination",
+        "ar": "تخطيط النقل\nالشحن الدولي\nتنسيق إرسال الشحنات",
+        "es": "Planificación del transporte\nTransporte internacional de mercancías\nCoordinación de envíos",
+        "hu": "Fuvartervezés\nNemzetközi áruszállítás\nA szállítmányok indításának összehangolása"
       },
       "image": "/images/logistics.webp",
       "index": "02",
       "approach": {
-        "ru": "Планирование ведётся от момента, когда груз понадобится на объекте. От этой даты зависят маршрут, очередность отгрузок и время приёмки на площадке.",
-        "en": "Transport planning works back from the date a load is needed on site. That date shapes the route, dispatch sequence and delivery window.",
-        "ar": "ينطلق تخطيط النقل من موعد الحاجة إلى الشحنة في الموقع. وعلى أساسه يُحدَّد المسار وترتيب الشحنات ووقت الاستلام.",
-        "es": "La planificación parte de la fecha en que la carga debe estar en obra. Esa fecha determina la ruta, el orden de las expediciones y el plazo de entrega.",
-        "hu": "A szállítást attól az időponttól visszafelé tervezzük, amikor a rakománynak a helyszínre kell érnie. Ez alapján határozzuk meg az útvonalat, a fuvarok indítási sorrendjét és a szállítási időablakot."
+        "ru": "Сначала определяем, когда груз понадобится на площадке. От этой даты отсчитываем время на перевозку и согласуем с поставщиками порядок отгрузки.",
+        "en": "We start with the date the site needs the load, then work back to allow for transit and agree the dispatch sequence with suppliers.",
+        "ar": "نبدأ بتحديد موعد الحاجة إلى الشحنة في الموقع، ثم نحسب مدة النقل ونتفق مع الموردين على ترتيب الإرسال.",
+        "es": "Partimos de la fecha en que se necesita la carga en obra. Con ese plazo calculamos el tiempo de transporte y acordamos con los proveedores el orden de los envíos.",
+        "hu": "A tervezés kiindulópontja az a nap, amikor a rakományra szükség lesz az építkezésen. Ebből számoljuk vissza a fuvaridőt, majd egyeztetjük a feladás sorrendjét a beszállítókkal."
       },
       "illustrative": false
     },
@@ -88,79 +88,79 @@
         "ru": "Снабжение и комплектация",
         "en": "Supply and procurement",
         "ar": "التوريد والتجهيز",
-        "es": "Suministro y aprovisionamiento",
+        "es": "Compras y suministro de materiales",
         "hu": "Anyagellátás és beszerzés"
       },
       "summary": {
-        "ru": "Материалы и комплектация под задачи объекта.",
-        "en": "Sourcing materials to meet site requirements.",
-        "ar": "توفير المواد وفق احتياجات الموقع.",
-        "es": "Aprovisionamiento de materiales según las necesidades de la obra.",
-        "hu": "Anyagbeszerzés az építkezés igényei szerint."
+        "ru": "Организуем закупку материалов для каждого этапа строительства.",
+        "en": "We source materials for each stage of construction.",
+        "ar": "نوفر المواد اللازمة لكل مرحلة من مراحل البناء.",
+        "es": "Gestionamos la compra de materiales para cada fase de la obra.",
+        "hu": "Gondoskodunk az egyes építési szakaszokhoz szükséges anyagok beszerzéséről."
       },
       "body": {
-        "ru": "Комплектация начинается с перечня материалов для конкретного этапа. Потребности площадки определяют состав поставки, сроки закупки и порядок передачи материалов в работу.",
-        "en": "Procurement starts with material requirements for each stage. Site needs inform purchasing schedules, deliveries and handover to the teams doing the work.",
-        "ar": "يبدأ التجهيز بحصر المواد اللازمة لكل مرحلة. وتحدد احتياجات الموقع مواعيد الشراء والتسليم لفرق التنفيذ.",
-        "es": "El aprovisionamiento parte de los materiales necesarios en cada fase. Las necesidades de obra determinan el calendario de compras, las entregas y la puesta a disposición de los equipos que ejecutan los trabajos.",
-        "hu": "A beszerzés alapja az egyes munkaszakaszok anyagszükséglete. A beszerzési ütemtervet, a szállításokat és az anyagok átadását a kivitelezőcsapatok helyszíni igényeihez igazítjuk."
+        "ru": "По перечню материалов для каждого этапа команда определяет, что и когда заказать и в какой последовательности передать материалы на площадку.",
+        "en": "The team uses the materials list for each stage to plan orders and schedule deliveries to the site.",
+        "ar": "يعتمد الفريق على قائمة المواد لكل مرحلة ليحدد ما يجب طلبه ومتى، ويرتب تسليم المواد إلى الموقع.",
+        "es": "A partir de la lista de materiales de cada fase, el equipo decide qué pedir, cuándo hacerlo y en qué orden entregar los materiales en obra.",
+        "hu": "A csapat az egyes építési szakaszok anyagjegyzéke alapján ütemezi a megrendeléseket és a helyszíni átadást."
       },
       "scope": {
-        "ru": "Потребность в материалах\nРабота с поставщиками\nКомплектация поставок",
-        "en": "Material requirements\nSupplier coordination\nSupply planning",
-        "ar": "احتياجات المواد\nتنسيق الموردين\nتجهيز التوريدات",
-        "es": "Necesidades de materiales\nCoordinación de proveedores\nPlanificación del suministro",
-        "hu": "Anyagszükséglet felmérése\nBeszállítók koordinálása\nEllátástervezés"
+        "ru": "Определение потребности в материалах\nРабота с поставщиками\nКомплектация поставок",
+        "en": "Identifying material requirements\nCoordinating suppliers\nPreparing deliveries",
+        "ar": "تحديد احتياجات المواد\nالتنسيق مع الموردين\nتجهيز الشحنات",
+        "es": "Determinación de las necesidades de materiales\nCoordinación con proveedores\nPreparación de los suministros",
+        "hu": "Az anyagszükséglet felmérése\nEgyeztetés a beszállítókkal\nA szállítmányok összeállítása"
       },
       "image": "/images/supply.webp",
       "index": "03",
       "approach": {
-        "ru": "Потребность в материалах задаёт состав поставки. При комплектации важно сверить перечень позиций со спецификацией и подготовить их к передаче строительной команде.",
-        "en": "Material requirements define each delivery. The procurement team checks the package against the specification and prepares it for handover to the construction team.",
-        "ar": "تحدد احتياجات المواد محتوى كل توريد. وتُراجع بنود الشحنة وفق المواصفات قبل تجهيزها للتسليم إلى فريق البناء.",
-        "es": "Cada entrega responde a unas necesidades concretas de materiales. El equipo de aprovisionamiento comprueba que el suministro cumpla las especificaciones y prepara su entrega al equipo de construcción.",
-        "hu": "Az egyes szállítmányok tartalmát az anyagigény határozza meg. A beszerzési csapat összeveti a szállítmányt a műszaki előírásokkal, majd előkészíti az átadást a kivitelezőknek."
+        "ru": "Перед передачей материалов строительной бригаде сверяем состав поставки со спецификацией.",
+        "en": "Before handing materials over to the construction crew, we check the delivery against the specification.",
+        "ar": "نراجع محتويات الشحنة وفق المواصفات قبل تسليم المواد إلى فريق البناء.",
+        "es": "Antes de entregar los materiales a la cuadrilla, comprobamos que la remesa se ajuste a las especificaciones.",
+        "hu": "Mielőtt átadjuk az anyagokat a kivitelezőknek, összevetjük a szállítmány tartalmát a műszaki előírásokkal."
       },
       "illustrative": true
     },
     {
       "slug": "catering",
       "title": {
-        "ru": "Организация питания и сервисов",
+        "ru": "Питание и обслуживание персонала",
         "en": "Catering and site services",
         "ar": "الإعاشة وخدمات الموقع",
-        "es": "Alimentación y servicios de obra",
+        "es": "Alimentación y servicios para el personal",
         "hu": "Étkeztetés és helyszíni szolgáltatások"
       },
       "summary": {
-        "ru": "Питание и повседневные сервисы для команд на объекте.",
-        "en": "Catering and daily support for teams on site.",
-        "ar": "الوجبات والخدمات اليومية لفرق العمل.",
-        "es": "Alimentación y apoyo diario al personal de obra.",
-        "hu": "Az építkezésen dolgozók étkeztetése és napi ellátása."
+        "ru": "Организуем питание и повседневное обслуживание работников стройплощадки.",
+        "en": "We provide meals and day-to-day support for site workers.",
+        "ar": "نقدم الوجبات والخدمات اليومية للعاملين في موقع البناء.",
+        "es": "Organizamos las comidas y los servicios diarios para el personal de obra.",
+        "hu": "Gondoskodunk az építkezésen dolgozók étkezéséről és napi ellátásáról."
       },
       "body": {
-        "ru": "Рабочая смена зависит и от того, как устроен повседневный быт. Организация питания и сервисов учитывает график команд, расположение рабочих зон и местные условия.",
-        "en": "A working shift depends on how everyday needs are met. Catering and site services take account of team schedules, work areas and local conditions.",
-        "ar": "يعتمد سير المناوبات على تلبية الاحتياجات اليومية. وتراعي خدمات الإعاشة جداول الفرق ومناطق العمل والظروف المحلية.",
-        "es": "El desarrollo de un turno depende también de la atención a las necesidades diarias del personal. La alimentación y los servicios de obra se adaptan a los horarios de los equipos, las zonas de trabajo y las condiciones locales.",
-        "hu": "A műszak zavartalan lebonyolításához a mindennapi ellátást is meg kell szervezni. Az étkeztetés és a helyszíni szolgáltatások a csapatok beosztásához, a munkaterületekhez és a helyi körülményekhez igazodnak."
+        "ru": "Питание и обслуживание на площадке зависят от графика смен, расположения рабочих зон и местных условий.",
+        "en": "We plan meals and site services around shift times, work locations and local conditions.",
+        "ar": "نخطط للوجبات والخدمات اليومية وفق مواعيد المناوبات ومواقع العمل والظروف المحلية.",
+        "es": "Adaptamos las comidas y los servicios diarios a los horarios de los turnos, la distribución de las zonas de trabajo y las condiciones locales.",
+        "hu": "Az étkeztetést és a napi ellátást a műszakbeosztáshoz, a munkaterületek elhelyezkedéséhez és a helyi körülményekhez igazítjuk."
       },
       "scope": {
-        "ru": "Организация питания\nСервисы для команд\nОбеспечение рабочих смен",
-        "en": "Catering operations\nTeam services\nShift support",
-        "ar": "تنظيم الوجبات\nخدمات الفرق\nدعم المناوبات",
-        "es": "Servicios de alimentación\nServicios para el personal\nApoyo durante los turnos",
-        "hu": "Étkeztetés biztosítása\nA munkatársak ellátása\nMűszakok támogatása"
+        "ru": "Организация питания\nПовседневное обслуживание персонала\nОбслуживание рабочих смен",
+        "en": "Catering\nDay-to-day staff services\nSupport for shift workers",
+        "ar": "تقديم الوجبات\nالخدمات اليومية للعاملين\nخدمة العاملين بنظام المناوبات",
+        "es": "Servicio de comidas\nAtención diaria al personal\nServicios para el personal a turnos",
+        "hu": "Étkeztetés\nA dolgozók napi ellátása\nA műszakban dolgozók kiszolgálása"
       },
       "image": "/images/catering.webp",
       "index": "04",
       "approach": {
-        "ru": "График смен определяет время и место обслуживания. Расположение рабочих зон и численность смены помогают рассчитать потребность в питании и повседневных сервисах.",
-        "en": "Shift patterns determine where and when services are needed. The layout of work areas and the size of each shift inform catering and daily service needs.",
-        "ar": "تحدد جداول المناوبات وقت تقديم الخدمات ومكانها. ويساعد توزيع مناطق العمل وعدد أفراد كل مناوبة على تقدير احتياجات الوجبات والخدمات اليومية.",
-        "es": "Los turnos determinan dónde y cuándo se necesitan los servicios. La distribución de las zonas de trabajo y el número de personas de cada turno permiten calcular las necesidades de alimentación y de atención diaria.",
-        "hu": "A műszakbeosztás határozza meg, hogy hol és mikor van szükség az egyes szolgáltatásokra. Az étkeztetést és a napi ellátást a munkaterületek elrendezése és a műszak létszáma alapján tervezzük."
+        "ru": "Учитываем, сколько человек работает в каждой смене и где находятся их рабочие места. Это помогает определить, где и когда организовать питание.",
+        "en": "The number of people on each shift and where they work determine when and where meals are served.",
+        "ar": "نحدد مواعيد تقديم الوجبات وأماكنها وفق عدد العاملين في كل مناوبة ومواقع عملهم.",
+        "es": "El número de personas de cada turno y la ubicación de sus puestos de trabajo determinan dónde y cuándo se sirven las comidas.",
+        "hu": "A műszak létszáma és a munkavégzés helye alapján tervezzük meg az étkezések idejét és helyszínét."
       },
       "illustrative": true
     }

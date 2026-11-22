@@ -67,6 +67,7 @@ export const news = newsFile.items as {
   slug: string;
   title: Local;
   body: Local;
+  summary?: Local;
   date: string;
   image: string;
   video?: string;
@@ -163,12 +164,14 @@ export function description(lang: Lang, path: string) {
       return projects.find((p) => p.slug === slug)?.summary[lang];
     if (section === "services")
       return services.find((s) => s.slug === slug)?.summary[lang];
-    if (section === "news")
-      return news.find((n) => n.slug === slug)?.body[lang].slice(0, 180);
+    if (section === "news") {
+      const article = news.find((n) => n.slug === slug);
+      return article?.summary?.[lang] || article?.body[lang];
+    }
     if (section === "team")
       return company.people.find((p) => p.slug === slug)?.role[lang];
     if (section === "careers")
-      return vacancies.find((v) => v.slug === slug)?.body[lang].slice(0, 180);
+      return vacancies.find((v) => v.slug === slug)?.body[lang];
   }
   const key = introKey[section as Key];
   return key ? txt(lang, key) : home.intro[lang];

@@ -3,18 +3,18 @@
     {
       "slug": "corporate-film-2026",
       "title": {
-        "ru": "ROIN WORLD. Корпоративный фильм",
-        "en": "ROIN WORLD. The corporate film",
-        "ar": "ROIN WORLD. فيلم الشركة",
-        "es": "ROIN WORLD. El vídeo corporativo",
-        "hu": "ROIN WORLD. Vállalati film"
+        "ru": "Корпоративный фильм ROIN WORLD",
+        "en": "The ROIN WORLD corporate film",
+        "ar": "فيلم تعريفي بشركة ROIN WORLD",
+        "es": "El vídeo corporativo de ROIN WORLD",
+        "hu": "A ROIN WORLD vállalati filmje"
       },
       "body": {
-        "ru": "Корпоративный фильм ROIN WORLD 2026 года знакомит с компанией. Посмотреть фильм целиком можно на YouTube.",
-        "en": "The 2026 corporate film introduces ROIN WORLD. Watch the full film on YouTube.",
-        "ar": "يعرّف فيلم الشركة لعام ٢٠٢٦ بشركة ROIN WORLD. يمكن مشاهدة الفيلم كاملاً على يوتيوب.",
-        "es": "El vídeo corporativo de 2026 presenta ROIN WORLD. La versión completa está disponible en YouTube.",
-        "hu": "A 2026-os vállalati film bemutatja a ROIN WORLD tevékenységét. A teljes film a YouTube-on tekinthető meg."
+        "ru": "Фильм 2026 года знакомит с работой ROIN WORLD. Полная версия доступна на YouTube.",
+        "en": "ROIN WORLD presents its work in this 2026 film. The full version is available on YouTube.",
+        "ar": "يعرض الفيلم، الصادر عام ٢٠٢٦، أعمال ROIN WORLD. وتتوفر نسخته الكاملة على يوتيوب.",
+        "es": "Este vídeo de 2026 presenta la actividad de ROIN WORLD. La versión completa está disponible en YouTube.",
+        "hu": "A 2026-os film a ROIN WORLD munkáját mutatja be. A teljes változat a YouTube-on nézhető meg."
       },
       "date": "2026",
       "source": "https://www.youtube.com/watch?v=4KEZoq2ubVE",
@@ -26,23 +26,30 @@
         "ar": "الشركة",
         "es": "Empresa",
         "hu": "Vállalati hírek"
+      },
+      "summary": {
+        "ru": "Полная версия доступна на YouTube.",
+        "en": "Watch the full film on YouTube.",
+        "ar": "النسخة الكاملة متاحة على يوتيوب.",
+        "es": "La versión completa está disponible en YouTube.",
+        "hu": "A teljes film a YouTube-on nézhető meg."
       }
     },
     {
       "slug": "rooppur-training-building",
       "title": {
-        "ru": "Основания для тренажёров на «Руппуре»",
-        "en": "Foundations for the Rooppur simulators",
-        "ar": "أساسات أجهزة المحاكاة في روبور",
-        "es": "Cimentaciones para los simuladores de Rooppur",
-        "hu": "A ruppuri szimulátorok alapozása"
+        "ru": "Фундаменты для тренажёров на АЭС «Руппур»",
+        "en": "Foundations for training simulators at Rooppur",
+        "ar": "أساسات لأجهزة المحاكاة في محطة روبور",
+        "es": "Cimentaciones para los simuladores de la central de Rooppur",
+        "hu": "A szimulátorok alapozása a ruppuri atomerőműben"
       },
       "body": {
-        "ru": "В учебно-производственном корпусе АЭС «Руппур» бригада ROIN WORLD построила железобетонную плиту и основания под тренажёры. Для этих работ использовали бетон класса B25. По данным компании, объём бетонирования превысил 400 м³; на площадке работали около 40 местных рабочих под руководством двух прорабов.",
-        "en": "At Rooppur’s training building, a ROIN WORLD crew cast a reinforced concrete slab and foundations for the simulators. The company reports using more than 400 m³ of B25 concrete. Around 40 local workers carried out the work under two foremen.",
-        "ar": "في مبنى التدريب بمحطة روبور، صبّ فريق ROIN WORLD بلاطة خرسانية مسلّحة وأساسات لأجهزة المحاكاة. وتفيد الشركة بأن حجم خرسانة B25 المستخدمة تجاوز 400 متر مكعب، وأن نحو 40 عاملاً محلياً شاركوا في الأعمال تحت إشراف مراقبَي إنشاء.",
-        "es": "En el edificio de formación de la central de Rooppur, un equipo de ROIN WORLD ejecutó una losa de hormigón armado y las cimentaciones para los simuladores. Según la empresa, se vertieron más de 400 m³ de hormigón de clase B25. Participaron unos 40 trabajadores locales dirigidos por dos encargados de obra.",
-        "hu": "A ruppuri atomerőmű oktatóépületében a ROIN WORLD csapata elkészítette a vasbeton lemezt és a szimulátorok alapjait. A vállalat beszámolója szerint több mint 400 m³ B25-ös betont használtak fel. A munkát mintegy 40 helyi munkás végezte két művezető irányításával."
+        "ru": "В учебно-производственном корпусе АЭС «Руппур» бригада ROIN WORLD отлила железобетонную плиту и основания для тренажёров. По данным компании, для работ потребовалось более 400 м³ бетона класса B25. На площадке работали около 40 местных рабочих под руководством двух прорабов.",
+        "en": "A ROIN WORLD crew cast a reinforced concrete slab and foundations for simulators in the Rooppur training building. The company reports that the work took more than 400 m³ of B25 concrete. Two foremen supervised a crew of around 40 local workers.",
+        "ar": "صبّ فريق ROIN WORLD في مبنى التدريب بمحطة روبور بلاطة من الخرسانة المسلّحة وأساسات لأجهزة المحاكاة. ووفقاً للشركة، استخدم الفريق أكثر من ٤٠٠ متر مكعب من خرسانة فئة B25. وشارك في الأعمال نحو ٤٠ عاملاً محلياً بإشراف مراقبَين.",
+        "es": "En el edificio de formación de la central de Rooppur, el equipo de ROIN WORLD construyó una losa de hormigón armado y las cimentaciones de los simuladores. Según la empresa, se vertieron más de 400 m³ de hormigón de clase B25. Participaron unos 40 trabajadores locales bajo la dirección de dos encargados de obra.",
+        "hu": "A ROIN WORLD csapata a ruppuri atomerőmű oktatóépületében elkészítette a vasbeton lemezt és a szimulátorok alapjait. A vállalat beszámolója szerint több mint 400 m³ B25-ös betont használtak fel. A munkát mintegy 40 helyi munkás végezte két művezető irányításával."
       },
       "date": "2020-04-27",
       "source": "https://roinworld.com/work-at-facility-6-1-1-of-the-training-and-production-building-rooppur-npp-bangladesh/",
@@ -55,23 +62,30 @@
         "es": "Construcción",
         "hu": "Építőipar"
       },
-      "project": "rooppur"
+      "project": "rooppur",
+      "summary": {
+        "ru": "В учебном корпусе бригада отлила плиту и основания под тренажёры.",
+        "en": "The crew cast a slab and foundations for simulators in the training building.",
+        "ar": "صبّ فريق البناء بلاطة وأساسات لأجهزة المحاكاة في مبنى التدريب.",
+        "es": "El equipo de obra construyó la losa y las cimentaciones de los simuladores del edificio de formación.",
+        "hu": "A csapat az oktatóépületben kialakította a vasbeton lemezt és a szimulátorok alapjait."
+      }
     },
     {
       "slug": "rooppur-fire-drill",
       "title": {
-        "ru": "Противопожарные учения на стройплощадке",
-        "en": "Fire drill at the Rooppur site",
-        "ar": "تدريب على مكافحة الحرائق في موقع روبور",
-        "es": "Simulacro de incendio en las obras de Rooppur",
+        "ru": "Противопожарные учения на стройплощадке АЭС «Руппур»",
+        "en": "Fire drill at the Rooppur construction site",
+        "ar": "تدريب على مكافحة الحرائق في موقع بناء محطة روبور",
+        "es": "Simulacro de incendio en las obras de la central de Rooppur",
         "hu": "Tűzvédelmi gyakorlat a ruppuri építkezésen"
       },
       "body": {
-        "ru": "Сотрудники ROIN WORLD и «Атомстройэкспорта» провели совместные противопожарные учения на площадке АЭС «Руппур» в Бангладеш. В тренировке участвовали специалисты ROIN WORLD со спецтехникой компании. Ход учений зафиксирован в видеорепортаже.",
-        "en": "ROIN WORLD and Atomstroyexport teams held a joint fire drill at the Rooppur construction site in Bangladesh. ROIN WORLD specialists took part with the company’s own equipment. A video report documents the exercise.",
-        "ar": "أجرى فريقا ROIN WORLD وأتوم ستروي إكسبورت تدريباً مشتركاً على مكافحة الحرائق في موقع إنشاء محطة روبور في بنغلاديش. وشارك متخصصو ROIN WORLD بمعدات الشركة. ويوثّق تقرير مصور مجريات التدريب.",
-        "es": "Los equipos de ROIN WORLD y Atomstroyexport realizaron un simulacro conjunto de incendio en las obras de Rooppur, en Bangladés. Los especialistas de ROIN WORLD utilizaron equipos propios de la empresa. El ejercicio quedó recogido en un reportaje en vídeo.",
-        "hu": "A ROIN WORLD és az Atomstroyexport csapatai közös tűzvédelmi gyakorlatot tartottak a bangladesi Ruppur építkezésén. A ROIN WORLD szakemberei a vállalat saját felszerelésével vettek részt. A gyakorlatról videóbeszámoló készült."
+        "ru": "На стройплощадке АЭС «Руппур» в Бангладеш сотрудники ROIN WORLD и «Атомстройэкспорта» отработали действия при пожаре. Команда ROIN WORLD использовала собственную спецтехнику.",
+        "en": "ROIN WORLD and Atomstroyexport teams practised responding to a fire at the Rooppur construction site in Bangladesh. The ROIN WORLD crew used its own specialist equipment.",
+        "ar": "تدرّب فريقا ROIN WORLD وأتوم ستروي إكسبورت على الاستجابة للحريق في موقع بناء محطة روبور في بنغلاديش. واستخدم فريق ROIN WORLD معداته المتخصصة.",
+        "es": "Los equipos de ROIN WORLD y Atomstroyexport ensayaron cómo actuar ante un incendio en las obras de la central de Rooppur, en Bangladés. El equipo de ROIN WORLD utilizó su propio material especializado.",
+        "hu": "A ROIN WORLD és az Atomstroyexport csapatai a tűz esetén szükséges teendőket gyakorolták a bangladesi ruppuri építkezésen. A ROIN WORLD szakemberei saját felszerelésüket használták."
       },
       "date": "2019-08-01",
       "source": "https://roinworld.com/roinworld-together-with-atomstroyexport-conducted-firefighting-training-exercises-at-the-rooppur-npp/",
@@ -84,7 +98,14 @@
         "es": "Seguridad",
         "hu": "Biztonság"
       },
-      "project": "rooppur"
+      "project": "rooppur",
+      "summary": {
+        "ru": "Команды ROIN WORLD и «Атомстройэкспорта» провели совместные учения в Бангладеш.",
+        "en": "Teams from ROIN WORLD and Atomstroyexport held a joint drill in Bangladesh.",
+        "ar": "تدرّب فريقا ROIN WORLD وأتوم ستروي إكسبورت معاً في بنغلاديش.",
+        "es": "Los equipos de ROIN WORLD y Atomstroyexport realizaron un ejercicio conjunto en Bangladés.",
+        "hu": "A ROIN WORLD és az Atomstroyexport csapatai közös gyakorlatot tartottak Bangladesben."
+      }
     }
   ]
 }

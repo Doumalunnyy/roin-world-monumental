@@ -43,6 +43,7 @@
     "more",
     "allProjects",
     "allServices",
+    "openMenu",
     "menu",
     "close",
     "language",
@@ -54,10 +55,7 @@
     "show",
     "gallery",
     "project",
-    "servicesHeading",
-    "projectHeading",
     "teamTag",
-    "geoTag",
     "teamText",
     "teamLink",
     "careerText",
@@ -192,7 +190,14 @@
     "supplier",
     "partner",
     "partnerList",
-    "issuer"
+    "issuer",
+    "mapArea",
+    "loadMap",
+    "hideMap",
+    "results",
+    "onThisPage",
+    "positionDescription",
+    "mapPrivacy"
   ],
   "captionPaths": [
     "/images/project-hu.webp",
@@ -214,7 +219,11 @@
     "/images/archive-field-team.webp",
     "/images/archive-rooppur-workshop.webp",
     "/images/rooppur-towers-panorama.webp",
-    "/images/rooppur-towers-portrait.webp"
+    "/images/rooppur-towers-portrait.webp",
+    "/images/crew-reinforcement.webp",
+    "/images/film-official-poster.webp",
+    "/images/training-foundations-poster.webp",
+    "/images/fire-drill-poster.webp"
   ],
   "landingKeys": [
     "expertise",
@@ -222,7 +231,6 @@
   ],
   "atlasKeys": [
     "heading",
-    "presence",
     "intro",
     "countryProjects",
     "pause",

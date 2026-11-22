@@ -9,7 +9,7 @@ import {
 } from "@/lib/content";
 import { features } from "@/lib/features";
 import { publicUrl } from "@/lib/urls";
-import { Action, Tag } from "./Shared";
+import { Action } from "./Shared";
 import { ExpertiseGrid } from "./Expertise";
 import { Featured, GeographyMap, Hero } from "./Showcases";
 import { Photo } from "./Media";
@@ -28,8 +28,8 @@ export function Home({ lang }: { lang: Lang }) {
   const office = company.offices.find((o) => o.email);
   return (
     <>
-      <Hero lang={lang} title={home.title[lang]} intro={home.intro[lang]} tag={t("expertTag")}
-        film={home.film} filmTitle={t("filmTitle")} close={t("close")} external={t("externalVideo")} scroll={t("scroll")} />
+      <Hero lang={lang} title={home.title[lang]} intro={home.intro[lang]}
+        film={home.film} filmTitle={t("filmTitle")} close={t("close")} external={t("externalVideo")} />
       <section id="geography" className="home-geo">
         <GeographyMap home lang={lang} items={items} label={t("geoText")} more={t("more")} />
       </section>
@@ -65,7 +65,6 @@ export function Home({ lang }: { lang: Lang }) {
       <section className="home-expertise section-space">
         <div className="shell">
           <div className="discipline-heading">
-            <Tag>{t("servicesHeading")}</Tag>
             <h2>{landing.expertise[lang]}</h2>
             <Action to={href(lang, "services")}>{t("allServices")}</Action>
           </div>
@@ -81,7 +80,6 @@ export function Home({ lang }: { lang: Lang }) {
       <section className="career-band hiring-story">
         <div className="hiring-photo"><Photo src={home.careerImage} alt={captions[home.careerImage as keyof typeof captions]?.[lang] || ""} sizes="100vw" /></div>
         <div className="hiring-copy">
-          <Tag>{t("careers")}</Tag>
           <h2>{home.career[lang]}</h2>
           <p>{t("careerText")}</p>
           <Action to={href(lang, "careers")}>
@@ -98,7 +96,6 @@ export function Home({ lang }: { lang: Lang }) {
           />
         </div><figcaption>{captions[home.teamImage as keyof typeof captions]?.[lang]}</figcaption></figure>
         <div className="team-copy">
-          <Tag>{t("teamTag")}</Tag>
           <h2>{home.team[lang]}</h2>
           <p>{t("teamText")}</p>
           <div className="panel-actions">
@@ -116,7 +113,6 @@ export function Home({ lang }: { lang: Lang }) {
       <section className="contact-section section-space">
         <div className="shell contact-layout">
           <div>
-            <Tag>{t("contacts")}</Tag>
             <h2>{home.contact[lang]}</h2>
             {office?.email && (
               <a className="contact-email" href={"mailto:" + office.email}>

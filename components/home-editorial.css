@@ -12,10 +12,10 @@ section.experience .facts strong span { color:inherit; font-size:.75em; }
 section.experience .facts a > span { color:#424242; font-size:clamp(.82rem,1vw,1.04rem); }
 
 section.home-expertise { background:var(--deep); color:var(--white); padding-block:clamp(48px,5.8vw,100px); }
-.home-expertise > .shell { display:grid; grid-template-columns:minmax(0,.68fr) minmax(0,2.3fr); align-items:center; gap:2vw; }
+.home-expertise > .shell { display:grid; grid-template-columns:minmax(0,.76fr) minmax(0,2.24fr); align-items:center; gap:2vw; }
+.discipline-heading { container-type:inline-size; }
 .discipline-heading h2,.hiring-copy h2,.people-story .team-copy h2 { font-weight:540; font-size:clamp(2rem,3.35vw,4.3rem); letter-spacing:-.045em; line-height:1.07; }
-.discipline-heading .tag,.hiring-copy .tag { color:var(--white); }
-.home-expertise .discipline-heading .tag i { background:currentColor; }
+.discipline-heading h2 { font-size:clamp(2rem,min(3.35vw,14cqi),4.3rem); }
 .discipline-heading .text-link { margin-top:clamp(1rem,2vw,2.4rem); }
 .discipline-ribbon { display:grid; grid-template-columns:1.35fr 1fr 1fr 1fr; min-width:0; }
 .discipline-panel { --rake:clamp(16px,2.65vw,54px); position:relative; display:flex; align-items:end; min-width:0; isolation:isolate; min-height:clamp(265px,23vw,430px); }

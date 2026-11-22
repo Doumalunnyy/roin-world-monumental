@@ -294,10 +294,7 @@ function GeographyScene({ items, countries, more, label, lang = "ru", home = fal
           })}
         </div>
         {home && <div className="ae-heading">
-          <div>
-            <a className="ae-presence" href={localeUrl(lang, "geography")}>{copy.presence[lang]}</a>
-            <h2>{copy.heading[lang]}</h2>
-          </div>
+          <h2><a href={localeUrl(lang, "geography")}>{copy.heading[lang]}</a></h2>
           <p>{copy.intro[lang]}</p>
         </div>}
         <div className="ae-record" id={panelId} aria-live={running ? "off" : "polite"} aria-atomic="true">
