@@ -284,7 +284,7 @@
   grid-template-columns: repeat(3,minmax(0,1fr));
   gap: clamp(.6rem, 1.1vw, 1.55rem);
   margin: 0;
-  padding: 0 var(--ae-gutter) clamp(2.2rem, 3.6vw, 4.3rem);
+  padding: clamp(1.1rem, 1.8vw, 2.15rem) var(--ae-gutter);
 }
 .atlas-engineering .ae-register button {
   position: relative;
@@ -450,7 +450,7 @@
   .atlas-engineering .ae-summary { max-width: 31em; margin: .75rem 0 .45rem; font-size: .91rem; }
   .atlas-engineering .ae-links { gap: .2rem .8rem; }
   .atlas-engineering .ae-caption { margin-top: .2rem; }
-  .atlas-engineering .ae-register.geo-country-list { gap: .4rem; padding-bottom: 2.2rem; }
+  .atlas-engineering .ae-register.geo-country-list { gap: .4rem; }
   .atlas-engineering .ae-register button {
     min-height: clamp(3.6rem, 15vw, 5rem);
     padding: .65rem .38rem;
