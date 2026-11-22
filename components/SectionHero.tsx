@@ -6,8 +6,6 @@ import covers from "@/content/section-covers.json";
 import copy from "@/content/company-ui.json";
 import portfolio from "@/content/technical-ui.json";
 import { certificates, company, description, href, news, projects, services, txt, vacancies, type Key, type Lang } from "@/lib/content";
-import { ProjectDrawing } from "./ProjectDrawing";
-import { projectContours } from "@/lib/project-contours";
 import "./chapters.css";
 import "./project-motion.css";
 
@@ -26,18 +24,10 @@ export function sectionCover(path: string) {
 }
 
 function Plate({ image, lang, full, projectSlug }: { image: string; lang: Lang; full: boolean; projectSlug?: string }) {
-  const outline = projectSlug ? projectContours[image] : undefined;
   const credit = caption(lang, image);
   return <figure className="chapter-plate">
     <div className="chapter-frame" id={projectSlug ? "project-hero-frame" : undefined} data-case-cover={projectSlug ? image : undefined}>
       <Photo src={image} alt={credit} sizes={full ? "100vw" : "(max-width:760px) 100vw, 62vw"} priority />
-      {projectSlug && outline && <ProjectDrawing slug={projectSlug}>
-        <svg viewBox={outline.viewBox} preserveAspectRatio="xMidYMid slice" focusable="false">
-          <g className="drawing-guide">{outline.silhouette.map(d => <path d={d} key={d}/>)}</g>
-          <g className="drawing-edge">{outline.silhouette.map(d => <path pathLength="1" d={d} key={d}/>)}</g>
-          <g className="drawing-context">{outline.setting.map(d => <path pathLength="1" d={d} key={d}/>)}</g>
-        </svg>
-      </ProjectDrawing>}
     </div>
     {credit && <figcaption>{credit}</figcaption>}
   </figure>;

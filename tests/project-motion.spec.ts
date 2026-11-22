@@ -25,7 +25,7 @@ for (const width of [1440, 390]) {
           sessionStorage.setItem("test-conflicting-effect", "yes");
         }
       });
-      watch.observe(document, { subtree:true, attributes:true, attributeOldValue:true, attributeFilter:["data-project-intro", "data-transition"] });
+      watch.observe(document, { subtree:true, attributes:true, attributeOldValue:true, attributeFilter:["data-transition"] });
     });
     await page.goto(new URL(lang + "/projects/", (baseURL || "http://localhost:3000").replace(/\/?$/, "/")).href);
     const card = page.locator('a[data-project-cover][href*="/projects/rooppur"]');
@@ -45,22 +45,9 @@ for (const width of [1440, 390]) {
     await expect(card).toBeVisible();
     await page.goForward();
     await expect(frame).toBeVisible();
-    await expect(page.locator("html[data-project-intro], html[data-project-morph]")).toHaveCount(0);
+    await expect(page.locator("html[data-project-morph]")).toHaveCount(0);
   });
 }
-
-test("the photographic contour develops once and a repeat visit opens the photograph", async ({ page, baseURL }) => {
-  const url = new URL("en/projects/el-dabaa/", (baseURL || "http://localhost:3000").replace(/\/?$/, "/")).href;
-  await page.emulateMedia({ reducedMotion:"no-preference" });
-  await page.goto(url,{ waitUntil:"domcontentloaded" });
-  await expect(page.locator("html")).toHaveAttribute("data-project-intro","drawing");
-  await expect(page.locator("[data-case-cover] .drawing-edge path").first()).toBeVisible();
-  await expect(page.locator("html[data-project-intro]")).toHaveCount(0);
-  await page.goto("about:blank");
-  await page.goto(url);
-  await expect(page.locator("[data-case-cover] img")).toBeVisible();
-  await expect(page.locator(".project-drawing")).toBeHidden();
-});
 
 test("reduced motion and blocked storage preserve the native catalogue journey", async ({ page, baseURL }) => {
   await page.emulateMedia({ reducedMotion:"reduce" });
@@ -69,5 +56,5 @@ test("reduced motion and blocked storage preserve the native catalogue journey",
   await page.locator('a[data-project-cover][href*="/projects/paks-ii"]').click();
   await expect(page.locator("main h1")).toBeVisible();
   await expect(page.locator("[data-case-cover] img")).toBeVisible();
-  await expect(page.locator("html[data-project-intro], html[data-project-morph], html[data-transition]")).toHaveCount(0);
+  await expect(page.locator("html[data-project-morph], html[data-transition]")).toHaveCount(0);
 });

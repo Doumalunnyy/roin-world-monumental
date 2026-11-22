@@ -83,7 +83,8 @@
     linear-gradient(0deg,#08080870,transparent 19%);
 }
 html[dir="rtl"] .hero-exposure::before { transform:scaleX(-1); }
-.hero-exposure .sequence-layer img {object-position:67% 50%;}
+.hero-exposure { --hero-photo-x:67%; --hero-photo-y:50%; }
+.hero-exposure .sequence-layer img { object-position:var(--hero-photo-x) var(--hero-photo-y); }
 .hero-film-layout {
   display:grid;
   grid-template-rows:1fr auto;
@@ -239,7 +240,7 @@ html[dir="rtl"] .hero.cinema-hero h1, html[dir="rtl"] .project-preface h2, html[
   .project-preface h2 {font-size:clamp(31px,3.25vw,37px);}
 }
 @media (max-width:850px) {
-  .hero-exposure .sequence-layer img {object-position:78% 45%;}
+  .hero-exposure { --hero-photo-x:78%; --hero-photo-y:45%; }
   .hero-intro {max-width:47ch;}
   .project-spread {display:grid; grid-template-columns:minmax(0, .87fr) minmax(0,1.13fr);}
   .project-edition {display:contents;}
@@ -264,7 +265,7 @@ html[dir="rtl"] .hero.cinema-hero h1, html[dir="rtl"] .project-preface h2, html[
   .hero-exposure::before {
     background:linear-gradient(0deg,#080808e8 0%,#080808d6 22%,#080808a6 43%,#08080838 64%,transparent 79%);
   }
-  .hero-exposure .sequence-layer img {object-position:80% 47%;}
+  .hero-exposure { --hero-photo-x:80%; --hero-photo-y:47%; }
   .hero.cinema-hero h1 {font-size:clamp(32px,8.65vw,49px);line-height:1.02;}
   .hero-intro {font-size:.91rem; line-height:1.47; margin-top:15px; max-width:42ch;}
   .hero-film .film-trigger {font-size:.84rem; gap:10px;}

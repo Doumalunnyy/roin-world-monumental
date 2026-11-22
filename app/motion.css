@@ -4,7 +4,6 @@
   --motion-reveal: 680ms;
   --motion-slide: 780ms;
   --motion-fade: 960ms;
-  --motion-ink: 1900ms;
   --title-lift: .52em;
 }
 @media (max-width: 680px) {

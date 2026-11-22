@@ -20,12 +20,6 @@ export const projectNavigationScript = String.raw`
     const probe = key + ":available";
     sessionStorage.setItem(probe, "1");
     sessionStorage.removeItem(probe);
-    if (slug && !fromCatalogue && !motion.matches && !history && !location.hash &&
-        !sessionStorage.getItem("roin-outline:" + slug)) {
-      root.dataset.projectIntro = "armed";
-      // Reveal the server-rendered photo if enhancement scripts or the image stall.
-      setTimeout(() => { if (root.dataset.projectIntro === "armed") delete root.dataset.projectIntro; }, 4500);
-    }
   } catch { return; }
 
   const fresh = handoff && handoff.href === location.href && Date.now() - handoff.time < 30000;
@@ -76,7 +70,6 @@ export const projectNavigationScript = String.raw`
     }
     const image = frame.querySelector("img");
     if (!image) { vt.skipTransition(); return; }
-    delete root.dataset.projectIntro;
     root.dataset.projectMorph = "in";
     // Keep the already decoded catalogue resource behind a still-loading larger
     // candidate. Both are different resolutions of the same credited photograph.
