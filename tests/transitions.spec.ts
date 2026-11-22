@@ -32,14 +32,11 @@ async function ready(page: Page) {
 }
 
 async function menuLink(page: Page, name: string): Promise<Locator> {
-  const desktop = page
-    .locator(".topnav")
-    .getByRole("link", { name, exact: true });
-  if (await desktop.isVisible()) return desktop;
-  await page.getByRole("button", { name: "Открыть меню", exact: true }).click();
-  return page
-    .getByRole("dialog", { name: "Меню" })
-    .getByRole("link", { name, exact: true });
+  const toggle = page.getByRole("button", { name: "Открыть меню", exact: true });
+  if (await toggle.isVisible()) await toggle.click();
+  const nav = page.locator(".corporate-nav");
+  if (name === "Проекты") await nav.locator(".nav-branch").filter({has: page.getByRole("link", {name:"О компании",exact:true})}).locator("summary").click();
+  return nav.getByRole("link", { name, exact: true });
 }
 
 // The browser changes documents at full coverage. A DOM observer keeps a record
@@ -126,7 +123,7 @@ for (const [width, height] of desktopAndMobile) {
         "data-transition",
         "leave",
       );
-      await page.locator("footer").getByRole("link", {name:"О компании", exact:true})
+      await page.locator("nav[data-menu-transition] a[href$='/about'], nav[data-menu-transition] a[href$='/about/']")
         .evaluate((el: HTMLAnchorElement) => el.click());
       await arrived(page, /\/ru\/about\/?$/);
       expect(await page.evaluate(() => history.length)).toBe(historyLength + 1);
@@ -141,12 +138,14 @@ for (const [width, height] of desktopAndMobile) {
       await ready(page);
       await (await menuLink(page, "Контакты")).click();
       await arrived(page, /\/ru\/contacts\/?$/);
+      const beforeHistory = await phases(page);
       await page.goBack();
       await expect(page).toHaveURL(/\/ru\/about\/?$/);
       await expect(page.locator(".page-transition")).toBeHidden();
       await page.goForward();
       await expect(page).toHaveURL(/\/ru\/contacts\/?$/);
       await expect(page.locator(".page-transition")).toBeHidden();
+      expect(await phases(page)).toEqual(beforeHistory);
       expect(
         await page.evaluate(() => document.documentElement.scrollWidth),
       ).toBeLessThanOrEqual(width + 1);
@@ -182,14 +181,31 @@ test("keyboard journey from home through contacts and the catalogue to a case, l
   const languages = page.locator("details.languages");
   await languages.locator("summary").click();
   await languages.getByRole("link", { name: "العربية", exact: true }).click();
-  await arrived(page, /\/ar\/projects\/rooppur\/?$/);
+  await expect(page).toHaveURL(/\/ar\/projects\/rooppur\/?$/);
+  await expect(page.locator(".page-transition")).toBeHidden();
   await expect(page.locator("html")).toHaveAttribute("dir", "rtl");
   await expect(page.locator("main h1")).toContainText(/[\u0600-\u06ff]/);
   expect(
     (await phases(page)).some((value) =>
       value.endsWith("/ar/projects/rooppur arrive"),
     ),
-  ).toBe(true);
+  ).toBe(false);
+});
+
+test("content links, the footer and the brand use native navigation without an atom", async ({ page, baseURL }) => {
+  await page.emulateMedia({ reducedMotion: "no-preference" });
+  await observePhases(page);
+  await open(page, baseURL, "ru/");
+  await ready(page);
+  await page.locator("main .ae-heading a").click();
+  await expect(page).toHaveURL(/\/ru\/geography\/?$/);
+  await ready(page);
+  await page.locator("footer").getByRole("link", { name: "О компании", exact: true }).click();
+  await expect(page).toHaveURL(/\/ru\/about\/?$/);
+  await ready(page);
+  await page.locator(".mast .brand").click();
+  await expect(page).toHaveURL(/\/ru\/?$/);
+  expect(await phases(page)).toEqual([]);
 });
 
 test("Escape cancels before departure and a subsequent navigation succeeds", async ({
@@ -199,7 +215,7 @@ test("Escape cancels before departure and a subsequent navigation succeeds", asy
   await page.emulateMedia({ reducedMotion: "no-preference" });
   await open(page, baseURL, "en/");
   await ready(page);
-  const link = page.locator(".topnav").getByRole("link", { name: "Company", exact: true });
+  const link = page.locator(".topnav").getByRole("link", { name: "About us", exact: true });
   await link.click();
   await expect(page.locator("html")).toHaveAttribute(
     "data-transition",
@@ -250,7 +266,7 @@ test("reduced motion uses ordinary links without a closing or opening overlay", 
   await page.emulateMedia({ reducedMotion: "reduce" });
   await observePhases(page);
   await open(page, baseURL, "en/");
-  await page.locator(".topnav").getByRole("link", { name: "Company", exact: true }).click();
+  await page.locator(".topnav").getByRole("link", { name: "About us", exact: true }).click();
   await expect(page).toHaveURL(/\/en\/about\/?$/);
   await expect(page.locator("main h1")).toBeVisible();
   await expect(page.locator(".page-transition")).toBeHidden();
@@ -281,7 +297,7 @@ for (const state of ["pending", "failed"] as const) {
         await open(page, baseURL, "en/");
         await request;
         await expect(page.locator("html[data-transition-ready]")).toHaveCount(0);
-        await page.locator(".topnav").getByRole("link", { name: "Company", exact: true }).click();
+        await page.locator(".topnav").getByRole("link", { name: "About us", exact: true }).click();
         await expect(page).toHaveURL(/\/en\/about\/?$/);
         await expect(page.locator("main h1")).toBeVisible();
         await expect(page.locator(".page-transition")).toBeHidden();
@@ -298,7 +314,7 @@ test("a delayed document receives focus after the source page is released", asyn
   await observePhases(page);
   await open(page, baseURL, "en/");
   await ready(page);
-  const link = page.locator(".topnav").getByRole("link", { name: "Company", exact: true });
+  const link = page.locator(".topnav").getByRole("link", { name: "About us", exact: true });
   const target = await link.evaluate((el: HTMLAnchorElement) => el.href);
   let heldNavigation = false;
   await page.route(target, async (route) => {
@@ -322,7 +338,7 @@ test("a navigation cancelled by a 204 response leaves the current page usable", 
   await page.emulateMedia({ reducedMotion: "no-preference" });
   await open(page, baseURL, "en/");
   await ready(page);
-  const link = page.locator(".topnav").getByRole("link", { name: "Company", exact: true });
+  const link = page.locator(".topnav").getByRole("link", { name: "About us", exact: true });
   const destination = await link.evaluate(
     (element: HTMLAnchorElement) => element.href,
   );
@@ -352,10 +368,12 @@ for (const width of [1440, 390]) {
     await page.emulateMedia({ reducedMotion: "no-preference" });
     await open(page, baseURL, "en/");
     await ready(page);
+    const mobileMenu = page.getByRole("button", { name: "Open menu", exact: true });
+    if (await mobileMenu.isVisible()) await mobileMenu.click();
     await page.clock.install();
     await page.clock.pauseAt(new Date(Date.now() + 1500));
     // Keep the departure pending while sampling the painted strokes in isolation.
-    await page.locator(".topnav a").first().evaluate((el: HTMLAnchorElement) => el.click());
+    await page.locator(".topnav").getByRole("link", {name:"About us",exact:true}).evaluate((el: HTMLAnchorElement) => el.click());
     const scene = page.locator(".page-transition");
     const mark = await scene.locator(".atom-symbol").boundingBox();
     expect(mark).toBeTruthy();

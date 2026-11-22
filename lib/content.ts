@@ -111,6 +111,7 @@ export const secondary = [
   "geography",
   "partners",
   "certificates",
+  "media",
   "news",
 ] as const;
 export const sections = [...primary, ...secondary, "privacy"] as const;
@@ -152,6 +153,7 @@ export const introKey: Partial<Record<Key, Key>> = {
   partners: "partnersIntro",
   certificates: "certificateIntro",
   news: "mediaIntro",
+  media: "mediaArchiveIntro",
   geography: "geoText",
   careers: "careerText",
   contacts: "contactIntro",

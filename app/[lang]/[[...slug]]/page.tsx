@@ -6,6 +6,7 @@ import { Footer } from "@/components/Shared";
 import { CompanyPages } from "@/components/CompanyPages";
 import { ProjectPages } from "@/components/ProjectPages";
 import { SectionHero, sectionCover } from "@/components/SectionHero";
+import { corporateNavigation } from "@/lib/navigation";
 import { publicUrl } from "@/lib/urls";
 import {
   txt,
@@ -17,8 +18,6 @@ import {
   paths,
   pageTitle,
   description,
-  primary,
-  type Key,
 } from "@/lib/content";
 
 type Params = { lang: string; slug?: string[] };
@@ -72,8 +71,6 @@ export default async function Page({ params }: Props) {
   const path = slug.join("/"),
     title = pageTitle(lang, path);
   if (!title) notFound();
-  const link = (key: Key) => ({ slug: key, title: txt(lang, key) });
-  const main = primary.map(link);
   const structured = path
     ? {
         "@context": "https://schema.org",
@@ -108,7 +105,7 @@ export default async function Page({ params }: Props) {
       <SiteHeader
         lang={lang}
         path={path}
-        main={main}
+        main={corporateNavigation(lang)}
         languages={locales.map((l) => ({
           code: l,
           name: languageInfo[l].name,

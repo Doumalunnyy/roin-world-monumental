@@ -1,0 +1,29 @@
+/* Shared timing for page headings, project photography and the site atlas. */
+:root {
+  --motion-ease: cubic-bezier(.2, .72, .24, 1);
+  --motion-reveal: 680ms;
+  --motion-slide: 780ms;
+  --motion-fade: 960ms;
+  --motion-ink: 1900ms;
+  --title-lift: .52em;
+}
+@media (max-width: 680px) {
+  :root { --motion-reveal: 560ms; --motion-slide: 620ms; --title-lift: .34em; }
+}
+@keyframes editorial-title-in {
+  from { opacity: 0; translate: 0 var(--title-lift); clip-path: inset(-.24em -.18em var(--title-lift) -.18em); }
+  to { opacity: 1; translate: 0 0; clip-path: inset(-.24em -.18em -.24em -.18em); }
+}
+#main h1 { animation: none; }
+.title-ink { display: block; }
+@media (prefers-reduced-motion: no-preference) {
+  #main h1 .title-ink, #main h2[data-editorial="enter"] {
+    animation: editorial-title-in var(--motion-reveal) var(--motion-ease) backwards;
+  }
+  #main h2[data-editorial="waiting"]:not(:focus-within) { opacity: 0; }
+  #main h2[data-editorial]:focus-within { animation: none; opacity: 1; }
+  html[data-transition="arrive"] #main h1 .title-ink { animation-play-state: paused; }
+}
+@media print {
+  #main h1 .title-ink, #main h2[data-editorial] { animation: none !important; opacity: 1 !important; }
+}

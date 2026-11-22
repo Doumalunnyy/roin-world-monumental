@@ -6,7 +6,10 @@ import covers from "@/content/section-covers.json";
 import copy from "@/content/company-ui.json";
 import portfolio from "@/content/technical-ui.json";
 import { certificates, company, description, href, news, projects, services, txt, vacancies, type Key, type Lang } from "@/lib/content";
+import { ProjectDrawing } from "./ProjectDrawing";
+import { projectContours } from "@/lib/project-contours";
 import "./chapters.css";
+import "./project-motion.css";
 
 export function sectionCover(path: string) {
   const [section, slug] = path.split("/");
@@ -22,10 +25,20 @@ export function sectionCover(path: string) {
   return fallback;
 }
 
-function Plate({ image, lang, full }: { image: string; lang: Lang; full: boolean }) {
+function Plate({ image, lang, full, projectSlug }: { image: string; lang: Lang; full: boolean; projectSlug?: string }) {
+  const outline = projectSlug ? projectContours[image] : undefined;
   const credit = caption(lang, image);
   return <figure className="chapter-plate">
-    <div className="chapter-frame"><Photo src={image} alt={credit} sizes={full ? "100vw" : "(max-width:760px) 100vw, 62vw"} priority /></div>
+    <div className="chapter-frame" id={projectSlug ? "project-hero-frame" : undefined} data-case-cover={projectSlug ? image : undefined}>
+      <Photo src={image} alt={credit} sizes={full ? "100vw" : "(max-width:760px) 100vw, 62vw"} priority />
+      {projectSlug && outline && <ProjectDrawing slug={projectSlug}>
+        <svg viewBox={outline.viewBox} preserveAspectRatio="xMidYMid slice" focusable="false">
+          <g className="drawing-guide">{outline.silhouette.map(d => <path d={d} key={d}/>)}</g>
+          <g className="drawing-edge">{outline.silhouette.map(d => <path pathLength="1" d={d} key={d}/>)}</g>
+          <g className="drawing-context">{outline.setting.map(d => <path pathLength="1" d={d} key={d}/>)}</g>
+        </svg>
+      </ProjectDrawing>}
+    </div>
     {credit && <figcaption>{credit}</figcaption>}
   </figure>;
 }
@@ -67,13 +80,15 @@ export function SectionHero({ lang, path, title }: { lang: Lang; path: string; t
           {project && <p className="chapter-place"><Icon name="pin" size={16}/>{project.country[lang]}<span> / </span>{project.sector[lang]}</p>}
           {job && <p className="chapter-place"><Icon name="pin" size={16}/>{job.location[lang]}{job.department && <> / {job.department[lang]}</>}</p>}
           {story && <p className="chapter-place"><time dateTime={story.date}>{dateLabel(lang,story.date)}</time>{story.category && <> / {story.category[lang]}</>}</p>}
-          <h1 tabIndex={-1}>{title}</h1>
+          <h1 tabIndex={-1}><span className="title-ink">{project ? title.split(/(\S+[-‐‑]\S+)/u).map((part, index) =>
+            index % 2 ? <span className="case-name-word" key={index}>{part}</span> : part
+          ) : title}</span></h1>
           {summary && <p className="chapter-deck">{summary}</p>}
           {layout === "portfolio" && <div className="chapter-actions"><Action to="#catalogue" light>{portfolio.catalogue[lang]}</Action><Action to={href(lang,"geography")}>{txt(lang,"geography")}</Action></div>}
           {layout === "careers" && <div className="chapter-actions"><Action to="#vacancies" light>{txt(lang,"vacancies")}</Action></div>}
           {layout === "crew" && <div className="chapter-actions"><Action to={href(lang,"leadership")}>{txt(lang,"leadership")}</Action></div>}
         </div>
-        {!immersive && image && <Plate image={image} lang={lang} full={false}/>}
+        {!immersive && image && <Plate image={image} lang={lang} full={false} projectSlug={project?.slug}/>}
         {layout === "chronicle" && <nav className="chapter-years" aria-label={txt(lang,"history")}>
           {company.history.map((event,i) => <a key={event.source} href={"#event-"+(i+1)}>{event.title[lang].split(" · ")[0]}<Icon name="down" size={16}/></a>)}
         </nav>}

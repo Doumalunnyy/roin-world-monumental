@@ -1,5 +1,6 @@
+import { OfficialArchives } from "./OfficialArchives";
 import { services, projects, company, news, href, txt, type Lang, type Project, type Service } from "@/lib/content";
-import { caption, features, disciplines } from "@/lib/features";
+import { caption, feature, features, disciplines } from "@/lib/features";
 import words from "@/content/technical-ui.json";
 import { Photo, MediaButton } from "./Media";
 import { GeographyMap, ProjectFilters } from "./Atlas";
@@ -162,7 +163,7 @@ function CaseStudy({ lang, project: p }: { lang: Lang; project: Project }) {
     <section id="case-media" className="technical-band">
       <div className="shell ed-section field-report">
         <h2>{words.siteMedia[lang]}</h2>
-        <ProjectGallery frames={gallery} title={t("gallery")} openLabel={words.openImage[lang]}
+        <ProjectGallery lang={lang} frames={gallery} title={t("gallery")} openLabel={words.openImage[lang]}
           prev={t("prev")} next={t("next")} close={t("close")} rtl={lang === "ar"}/>
         {(p.videos.length > 0 || reports.length > 0) && <div className="case-media-links">
           {p.videos.length > 0 && <div className="case-videos">
@@ -211,11 +212,11 @@ export function ProjectPages({ lang, path }: { lang: Lang; path: string }) {
   </>;
   if (path === "services") return <ServiceOverview lang={lang}/>;
   if (path === "projects") return <section id="catalogue" className="shell portfolio-catalog" aria-label={words.catalogue[lang]}>
-    <ProjectFilters items={features(lang)} areas={disciplines(lang)} labels={{
+    <ProjectFilters items={projects.map(p => feature(lang, p.coverImage ? { ...p, image: p.coverImage } : p))} areas={disciplines(lang)} labels={{
       country: t("country"), area: t("area"), allCountries: t("allCountries"), allAreas: t("allAreas"),
       noResults: t("noResults"), found: t("found"), reset: t("reset"),
     }}/>
-    <div className="portfolio-footer"><Action to={href(lang, "geography")}>{words.exploreGeography[lang]}</Action></div>
+    <div className="portfolio-footer"><Action to={href(lang, "geography")}>{words.exploreGeography[lang]}</Action><OfficialArchives lang={lang} section="projects"/></div>
   </section>;
   if (section === "services") {
     const service = services.find(s => s.slug === slug);

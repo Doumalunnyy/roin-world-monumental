@@ -166,5 +166,33 @@
     "ar": "لقطة من فيلم ROIN WORLD عن تدريب مكافحة الحرائق في روبور",
     "es": "Fotograma del vídeo de ROIN WORLD sobre un simulacro de incendio en Rooppur",
     "hu": "Képkocka a ROIN WORLD ruppuri tűzvédelmi gyakorlatáról készült videóból"
+  },
+  "/images/paks-construction.webp": {
+    "ru": "Краны над строительной площадкой «Пакш II», Венгрия",
+    "en": "Cranes on the Paks II construction site, Hungary",
+    "ar": "رافعات في موقع بناء باكش 2 في المجر",
+    "es": "Grúas en las obras de Paks II, Hungría",
+    "hu": "Daruk a Paks II. építkezésén"
+  },
+  "/images/paks-night.webp": {
+    "ru": "Ночная смена на стройке «Пакш II»",
+    "en": "Night shift at the Paks II construction site",
+    "ar": "الوردية الليلية في موقع بناء باكش 2",
+    "es": "Turno de noche en las obras de Paks II",
+    "hu": "Éjszakai műszak a Paks II. építkezésén"
+  },
+  "/images/el-dabaa-delivery.webp": {
+    "ru": "Перевозка оборудования для АЭС «Эль-Дабаа», кадр 2025 года",
+    "en": "Equipment in transit for El Dabaa, video still from 2025",
+    "ar": "نقل معدات لمحطة الضبعة، لقطة من عام 2025",
+    "es": "Traslado de equipos para El Dabaa, fotograma de 2025",
+    "hu": "Berendezések szállítása az El-Dabaa erőműhöz, 2025-ös filmkocka"
+  },
+  "/images/el-dabaa-lifting.webp": {
+    "ru": "Подъём оборудования на площадке «Эль-Дабаа», кадр 2025 года",
+    "en": "Equipment being lifted at El Dabaa, video still from 2025",
+    "ar": "رفع معدات في موقع الضبعة، لقطة من عام 2025",
+    "es": "Izado de equipos en El Dabaa, fotograma de 2025",
+    "hu": "Berendezés emelése az El-Dabaa építkezésén, 2025-ös filmkocka"
   }
 }

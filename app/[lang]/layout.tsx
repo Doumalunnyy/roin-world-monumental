@@ -4,6 +4,8 @@ import { isLang, locales, origin, languageInfo } from "@/lib/content";
 import "../site.css";
 import "../monumental.css";
 import "../atomic-transition.css";
+import "../motion.css";
+import { EditorialMotion } from "@/components/EditorialMotion";
 import { PageTransition } from "@/components/PageTransition";
 import { AtomicScene } from "@/components/AtomicScene";
 import { arrivalScript } from "@/lib/industrial-transition";
@@ -27,7 +29,7 @@ export default async function LocaleLayout({
   return (
     <html lang={lang} dir={languageInfo[lang].dir} suppressHydrationWarning>
       <head><script dangerouslySetInnerHTML={{ __html: arrivalScript }} /></head>
-      <body><PageTransition languages={locales}><AtomicScene /></PageTransition>{children}</body>
+      <body><PageTransition languages={locales}><AtomicScene /></PageTransition>{children}<EditorialMotion /></body>
     </html>
   );
 }

@@ -17,6 +17,7 @@ import {
 } from "@/lib/content";
 import { contactEnabled } from "@/lib/contact";
 import { caption } from "@/lib/features";
+import { MediaArchive } from "./MediaArchive";
 import { ContactForm } from "./ContactForm";
 import { Icon } from "./Icons";
 import { MediaButton, Photo } from "./Media";
@@ -381,6 +382,7 @@ function Team({ lang }: LanguageProps) {
         );
       })}
       <Sites lang={lang} />
+      <Action to={href(lang, "careers") + "#vacancies"}>{txt(lang,"vacancies")}</Action>
       {interviews.length > 0 && (
         <section className="cp-interviews">
           <h2>{txt(lang, "interviews")}</h2>
@@ -994,6 +996,9 @@ export function CompanyPages({ lang, path }: Props) {
       break;
     case "careers":
       page = <Careers lang={lang} slug={slug} />;
+      break;
+    case "media":
+      page = <MediaArchive lang={lang} />;
       break;
     case "news":
       page = <News lang={lang} slug={slug} />;

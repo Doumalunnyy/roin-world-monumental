@@ -84,11 +84,11 @@
     "hu": "Tanúsítványok"
   },
   "news": {
-    "ru": "Новости и медиа",
-    "en": "News and media",
-    "ar": "الأخبار والإعلام",
-    "es": "Noticias y medios",
-    "hu": "Hírek és média"
+    "ru": "Новости",
+    "en": "News",
+    "ar": "الأخبار",
+    "es": "Noticias",
+    "hu": "Hírek"
   },
   "privacy": {
     "ru": "Конфиденциальность",
@@ -705,5 +705,12 @@
     "ar": "أرشيف ROIN WORLD",
     "es": "Archivo de ROIN WORLD",
     "hu": "A ROIN WORLD archívuma"
+  },
+  "mediaArchiveIntro": {
+    "ru": "Фотографии со строительных площадок, корпоративный фильм и видеоматериалы операторов АЭС.",
+    "en": "Photographs from the construction sites, the ROIN WORLD company film and videos from nuclear plant operators.",
+    "ar": "صور من مواقع البناء، وفيلم تعريفي بشركة ROIN WORLD، ومقاطع فيديو من مشغّلي المحطات النووية.",
+    "es": "Fotografías de las obras, la película corporativa de ROIN WORLD y vídeos de los operadores de centrales nucleares.",
+    "hu": "Fotók az építkezésekről, a ROIN WORLD vállalati filmje és az atomerőművek üzemeltetőinek videói."
   }
 }

@@ -146,7 +146,7 @@ export function Hero({ lang, title, intro, film, filmTitle, close, external }: H
         <Frames frames={frames} sequence={sequence} eager />
         <div className="shell hero-film-layout">
           <div className="hero-inscription">
-            <h1 id="hero-title" tabIndex={-1}>{title}</h1>
+            <h1 id="hero-title" tabIndex={-1}><span className="title-ink">{title}</span></h1>
             <p className="hero-intro">{intro}</p>
             <div className="hero-film" onPointerEnter={sequence.interaction.onPointerEnter} onPointerLeave={sequence.interaction.onPointerLeave}>
               <MediaButton url={film} title={filmTitle} playLabel={messages[lang].film} closeLabel={close} externalLabel={external} />

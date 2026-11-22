@@ -132,6 +132,10 @@ test("mobile menu restores focus and language changes preserve the project", asy
   await menu.click();
   const panel = page.getByRole("dialog", { name: "Меню" });
   await expect(panel).toBeVisible();
+  await expect(page.locator("header .corporate-nav")).toHaveCount(1);
+  await expect(panel.locator(".nav-parent")).toHaveText([
+    "Главная", "О компании", "Медиа", "Новости", "Партнёры", "Команда", "Контакты", "Присоединиться к команде",
+  ]);
   const close = panel.getByRole("button", { name: "Закрыть" });
   await expect(close).toBeFocused();
   await page.keyboard.press("Shift+Tab");
@@ -142,6 +146,7 @@ test("mobile menu restores focus and language changes preserve the project", asy
   await expect(panel).toBeHidden();
   await expect(menu).toBeFocused();
   await menu.click();
+  await panel.locator(".nav-disclosure summary").first().click();
   await panel.getByRole("link", { name: "Проекты", exact: true }).click();
   await expect(page).toHaveURL(/\/ru\/projects\/?$/);
   await page.locator(".project-card").filter({ hasText: "Руппур" }).click();

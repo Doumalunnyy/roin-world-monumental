@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, type ReactNode } from "react";
 import { basePath, publicUrl } from "@/lib/urls";
+import { catalogueOpensCase } from "@/lib/project-navigation";
 import { fitAtomTraces } from "@/lib/atom-traces";
 import { handoffKey, reducedQuery } from "@/lib/industrial-transition";
 
@@ -12,7 +13,6 @@ export function PageTransition({ languages, children }: { languages: readonly st
     if (!scene || !scene.getAnimations) return;
     const root = document.documentElement;
     const reduced = matchMedia(reducedQuery);
-    const navigation = (window as Window & { navigation?: EventTarget }).navigation;
     const isPage = (url: URL) => url.origin === location.origin &&
       languages.some((lang) => url.pathname === basePath + "/" + lang || url.pathname.startsWith(basePath + "/" + lang + "/"));
     let disposed = false;
@@ -61,7 +61,14 @@ export function PageTransition({ languages, children }: { languages: readonly st
       if (!(event.target instanceof Element) || !scene) return;
       const link = event.target.closest<HTMLAnchorElement>("a[href]");
       if (!link || link.hasAttribute("download") || (link.target && link.target !== "_self")) return;
+      if (!link.closest("nav[data-menu-transition]")) {
+        // A new ordinary link supersedes any cancelled or still-pending menu request.
+        if (target) clear();
+        try { sessionStorage.removeItem(handoffKey); } catch {}
+        return;
+      }
       const url = new URL(link.href);
+      if (catalogueOpensCase(new URL(location.href), url)) return;
       if (!isPage(url) || url.pathname === location.pathname || !ready || reduced.matches) return;
       event.preventDefault();
       if (target) return;
@@ -82,20 +89,10 @@ export function PageTransition({ languages, children }: { languages: readonly st
     function keydown(event: KeyboardEvent) {
       if (event.key === "Escape" && target && !sent) clear();
     }
-    function traverse(event: Event) {
-      const entry = event as Event & { navigationType?: string; destination?: { url?: string; sameDocument?: boolean } };
-      if (!ready || reduced.matches || entry.navigationType !== "traverse" || !entry.destination?.url || entry.destination.sameDocument) return;
-      const url = new URL(entry.destination.url);
-      if (isPage(url)) remember(url);
-    }
     function restore(event: PageTransitionEvent) {
       if (!event.persisted) return;
       try { sessionStorage.removeItem(handoffKey); } catch {}
       clear();
-      if (ready && !reduced.matches) {
-        root.dataset.transition = "arrive";
-        timer = window.setTimeout(clear, 480);
-      }
     }
     function motionChange() {
       if (!reduced.matches) return;
@@ -107,7 +104,6 @@ export function PageTransition({ languages, children }: { languages: readonly st
     }
     document.addEventListener("click", click);
     document.addEventListener("keydown", keydown);
-    navigation?.addEventListener("navigate", traverse);
     window.addEventListener("pagehide", clear);
     window.addEventListener("pageshow", restore);
     window.addEventListener("resize", resize);
@@ -116,7 +112,6 @@ export function PageTransition({ languages, children }: { languages: readonly st
       disposed = true;
       document.removeEventListener("click", click);
       document.removeEventListener("keydown", keydown);
-      navigation?.removeEventListener("navigate", traverse);
       window.removeEventListener("pagehide", clear);
       window.removeEventListener("pageshow", restore);
       window.removeEventListener("resize", resize);

@@ -1,9 +1,11 @@
-export const handoffKey = "roin-atomic-transition-v1";
+import { projectNavigationScript } from "./project-navigation";
+
+export const handoffKey = "roin-menu-transition-v1";
 export const reducedQuery = "(prefers-reduced-motion: reduce)";
 
 // The target is a separate HTML document on both Node and GitHub Pages. Install
 // its first paint state in <head>, before React or any visible content arrives.
-export const arrivalScript = `
+export const arrivalScript = projectNavigationScript + `
 (() => {
   const root = document.documentElement;
   try {
@@ -11,16 +13,15 @@ export const arrivalScript = `
     const travel = JSON.parse(sessionStorage.getItem(key) || "null");
     sessionStorage.removeItem(key);
     const navigation = performance.getEntriesByType("navigation")[0];
-    const historyEntry = navigation?.type === "back_forward";
     const fresh = travel && travel.href === location.href && Date.now() - travel.time < 120000 &&
-      (historyEntry || (document.referrer && new URL(document.referrer).origin === location.origin));
-    if (!fresh || navigation?.type === "reload" ||
+      document.referrer && new URL(document.referrer).origin === location.origin;
+    if (!fresh || (navigation && navigation.type !== "navigate") ||
         matchMedia(${JSON.stringify(reducedQuery)}).matches) return;
 
     root.dataset.transition = "arrive";
     let timer;
     function focusContent() {
-      if (historyEntry || location.hash || document.activeElement !== document.body) return;
+      if (location.hash || document.activeElement !== document.body) return;
       const heading = document.querySelector("main h1");
       if (heading) {
         heading.tabIndex = -1;
