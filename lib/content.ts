@@ -145,6 +145,7 @@ export function pageTitle(lang: Lang, path: string): string | undefined {
   }
 }
 export const introKey: Partial<Record<Key, Key>> = {
+  about: "aboutIntro",
   services: "servicesIntro",
   projects: "projectsIntro",
   history: "historyIntro",

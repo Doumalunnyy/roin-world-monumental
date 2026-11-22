@@ -60,6 +60,15 @@ test.describe("touch photo archive", () => {
     const gallery = page.locator(".cinematic-gallery");
     const strip = gallery.locator(".cg-strip");
     await ready(strip);
+    const nextArrow = gallery.locator(".cg-overview .cg-controls button").last().locator("path");
+    const pointsLeft = await nextArrow.evaluate(element => {
+      const path = element as SVGPathElement;
+      const matrix = path.getScreenCTM()!;
+      const tail = path.getPointAtLength(0).matrixTransform(matrix);
+      const tip = path.getPointAtLength(path.getTotalLength() / 2).matrixTransform(matrix);
+      return tip.x < tail.x;
+    });
+    expect(pointsLeft).toBe(true);
     await expect(gallery.locator(".cg-cycle")).toBeHidden();
     const box = await strip.boundingBox();
     const x = Math.round(box!.x + box!.width * .25);

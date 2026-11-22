@@ -169,9 +169,9 @@
 .company-pages .publication-story .cp-lede { font-size:var(--cp-reading); line-height:1.5; margin-block:1rem; }
 .publication-player { position:relative; display:grid; place-items:center; aspect-ratio:16/9; isolation:isolate; background:#151515; }
 .publication-player img { object-fit:contain; }
-.company-pages .publication-player .film-trigger { position:relative; display:inline-flex; align-items:center; gap:.65rem; color:#fff; background:#111; padding:.65rem 1rem; min-height:44px; border:1px solid #d4d4d4; }
-.company-pages .publication-player .film-trigger:hover { background:#292929; }
-.company-pages .publication-player .play-ring { border:0; width:auto; height:auto; }
+.publication-player .film-trigger { position:relative; display:inline-flex; align-items:center; gap:.65rem; color:#fff; background:#111; padding:.65rem 1rem; min-height:44px; border:1px solid #d4d4d4; }
+.publication-player .film-trigger:hover { background:#292929; }
+.publication-player .play-ring { border:0; width:auto; height:auto; }
 .company-pages .publication-story .cp-story-links { border:0; padding:0; }
 .company-pages .publication-story .cp-story-links > .text-link { margin-block-start:.65rem; }
 

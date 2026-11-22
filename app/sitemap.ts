@@ -6,9 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     locales.map((l) => ({
       url: origin + href(l, p),
       alternates: {
-        languages: Object.fromEntries(
-          locales.map((a) => [a, origin + href(a, p)]),
-        ),
+        languages: { ...Object.fromEntries(locales.map((a) => [a, origin + href(a, p)])), "x-default": origin + href("ru", p) },
       },
     })),
   );

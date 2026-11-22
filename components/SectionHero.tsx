@@ -1,3 +1,4 @@
+import { EditorialPlayer, HistoryIndex, PartnerIndex, PracticeIndex } from "./ChapterFeatures";
 import { Icon } from "./Icons";
 import { Photo } from "./Media";
 import { Action } from "./Shared";
@@ -8,18 +9,31 @@ import portfolio from "@/content/technical-ui.json";
 import { certificates, company, description, href, news, projects, services, txt, vacancies, type Key, type Lang } from "@/lib/content";
 import "./chapters.css";
 import "./project-motion.css";
+import "./chapter-refinements.css";
+
+// These archived views identify the Bangladesh branch's site, not the people in a vacancy.
+const hiringPlates: Record<string, string | undefined> = {
+  "building-foreman": "/images/archive-rooppur-workshop.webp",
+  "head-of-section": "/images/hero.webp",
+  "head-engineer-ptd": "/images/archive-rooppur-workshop.webp",
+  "instrumentation-engineer": "/images/rooppur-towers-panorama.webp",
+  "interpreter-assistant": "/images/hero-dusk.webp",
+  "primary-documentation-accountant": "/images/hero.webp",
+  "cleaning-services-manager": "/images/rooppur-towers-panorama.webp",
+};
 
 export function sectionCover(path: string) {
   const [section, slug] = path.split("/");
   const fallback = covers[section as keyof typeof covers];
   if (!slug) return fallback;
+  if (section === "careers") return hiringPlates[slug];
   if (section === "projects") {
     const project = projects.find((p) => p.slug === slug);
     return project?.coverImage || project?.image || fallback;
   }
   if (section === "services") return services.find((s) => s.slug === slug)?.image || fallback;
   if (section === "news") return news.find((n) => n.slug === slug)?.image || fallback;
-  if (section === "team") return company.people.find((p) => p.slug === slug)?.photo;
+  if (section === "team") return company.people.find((p) => p.slug === slug)?.photo || "/images/archive-rooppur-workshop.webp";
   return fallback;
 }
 
@@ -36,7 +50,7 @@ function Plate({ image, lang, full, projectSlug }: { image: string; lang: Lang; 
 const indexLayout: Record<string, string> = {
   projects: "portfolio", services: "practice", about: "company", history: "chronicle",
   team: "crew", leadership: "leadership", geography: "atlas", partners: "partners",
-  certificates: "documents", careers: "careers", news: "press", contacts: "contact", privacy: "notice",
+  media: "media", certificates: "documents", careers: "careers", news: "press", contacts: "contact", privacy: "notice",
 };
 const detailLayout: Record<string, string> = {
   projects: "case", services: "discipline", news: "story", team: "person", careers: "job",
@@ -49,15 +63,15 @@ function dateLabel(lang: Lang, value: string) {
 export function SectionHero({ lang, path, title }: { lang: Lang; path: string; title: string }) {
   const [section, slug] = path.split("/");
   const layout = (slug ? detailLayout : indexLayout)[section] || "notice";
-  const immersive = layout === "portfolio" || layout === "crew";
-  const image = immersive || ["company","careers","practice","case","discipline","person"].includes(layout) ? sectionCover(path) : undefined;
+  const immersive = ["portfolio", "crew", "company", "media"].includes(layout);
+  const image = immersive || ["careers","case","discipline","person","job"].includes(layout) ? sectionCover(path) : undefined;
   const project = layout === "case" ? projects.find((p) => p.slug === slug) : undefined;
   const job = layout === "job" ? vacancies.find((v) => v.slug === slug) : undefined;
   const story = layout === "story" ? news.find((n) => n.slug === slug) : undefined;
   const lead = layout === "press" ? news[0] : undefined;
-  const email = layout === "contact" ? company.offices.find((o) => o.email)?.email : undefined;
+  const office = layout === "contact" ? company.offices.find((o) => o.email) : undefined;
   const summary = job || story ? undefined : description(lang,path);
-  return <header className={"chapter chapter--" + layout} data-section={section}>
+  return <header className={"chapter chapter--" + layout} data-section={section} data-record={slug}>
     {immersive && image && <Plate image={image} lang={lang} full />}
     <div className="shell chapter-shell">
       <nav className="chapter-crumbs" aria-label={txt(lang,"breadcrumb")}>
@@ -74,27 +88,31 @@ export function SectionHero({ lang, path, title }: { lang: Lang; path: string; t
             index % 2 ? <span className="case-name-word" key={index}>{part}</span> : part
           ) : title}</span></h1>
           {summary && <p className="chapter-deck">{summary}</p>}
+          {layout === "company" && <div className="chapter-actions"><Action to={href(lang,"history")}>{txt(lang,"history")}</Action></div>}
+          {job && <div className="chapter-actions"><Action to="#application" light>{copy.application[lang]}</Action></div>}
           {layout === "portfolio" && <div className="chapter-actions"><Action to="#catalogue" light>{portfolio.catalogue[lang]}</Action><Action to={href(lang,"geography")}>{txt(lang,"geography")}</Action></div>}
           {layout === "careers" && <div className="chapter-actions"><Action to="#vacancies" light>{txt(lang,"vacancies")}</Action></div>}
           {layout === "crew" && <div className="chapter-actions"><Action to={href(lang,"leadership")}>{txt(lang,"leadership")}</Action></div>}
         </div>
         {!immersive && image && <Plate image={image} lang={lang} full={false} projectSlug={project?.slug}/>}
-        {layout === "chronicle" && <nav className="chapter-years" aria-label={txt(lang,"history")}>
-          {company.history.map((event,i) => <a key={event.source} href={"#event-"+(i+1)}>{event.title[lang].split(" · ")[0]}<Icon name="down" size={16}/></a>)}
-        </nav>}
+        {layout === "chronicle" && <HistoryIndex lang={lang}/>}
+        {layout === "practice" && <PracticeIndex lang={lang}/>}
+        {story && <EditorialPlayer article={story} lang={lang}/>}
         {layout === "documents" && <nav className="chapter-scans" aria-label={copy.docRegister[lang]}>
           {certificates.map((doc) => <a href={"#"+doc.slug} key={doc.slug}>
             {doc.preview && <span className="scan-paper"><Photo src={doc.preview} alt="" sizes="(max-width:760px) 25vw, 13vw"/></span>}
             <bdi>{doc.title}</bdi>
           </a>)}
         </nav>}
-        {layout === "partners" && <nav className="chapter-partner-types" aria-label={copy.partnerList[lang]}>
-          {(["customer","supplier","partner"] as const).filter((key)=>company.partnerDirectory.some((o)=>o.group===key)).map((key)=><a href={"#partners-"+key} key={key}>{copy[key][lang]}<Icon name="down" size={16}/></a>)}
-        </nav>}
-        {email && <a className="chapter-mail" href={"mailto:"+email}><span>{copy.generalMail[lang]}</span><bdi>{email}</bdi><Icon name="diagonal"/></a>}
+        {layout === "partners" && <PartnerIndex lang={lang}/>}
+        {office && <address className="chapter-address">
+          <span>{office.label[lang]}</span>
+          {office.email && <a href={"mailto:" + office.email}><bdi>{office.email}</bdi><Icon name="diagonal" size={20}/></a>}
+          {office.phone && <a href={"tel:" + office.phone.replace(/[^+0-9]/g,"")}><bdi dir="ltr">{office.phone}</bdi><Icon name="diagonal" size={20}/></a>}
+        </address>}
         {lead && <a className="chapter-issue" href={href(lang,"news/"+lead.slug)}>
           <span className="chapter-issue-photo"><Photo src={lead.image} alt="" priority sizes="(max-width:760px) 100vw, 52vw"/></span>
-          <span className="chapter-issue-legend"><small>{lead.date} · {lead.category?.[lang] || txt(lang,"media")}</small><strong>{lead.title[lang]}</strong></span><Icon name="arrow"/>
+          <span className="chapter-issue-legend"><small><time dateTime={lead.date}>{dateLabel(lang,lead.date)}</time> · {lead.category?.[lang] || txt(lang,"media")}</small><strong>{lead.title[lang]}</strong></span><Icon name="arrow"/>
         </a>}
       </div>
     </div>

@@ -1,6 +1,6 @@
 import { OfficialArchives } from "./OfficialArchives";
 import { services, projects, company, news, href, txt, type Lang, type Project, type Service } from "@/lib/content";
-import { caption, feature, features, disciplines } from "@/lib/features";
+import { caption, feature, disciplines } from "@/lib/features";
 import words from "@/content/technical-ui.json";
 import { Photo, MediaButton } from "./Media";
 import { GeographyMap, ProjectFilters } from "./Atlas";
@@ -10,16 +10,24 @@ import { ProjectGallery } from "./ProjectGallery";
 import "./project-pages.css";
 import "./project-editorial.css";
 
+function projectImage(project: Project) {
+  return project.coverImage || project.image;
+}
+
+function portfolio(lang: Lang) {
+  return projects.map(p => feature(lang, { ...p, image: projectImage(p) }));
+}
+
 function ProjectLinks({ lang, list }: { lang: Lang; list: Project[] }) {
   return <div className="related-records">
     {list.map(p => <a key={p.slug} href={href(lang, "projects/" + p.slug)}>
       <div className="related-thumbnail">
-        <Photo src={p.image} alt={caption(lang, p.image)} sizes="(max-width:600px) 22vw, 130px"/>
+        <Photo src={projectImage(p)} alt="" sizes="(max-width:600px) 22vw, 130px"/>
       </div>
       <div>
         <small>{p.country[lang]}</small>
         <strong>{p.title[lang]}</strong>
-        {caption(lang, p.image) && <small>{caption(lang, p.image)}</small>}
+        {caption(lang, projectImage(p)) && <small>{caption(lang, projectImage(p))}</small>}
       </div>
       <Icon name="diagonal" size={21}/>
     </a>)}
@@ -37,9 +45,9 @@ function CountryRegister({ lang }: { lang: Lang }) {
       {countries.map(country => <article key={country.region}>
         <figure>
           <div className="register-image">
-            <Photo src={country.image} alt="" sizes="(max-width:760px) 32vw, 20vw"/>
+            <Photo src={projectImage(country)} alt="" sizes="(max-width:760px) 32vw, 20vw"/>
           </div>
-          <figcaption>{caption(lang, country.image)}</figcaption>
+          <figcaption>{caption(lang, projectImage(country))}</figcaption>
         </figure>
         <div className="region-name">
           <h3>{country.country[lang]}</h3>
@@ -79,7 +87,8 @@ function ServiceOverview({ lang }: { lang: Lang }) {
 
 function ServiceDetail({ lang, service }: { lang: Lang; service: Service }) {
   const related = projects.filter(p => p.services.includes(service.slug));
-  const supportingImage = service.slug === "engineering" ? "/images/archive-roof.webp" : undefined;
+  const report = service.slug === "engineering" ? news.find(item => item.slug === "rooppur-training-building") : undefined;
+  const supportingImage = service.slug === "engineering" ? report?.image || "/images/archive-roof.webp" : undefined;
   return <>
     <section className="shell ed-section expertise-record">
       <div className="expertise-scope">
@@ -89,8 +98,13 @@ function ServiceDetail({ lang, service }: { lang: Lang; service: Service }) {
       </div>
       <div className="expertise-method">
         {supportingImage && <figure>
-          <div className="expertise-method-image"><Photo src={supportingImage} alt="" sizes="(max-width:760px) 92vw, 47vw"/></div>
-          <figcaption>{caption(lang, supportingImage)}</figcaption>
+          <div className={report?.video ? "publication-player" : "expertise-method-image"}>
+            <Photo src={supportingImage} alt="" sizes="(max-width:760px) 92vw, 47vw"/>
+            {report?.video && <MediaButton url={report.video} title={report.title[lang]}
+              playLabel={txt(lang, "watch")} closeLabel={txt(lang, "close")}
+              externalLabel={txt(lang, "externalVideo")} poster={supportingImage}/>}
+          </div>
+          <figcaption>{report ? <a href={href(lang, "news/" + report.slug)}>{report.title[lang]}</a> : caption(lang, supportingImage)}</figcaption>
         </figure>}
         <div>
           <h2>{words.serviceApproach[lang]}</h2>
@@ -205,14 +219,14 @@ export function ProjectPages({ lang, path }: { lang: Lang; path: string }) {
   if (path === "geography") return <>
     <section className="technical-band atlas-room">
       <div className="shell">
-        <GeographyMap items={features(lang)} lang={lang} label={t("geoText")} more={t("more")}/>
+        <GeographyMap items={portfolio(lang)} lang={lang} label={t("geoText")} more={t("more")}/>
       </div>
     </section>
     <CountryRegister lang={lang}/>
   </>;
   if (path === "services") return <ServiceOverview lang={lang}/>;
   if (path === "projects") return <section id="catalogue" className="shell portfolio-catalog" aria-label={words.catalogue[lang]}>
-    <ProjectFilters items={projects.map(p => feature(lang, p.coverImage ? { ...p, image: p.coverImage } : p))} areas={disciplines(lang)} labels={{
+    <ProjectFilters items={portfolio(lang)} areas={disciplines(lang)} labels={{
       country: t("country"), area: t("area"), allCountries: t("allCountries"), allAreas: t("allAreas"),
       noResults: t("noResults"), found: t("found"), reset: t("reset"),
     }}/>

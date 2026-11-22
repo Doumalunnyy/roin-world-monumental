@@ -161,8 +161,8 @@ export function ProjectGallery({ frames, title, openLabel, prev, next, close, rt
   const size = count === 1 ? "(max-width:760px) 92vw, (max-width:1540px) 89vw, 1380px"
     : "(max-width:760px) 74vw, (max-width:1540px) 68vw, 1050px";
   const controls = <>
-    <button type="button" aria-label={prev} onClick={() => void step(-1)}><Icon name={rtl ? "right" : "left"} /></button>
-    <button type="button" aria-label={next} onClick={() => void step(1)}><Icon name={rtl ? "left" : "right"} /></button>
+    <button type="button" aria-label={prev} onClick={() => void step(-1)}><Icon name="left" /></button>
+    <button type="button" aria-label={next} onClick={() => void step(1)}><Icon name="right" /></button>
   </>;
   const counter = <bdi dir="ltr" className="cg-count">{String(active + 1).padStart(2, "0")} / {String(count).padStart(2, "0")}</bdi>;
 

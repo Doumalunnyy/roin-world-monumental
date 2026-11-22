@@ -122,7 +122,10 @@
     "experienceTitle",
     "partnersLink",
     "documentLibrary",
-    "corporateArchive"
+    "corporateArchive",
+    "mediaArchiveIntro",
+    "aboutIntro",
+    "privacyEmailText"
   ],
   "companyInterfaceKeys": [
     "principles",
@@ -223,7 +226,11 @@
     "/images/crew-reinforcement.webp",
     "/images/film-official-poster.webp",
     "/images/training-foundations-poster.webp",
-    "/images/fire-drill-poster.webp"
+    "/images/fire-drill-poster.webp",
+    "/images/paks-construction.webp",
+    "/images/paks-night.webp",
+    "/images/el-dabaa-delivery.webp",
+    "/images/el-dabaa-lifting.webp"
   ],
   "landingKeys": [
     "expertise",

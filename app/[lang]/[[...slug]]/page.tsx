@@ -8,6 +8,7 @@ import { ProjectPages } from "@/components/ProjectPages";
 import { SectionHero, sectionCover } from "@/components/SectionHero";
 import { corporateNavigation } from "@/lib/navigation";
 import { publicUrl } from "@/lib/urls";
+import { caption } from "@/lib/features";
 import {
   txt,
   locales,
@@ -22,6 +23,7 @@ import {
 
 type Params = { lang: string; slug?: string[] };
 type Props = { params: Promise<Params> };
+const graphLocales = { ru: "ru_RU", en: "en_GB", ar: "ar_AE", es: "es_ES", hu: "hu_HU" };
 export function generateStaticParams() {
   return paths().map((path) => ({ slug: path ? path.split("/") : [] }));
 }
@@ -38,6 +40,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? title + " — ROIN WORLD"
     : "ROIN WORLD — " + txt(lang, "expertTag");
   const previewImage = new URL(publicUrl(cover), origin).href;
+  const previewAlt = caption(lang, cover) || "ROIN WORLD";
   return {
     title: { absolute: fullTitle },
     description: summary,
@@ -53,15 +56,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: summary,
       url,
       siteName: "ROIN WORLD",
-      locale: lang,
-      images: [{ url: previewImage }],
+      locale: graphLocales[lang],
+      alternateLocale: locales.filter(code => code !== lang).map(code => graphLocales[code]),
+      images: [{ url: previewImage, alt: previewAlt }],
       type: path.startsWith("news/") ? "article" : "website",
     },
     twitter: {
       card: "summary_large_image",
       title: fullTitle,
       description: summary,
-      images: [previewImage],
+      images: [{ url: previewImage, alt: previewAlt }],
     },
   };
 }

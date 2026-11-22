@@ -10,6 +10,7 @@
     "lint": "eslint app components lib tests",
     "test": "node --test tests/*.test.mjs",
     "e2e": "playwright test",
+    "audit:site": "node scripts/audit-site.mjs",
     "cms": "npx --yes decap-server@3.11.6",
     "predev": "node --env-file-if-exists=.env.local scripts/cms-config.mjs",
     "prebuild": "node --env-file-if-exists=.env.local scripts/cms-config.mjs",

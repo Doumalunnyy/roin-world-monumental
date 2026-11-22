@@ -450,7 +450,7 @@
   "projectsIntro": {
     "ru": "ROIN WORLD участвует в строительстве АЭС «Руппур» в Бангладеш, «Эль-Дабаа» в Египте и «Пакш II» в Венгрии. Выберите проект, чтобы подробнее узнать о работах нашей команды.",
     "en": "ROIN WORLD contributes to the construction of Rooppur in Bangladesh, El Dabaa in Egypt and Paks II in Hungary. Explore our work at each nuclear power plant.",
-    "ar": "تشارك ROIN WORLD في بناء محطات روبور النووية في بنغلاديش والضبعة في مصر وباكش الثانية في المجر. تعرّف على دور فرقنا في كل مشروع.",
+    "ar": "تشارك ROIN WORLD في بناء محطة روبور النووية في بنغلاديش، ومحطة الضبعة في مصر، ومحطة باكس ٢ في المجر. تعرّف على أعمال فرقنا في كل مشروع.",
     "es": "ROIN WORLD participa en la construcción de las centrales nucleares de Rooppur en Bangladés, El Dabaa en Egipto y Paks II en Hungría. Conoce el trabajo de nuestros equipos en cada proyecto.",
     "hu": "A ROIN WORLD a bangladesi Ruppur, az egyiptomi El-Dabaa és a magyarországi Paks II. atomerőmű építésében vesz részt. Bemutatjuk, milyen feladatokon dolgoznak csapataink az egyes helyszíneken."
   },
@@ -581,11 +581,11 @@
     "hu": "Itt olvashat arról, milyen adatokat kér a kapcsolatfelvételi űrlap, és mikor kapcsolódik a webhely külső szolgáltatásokhoz."
   },
   "privacyText": {
-    "ru": "Форма запрашивает имя, электронную почту и сообщение. Название компании можно указать по желанию. При отправке через сайт эти сведения поступают на сервер для ответа на обращение. В режиме подготовки письма форма создаёт черновик на вашем устройстве. Отправляете его вы из своей почтовой программы. Внешний видеоплеер загружается после нажатия кнопки просмотра.",
-    "en": "The form asks for your name, email address and message. Your company name is optional. If you submit an enquiry through the site, the server stores these details so the team can reply. In email mode, the form prepares a draft on your device. You send it from your email app. External video players load when you choose to play a video.",
-    "ar": "يطلب النموذج اسمك وبريدك الإلكتروني ونص رسالتك. ويمكنك إضافة اسم شركتك. عند الإرسال عبر الموقع، تُحفظ هذه البيانات على الخادم ليتمكن الفريق من الرد. وفي وضع البريد الإلكتروني، يُعدّ النموذج مسودة على جهازك ترسلها بنفسك من تطبيق البريد. ولا يُحمّل مشغّل الفيديو الخارجي إلا عند طلب المشاهدة.",
-    "es": "El formulario solicita tu nombre, tu correo electrónico y un mensaje. El nombre de la empresa es opcional. Si envías la consulta desde el sitio, el servidor guarda esos datos para que el equipo pueda responder. En el modo de correo electrónico, el formulario prepara en tu dispositivo un borrador que envías desde tu aplicación de correo. El reproductor externo se carga cuando eliges ver un vídeo.",
-    "hu": "Az űrlap a nevét, az e-mail-címét és az üzenetét kéri. A cégnevet tetszés szerint megadhatja. Ha a webhelyen küldi el az üzenetet, a szerver a válaszadáshoz tárolja az adatokat. Levelezőprogram használatakor az űrlap az eszközén készíti elő a levéltervezetet, amelyet Ön küld el. A külső videólejátszó a lejátszás indításakor töltődik be."
+    "ru": "При отправке формы ROIN WORLD получает ваше имя, адрес электронной почты и сообщение. Название компании можно указать по желанию. Сервер сохраняет обращение, язык формы, отметку о согласии и время получения, чтобы сотрудники могли ответить. Внешний видеоплеер подключается при запуске видео.",
+    "en": "When you submit the form, ROIN WORLD receives your name, email address and message. Your company name is optional. The server stores the enquiry along with the form language, your consent and the time received so the team can reply. An external video player loads when you choose to play a video.",
+    "ar": "عند إرسال النموذج، تتلقى ROIN WORLD اسمك وبريدك الإلكتروني ورسالتك. ويمكنك إضافة اسم شركتك. يحفظ الخادم الرسالة ولغة النموذج وموافقتك ووقت الاستلام ليتمكن الفريق من الرد. ويُحمَّل مشغّل الفيديو الخارجي عند اختيار تشغيل المقطع.",
+    "es": "Cuando envías el formulario, ROIN WORLD recibe tu nombre, tu dirección de correo y tu mensaje. El nombre de tu empresa es opcional. Para que el equipo pueda responder, el servidor registra la consulta, el idioma del formulario, tu consentimiento y la hora de recepción. El reproductor externo se carga cuando eliges ver un vídeo.",
+    "hu": "Az űrlap elküldésével a ROIN WORLD megkapja a nevét, e-mail-címét és üzenetét. A cégnév megadása választható. A szerver a megkereséssel együtt rögzíti az űrlap nyelvét, a hozzájárulást és a beérkezés időpontját, hogy munkatársaink válaszolhassanak. A külső videólejátszó a lejátszás indításakor töltődik be."
   },
   "privacyPending": {
     "ru": "Полная политика обработки персональных данных ожидает утверждения. Вопросы о хранении данных и о ранее отправленном обращении можно направить в офис ROIN WORLD.",
@@ -712,5 +712,19 @@
     "ar": "صور من مواقع البناء، وفيلم تعريفي بشركة ROIN WORLD، ومقاطع فيديو من مشغّلي المحطات النووية.",
     "es": "Fotografías de las obras, la película corporativa de ROIN WORLD y vídeos de los operadores de centrales nucleares.",
     "hu": "Fotók az építkezésekről, a ROIN WORLD vállalati filmje és az atomerőművek üzemeltetőinek videói."
+  },
+  "aboutIntro": {
+    "ru": "ROIN WORLD выполняет строительные работы на энергетических объектах, организует перевозки и поставляет оборудование. В числе международных проектов компании — АЭС «Руппур» в Бангладеш и «Эль-Дабаа» в Египте.",
+    "en": "ROIN WORLD builds energy infrastructure, arranges transport and supplies equipment. Its international work includes the Rooppur nuclear power plant in Bangladesh and El Dabaa in Egypt.",
+    "ar": "تنفّذ ROIN WORLD أعمالاً إنشائية في قطاع الطاقة، وتنظّم النقل وتورّد المعدات. وتشمل مشاريعها الدولية محطة روبور النووية في بنغلاديش ومحطة الضبعة في مصر.",
+    "es": "ROIN WORLD construye infraestructuras energéticas, organiza el transporte y suministra equipos. Entre sus proyectos internacionales figuran las centrales nucleares de Rooppur, en Bangladés, y El Dabaa, en Egipto.",
+    "hu": "A ROIN WORLD energetikai létesítmények kivitelezésével, szállításszervezéssel és berendezések beszerzésével foglalkozik. Nemzetközi munkái közé tartozik a bangladesi ruppuri és az egyiptomi El-Dabaa atomerőmű építése."
+  },
+  "privacyEmailText": {
+    "ru": "Форма готовит на вашем устройстве черновик с именем, адресом электронной почты и сообщением. Название компании можно указать по желанию. Вы сами открываете черновик в почтовой программе и отправляете его в ROIN WORLD. Внешний видеоплеер подключается при запуске видео.",
+    "en": "The form prepares an email draft on your device with your name, email address and message. You can also include your company name. You choose when to open the draft in your email app and send it to ROIN WORLD. An external video player loads when you choose to play a video.",
+    "ar": "يُعِدّ النموذج على جهازك مسودة رسالة تتضمّن اسمك وبريدك الإلكتروني ونص رسالتك. ويمكنك إضافة اسم شركتك. تفتح المسودة في تطبيق البريد وترسلها إلى ROIN WORLD حين تختار ذلك. ويُحمَّل مشغّل الفيديو الخارجي عند اختيار تشغيل المقطع.",
+    "es": "El formulario prepara en tu dispositivo un borrador con tu nombre, tu correo electrónico y tu mensaje. También puedes incluir el nombre de tu empresa. Tú decides cuándo abrir el borrador en tu aplicación de correo y enviarlo a ROIN WORLD. El reproductor externo se carga cuando eliges ver un vídeo.",
+    "hu": "Az űrlap az Ön eszközén készít levéltervezetet a nevével, e-mail-címével és üzenetével. A cégnevét is megadhatja. A tervezetet saját levelezőprogramjában nyithatja meg, és onnan küldheti el a ROIN WORLD-nak. A külső videólejátszó a lejátszás indításakor töltődik be."
   }
 }

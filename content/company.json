@@ -2,20 +2,20 @@
   "history": [
     {
       "title": {
-        "ru": "2011 · Основание ROIN WORLD",
-        "en": "2011 · Founding of ROIN WORLD",
-        "ar": "٢٠١١ · تأسيس ROIN WORLD",
-        "es": "2011 · Fundación de ROIN WORLD",
-        "hu": "2011 · Megalakul a ROIN WORLD"
+        "ru": "2012–2014 · Работы на Нововоронежской АЭС",
+        "en": "2012–2014 · Work at Novovoronezh nuclear power plant",
+        "ar": "٢٠١٢–٢٠١٤ · أعمال في محطة نوفوفورونيج النووية",
+        "es": "2012–2014 · Obras en la central nuclear de Novovorónezh",
+        "hu": "2012–2014 · Munkák a Novovoronyezsi Atomerőműben"
       },
       "body": {
-        "ru": "Роин Бараташвили основал компанию, которая объединила специалистов по строительству АЭС, недвижимости, логистике и поставкам материалов и оборудования.",
-        "en": "Roin Baratashvili founded ROIN WORLD, bringing together specialists in nuclear power plant construction, real estate, logistics and the supply of materials and equipment.",
-        "ar": "أسّس روين باراتاشفيلي شركة ROIN WORLD وجمع فيها متخصصين في بناء المحطات النووية والعقارات والخدمات اللوجستية وتوريد المواد والمعدات.",
-        "es": "Roin Baratashvili fundó ROIN WORLD y reunió a especialistas en construcción de centrales nucleares, sector inmobiliario, logística y suministro de materiales y equipos.",
-        "hu": "Roin Baratashvili megalapította a ROIN WORLD vállalatot, amely az atomerőmű-építés, az ingatlanszakma, a logisztika, valamint az anyag- és eszközellátás szakembereit fogta össze."
+        "ru": "ROIN WORLD участвовала в строительстве новых энергоблоков Нововоронежской АЭС. Компания монтировала системы отопления и вентиляции, выполняла электромонтажные и отделочные работы.",
+        "en": "ROIN WORLD worked on the new units at Novovoronezh nuclear power plant. Its teams installed heating and ventilation systems and carried out electrical and finishing work.",
+        "ar": "شاركت ROIN WORLD في إنشاء وحدات جديدة بمحطة نوفوفورونيج النووية. وركّبت فرقها أنظمة التدفئة والتهوية، ونفّذت أعمال التمديدات الكهربائية والتشطيبات.",
+        "es": "ROIN WORLD participó en la construcción de los nuevos grupos generadores de la central nuclear de Novovorónezh. Sus equipos instalaron sistemas de calefacción y ventilación y ejecutaron trabajos de electricidad y acabados.",
+        "hu": "A ROIN WORLD részt vett a Novovoronyezsi Atomerőmű új blokkjainak építésében. A csapatok fűtési és szellőzőrendszereket szereltek, valamint villanyszerelési és befejező építési munkákat végeztek."
       },
-      "source": "https://roinworld.ae/o-kompanii/"
+      "source": "https://roinworld.ae/projects/"
     },
     {
       "title": {
@@ -180,14 +180,14 @@
       "label": {
         "ru": "Пакш · Венгрия",
         "en": "Paks · Hungary",
-        "ar": "باكش · المجر",
+        "ar": "باكس · المجر",
         "es": "Paks · Hungría",
         "hu": "Paks · Magyarország"
       },
       "address": {
         "ru": "Венгрия, 7030 Пакш, Ipari Park 4710/60. Корреспонденцию направляйте по электронной почте.",
         "en": "Ipari Park 4710/60, HU-7030 Paks, Hungary. Please send correspondence by email.",
-        "ar": "Ipari Park 4710/60، باكش HU-7030، المجر. يرجى إرسال المراسلات عبر البريد الإلكتروني.",
+        "ar": "Ipari Park 4710/60، باكس HU-7030، المجر. يرجى إرسال المراسلات عبر البريد الإلكتروني.",
         "es": "Ipari Park 4710/60, HU-7030 Paks, Hungría. Envía la correspondencia por correo electrónico.",
         "hu": "Magyarország, 7030 Paks, Ipari Park 4710/60. Kérjük, leveleit e-mailben küldje."
       },

@@ -1,0 +1,12 @@
+.missing-page { min-height:100svh; background:#181818; color:#f6f6f4; display:grid; align-items:center; }
+.missing-sheet { width:min(76rem,90%); margin:auto; padding:clamp(2rem,6vh,5rem) 0; }
+.missing-layout { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); align-items:center; gap:clamp(2rem,7vw,6rem); border-block:1px solid #656565; padding-block:clamp(2.4rem,12vh,9rem); margin-block:2rem 1.2rem; }
+.missing-number { direction:ltr; font-size:clamp(6rem,18vw,17rem); letter-spacing:-.075em; font-weight:600; line-height:.92; color:#ccc; }
+.missing-layout h1 { font-size:clamp(2rem,3.8vw,4rem); line-height:1.1; margin:0; }
+.missing-layout p { margin:1rem 0 1.5rem; max-width:44ch; color:#d0d0ce; }
+.missing-home,.missing-languages a { display:inline-flex; align-items:center; gap:.7rem; min-height:44px; }
+.missing-home { border-block-end:1px solid currentColor; }
+.missing-languages { display:flex; flex-wrap:wrap; gap:.3rem 1.3rem; }
+.missing-page a:focus-visible { outline:2px solid currentColor; outline-offset:3px; }
+.missing-page [dir="rtl"] .missing-home svg { transform:scaleX(-1); }
+@media (max-width:680px) { .missing-layout { grid-template-columns:1fr; gap:1.6rem; } }

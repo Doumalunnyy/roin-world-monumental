@@ -1,4 +1,5 @@
 import { expect, test, type Page } from "@playwright/test";
+import records from "../content/projects.json";
 
 declare global {
   interface Window {
@@ -71,14 +72,18 @@ test("newest manual choice wins after decoding, including a return to the curren
 
 test("a failed manual photo preserves the project link and retries on selection", async ({ page }) => {
   let fail = true;
-  await page.route(url => decodeURIComponent(url.href).includes("project-hu.webp"), async route => {
-    if (fail) return route.abort("failed");
+  let interrupted = 0;
+  const project = records.items.find(item => item.slug === "paks-ii")!;
+  const photograph = (project.featuredImage || project.coverImage || project.image).split("/").at(-1)!;
+  await page.route(url => decodeURIComponent(url.href).includes(photograph), async route => {
+    if (fail) { interrupted++; return route.abort("failed"); }
     return route.continue();
   });
   await openAtlas(page);
   await pin(page, "hungary").click();
   await expectCountry(page, "hungary");
   await expect(page.locator(".ae-frame[data-active='true'] .media-missing")).toBeVisible();
+  expect(interrupted).toBeGreaterThan(0);
   await expect(page.locator(".geo-selection a")).toHaveAttribute("href", /projects\/paks-ii\/?$/);
   fail = false;
   await pin(page, "hungary").click();

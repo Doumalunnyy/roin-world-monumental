@@ -1,0 +1,176 @@
+/* The public homepage does not mount any of these editorial openings. */
+.interior {
+  --chapter-display:clamp(3rem,5.35vw,6.25rem);
+  --chapter-title:clamp(2.4rem,3.85vw,4.6rem);
+}
+.chapter-crumbs { max-width:100%; }
+.chapter-crumbs svg { flex:none; }
+.chapter h1 { text-wrap:pretty; }
+.chapter p.chapter-deck { text-wrap:pretty; }
+.chapter--portfolio h1 { font-size:clamp(3.8rem,6.8vw,7.15rem); }
+.chapter--portfolio .chapter-actions { align-items:stretch; }
+.chapter--portfolio .chapter-actions .text-link { align-self:center; }
+.chapter--case .chapter-place, .chapter--job .chapter-place, .chapter--story .chapter-place { font-weight:580; }
+.chapter--atlas .chapter-crumbs + .chapter-stage { padding-block-start:clamp(1.2rem,2.5vw,2.8rem); }
+.chapter--atlas .chapter-shell { padding-block-end:clamp(1.45rem,2.25vw,2.55rem); }
+
+:is(.chapter--company,.chapter--media,.chapter--practice,.chapter--discipline,.chapter--job,.chapter--story,.chapter--leadership) {
+  --chapter-surface:#181818;
+  --chapter-text:#fafafa;
+  --chapter-secondary:#e3e3e3;
+  --chapter-line:#626262;
+}
+:is(.chapter--company,.chapter--media) { overflow:hidden; }
+:is(.chapter--company,.chapter--media) > .chapter-plate {
+  position:absolute; inset:0; z-index:-1;
+}
+:is(.chapter--company,.chapter--media) > .chapter-plate .chapter-frame {
+  position:absolute; inset:0; height:100%; aspect-ratio:auto;
+}
+:is(.chapter--company,.chapter--media) > .chapter-plate .chapter-frame::after {
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(90deg,#080808e0 0%,#080808a6 31%,#08080818 73%),linear-gradient(0deg,#08080893 0%,transparent 25%);
+}
+[dir=rtl] :is(.chapter--company,.chapter--media) > .chapter-plate .chapter-frame::after { transform:scaleX(-1); }
+:is(.chapter--company,.chapter--media) .chapter-shell {
+  display:flex; flex-direction:column; justify-content:space-between;
+  min-height:clamp(25rem,52svh,35rem); padding-block-end:clamp(3.7rem,4.8vw,5rem);
+}
+:is(.chapter--company,.chapter--media) .chapter-stage { display:block; }
+:is(.chapter--company,.chapter--media) .chapter-type { max-width:42rem; padding:0; }
+:is(.chapter--company,.chapter--media) .chapter-deck { max-width:36ch; }
+:is(.chapter--company,.chapter--media) > .chapter-plate figcaption {
+  position:absolute; inset-inline-end:max(var(--gutter),calc((100% - 1680px)/2 + var(--gutter))); bottom:1rem;
+  max-width:min(52%,56ch); text-align:end; font-size:var(--chapter-note); color:#fafafa;
+  background:#141414d9; padding:.28rem .48rem;
+}
+.chapter--company .chapter-frame img { object-position:55% 53%; }
+@media(min-width:1367px) {
+  .chapter--company > .chapter-plate { inset-inline-start:calc(100% - 1366px); }
+  .chapter--company > .chapter-plate .chapter-frame::after {
+    background:linear-gradient(90deg,#181818 0%,#181818b8 27%,#18181814 73%),linear-gradient(0deg,#08080885,transparent 25%);
+  }
+}
+.chapter--media > .chapter-plate { inset-inline-start:33%; }
+.chapter--media > .chapter-plate .chapter-frame::after {
+  background:linear-gradient(90deg,#181818 0%,#18181870 14%,transparent 45%),linear-gradient(0deg,#0b0b0b66,transparent 25%);
+}
+.chapter--media .chapter-type { max-width:min(34%,38rem); }
+.chapter--media .chapter-frame img { object-position:54% 50%; }
+
+.chapter--practice .chapter-stage { align-items:start; }
+.chapter-services { border-block-start:1px solid #aaa; min-width:0; }
+.chapter-services a { display:flex; align-items:center; justify-content:space-between; gap:1rem; min-height:56px;
+  padding-block:.78rem; border-block-end:1px solid #535353; color:inherit; font-size:clamp(1.07rem,1.65vw,1.7rem); line-height:1.23; }
+.chapter-services svg { flex:none; }
+.chapter-services a:hover span,.chapter-address a:hover bdi { text-decoration:underline; text-underline-offset:.2em; }
+.chapter--discipline .chapter-stage { align-items:end; }
+.chapter--discipline .chapter-type { padding-block:1.4rem 2rem; }
+.chapter--discipline .chapter-frame { height:auto; aspect-ratio:1.69; }
+.chapter--discipline[data-record="supply"] .chapter-frame img { object-position:54% 52%; }
+.chapter--discipline[data-record="catering"] .chapter-frame img { object-position:45% 50%; }
+
+.chapter--chronicle .chapter-stage { grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr); align-items:start; }
+.chapter-years { display:block; }
+.chapter-years a { display:grid; grid-template-columns:minmax(5.7rem,.36fr) minmax(0,1fr) auto; gap:clamp(.6rem,1.3vw,1.5rem); align-items:baseline; min-height:3.2rem; }
+.chapter-years bdi { font-size:clamp(1.05rem,1.8vw,1.95rem); white-space:nowrap; letter-spacing:-.045em; }
+.chapter-years span { font-size:clamp(.93rem,1.12vw,1.19rem); line-height:1.38; color:#e6e6e6; letter-spacing:normal; }
+.chapter-years a:last-child { border-block-end:1px solid var(--chapter-line); }
+.chapter-years a:hover { text-decoration:none; }
+.chapter-years a:hover span { text-decoration:underline; text-underline-offset:.2em; }
+
+.chapter--partners .chapter-stage,.chapter--job .chapter-stage,.chapter--story .chapter-stage {
+  display:grid; grid-template-columns:minmax(0,.91fr) minmax(0,1.09fr); align-items:center; gap:var(--chapter-gap);
+}
+.chapter--partners .chapter-stage { align-items:end; }
+.chapter--partners .chapter-partner-types {
+  display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); margin:0; gap:0;
+  border-block:1px solid #a8a8a8; padding:0; color:#171717;
+}
+.chapter-partner-types a {
+  display:grid; grid-template-columns:minmax(0,1fr) auto; gap:.8rem .25rem; align-items:center;
+  min-width:0; padding:1rem clamp(.45rem,1vw,1.2rem); border-inline-start:1px solid #ccc;
+}
+.chapter-partner-types a:first-child { border-inline-start:0; }
+.chapter-partner-types a:hover { background:#fff; }
+.chapter-partner-mark { grid-column:1/-1; display:block; position:relative; height:clamp(2.1rem,4.2vw,4.2rem); }
+.chapter-partner-mark img { object-fit:contain; mix-blend-mode:multiply; }
+.chapter--documents .chapter-scans { background:#222; color:white; padding:clamp(14px,2.1vw,34px); }
+.chapter-scans .scan-paper { background:#e9e9e9; padding:.35rem; }
+.chapter-scans bdi { line-height:1.4; }
+.chapter--documents h1,.chapter--partners h1,.chapter--practice h1 { font-size:var(--chapter-display); }
+
+.chapter--job .chapter-stage { grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr); }
+.chapter--job .chapter-shell,.chapter--story .chapter-shell { border:0; }
+.chapter--job .chapter-frame { aspect-ratio:2.1; }
+.chapter--job .chapter-actions { margin-block-start:1.1rem; }
+.chapter--job h1 { max-width:20ch; }
+.chapter--story .chapter-stage { align-items:end; }
+.chapter--story .chapter-type { padding-block-end:clamp(1rem,2vw,2rem); }
+.chapter--story h1 { max-width:21ch; }
+.editorial-screen { position:relative; display:grid; place-items:center; isolation:isolate; aspect-ratio:16/9; background:#111; }
+.editorial-screen img { object-fit:contain; }
+.editorial-screen .film-trigger {
+  position:absolute; inset-inline-start:1.15rem; bottom:1.05rem; display:inline-flex; align-items:center; gap:.65rem; min-height:44px;
+  padding:.65rem 1rem; background:#fff; color:#141414; font-weight:600; line-height:1.2;
+}
+.editorial-screen .film-trigger .play-ring { width:1.05rem; height:1.05rem; border:0; margin:0; }
+.editorial-player figcaption { padding-block-start:.55rem; color:#e3e3e3; font-size:var(--chapter-note); line-height:1.4; }
+
+.chapter--person .chapter-frame { aspect-ratio:1.87; }
+.chapter--person:has(.chapter-plate) .chapter-stage { grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr); align-items:center; }
+.chapter--leadership .chapter-type { align-items:start; }
+.chapter-address { margin:0; border-block:1px solid #737373; font-style:normal; padding-block:.8rem; }
+.chapter-address > span { display:block; font-size:.88rem; font-weight:550; color:#d3d3d3; }
+.chapter-address a { display:flex; justify-content:space-between; align-items:center; gap:.75rem; min-height:44px; }
+.chapter-address a:first-of-type { font-size:clamp(1.35rem,2.35vw,2.5rem); letter-spacing:-.035em; }
+.chapter-address a bdi { overflow-wrap:anywhere; }
+.chapter-address a svg { flex:none; }
+.chapter--notice .chapter-stage { padding-block-start:clamp(1.35rem,3vw,3.25rem); }
+.chapter--notice .chapter-type { display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr); gap:var(--chapter-gap); align-items:baseline; }
+.chapter--notice p.chapter-deck { margin:0; }
+.interior .company-pages[data-chapter-body="media"] .media-archive { padding-block-start:0; }
+.interior .company-pages #application { scroll-margin-block-start:7.2rem; }
+.interior .company-pages .publication-story { align-items:baseline; grid-template-columns:minmax(0,1.28fr) minmax(0,.72fr); }
+.interior .company-pages .publication-story .cp-body { border:0; padding:0; }
+.interior .company-pages .publication-story .cp-lede { max-width:54ch; margin-block-start:0; }
+.interior .company-pages .archive-date { container-type:inline-size; }
+.interior .company-pages .archive-date bdi { font-size:clamp(1.1rem,17cqw,3.8rem); line-height:1.15; white-space:nowrap; }
+.interior .company-pages .bio-year { font-size:clamp(2.15rem,4vw,4.5rem); }
+[dir=rtl] .interior :is(.chapter h1,.chapter-years bdi,.company-pages h2,.company-pages h3,.project-pages h2,.project-pages h3) { letter-spacing:normal; line-height:1.25; }
+
+@media(max-width:760px) {
+  .chapter--portfolio h1 { font-size:clamp(2.9rem,12vw,4.35rem); }
+  .chapter--company .chapter-shell,.chapter--media .chapter-shell { min-height:clamp(21rem,47svh,30rem); padding-block-end:3.6rem; }
+  .chapter--company > .chapter-plate { inset-block-start:60px; }
+  :is(.chapter--company,.chapter--media) > .chapter-plate figcaption { inset-inline:var(--gutter) auto; bottom:.55rem; max-width:calc(100% - var(--gutter)*2); text-align:start; font-size:.72rem; }
+  .chapter--company > .chapter-plate .chapter-frame::after { background:linear-gradient(0deg,#0a0a0ae8 0%,#0a0a0ab8 48%,#0a0a0a26 86%,#0a0a0ab3 100%); }
+  .chapter--media > .chapter-plate { inset-inline-start:0; }
+  .chapter--media > .chapter-plate .chapter-frame::after { background:linear-gradient(0deg,#0b0b0be8 0%,#0b0b0b9c 39%,transparent 77%,#0b0b0b8c 100%); }
+  .chapter--media .chapter-type { max-width:100%; }
+  .chapter--chronicle .chapter-stage,.chapter--partners .chapter-stage,.chapter--job .chapter-stage,.chapter--story .chapter-stage,.chapter--notice .chapter-type { display:block; }
+  .chapter--notice p.chapter-deck { margin-block-start:.85rem; }
+  .chapter--practice .chapter-services,.chapter--partners .chapter-partner-types,.chapter--contact .chapter-address,.chapter--story .editorial-player { margin-block-start:1.25rem; }
+  .chapter-services a { min-height:44px; padding-block:.59rem; }
+  .chapter--discipline .chapter-type,.chapter--story .chapter-type { padding:0; }
+  .chapter--job .chapter-frame { aspect-ratio:2.35; }
+  .chapter-years a { grid-template-columns:minmax(5.2rem,.36fr) minmax(0,1fr) auto; min-height:2.85rem; }
+  .chapter-partner-types a { padding:.55rem .42rem; font-size:.76rem; line-height:1.25; }
+  .chapter-partner-types svg { width:12px; }
+  .chapter--partners .chapter-partner-types { grid-template-columns:repeat(3,minmax(0,1fr)); }
+  .chapter--partners .chapter-type h1,.chapter--practice .chapter-type h1,.chapter--documents .chapter-type h1 { font-size:clamp(2.45rem,9.8vw,4rem); }
+  .chapter--person:has(.chapter-plate) .chapter-stage { display:block; }
+  .chapter--person .chapter-frame { aspect-ratio:2; }
+  .editorial-screen .film-trigger { inset-inline-start:.7rem; bottom:.7rem; }
+  .interior .company-pages .publication-story { grid-template-columns:minmax(0,1fr); }
+  .interior .company-pages .bio-year { font-size:2.25rem; }
+  .interior .company-pages .archive-timeline li { grid-template-columns:minmax(0,1fr); gap:.8rem; }
+  .interior .company-pages .archive-timeline li > :is(.archive-date,.archive-entry,.cp-figure) { grid-column:1; }
+  .interior .company-pages .archive-date bdi { font-size:clamp(2rem,6.6vw,3rem); }
+}
+@media (min-width:761px) and (max-width:1050px) {
+  .chapter--partners .chapter-stage { grid-template-columns:minmax(0,.82fr) minmax(0,1fr); }
+  .chapter-partner-types svg { display:none; }
+  .chapter--person .chapter-stage,.chapter--job .chapter-stage,.chapter--story .chapter-stage { gap:1.5rem; }
+  .chapter--chronicle .chapter-stage { grid-template-columns:minmax(0,.71fr) minmax(0,1fr); }
+}

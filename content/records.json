@@ -36,8 +36,8 @@
       "slug": "head-of-section",
       "title": {
         "ru": "Начальник участка",
-        "en": "Head of Section",
-        "ar": "رئيس قسم",
+        "en": "Construction Section Manager",
+        "ar": "رئيس قسم الإنشاءات",
         "es": "Jefe de sección de obra",
         "hu": "Építési részlegvezető"
       },
@@ -57,8 +57,8 @@
       },
       "body": {
         "ru": "ROIN WORLD опубликовала вакансию начальника строительного участка в филиале в Бангладеш.",
-        "en": "ROIN WORLD advertised this construction section head role for its Bangladesh branch.",
-        "ar": "أعلنت ROIN WORLD عن وظيفة رئيس قسم للإنشاءات في فرعها ببنغلاديش.",
+        "en": "ROIN WORLD lists a position managing a construction section at its Bangladesh branch.",
+        "ar": "نشرت ROIN WORLD إعلاناً لرئاسة قسم الإنشاءات في فرعها ببنغلاديش.",
         "es": "ROIN WORLD ha publicado una vacante de jefe de sección de obra en su delegación de Bangladés.",
         "hu": "A ROIN WORLD építési részlegvezetői állást hirdetett a bangladesi kirendeltségén."
       },
@@ -68,10 +68,10 @@
       "slug": "building-foreman",
       "title": {
         "ru": "Прораб",
-        "en": "Building Foreman",
+        "en": "Construction Foreman",
         "ar": "مراقب أعمال البناء",
         "es": "Encargado de obra",
-        "hu": "Építésvezető"
+        "hu": "Építési művezető"
       },
       "department": {
         "ru": "Строительство",
@@ -89,10 +89,10 @@
       },
       "body": {
         "ru": "В перечне вакансий ROIN WORLD для Бангладеш есть должность производителя строительных работ.",
-        "en": "The company lists a building foreman position at its Bangladesh branch.",
+        "en": "ROIN WORLD lists a construction foreman position at its Bangladesh branch.",
         "ar": "تتضمن إعلانات التوظيف في فرع ROIN WORLD ببنغلاديش وظيفة مراقب لأعمال البناء.",
         "es": "La delegación de ROIN WORLD en Bangladés ha publicado una oferta para el puesto de encargado de obra.",
-        "hu": "A ROIN WORLD a bangladesi kirendeltségére építésvezetői állást hirdetett."
+        "hu": "A ROIN WORLD építési művezetőt keresett bangladesi kirendeltségére."
       },
       "source": "https://roinworld.ae/team/"
     },
@@ -100,7 +100,7 @@
       "slug": "head-engineer-ptd",
       "title": {
         "ru": "Главный инженер производственно-технического отдела",
-        "en": "Head Engineer in the Production and Technical Department",
+        "en": "Chief Engineer, Production and Technical Department",
         "ar": "كبير مهندسي قسم الإنتاج والشؤون الفنية",
         "es": "Ingeniero jefe del departamento técnico y de producción",
         "hu": "A termelési és műszaki osztály vezető mérnöke"
@@ -132,7 +132,7 @@
       "slug": "primary-documentation-accountant",
       "title": {
         "ru": "Бухгалтер по первичной документации",
-        "en": "Accountant for Source Documents",
+        "en": "Accountant, Source Documentation",
         "ar": "محاسب للمستندات المحاسبية الأولية",
         "es": "Contable de documentación justificativa",
         "hu": "Számviteli bizonylatok könyvelője"
@@ -153,7 +153,7 @@
       },
       "body": {
         "ru": "ROIN WORLD опубликовала вакансию бухгалтера для работы с первичными документами в филиале в Бангладеш.",
-        "en": "ROIN WORLD has advertised an accounting role at its Bangladesh branch for work with source documents.",
+        "en": "The accounting team at ROIN WORLD’s Bangladesh branch has advertised a role handling the documents that support its accounting entries.",
         "ar": "أعلنت ROIN WORLD عن وظيفة محاسب للتعامل مع المستندات المحاسبية الأولية في فرعها ببنغلاديش.",
         "es": "ROIN WORLD ha publicado una vacante de contabilidad para trabajar con documentos justificativos en su delegación de Bangladés.",
         "hu": "A ROIN WORLD a bangladesi kirendeltségére számviteli bizonylatokkal foglalkozó könyvelői állást hirdetett."
@@ -163,8 +163,8 @@
     {
       "slug": "instrumentation-engineer",
       "title": {
-        "ru": "Инженер-электрик по контрольно-измерительным приборам",
-        "en": "Electrical Engineer for Control and Test Instruments",
+        "ru": "Инженер-электрик по контрольно-измерительным и испытательным приборам",
+        "en": "Electrical Engineer, Control and Test Instrumentation",
         "ar": "مهندس كهرباء لأجهزة القياس والتحكم والاختبار",
         "es": "Ingeniero eléctrico de instrumentación de control y ensayo",
         "hu": "Villamosmérnök ellenőrző- és vizsgálóműszerek területére"
@@ -184,7 +184,7 @@
         "hu": "Bangladesi kirendeltség"
       },
       "body": {
-        "ru": "ROIN WORLD опубликовала эту инженерную вакансию для филиала в Бангладеш. Работа связана с контрольно-измерительными приборами.",
+        "ru": "Должность в филиале ROIN WORLD в Бангладеш связана с электротехническими работами в области измерений, контроля и испытаний.",
         "en": "ROIN WORLD advertised this electrical engineering role for work with control and test instruments at its Bangladesh branch.",
         "ar": "أعلنت ROIN WORLD عن وظيفة في الهندسة الكهربائية بفرعها في بنغلاديش، في مجال أجهزة القياس والتحكم والاختبار.",
         "es": "ROIN WORLD ha publicado un puesto de ingeniería eléctrica especializado en instrumentos de control y ensayo en su delegación de Bangladés.",

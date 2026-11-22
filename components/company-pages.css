@@ -489,8 +489,7 @@
   justify-content: space-between;
   margin: 0;
 }
-.company-pages .cp-sites,
-.company-pages .cp-docs-grid {
+.company-pages .cp-sites {
   display: grid;
   align-items: start;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -734,13 +733,9 @@
   .company-pages .cp-split {
     grid-template-columns: minmax(0, 1fr);
   }
-  .company-pages .cp-docs-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }
 @media (max-width: 580px) {
-  .company-pages .cp-sites,
-  .company-pages .cp-docs-grid {
+  .company-pages .cp-sites {
     grid-template-columns: minmax(0, 1fr);
   }
   .company-pages .cp-vacancies article {
@@ -748,9 +743,6 @@
   }
   .company-pages .cp-contacts aside {
     grid-row: auto;
-  }
-  .company-pages .cp-docs-grid {
-    row-gap: 2.6rem;
   }
   .company-pages .cp-filter-toolbar label {
     min-width: 0;

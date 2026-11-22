@@ -1,4 +1,5 @@
 import { Icon, Wordmark } from "./Icons";
+import { LocaleChoices } from "./LocaleChoices";
 import { publicUrl } from "@/lib/urls";
 import {
   txt,
@@ -6,6 +7,7 @@ import {
   primary,
   secondary,
   locales,
+  languageInfo,
   company,
   type Lang,
 } from "@/lib/content";
@@ -64,16 +66,7 @@ export function Footer({ lang, path }: { lang: Lang; path: string }) {
             {txt(lang, "photoCredits")}
           </a>
           <div dir="ltr">
-            {locales.map((l) => (
-              <a
-                key={l}
-                href={href(l, path)}
-                lang={l}
-                aria-current={l === lang ? "true" : undefined}
-              >
-                {l.toUpperCase()}
-              </a>
-            ))}
+            <LocaleChoices compact languages={locales.map(code => ({code, name:languageInfo[code].name}))} lang={lang} path={path}/>
           </div>
         </div>
       </div>

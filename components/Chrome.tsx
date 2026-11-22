@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Icon, Wordmark } from "./Icons";
+import { LocaleChoices } from "./LocaleChoices";
 import type { Lang, Key } from "@/lib/content";
 import type { NavigationItem } from "@/lib/navigation";
 import { localeUrl } from "@/lib/urls";
@@ -128,8 +129,7 @@ export function SiteHeader({ lang, path, main, languages, labels }: Props) {
             <summary aria-label={labels.language + " · " + lang.toUpperCase()}><Icon name="globe" size={16}/>
               <span className="nav-lang-code">{lang.toUpperCase()}</span><span className="nav-lang-label">{labels.language}</span><Icon name="chevron" size={12}/>
             </summary>
-            <div className="locale-list">{languages.map(l => <a key={l.code} href={localeUrl(l.code,path)} lang={l.code}
-              hrefLang={l.code} aria-current={l.code === lang ? "true" : undefined}>{l.name}</a>)}</div>
+            <div className="locale-list"><LocaleChoices languages={languages} lang={lang} path={path}/></div>
           </details>
         </div>
         <noscript><a href="#footer">{labels.menu}</a></noscript>

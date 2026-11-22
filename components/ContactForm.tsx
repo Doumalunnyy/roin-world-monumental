@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useId, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState, useSyncExternalStore } from "react";
 import type { FormEvent } from "react";
 import { contactCopy } from "@/lib/contact-copy";
 import { localeUrl, publicUrl } from "@/lib/urls";
@@ -17,7 +17,12 @@ type Feedback =
   | "unavailable"
   | "closed";
 
+const subscribeReady = () => () => {};
+const clientReady = () => true;
+const serverReady = () => false;
+
 export function ContactForm({ lang, enabled }: Props) {
+  const ready = useSyncExternalStore(subscribeReady, clientReady, serverReady);
   const t = contactCopy[lang];
   const officeEmail = company.offices.find((office) => office.email)?.email;
   const contactLink = officeEmail ? (
@@ -141,7 +146,7 @@ export function ContactForm({ lang, enabled }: Props) {
           {t.js} {contactLink}
         </p>
       </noscript>
-      <fieldset disabled={busy}>
+      <fieldset disabled={busy || !ready}>
         <div className="contact-form__row">
           <label>
             {t.name}

@@ -20,7 +20,7 @@ import { caption } from "@/lib/features";
 import { MediaArchive } from "./MediaArchive";
 import { ContactForm } from "./ContactForm";
 import { Icon } from "./Icons";
-import { MediaButton, Photo } from "./Media";
+import { Photo } from "./Media";
 import { Action } from "./Shared";
 import { CorporateDirectory, OfficeMap } from "./CorporateDirectory";
 import "./company-pages.css";
@@ -98,7 +98,7 @@ function Sites({ lang }: LanguageProps) {
           <a key={project.slug} href={href(lang, "projects/" + project.slug)}>
             <span className="cp-site-image">
               <Photo
-                src={project.image}
+                src={project.coverImage || project.image}
                 alt=""
                 sizes="(max-width: 670px) 92vw, 31vw"
               />
@@ -659,7 +659,7 @@ function Careers({ lang, slug }: LanguageProps & { slug?: string }) {
               </Action>
             </div>
           </section>
-          <section className="cp-application cp-copy">
+          <section className="cp-application cp-copy" id="application">
             <h2>{copy.application[lang]}</h2>
             <p>{copy.applicationText[lang]}</p>
             <div className="vacancy-facts">
@@ -700,7 +700,9 @@ function Careers({ lang, slug }: LanguageProps & { slug?: string }) {
             entries={vacancies.map((vacancy) => ({
               id: vacancy.slug,
               category: vacancy.department?.[lang] || "",
+              categoryKey: vacancy.department?.en || "",
               location: vacancy.location[lang],
+              locationKey: vacancy.location.en,
               card: (
                 <article>
                   <div>
@@ -821,6 +823,7 @@ function News({ lang, slug }: LanguageProps & { slug?: string }) {
           entries={news.map((article) => ({
             id: article.slug,
             category: article.category?.[lang] || copy.lastCategory[lang],
+            categoryKey: article.category?.en || copy.lastCategory.en,
             card: <NewsCard lang={lang} article={article} />,
           }))}
         />
@@ -836,35 +839,11 @@ function News({ lang, slug }: LanguageProps & { slug?: string }) {
           <p className="cp-lede">{article.body[lang]}</p>
           <Source lang={lang} url={article.source} />
         </div>
-        <aside className="cp-story-links">
-          {article.video && (
-            <figure className="publication-media">
-              <div className="publication-player">
-                <Photo
-                  src={article.image}
-                  alt={caption(lang, article.image) || article.title[lang]}
-                  sizes="(max-width:760px) 90vw, 56vw"
-                />
-                <MediaButton
-                  url={article.video}
-                  title={article.title[lang]}
-                  playLabel={txt(lang, "watch")}
-                  closeLabel={txt(lang, "close")}
-                  externalLabel={txt(lang, "externalVideo")}
-                  poster={article.image}
-                />
-              </div>
-              <figcaption>
-                {caption(lang, article.image) || article.title[lang]}
-              </figcaption>
-            </figure>
-          )}
-          {project && (
-            <Action to={href(lang, "projects/" + project.slug)}>
-              {project.title[lang]} · {project.country[lang]}
-            </Action>
-          )}
-        </aside>
+        {project && <aside className="cp-story-links">
+          <Action to={href(lang, "projects/" + project.slug)}>
+            {project.title[lang]} · {project.country[lang]}
+          </Action>
+        </aside>}
       </article>
       {news.length > 1 && (
         <section className="cp-related-news">
@@ -925,6 +904,7 @@ function Contacts({ lang }: LanguageProps) {
                 </address>
                 <OfficeMap
                   url={office.mapEmbed}
+                  lang={lang}
                   name={copy.mapArea[lang] + " · " + office.label[lang]}
                   show={copy.loadMap[lang]}
                   hide={copy.hideMap[lang]}
@@ -952,7 +932,7 @@ function Privacy({ lang }: LanguageProps) {
       <div className="cp-policy">
         <section id="requests">
           <h2>{copy.requests[lang]}</h2>
-          <p>{txt(lang, "privacyText")}</p>
+          <p>{txt(lang, contactEnabled() ? "privacyText" : "privacyEmailText")}</p>
           <p>{copy.mapPrivacy[lang]}</p>
         </section>
         <section id="policy-status">
