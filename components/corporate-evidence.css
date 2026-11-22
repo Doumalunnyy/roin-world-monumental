@@ -68,6 +68,7 @@ section:is(.partners-band, .certificate-band) {
 }
 .partner-mark {
   display: grid;
+  background-color: var(--carbon);
   align-content: center;
   justify-items: center;
   gap: 1rem;
