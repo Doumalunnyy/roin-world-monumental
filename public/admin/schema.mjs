@@ -77,7 +77,7 @@ export function collections({ languages, interfaceKeys, companyInterfaceKeys, ca
           input('external', 'Открывать видеотеку издателя', 'boolean', { required: false, default: false }),
           image('poster', 'Обложка', false)
         ], heading),
-        list('stages', 'Этапы проекта', [title, body], heading),
+        list('stages', 'Работы на площадке', [title, body, uri('source', 'Публикация о работах', false)], heading),
         list('stories', 'Люди проекта', [input('person', 'Идентификатор сотрудника', 'string', {
           hint: 'Возьмите идентификатор из раздела «Компания и люди».'
         })], '{{fields.person}}')

@@ -43,11 +43,36 @@ async function openAtlas(page: Page) {
   await expect(page.locator(".ae-thumbnail img").first()).toBeAttached();
 }
 
+test("each country pin opens its matching station and filtered catalogue in RTL", async ({ page }) => {
+  await page.setViewportSize({ width: 360, height: 800 });
+  await page.goto("ar/geography/", { waitUntil: "domcontentloaded" });
+  await page.locator(".atlas-engineering").scrollIntoViewIfNeeded();
+  await expect(page.locator(".ae-thumbnail img").first()).toBeAttached();
+  await expectCountry(page, "egypt");
+  for (const project of records.items) {
+    await pin(page, project.region).click();
+    await expectCountry(page, project.region);
+    await expect(page.locator('.ae-register button[aria-pressed="true"]')).toHaveAttribute("data-region", project.region);
+    await expect(page.locator(".geo-selection a")).toHaveAttribute("href", new RegExp("/ar/projects/" + project.slug + "/?$"));
+    await expect(page.locator('.ae-territory[data-active="true"]')).toHaveAttribute("data-region", project.region);
+  }
+});
+
 test("only the active archive photo is mounted before the home atlas is visible", async ({ page }) => {
   await page.goto("ru/", { waitUntil: "domcontentloaded" });
   await expectCountry(page, "egypt");
   await expect(page.locator(".ae-frame img")).toHaveCount(1);
   await expect(page.locator(".ae-thumbnail img")).toHaveCount(0);
+});
+
+test("the northern map label clears the Hungarian introduction at tablet width", async ({ page }) => {
+  await page.setViewportSize({ width: 1024, height: 768 });
+  await page.goto("hu/", { waitUntil: "domcontentloaded" });
+  await page.locator(".atlas-engineering").scrollIntoViewIfNeeded();
+  await page.evaluate(() => document.fonts.ready);
+  const intro = await page.locator(".ae-heading > p").boundingBox();
+  const label = await pin(page, "russia").locator("span").boundingBox();
+  expect(label!.y).toBeGreaterThan(intro!.y + intro!.height);
 });
 
 test("newest manual choice wins after decoding, including a return to the current country", async ({ page }) => {
@@ -91,9 +116,9 @@ test("a failed manual photo preserves the project link and retries on selection"
     .evaluateAll(elements => elements.some(image => (image as HTMLImageElement).naturalWidth > 0))).toBe(true);
 });
 
-test("autorotation waits for the next decoded frame, and a pause cancels a pending switch", async ({ page }) => {
+test("autorotation waits for the decoded frame and a changed motion preference cancels a pending switch", async ({ page }) => {
   await page.emulateMedia({ reducedMotion: "no-preference" });
-  await holdDecode(page, ["hungary", "bangladesh"]);
+  await holdDecode(page, ["hungary", "turkey"]);
   await openAtlas(page);
   await page.mouse.move(1, 1);
   await expect.poll(() => page.evaluate(() => window.atlasDecode.waiting), { timeout: 15_000 }).toContain("hungary");
@@ -101,11 +126,23 @@ test("autorotation waits for the next decoded frame, and a pause cancels a pendi
   await expectCountry(page, "egypt");
   await page.evaluate(() => window.atlasDecode.release.hungary());
   await expectCountry(page, "hungary");
-  await expect.poll(() => page.evaluate(() => window.atlasDecode.waiting), { timeout: 15_000 }).toContain("bangladesh");
+  await expect.poll(() => page.evaluate(() => window.atlasDecode.waiting), { timeout: 15_000 }).toContain("turkey");
   await page.waitForTimeout(7100);
-  const pause = page.locator(".ae-pause");
-  await pause.focus();
-  await pause.press("Enter");
-  await page.evaluate(() => window.atlasDecode.release.bangladesh());
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.evaluate(() => window.atlasDecode.release.turkey());
   await expectCountry(page, "hungary");
+});
+
+test("a slow manual selection takes priority and starts its own rotation cycle", async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: "no-preference" });
+  await holdDecode(page, ["bangladesh"]);
+  await openAtlas(page);
+  await pin(page, "bangladesh").click();
+  await expect.poll(() => page.evaluate(() => window.atlasDecode.waiting)).toContain("bangladesh");
+  await page.waitForTimeout(7100);
+  await expectCountry(page, "egypt");
+  await page.evaluate(() => window.atlasDecode.release.bangladesh());
+  await expectCountry(page, "bangladesh");
+  await expect(page.locator(".ae-pin[aria-pressed=true]")).toHaveAttribute("data-region", "egypt", { timeout: 15_000 });
+  await expectCountry(page, "egypt");
 });

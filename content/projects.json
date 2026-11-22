@@ -90,7 +90,76 @@
           "poster": "/images/training-foundations-poster.webp"
         }
       ],
-      "stages": [],
+      "stages": [
+        {
+          "title": {
+            "ru": "Подготовка площадки",
+            "en": "Site preparation",
+            "ar": "تهيئة الموقع",
+            "es": "Preparación del terreno",
+            "hu": "Terepelőkészítés"
+          },
+          "body": {
+            "ru": "На четырёх участках команда намыла более 2,34 млн м³ песка. Собственная лаборатория ROIN WORLD вместе со строительным надзором проверяла планировку и уплотнение грунта.",
+            "en": "The team placed more than 2.34 million m³ of sand across four sites by hydraulic filling. ROIN WORLD’s laboratory worked with site supervisors to check grading and compaction.",
+            "ar": "ردم الفريق أربع مناطق بأكثر من ٢٫٣٤ مليون متر مكعب من الرمال باستخدام الضخ المائي. وتحقق مختبر الشركة بالتعاون مع مشرفي الموقع من تسوية التربة ودمكها.",
+            "es": "El equipo aportó más de 2,34 millones de m³ de arena mediante relleno hidráulico en cuatro zonas. El laboratorio de ROIN WORLD comprobó la nivelación y compactación del terreno junto con la supervisión de obra.",
+            "hu": "A csapat négy területet töltött fel hidraulikus eljárással, több mint 2,34 millió m³ homokkal. A terepszinteket és a tömörítést a ROIN WORLD laboratóriuma az építésfelügyelettel együtt ellenőrizte."
+          },
+          "source": "https://roinworld.com/roinworld-has-washed-more-than-2340-000-m3-of-sand-at-4-vertical-planning-sites-as-part-of-the-construction-of-the-rooppur-npp/"
+        },
+        {
+          "title": {
+            "ru": "Монтажная база",
+            "en": "Construction support base",
+            "ar": "قاعدة دعم البناء",
+            "es": "Base de apoyo a la construcción",
+            "hu": "Építési kiszolgálóbázis"
+          },
+          "body": {
+            "ru": "На базе СМБ-2 компания монтировала стальные каркасы, стеновые и кровельные панели. К августу 2019 года работы были завершены на 32 из 37 объектов.",
+            "en": "At the SMB-2 construction base the team installed steel frames, wall panels and roofing panels. By August 2019, work was complete at 32 of the 37 facilities.",
+            "ar": "ركّب الفريق هياكل فولاذية وألواح الجدران والأسقف في قاعدة الإنشاءات SMB-2. وبحلول أغسطس ٢٠١٩، اكتملت الأعمال في ٣٢ منشأة من أصل ٣٧.",
+            "es": "En la base de construcción SMB-2 el equipo montó estructuras de acero y paneles de fachada y cubierta. En agosto de 2019 había terminado los trabajos en 32 de las 37 instalaciones.",
+            "hu": "Az SMB-2 építési bázison a csapat acélvázakat, fal- és tetőpaneleket szerelt. A 37 létesítményből 32-nél 2019 augusztusára befejezte a munkát."
+          },
+          "source": "https://roinworld.com/metal-structures-37-sites-rooppur-npp/"
+        },
+        {
+          "title": {
+            "ru": "Цех предварительной сборки",
+            "en": "Pre-assembly workshop",
+            "ar": "ورشة التجميع المسبق",
+            "es": "Taller de premontaje",
+            "hu": "Előszerelő csarnok"
+          },
+          "body": {
+            "ru": "На участке 4.1 команда завершила работы в производственном корпусе площадью 4 300 м². Цех оснащён пятью мостовыми кранами.",
+            "en": "The team finished work on the 4,300 m² production building at site 4.1. The workshop is equipped with five overhead cranes.",
+            "ar": "أكمل الفريق أعماله في مبنى الإنتاج بالموقع ٤٫١، وتبلغ مساحة المبنى ٤٣٠٠ متر مربع. وتضم الورشة خمس رافعات جسرية.",
+            "es": "El equipo terminó las obras de la nave de producción de 4300 m² en la zona 4.1. El taller está equipado con cinco puentes grúa.",
+            "hu": "A csapat a 4.1-es területen befejezte a munkálatokat a 4300 m²-es üzemi csarnokban. A műhelyt öt híddaruval szerelték fel."
+          },
+          "source": "https://roinworld.com/roinworld-completed-work-on-site-4-1-rooppur-npp/"
+        },
+        {
+          "title": {
+            "ru": "Учебно-производственный корпус",
+            "en": "Training building",
+            "ar": "مبنى التدريب",
+            "es": "Edificio de formación",
+            "hu": "Oktatóépület"
+          },
+          "body": {
+            "ru": "На объекте 6.1.1 специалисты забетонировали железобетонную плиту и фундаменты для тренажёров. На эти работы ушло более 400 м³ бетона.",
+            "en": "At facility 6.1.1 the team cast the reinforced concrete slab and foundations for the training simulators, using more than 400 m³ of concrete.",
+            "ar": "صبّ الفريق في المنشأة ٦٫١٫١ بلاطة خرسانية مسلحة وأساسات لأجهزة المحاكاة المستخدمة في التدريب. واستُخدم في هذه الأعمال أكثر من ٤٠٠ متر مكعب من الخرسانة.",
+            "es": "En la instalación 6.1.1 el equipo ejecutó la losa de hormigón armado y las cimentaciones para los simuladores de formación. Para estos trabajos empleó más de 400 m³ de hormigón.",
+            "hu": "A 6.1.1-es létesítményben a csapat elkészítette a vasbeton lemezt és az oktatószimulátorok alapozását. A munkához több mint 400 m³ betont használtak fel."
+          },
+          "source": "https://roinworld.com/work-at-facility-6-1-1-of-the-training-and-production-building-rooppur-npp-bangladesh/"
+        }
+      ],
       "stories": [],
       "context": {
         "ru": "«Руппур» — первая атомная электростанция Бангладеш. Проект предусматривает два энергоблока.",
@@ -281,6 +350,150 @@
       },
       "contextSource": "https://paks2.hu/web/paks-2-en/w/contracts-signed-on-implementation-of-new-reactor-units-at-the-paks-nuclear-power-plant",
       "coverImage": "/images/paks-construction.webp"
+    },
+    {
+      "slug": "akkuyu",
+      "region": "turkey",
+      "country": {
+        "ru": "Турция",
+        "en": "Türkiye",
+        "ar": "تركيا",
+        "es": "Turquía",
+        "hu": "Törökország"
+      },
+      "title": {
+        "ru": "АЭС «Аккую»",
+        "en": "Akkuyu NPP",
+        "ar": "محطة أكويو النووية",
+        "es": "Central nuclear de Akkuyu",
+        "hu": "Akkuyui Atomerőmű"
+      },
+      "summary": {
+        "ru": "«Аккую» в провинции Мерсин — первая атомная электростанция Турции. ROIN WORLD указывает её среди своих международных проектов.",
+        "en": "Akkuyu, in Mersin province, is Türkiye’s first nuclear power plant. ROIN WORLD lists it among its international projects.",
+        "ar": "أكويو في ولاية مرسين هي أول محطة للطاقة النووية في تركيا، وتدرجها شركة ROIN WORLD ضمن مشروعاتها الدولية.",
+        "es": "Akkuyu, en la provincia de Mersin, es la primera central nuclear de Turquía. ROIN WORLD la incluye entre sus proyectos internacionales.",
+        "hu": "A Mersin tartományban épülő Akkuyu Törökország első atomerőműve. A ROIN WORLD nemzetközi beruházásai között tartja számon."
+      },
+      "sector": {
+        "ru": "Атомная энергетика",
+        "en": "Nuclear energy",
+        "ar": "الطاقة النووية",
+        "es": "Energía nuclear",
+        "hu": "Atomenergia"
+      },
+      "services": [
+        "engineering"
+      ],
+      "image": "/images/akkuyu-construction.webp",
+      "role": {
+        "ru": "ROIN WORLD сообщает об участии в строительстве АЭС «Аккую».",
+        "en": "ROIN WORLD reports taking part in the construction of the Akkuyu nuclear power plant.",
+        "ar": "تفيد شركة ROIN WORLD بأنها شاركت في بناء محطة أكويو النووية.",
+        "es": "ROIN WORLD señala que ha participado en la construcción de la central nuclear de Akkuyu.",
+        "hu": "A ROIN WORLD tájékoztatása szerint részt vett az Akkuyui Atomerőmű építésében."
+      },
+      "source": "https://roinworld.ae/o-kompanii/",
+      "gallery": [
+        {
+          "image": "/images/akkuyu-construction.webp",
+          "caption": {
+            "ru": "Строительная площадка АЭС «Аккую» на средиземноморском побережье Турции, 2023 год",
+            "en": "The Akkuyu construction site on Türkiye’s Mediterranean coast, 2023",
+            "ar": "موقع بناء محطة أكويو على ساحل البحر المتوسط في تركيا عام ٢٠٢٣",
+            "es": "Obras de la central de Akkuyu en la costa mediterránea de Turquía, 2023",
+            "hu": "Az Akkuyui Atomerőmű építkezése Törökország földközi-tengeri partvidékén, 2023"
+          }
+        }
+      ],
+      "videos": [],
+      "stages": [],
+      "stories": [],
+      "context": {
+        "ru": "Площадка расположена у Средиземного моря, в районе Гюльнар. Проект предусматривает четыре энергоблока мощностью по 1 200 МВт.",
+        "en": "The site lies on the Mediterranean coast in the district of Gülnar. The project comprises four 1,200 MW units.",
+        "ar": "يقع الموقع على ساحل البحر المتوسط في منطقة غولنار. ويضم المشروع أربع وحدات بقدرة ١٢٠٠ ميغاواط لكل منها.",
+        "es": "El emplazamiento se encuentra en el distrito de Gülnar, junto al Mediterráneo. El proyecto comprende cuatro unidades de 1200 MW cada una.",
+        "hu": "Az erőmű a Gülnar járásban, a Földközi-tenger partján épül. A terv négy, egyenként 1200 MW teljesítményű blokkot foglal magában."
+      },
+      "contextSource": "https://www.ndk.gov.tr/en-US/licensing-of-akkuyu-nuclear-power-plant"
+    },
+    {
+      "slug": "novovoronezh-ii",
+      "region": "russia",
+      "country": {
+        "ru": "Россия",
+        "en": "Russia",
+        "ar": "روسيا",
+        "es": "Rusia",
+        "hu": "Oroszország"
+      },
+      "title": {
+        "ru": "Нововоронежская АЭС-2",
+        "en": "Novovoronezh II NPP",
+        "ar": "محطة نوفوفورونيج النووية الثانية",
+        "es": "Central nuclear de Novovorónezh II",
+        "hu": "Novovoronyezsi II. Atomerőmű"
+      },
+      "summary": {
+        "ru": "В 2012–2014 годах специалисты ROIN WORLD участвовали в строительстве новых энергоблоков Нововоронежской АЭС.",
+        "en": "From 2012 to 2014, ROIN WORLD specialists worked on the expansion of the Novovoronezh nuclear power plant.",
+        "ar": "شارك مختصو ROIN WORLD بين عامي ٢٠١٢ و٢٠١٤ في بناء وحدات جديدة بمحطة نوفوفورونيج النووية.",
+        "es": "Entre 2012 y 2014, especialistas de ROIN WORLD trabajaron en la ampliación de la central nuclear de Novovorónezh.",
+        "hu": "A ROIN WORLD szakemberei 2012 és 2014 között részt vettek a Novovoronyezsi Atomerőmű új blokkjainak építésében."
+      },
+      "sector": {
+        "ru": "Атомная энергетика",
+        "en": "Nuclear energy",
+        "ar": "الطاقة النووية",
+        "es": "Energía nuclear",
+        "hu": "Atomenergia"
+      },
+      "services": [
+        "engineering"
+      ],
+      "image": "/images/novovoronezh-ii-construction.webp",
+      "role": {
+        "ru": "Специалисты компании монтировали отопление, вентиляцию, кондиционирование и лифты, выполняли электромонтаж и отделку фасадов. В зданиях вспомогательной инфраструктуры они устанавливали системы пожаротушения.",
+        "en": "The team installed heating, ventilation, air conditioning and lifts, carried out electrical work and fitted ventilated façades. It also installed fire suppression systems in support buildings.",
+        "ar": "ركّب الفريق أنظمة التدفئة والتهوية والتكييف والمصاعد، ونفّذ أعمال الكهرباء والواجهات المهواة. كما ركّب أنظمة إطفاء الحريق في مباني الخدمات.",
+        "es": "El equipo instaló sistemas de calefacción, ventilación y aire acondicionado, además de ascensores. También ejecutó instalaciones eléctricas, montó fachadas ventiladas e instaló sistemas de extinción de incendios en edificios auxiliares.",
+        "hu": "A csapat fűtési, szellőzési és légkondicionáló rendszereket, felvonókat és átszellőztetett homlokzatokat szerelt. A villanyszerelés mellett a kiszolgálóépületek tűzoltó rendszerein is dolgozott."
+      },
+      "source": "https://roinworld.ae/projects/",
+      "gallery": [
+        {
+          "image": "/images/novovoronezh-ii-construction.webp",
+          "caption": {
+            "ru": "Градирни первого энергоблока Нововоронежской АЭС-2, октябрь 2014 года",
+            "en": "Cooling towers at Unit 1 of Novovoronezh II, October 2014",
+            "ar": "برجا التبريد للوحدة الأولى في محطة نوفوفورونيج الثانية، أكتوبر ٢٠١٤",
+            "es": "Torres de refrigeración de la primera unidad de Novovorónezh II en octubre de 2014",
+            "hu": "A Novovoronyezsi II. Atomerőmű első blokkjának hűtőtornyai 2014 októberében"
+          }
+        },
+        {
+          "image": "/images/novovoronezh-ii-2010.webp",
+          "caption": {
+            "ru": "Панорама стройплощадки Нововоронежской АЭС-2, октябрь 2010 года",
+            "en": "Overview of the Novovoronezh II construction site, October 2010",
+            "ar": "مشهد عام لموقع بناء محطة نوفوفورونيج الثانية في أكتوبر ٢٠١٠",
+            "es": "Vista general de las obras de Novovorónezh II en octubre de 2010",
+            "hu": "A Novovoronyezsi II. Atomerőmű építési területe 2010 októberében"
+          }
+        }
+      ],
+      "videos": [],
+      "stages": [],
+      "stories": [],
+      "context": {
+        "ru": "При расширении Нововоронежской АЭС построили два новых энергоблока. Второй из них ввели в промышленную эксплуатацию в 2019 году.",
+        "en": "The Novovoronezh expansion added two units. The second entered commercial operation in 2019.",
+        "ar": "أضاف مشروع توسعة محطة نوفوفورونيج وحدتين جديدتين. ودخلت الثانية مرحلة التشغيل التجاري عام ٢٠١٩.",
+        "es": "La ampliación de Novovorónezh incorporó dos unidades. La segunda entró en explotación comercial en 2019.",
+        "hu": "A novovoronyezsi bővítés során két új blokk épült. A második 2019-ben kezdte meg kereskedelmi üzemét."
+      },
+      "contextSource": "https://www.report.rosatom.ru/1628.html"
     }
   ]
 }

@@ -19,22 +19,21 @@ test("section titles reveal once on scroll, retain their words and respect a cha
   await expect(title).toHaveCSS("opacity", "1");
 });
 
-test("the compact geography control resumes rotation while it still holds keyboard focus", async ({ page }) => {
+test("geography continues from a keyboard selection under the pointer", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.emulateMedia({ reducedMotion: "no-preference" });
   await page.goto("ru/geography/", { waitUntil: "domcontentloaded" });
   const atlas = page.locator(".atlas-engineering");
-  const control = atlas.locator(".ae-pause");
-  await control.scrollIntoViewIfNeeded();
-  await control.focus();
-  await control.press("Enter");
-  await expect(control).toHaveAccessibleName("Продолжить показ стран");
+  const country = atlas.locator(".ae-register button").last();
+  await country.hover();
+  await expect(country.locator("img")).toBeAttached();
+  await country.focus();
+  await country.press("Enter");
   const pin = atlas.locator(".ae-pin[aria-pressed=true]");
-  const country = await pin.getAttribute("data-region");
-  await control.press("Enter");
-  await expect(control).toBeFocused();
-  await expect(pin).not.toHaveAttribute("data-region", country!, { timeout: 15000 });
-  await expect(atlas.locator(".ae-frame[data-active=true]")).toHaveAttribute("data-region", (await pin.getAttribute("data-region"))!);
-  await page.emulateMedia({ reducedMotion: "reduce" });
-  await expect(control).toHaveCount(0);
+  await expect(pin).toHaveAttribute("data-region", "russia");
+  await expect(pin).toHaveAttribute("data-region", "bangladesh", { timeout: 15_000 });
+  await expect(country).toBeFocused();
+  await expect(atlas.locator(".ae-frame[data-active=true]")).toHaveAttribute("data-region", "bangladesh");
+  await expect(atlas.locator(".ae-register button")).toHaveCount(5);
+  await expect(atlas.locator(".ae-pin")).toHaveCount(5);
 });

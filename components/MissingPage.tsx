@@ -4,7 +4,7 @@ import "./missing-page.css";
 
 export function MissingPage() {
   return <main className="missing-page">
-    <div className="missing-sheet">
+    <div className="missing-top"><div className="missing-sheet">
       <Wordmark />
       <div className="missing-layout">
         <span className="missing-number" aria-hidden="true">404</span>
@@ -14,10 +14,10 @@ export function MissingPage() {
           <a className="missing-home" href={href(lang)}>{txt(lang, "backHome")} <Icon name="arrow" size={19}/></a>
         </section>)}
       </div>
-      <div className="missing-languages">
+    </div></div>
+      <div className="missing-sheet missing-languages">
         {locales.map(lang => <a key={lang} href={href(lang)} lang={lang} hrefLang={lang} dir={languageInfo[lang].dir}>{languageInfo[lang].name}</a>)}
       </div>
-    </div>
     <style>{locales.map(lang => `html:not([lang="${lang}"]) [data-missing-language="${lang}"]{display:none}`).join("\n")}</style>
   </main>;
 }

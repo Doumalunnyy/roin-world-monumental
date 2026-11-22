@@ -111,7 +111,6 @@
 }
 @media (prefers-reduced-motion: reduce) {
   .cg-plate, .cg-plate .photo { transition: none; }
-  .cinematic-gallery .cg-controls .cg-cycle { display: none; }
 }
 
 @media (scripting: none) {

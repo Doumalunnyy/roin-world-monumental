@@ -194,5 +194,26 @@
     "ar": "رفع معدات في موقع الضبعة، لقطة من عام ٢٠٢٥",
     "es": "Izado de equipos en El Dabaa, fotograma de 2025",
     "hu": "Berendezés emelése az El-Dabaa építkezésén, 2025-ös filmkocka"
+  },
+  "/images/akkuyu-construction.webp": {
+    "ru": "Строительная площадка АЭС «Аккую» на средиземноморском побережье Турции, 2023 год",
+    "en": "The Akkuyu construction site on Türkiye’s Mediterranean coast, 2023",
+    "ar": "موقع بناء محطة أكويو على ساحل البحر المتوسط في تركيا عام ٢٠٢٣",
+    "es": "Obras de la central de Akkuyu en la costa mediterránea de Turquía, 2023",
+    "hu": "Az Akkuyui Atomerőmű építkezése Törökország földközi-tengeri partvidékén, 2023"
+  },
+  "/images/novovoronezh-ii-construction.webp": {
+    "ru": "Градирни первого энергоблока Нововоронежской АЭС-2, октябрь 2014 года",
+    "en": "Cooling towers at Unit 1 of Novovoronezh II, October 2014",
+    "ar": "برجا التبريد للوحدة الأولى في محطة نوفوفورونيج الثانية، أكتوبر ٢٠١٤",
+    "es": "Torres de refrigeración de la primera unidad de Novovorónezh II en octubre de 2014",
+    "hu": "A Novovoronyezsi II. Atomerőmű első blokkjának hűtőtornyai 2014 októberében"
+  },
+  "/images/novovoronezh-ii-2010.webp": {
+    "ru": "Панорама стройплощадки Нововоронежской АЭС-2, октябрь 2010 года",
+    "en": "Overview of the Novovoronezh II construction site, October 2010",
+    "ar": "مشهد عام لموقع بناء محطة نوفوفورونيج الثانية في أكتوبر ٢٠١٠",
+    "es": "Vista general de las obras de Novovorónezh II en octubre de 2010",
+    "hu": "A Novovoronyezsi II. Atomerőmű építési területe 2010 októberében"
   }
 }

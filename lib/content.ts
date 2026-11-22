@@ -52,7 +52,7 @@ export type Project = {
   contextSource?: string;
   gallery: { image: string; caption: Local }[];
   videos: { url: string; title: Local; poster?: string; external?: boolean }[];
-  stages: { title: Local; body: Local }[];
+  stages: { title: Local; body: Local; source?: string }[];
   stories: { person: string }[];
 };
 export const company = {

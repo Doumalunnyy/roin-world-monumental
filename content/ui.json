@@ -378,11 +378,11 @@
     "hu": "Találatok száma"
   },
   "geoText": {
-    "ru": "На карте представлены проекты ROIN WORLD в Бангладеш, Египте и Венгрии. Выберите страну, чтобы узнать о работе компании на площадке.",
-    "en": "The map features ROIN WORLD projects in Bangladesh, Egypt and Hungary. Select a country to see our work on site.",
-    "ar": "تُظهر الخريطة مشاريع ROIN WORLD في بنغلاديش ومصر والمجر. اختر دولة للتعرّف على أعمال الشركة في الموقع.",
-    "es": "El mapa muestra proyectos de ROIN WORLD en Bangladés, Egipto y Hungría. Selecciona un país para conocer nuestro trabajo en la obra.",
-    "hu": "A térkép a ROIN WORLD bangladesi, egyiptomi és magyarországi projektjeit mutatja be. Válasszon országot a helyszíni munkák megtekintéséhez."
+    "ru": "Выберите страну на карте, чтобы увидеть площадку АЭС и работы команды ROIN WORLD.",
+    "en": "Choose a country on the map to see the nuclear site and the work of the ROIN WORLD team.",
+    "ar": "اختر دولة على الخريطة للاطلاع على موقع المحطة النووية والأعمال التي شارك فيها فريق ROIN WORLD.",
+    "es": "Selecciona un país en el mapa para conocer la central nuclear y el trabajo del equipo de ROIN WORLD.",
+    "hu": "Válasszon országot a térképen az atomerőmű és a ROIN WORLD csapatának munkái megtekintéséhez."
   },
   "companyDetails": {
     "ru": "Подробнее о компании",
@@ -427,7 +427,7 @@
     "hu": "szakterület"
   },
   "factsRegions": {
-    "ru": "страны в каталоге проектов",
+    "ru": "стран в каталоге проектов",
     "en": "countries in our project portfolio",
     "ar": "دول في محفظة المشاريع المعروضة",
     "es": "países representados en la cartera de proyectos",
@@ -448,11 +448,11 @@
     "hu": "Építési és mérnöki munkákat végzünk, gondoskodunk a berendezések szállításáról, az anyagellátásról és a helyszínen dolgozók étkeztetéséről."
   },
   "projectsIntro": {
-    "ru": "ROIN WORLD участвует в строительстве АЭС «Руппур» в Бангладеш, «Эль-Дабаа» в Египте и «Пакш II» в Венгрии. Выберите проект, чтобы подробнее узнать о работах нашей команды.",
-    "en": "ROIN WORLD contributes to the construction of Rooppur in Bangladesh, El Dabaa in Egypt and Paks II in Hungary. Explore our work at each nuclear power plant.",
-    "ar": "تشارك ROIN WORLD في بناء محطة روبور النووية في بنغلاديش، ومحطة الضبعة في مصر، ومحطة باكس ٢ في المجر. تعرّف على أعمال فرقنا في كل مشروع.",
-    "es": "ROIN WORLD participa en la construcción de las centrales nucleares de Rooppur en Bangladés, El Dabaa en Egipto y Paks II en Hungría. Conoce el trabajo de nuestros equipos en cada proyecto.",
-    "hu": "A ROIN WORLD a bangladesi Ruppur, az egyiptomi El-Dabaa és a magyarországi Paks II. atomerőmű építésében vesz részt. Bemutatjuk, milyen feladatokon dolgoznak csapataink az egyes helyszíneken."
+    "ru": "От Нововоронежской АЭС до «Руппура» в Бангладеш. В каталоге собраны площадки, где работала команда ROIN WORLD, с фотографиями и источниками по каждому проекту.",
+    "en": "From Novovoronezh in Russia to Rooppur in Bangladesh, explore the sites where ROIN WORLD teams have worked. Each project includes photographs and published sources.",
+    "ar": "من نوفوفورونيج في روسيا إلى روبور في بنغلاديش، تعرّف على المواقع التي عملت فيها فرق ROIN WORLD. يتضمّن كل مشروع صورًا ومصادر منشورة.",
+    "es": "De Novovorónezh, en Rusia, a Rooppur, en Bangladés. Descubre las centrales donde han trabajado los equipos de ROIN WORLD, con fotografías y fuentes de cada proyecto.",
+    "hu": "Az oroszországi Novovoronyezstől a bangladesi Ruppurig mutatjuk be azokat a helyszíneket, ahol a ROIN WORLD csapatai dolgoztak. Minden projekthez fényképek és források tartoznak."
   },
   "historyIntro": {
     "ru": "Публикации о строительстве АЭС «Руппур» и документы о переносе юридического адреса в Дубай отражают разные этапы истории ROIN WORLD.",
@@ -560,11 +560,11 @@
     "hu": "Média"
   },
   "stages": {
-    "ru": "Этапы проекта",
-    "en": "Project milestones",
-    "ar": "مراحل المشروع",
-    "es": "Hitos del proyecto",
-    "hu": "A projekt mérföldkövei"
+    "ru": "Работы на площадке",
+    "en": "Work on site",
+    "ar": "الأعمال في الموقع",
+    "es": "Trabajos en la obra",
+    "hu": "Helyszíni munkák"
   },
   "externalVideo": {
     "ru": "Открыть оригинал видео",

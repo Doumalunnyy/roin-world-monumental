@@ -2,8 +2,6 @@
   "ru": {
     "film": "Смотреть корпоративный фильм",
     "archive": "Фотоархив ROIN WORLD",
-    "pause": "Приостановить показ",
-    "resume": "Продолжить показ",
     "index": "Кадр",
     "select": "Выбор проекта",
     "role": "Участие ROIN WORLD",
@@ -12,8 +10,6 @@
   "en": {
     "film": "Watch the company film",
     "archive": "ROIN WORLD photo archive",
-    "pause": "Pause slideshow",
-    "resume": "Resume slideshow",
     "index": "Frame",
     "select": "Select a project",
     "role": "ROIN WORLD’s role",
@@ -22,8 +18,6 @@
   "ar": {
     "film": "شاهد الفيلم التعريفي بالشركة",
     "archive": "أرشيف صور ROIN WORLD",
-    "pause": "إيقاف عرض الصور مؤقتاً",
-    "resume": "متابعة عرض الصور",
     "index": "الصورة",
     "select": "اختيار المشروع",
     "role": "دور ROIN WORLD",
@@ -32,8 +26,6 @@
   "es": {
     "film": "Ver el vídeo corporativo",
     "archive": "Archivo fotográfico de ROIN WORLD",
-    "pause": "Pausar la presentación",
-    "resume": "Reanudar la presentación",
     "index": "Fotografía",
     "select": "Seleccionar un proyecto",
     "role": "Participación de ROIN WORLD",
@@ -42,8 +34,6 @@
   "hu": {
     "film": "A vállalati film megtekintése",
     "archive": "A ROIN WORLD fotóarchívuma",
-    "pause": "A diavetítés szüneteltetése",
-    "resume": "A diavetítés folytatása",
     "index": "Kép",
     "select": "Projekt kiválasztása",
     "role": "A ROIN WORLD szerepe",

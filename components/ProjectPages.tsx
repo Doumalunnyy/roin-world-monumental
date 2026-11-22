@@ -172,12 +172,13 @@ function CaseStudy({ lang, project: p }: { lang: Lang; project: Project }) {
       <h2>{t("stages")}</h2>
       {p.stages.map(stage => <article key={stage.title[lang]}>
         <h3>{stage.title[lang]}</h3><p>{stage.body[lang]}</p>
+        {stage.source && <Action to={stage.source}>{t("source")} · ROIN WORLD</Action>}
       </article>)}
     </section>}
     <section id="case-media" className="technical-band">
       <div className="shell ed-section field-report">
         <h2>{words.siteMedia[lang]}</h2>
-        <ProjectGallery lang={lang} frames={gallery} title={t("gallery")} openLabel={words.openImage[lang]}
+        <ProjectGallery frames={gallery} title={t("gallery")} openLabel={words.openImage[lang]}
           prev={t("prev")} next={t("next")} close={t("close")} rtl={lang === "ar"}/>
         {(p.videos.length > 0 || reports.length > 0) && <div className="case-media-links">
           {p.videos.length > 0 && <div className="case-videos">

@@ -1,12 +1,14 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { Icon, Wordmark } from "./Icons";
 import { LocaleChoices } from "./LocaleChoices";
+import { SocialLinks } from "./SocialLinks";
 import type { Lang, Key } from "@/lib/content";
 import type { NavigationItem } from "@/lib/navigation";
 import { localeUrl } from "@/lib/urls";
 import "./corporate-navigation.css";
+import "./mobile-navigation.css";
 
 type Labels = Pick<Record<Key, string>, "menu" | "openMenu" | "close" | "language" | "navigation" | "skip" | "home">;
 type Props = {
@@ -14,11 +16,18 @@ type Props = {
   languages: {code: string; name: string}[]; labels: Labels;
 };
 
+const subscribeReady = () => () => {};
+const clientReady = () => true;
+const serverReady = () => false;
+
 export function SiteHeader({ lang, path, main, languages, labels }: Props) {
+  const ready = useSyncExternalStore(subscribeReady, clientReady, serverReady);
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const mast = useRef<HTMLElement>(null);
   const bar = useRef<HTMLDivElement>(null);
+  const panel = useRef<HTMLDivElement>(null);
+  const drawerWasOpen = useRef(false);
   const toggle = useRef<HTMLButtonElement>(null);
   const locale = useRef<HTMLDetailsElement>(null);
 
@@ -29,8 +38,10 @@ export function SiteHeader({ lang, path, main, languages, labels }: Props) {
     const wide = matchMedia("(min-width: 1181px)");
     const reset = () => { setOpen(false); };
     wide.addEventListener("change", reset);
-    window.addEventListener("pageshow", reset);
+    const onRestore = (event: PageTransitionEvent) => { if (event.persisted) reset(); };
+    window.addEventListener("pageshow", onRestore);
     const outside = (event: PointerEvent) => {
+      if (mast.current?.classList.contains("menu-is-open")) return;
       for (const details of mast.current?.querySelectorAll("details[open]") || []) {
         if (!(details.closest(".nav-branch") || details).contains(event.target as Node)) details.removeAttribute("open");
       }
@@ -39,14 +50,36 @@ export function SiteHeader({ lang, path, main, languages, labels }: Props) {
     return () => {
       window.removeEventListener("scroll", update);
       wide.removeEventListener("change", reset);
-      window.removeEventListener("pageshow", reset);
+      window.removeEventListener("pageshow", onRestore);
       document.removeEventListener("pointerdown", outside);
     };
   }, []);
 
   useEffect(() => {
+    const element = panel.current;
+    if (!element) return;
+    const compact = matchMedia("(max-width: 1180px)");
+    const sync = () => { element.inert = compact.matches && !open; };
+    sync();
+    compact.addEventListener("change", sync);
+    return () => compact.removeEventListener("change", sync);
+  }, [open]);
+
+  useEffect(() => {
     const header = mast.current;
-    if (!open || !header) return;
+    if (!header) return;
+    if (!open) {
+      if (!drawerWasOpen.current) return;
+      drawerWasOpen.current = false;
+      let cancelled = false;
+      // Keep expanded groups in place until the outgoing sheet has faded.
+      const transitions = panel.current?.getAnimations?.() || [];
+      void Promise.allSettled(transitions.map(effect => effect.finished)).then(() => {
+        if (!cancelled) header.querySelectorAll("details[open]").forEach(details => details.removeAttribute("open"));
+      });
+      return () => { cancelled = true; };
+    }
+    drawerWasOpen.current = true;
     const excluded: HTMLElement[] = [];
     // The modal uses the same header, links and language switcher as the desktop row.
     // Prevent pointer, keyboard and assistive-technology access to its background.
@@ -64,7 +97,6 @@ export function SiteHeader({ lang, path, main, languages, labels }: Props) {
     return () => {
       document.documentElement.classList.remove("corporate-menu-open");
       for (const node of excluded) node.inert = false;
-      header.querySelectorAll("details[open]").forEach(details => details.removeAttribute("open"));
     };
   }, [open]);
 
@@ -75,7 +107,8 @@ export function SiteHeader({ lang, path, main, languages, labels }: Props) {
 
   return <>
     <a className="skip" href="#main">{labels.skip}</a>
-    <header ref={mast} className={"mast corporate-mast" + (scrolled ? " solid" : "") + (path ? " inner-mast" : "") + (open ? " menu-is-open" : "")}>
+    <header ref={mast} className={"mast corporate-mast" + (scrolled ? " solid" : "") + (path ? " inner-mast" : "") + (open ? " menu-is-open" : "")}
+      onClick={event => { if (open && event.target === event.currentTarget) close(); }}>
       <div className="shell mast-inner" ref={bar} role={open ? "dialog" : undefined}
         aria-modal={open || undefined} aria-label={open ? labels.menu : undefined}
         onKeyDown={event => {
@@ -100,10 +133,11 @@ export function SiteHeader({ lang, path, main, languages, labels }: Props) {
         }}>
         <a className="brand" href={localeUrl(lang)} aria-label={"ROIN WORLD · " + labels.home} tabIndex={open ? -1 : undefined} onClick={() => { if (open) close(); }}><Wordmark /></a>
         <button ref={toggle} type="button" className="menu-toggle corporate-toggle" aria-label={open ? labels.close : labels.openMenu}
-          aria-haspopup="dialog" aria-controls="corporate-navigation" aria-expanded={open} onClick={() => open ? close() : setOpen(true)}>
+          disabled={!ready} aria-haspopup="dialog" aria-controls="corporate-navigation" aria-expanded={open} onClick={() => open ? close() : setOpen(true)}>
           <span className="menu-glyph" aria-hidden="true" />
         </button>
-        <div id="corporate-navigation" className="corporate-panel" onClick={event => {
+        <SocialLinks placement="header" />
+        <div ref={panel} id="corporate-navigation" className="corporate-panel" onClick={event => {
           if (open && event.target instanceof Element && event.target.closest("a[href]") && !event.ctrlKey && !event.metaKey && !event.shiftKey && !event.altKey) close();
         }}>
           <nav className="topnav corporate-nav" aria-label={labels.navigation} data-menu-transition>
@@ -113,12 +147,14 @@ export function SiteHeader({ lang, path, main, languages, labels }: Props) {
                 if (!open && event.relatedTarget instanceof Node && !event.currentTarget.contains(event.relatedTarget))
                   event.currentTarget.querySelector("details")?.removeAttribute("open");
               }}>
-                <a className="nav-parent" href={localeUrl(lang, item.slug)} aria-current={path === item.slug ? "page" : undefined}>{item.title}</a>
+                <a className="nav-parent" href={localeUrl(lang, item.slug)} aria-current={path === item.slug ? "page" : undefined}><span>{item.title}</span></a>
                 {item.children && <details className="nav-disclosure" name="corporate-submenu">
                   <summary aria-label={item.title + " · " + labels.menu}><Icon name="chevron" size={12}/></summary>
-                  <ul className="nav-sublist">{item.children.map(child => <li key={child.slug}>
-                    <a href={localeUrl(lang, child.slug)} aria-current={path === child.slug ? "page" : undefined}>{child.title}</a>
-                  </li>)}</ul>
+                  <div className="nav-flyout">
+                    <ul className="nav-sublist">{item.children.map(child => <li key={child.slug}>
+                      <a href={localeUrl(lang, child.slug)} aria-current={path === child.slug ? "page" : undefined}><span>{child.title}</span></a>
+                    </li>)}</ul>
+                  </div>
                 </details>}
               </li>;
             })}</ul>

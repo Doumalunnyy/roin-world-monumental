@@ -1,5 +1,6 @@
 import AxeBuilder from "@axe-core/playwright";
 import { active as activeLanguages } from "../content/locales.json";
+import { items as projectRecords } from "../content/projects.json";
 import { test as base, expect, type Page } from "@playwright/test";
 
 const test = base.extend<{ browserErrors: void }>({
@@ -48,7 +49,7 @@ test("archive hero and project selection are independent under reduced motion", 
   await featured.getByRole("link", {name:/Подробнее/}).click();
   await expect(page).toHaveURL(/\/ru\/projects\/el-dabaa\/?$/);
 });
-test("visible photo sequences advance in place and the logo strip can be paused", async ({page}) => {
+test("visible photo sequences and partner logos keep moving during interaction", async ({page}) => {
   await page.emulateMedia({reducedMotion:"no-preference"});
   await open(page, "/ru");
   const hero = page.locator('[data-sequence="hero"]');
@@ -57,10 +58,10 @@ test("visible photo sequences advance in place and the logo strip can be paused"
   const position = await heading.boundingBox();
   await expect(hero).toHaveAttribute("data-active", "1", {timeout:16000});
   expect(await heading.boundingBox()).toEqual(position);
-  await hero.focus();
-  await page.keyboard.press("Space");
-  await expect(hero).toHaveAttribute("data-paused", "true");
-  await expect(hero).toHaveAttribute("data-running", "false");
+  const picker = hero.locator(".hero-frame-picker button").first();
+  await picker.focus();
+  await picker.hover();
+  await expect(hero).toHaveAttribute("data-running", "true");
   await projects.scrollIntoViewIfNeeded();
   await page.mouse.move(0,0);
   await expect(projects).toHaveAttribute("data-active","1",{timeout:16000});
@@ -68,9 +69,14 @@ test("visible photo sequences advance in place and the logo strip can be paused"
   const strip = page.locator(".partner-strip");
   await strip.scrollIntoViewIfNeeded();
   await expect(strip).toHaveAttribute("data-running","true");
-  await strip.getByRole("button").focus();
-  await page.keyboard.press("Space");
-  await expect(strip).toHaveAttribute("data-running","false");
+  await expect(strip.getByRole("button")).toHaveCount(0);
+  const viewport = strip.locator(".evidence-window");
+  await viewport.focus();
+  await viewport.hover();
+  await expect(strip).toHaveAttribute("data-running","true");
+  const positionX = () => strip.locator(".partner-track").evaluate(el => el.getBoundingClientRect().x);
+  const start = await positionX();
+  await expect.poll(async () => Math.abs(await positionX() - start)).toBeGreaterThan(3);
   await expect(strip.locator("ul").first().getByRole("img")).toHaveCount(6);
   await page.emulateMedia({reducedMotion:"reduce"});
   await expect(strip.locator(".partner-track")).toHaveCSS("animation-name","none");
@@ -83,7 +89,7 @@ test("project filters combine, communicate an empty result and reset", async ({
   const country = page.getByRole("combobox", { name: /Страна/ });
   const service = page.getByRole("combobox", { name: /Направление/ });
   const cards = page.locator(".project-card");
-  await expect(cards).toHaveCount(3);
+  await expect(cards).toHaveCount(projectRecords.length);
   await country.selectOption({ label: "Египет" });
   await expect(cards).toHaveCount(1);
   await expect(cards).toContainText("Эль-Дабаа");
@@ -97,10 +103,10 @@ test("project filters combine, communicate an empty result and reset", async ({
   await page.getByRole("button", { name: "Сбросить фильтры" }).click();
   await expect(country).toHaveValue("");
   await expect(service).toHaveValue("");
-  await expect(cards).toHaveCount(3);
+  await expect(cards).toHaveCount(projectRecords.length);
 });
 
-test("the certificate strip moves in RTL, pauses and exposes the three originals", async ({ page }) => {
+test("the certificate strip moves in RTL with focus and exposes the three originals", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.emulateMedia({ reducedMotion: "no-preference" });
   await open(page, "/ar");
@@ -108,9 +114,11 @@ test("the certificate strip moves in RTL, pauses and exposes the three originals
   const viewport = strip.locator(".evidence-window");
   await viewport.scrollIntoViewIfNeeded();
   await expect(strip).toHaveAttribute("data-running", "true");
-  await expect.poll(() => viewport.evaluate(el => el.scrollLeft)).toBeLessThan(-2);
-  await strip.getByRole("button").click();
-  await expect(strip).toHaveAttribute("data-running", "false");
+  await expect(strip.getByRole("button")).toHaveCount(0);
+  await viewport.focus();
+  const x = () => strip.locator(".certificate-track").evaluate(el => el.getBoundingClientRect().x);
+  const start = await x();
+  await expect.poll(async () => (await x()) - start).toBeGreaterThan(2);
   await page.emulateMedia({ reducedMotion: "reduce" });
   await expect(strip.getByRole("button")).toHaveCount(0);
   await expect(strip.getByRole("listitem")).toHaveCount(3);
@@ -204,6 +212,23 @@ test("Spanish and Hungarian preserve the project and publish its language altern
   await expect(page).toHaveURL(/\/hu\/projects\/rooppur\/?$/);
   await expect(page.locator("html")).toHaveAttribute("dir", "ltr");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Ruppuri Atomerőmű");
+});
+
+test("social profiles are reachable from the header and footer with the mobile menu closed", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await open(page, "/ru/projects");
+  for (const landmark of ["header", "footer"]) {
+    const links = page.locator(landmark).locator(".social-links");
+    for (const [network, url] of [
+      ["Instagram", "https://www.instagram.com/roinworld_sl/"],
+      ["Facebook", "https://www.facebook.com/RoinWorldSL/"],
+    ]) {
+      const link = links.getByRole("link", { name: "ROIN WORLD · " + network });
+      await expect(link).toBeVisible();
+      await expect(link).toHaveAttribute("href", url);
+      await expect(link).toHaveAttribute("target", "_blank");
+    }
+  }
 });
 
 test("film is requested on activation and released when the player closes", async ({

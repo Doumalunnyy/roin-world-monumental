@@ -3,9 +3,7 @@
 import { useCallback, useEffect, useRef, useState, useSyncExternalStore, type CSSProperties,
   type KeyboardEvent, type MouseEvent, type PointerEvent } from "react";
 import { publicUrl } from "@/lib/urls";
-import type { Lang } from "@/lib/content";
 import { cycleMs, reducedMotionQuery } from "@/lib/motion";
-import showcase from "@/content/showcase-ui.json";
 import { Photo } from "./Media";
 import { Icon } from "./Icons";
 import "./project-gallery.css";
@@ -19,7 +17,6 @@ type GalleryProps = {
   next: string;
   close: string;
   rtl: boolean;
-  lang?: Lang;
 };
 type Direction = -1 | 1;
 type Gesture = { id: number; x: number; y: number; dragging: boolean };
@@ -37,7 +34,7 @@ const canPlay = () => !document.hidden && !matchMedia(reducedMotionQuery).matche
 const staticMode = () => false;
 const wrap = (position: number, count: number) => (position % count + count) % count;
 
-export function ProjectGallery({ frames, title, openLabel, prev, next, close, rtl, lang = "en" }: GalleryProps) {
+export function ProjectGallery({ frames, title, openLabel, prev, next, close, rtl }: GalleryProps) {
   const track = useRef<HTMLDivElement>(null);
   const dialog = useRef<HTMLDialogElement>(null);
   const opener = useRef<HTMLAnchorElement>(null);
@@ -49,16 +46,12 @@ export function ProjectGallery({ frames, title, openLabel, prev, next, close, rt
   const [visited, setVisited] = useState(false);
   const [opened, setOpened] = useState(false);
   const [preview, setPreview] = useState("");
-  const [paused, setPaused] = useState(false);
-  const [pointed, setPointed] = useState(false);
-  const [focused, setFocused] = useState(false);
   const [touching, setTouching] = useState(false);
   const motion = useSyncExternalStore(observeMotion, canPlay, staticMode);
   const count = frames.length;
   const active = count ? wrap(position.cursor, count) : 0;
   const selected = frames[active];
-  const running = count > 1 && motion && inView && !opened && !paused && !focused && !pointed && !touching;
-  const labels = showcase[lang];
+  const running = count > 1 && motion && inView && !opened && !touching;
 
   useEffect(() => {
     const element = track.current;
@@ -167,10 +160,7 @@ export function ProjectGallery({ frames, title, openLabel, prev, next, close, rt
   const counter = <bdi dir="ltr" className="cg-count">{String(active + 1).padStart(2, "0")} / {String(count).padStart(2, "0")}</bdi>;
 
   return <div className="cinematic-gallery" data-single={count === 1 || undefined} onKeyDown={onKeyDown}>
-    <figure className="cg-overview"
-      onPointerEnter={e => setPointed(e.pointerType === "mouse")} onPointerLeave={() => setPointed(false)}
-      onFocusCapture={e => setFocused(e.target.matches(":focus-visible"))}
-      onBlurCapture={e => { if (!e.currentTarget.contains(e.relatedTarget)) setFocused(false); }}>
+    <figure className="cg-overview">
       <div className="cg-strip" ref={track} {...swipe}>
         {(count > 1 ? [-2, -1, 0, 1, 2] : [0]).map(slot => {
           const key = position.cursor + slot;
@@ -194,10 +184,6 @@ export function ProjectGallery({ frames, title, openLabel, prev, next, close, rt
         </span>
         {count > 1 && <span className="cg-controls">
           {counter}
-          <button type="button" className="cg-cycle" aria-label={paused ? labels.resume : labels.pause}
-            onClick={() => setPaused(p => !p)}>
-            {paused ? <Icon name="play" size={14} /> : <svg width="15" height="15" viewBox="0 0 15 15" aria-hidden="true"><path d="M5 2v11 M10 2v11" stroke="currentColor" strokeWidth="1.6" /></svg>}
-          </button>
           {controls}
         </span>}
       </figcaption>

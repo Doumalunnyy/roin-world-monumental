@@ -1,5 +1,6 @@
 import { Icon, Wordmark } from "./Icons";
 import { LocaleChoices } from "./LocaleChoices";
+import { SocialLinks } from "./SocialLinks";
 import { publicUrl } from "@/lib/urls";
 import {
   txt,
@@ -43,6 +44,7 @@ export function Footer({ lang, path }: { lang: Lang; path: string }) {
                 {office.email}
               </a>
             )}
+            <SocialLinks placement="footer" />
           </div>
           <nav aria-label={txt(lang, "navigation")}>
             {primary.map((k) => (

@@ -1,15 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type FocusEvent, type ReactNode } from "react";
 import type { Lang } from "@/lib/content";
-
-const controls = {
-  ru: ["Приостановить ленту", "Продолжить движение"],
-  en: ["Pause strip", "Resume strip"],
-  ar: ["إيقاف الشريط مؤقتًا", "استئناف حركة الشريط"],
-  es: ["Pausar la cinta", "Reanudar la cinta"],
-  hu: ["A sáv megállítása", "A sáv elindítása"],
-};
 
 type Props = {
   kind: "partner" | "certificate";
@@ -22,12 +14,9 @@ type Props = {
 
 export function EvidenceStrip({ kind, lang, title, action, items, copies }: Props) {
   const viewport = useRef<HTMLDivElement>(null);
-  const original = useRef<HTMLUListElement>(null);
+  const track = useRef<HTMLDivElement>(null);
   const [animated, setAnimated] = useState(false);
   const [visible, setVisible] = useState(false);
-  const [paused, setPaused] = useState(false);
-  const [hovered, setHovered] = useState(false);
-  const [focused, setFocused] = useState(false);
 
   useEffect(() => {
     const element = viewport.current;
@@ -53,55 +42,32 @@ export function EvidenceStrip({ kind, lang, title, action, items, copies }: Prop
     };
   }, []);
 
-  const running = animated && visible && !paused && !focused && !hovered;
-  useEffect(() => {
-    const element = viewport.current;
-    const list = original.current;
-    if (!running || !element || !list) return;
-    const sign = lang === "ar" ? -1 : 1;
-    let width = list.getBoundingClientRect().width;
-    let offset = Math.abs(element.scrollLeft);
-    let previous = 0;
-    let frame = 0;
-    const resize = new ResizeObserver(() => { width = list.getBoundingClientRect().width; });
-    resize.observe(list);
-    function advance(now: number) {
-      if (previous && width > 0 && element) {
-        offset = (offset + Math.min(now - previous, 80) * 0.027) % width;
-        element.scrollLeft = sign * offset;
-      }
-      previous = now;
-      frame = requestAnimationFrame(advance);
-    }
-    frame = requestAnimationFrame(advance);
-    return () => { cancelAnimationFrame(frame); resize.disconnect(); };
-  }, [running, lang]);
+  function revealKeyboardLink(event: FocusEvent<HTMLDivElement>) {
+    const link = event.target;
+    if (!(link instanceof HTMLAnchorElement) || !link.matches(":focus-visible")) return;
+    const bounds = event.currentTarget.getBoundingClientRect();
+    const item = link.getBoundingClientRect();
+    if (item.left >= bounds.left && item.right <= bounds.right) return;
+    // A visible duplicate is pointer-accessible; Tab targets the single semantic list.
+    // Bring its original into view without stopping the running animation.
+    const animation = track.current?.getAnimations()[0];
+    if (animation) animation.currentTime = 0;
+    link.scrollIntoView({ block: "nearest", inline: "center", behavior: "instant" });
+  }
 
-  const label = controls[lang][paused ? 1 : 0];
   const titleId = `home-${kind}-heading`;
-  return <div className={`shell evidence-strip ${kind}-strip`} data-running={running} data-animated={animated}>
+  return <div className={`shell evidence-strip ${kind}-strip`} data-running={animated && visible} data-animated={animated}>
     <div className="section-heading evidence-heading">
       <h2 id={titleId}>{title}</h2>
-      <div className="evidence-controls">
-        {action}
-        {animated && <button type="button" className="strip-control" aria-label={label} title={label}
-          onClick={() => setPaused(!paused)}>
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
-            {paused ? <path d="M5 2.5 13 8l-8 5.5Z"/> : <path d="M4 2.5h2.5v11H4zm5.5 0H12v11H9.5z"/>}
-          </svg>
-        </button>}
-      </div>
+      {action}
     </div>
-    <div className="evidence-window" ref={viewport} role="group" aria-labelledby={titleId} tabIndex={0}
-      onPointerEnter={event => { if (event.pointerType === "mouse") setHovered(true); }}
-      onPointerLeave={() => setHovered(false)}
-      onPointerDown={event => { if (event.pointerType !== "mouse") setPaused(true); }}
-      onWheel={event => { if (Math.abs(event.deltaX) > Math.abs(event.deltaY) || event.shiftKey) setPaused(true); }}
-      onFocus={() => setFocused(true)}
-      onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget)) setFocused(false); }}>
-      <div className={`evidence-track ${kind}-track`}>
-        <ul ref={original}>{items}</ul>
-        <ul aria-hidden="true" className="evidence-copy">{copies}</ul>
+    <div className="evidence-window" ref={viewport} role="group" aria-labelledby={titleId}
+      dir={lang === "ar" ? "rtl" : "ltr"} tabIndex={0} onFocusCapture={revealKeyboardLink}>
+      <div className="evidence-lane">
+        <div className={`evidence-track ${kind}-track`} ref={track}>
+          <ul>{items}</ul>
+          <ul aria-hidden="true" className="evidence-copy">{copies}</ul>
+        </div>
       </div>
     </div>
   </div>;

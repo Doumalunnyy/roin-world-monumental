@@ -7,11 +7,11 @@
     "hu": "Projektjeink helyszínei"
   },
   "intro": {
-    "ru": "ROIN WORLD участвует в строительстве атомных электростанций в Бангладеш, Египте и Венгрии.",
-    "en": "ROIN WORLD takes part in nuclear power plant construction in Bangladesh, Egypt and Hungary.",
-    "ar": "تشارك شركة ROIN WORLD في بناء محطات للطاقة النووية في بنغلاديش ومصر والمجر.",
-    "es": "ROIN WORLD participa en la construcción de centrales nucleares en Bangladés, Egipto y Hungría.",
-    "hu": "A ROIN WORLD Bangladesben, Egyiptomban és Magyarországon vesz részt atomerőművek építésében."
+    "ru": "География работ ROIN WORLD в атомной энергетике охватывает Бангладеш, Египет, Венгрию, Турцию и Россию.",
+    "en": "ROIN WORLD’s nuclear construction projects span Bangladesh, Egypt, Hungary, Türkiye and Russia.",
+    "ar": "تشمل مشاريع ROIN WORLD في قطاع الطاقة النووية بنغلاديش ومصر والمجر وتركيا وروسيا.",
+    "es": "Los proyectos de construcción nuclear de ROIN WORLD se extienden por Bangladés, Egipto, Hungría, Turquía y Rusia.",
+    "hu": "A ROIN WORLD atomerőművi építési projektjei Bangladesre, Egyiptomra, Magyarországra, Törökországra és Oroszországra terjednek ki."
   },
   "countryProjects": {
     "ru": "Проекты в этой стране",
@@ -19,20 +19,6 @@
     "ar": "المشاريع في هذا البلد",
     "es": "Proyectos en este país",
     "hu": "Projektek ebben az országban"
-  },
-  "pause": {
-    "ru": "Приостановить показ стран",
-    "en": "Pause country slideshow",
-    "ar": "إيقاف عرض البلدان مؤقتاً",
-    "es": "Pausar el recorrido por países",
-    "hu": "Az országok bemutatásának szüneteltetése"
-  },
-  "resume": {
-    "ru": "Продолжить показ стран",
-    "en": "Resume country slideshow",
-    "ar": "متابعة عرض البلدان",
-    "es": "Reanudar el recorrido por países",
-    "hu": "Az országok bemutatásának folytatása"
   },
   "projectNotes": {
     "rooppur": {
@@ -48,6 +34,20 @@
       "ar": "يشمل اتفاق شركة ROIN WORLD مع KHNP وDoosan Enerbility بناء مرافق جزيرة التوربينات في محطة الضبعة النووية.",
       "es": "El acuerdo de ROIN WORLD con KHNP y Doosan Enerbility abarca la construcción de instalaciones en la isla de turbinas de la central nuclear de El Dabaa.",
       "hu": "A ROIN WORLD a KHNP-vel és a Doosan Enerbilityvel az El-Dabaa Atomerőmű turbinaszigetének építési munkáiról kötött megállapodást."
+    },
+    "akkuyu": {
+      "ru": "ROIN WORLD участвовала в строительстве АЭС «Аккую» в Турции.",
+      "en": "ROIN WORLD took part in the construction of the Akkuyu nuclear power plant in Türkiye.",
+      "ar": "شاركت ROIN WORLD في إنشاء محطة أكويو للطاقة النووية في تركيا.",
+      "es": "ROIN WORLD participó en la construcción de la central nuclear de Akkuyu, en Turquía.",
+      "hu": "A ROIN WORLD részt vett a törökországi Akkuyu Atomerőmű építésében."
+    },
+    "novovoronezh-ii": {
+      "ru": "В 2012–2014 годах специалисты ROIN WORLD монтировали системы отопления и вентиляции для новых энергоблоков Нововоронежской АЭС.",
+      "en": "Between 2012 and 2014, ROIN WORLD’s teams installed heating and ventilation systems for new units at Novovoronezh nuclear power plant.",
+      "ar": "بين عامي 2012 و2014، ركّبت فرق ROIN WORLD أنظمة التدفئة والتهوية للوحدات الجديدة في محطة نوفوفورونيج النووية.",
+      "es": "Entre 2012 y 2014, los equipos de ROIN WORLD instalaron sistemas de calefacción y ventilación para las nuevas unidades de la central de Novovorónezh.",
+      "hu": "A ROIN WORLD szakemberei 2012 és 2014 között fűtési és szellőzési rendszereket szereltek a Novovoronyezsi Atomerőmű új blokkjain."
     }
   }
 }

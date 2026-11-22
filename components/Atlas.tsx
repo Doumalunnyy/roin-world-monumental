@@ -30,7 +30,7 @@ const pointFor = (region: string) => geometry.points[region as Region];
 
 type AtlasLang = keyof typeof copy.heading;
 const projectNotes: Partial<Record<string, Record<AtlasLang, string>>> = copy.projectNotes;
-const countryOrder: Region[] = ["bangladesh", "egypt", "hungary"];
+const countryOrder: Region[] = ["bangladesh", "egypt", "hungary", "turkey", "russia"];
 
 
 function motionAllowed() {
@@ -71,7 +71,7 @@ function Chart({ countries, active, select, label, panelId }: {
             width={chartWidth} height={chartHeight} loading="lazy" fetchPriority="low" decoding="async" alt="" />
           <svg className="ae-drawing" viewBox={geometry.viewBox.join(" ")}>
             {countries.map(country => <path key={country.region} d={pointFor(country.region).outline}
-              className="ae-territory" data-active={country === active}/>)}
+              className="ae-territory" data-region={country.region} data-active={country === active}/>)}
           </svg>
         </div>
         {countries.map(country => {
@@ -100,7 +100,8 @@ type Scene = {
 };
 type PhotoEvent =
   | { type: "warm"; region: string }
-  | { type: "select"; region: string; manual: boolean }
+  | { type: "select"; region: string; manual: true }
+  | { type: "select"; region: string; manual: false; from: string }
   | { type: "settled"; region: string; attempt: number; ready: boolean; mayRotate: boolean }
   | { type: "cancelAuto" };
 
@@ -113,6 +114,7 @@ function updateScene(state: Scene, event: PhotoEvent): Scene {
     return state.pending && !state.pending.manual ? { ...state, pending: null } : state;
   }
   const { region } = event;
+  if (event.type === "select" && !event.manual && (event.from !== state.active || state.pending?.manual)) return state;
   const photo = state.photos[region];
   if (event.type === "settled") {
     if (!photo || photo.attempt !== event.attempt || photo.status !== "loading") return state;
@@ -203,8 +205,6 @@ function GeographyScene({ items, countries, more, label, lang = "ru", home = fal
   const first = countries.find(country => country.region === "egypt") ?? countries[0];
   const [scene, dispatch] = useReducer(updateScene, first.region, initialScene);
   const [seen, setSeen] = useState(false);
-  const [paused, setPaused] = useState(false);
-  const [focused, setFocused] = useState(false);
   const [onscreen, setOnscreen] = useState(false);
   const root = useRef<HTMLDivElement>(null);
   const panelId = useId();
@@ -215,7 +215,7 @@ function GeographyScene({ items, countries, more, label, lang = "ru", home = fal
     .find(country => scene.photos[country.region]?.status !== "failed");
   const nextRegion = next?.region;
   const activeSettled = scene.photos[scene.active]?.status !== "loading";
-  const running = Boolean(next && canMove && onscreen && !paused && !focused);
+  const running = Boolean(next && canMove && onscreen);
   useEffect(() => {
     const element = root.current;
     if (!element) return;
@@ -233,17 +233,20 @@ function GeographyScene({ items, countries, more, label, lang = "ru", home = fal
   }, [countries.length]);
 
   useEffect(() => {
-    if (!running || !nextRegion || !activeSettled) return;
+    if (running) return () => dispatch({ type: "cancelAuto" });
+  }, [running]);
+
+  useEffect(() => {
+    if (!running || !nextRegion || !activeSettled || scene.pending) return;
     const warm = window.setTimeout(() => dispatch({ type: "warm", region: nextRegion }), cycleMs / 2);
     const advance = window.setTimeout(() => {
-      if (motionAllowed()) dispatch({ type: "select", region: nextRegion, manual: false });
+      if (motionAllowed()) dispatch({ type: "select", region: nextRegion, manual: false, from: scene.active });
     }, cycleMs);
     return () => {
       window.clearTimeout(warm);
       window.clearTimeout(advance);
-      dispatch({ type: "cancelAuto" });
     };
-  }, [running, nextRegion, activeSettled]);
+  }, [running, nextRegion, activeSettled, scene.active, scene.pending]);
 
   function settled(region: string, attempt: number, ready: boolean) {
     dispatch({ type: "settled", region, attempt, ready, mayRotate: running && motionAllowed() });
@@ -251,7 +254,6 @@ function GeographyScene({ items, countries, more, label, lang = "ru", home = fal
   const CountryHeading = home ? "h3" : "h2";
 
   function select(region: string) {
-    setPaused(true);
     setSeen(true);
     dispatch({ type: "select", region, manual: true });
   }
@@ -272,20 +274,8 @@ function GeographyScene({ items, countries, more, label, lang = "ru", home = fal
   }
 
   return (
-    <div className="atlas-engineering geo-widget" ref={root} data-home={home}
-      onFocusCapture={event => setFocused(!event.target.closest(".ae-pause"))}
-      onBlurCapture={event => {
-        if (!event.currentTarget.contains(event.relatedTarget)) setFocused(false);
-      }}
-      >
+    <div className="atlas-engineering geo-widget" ref={root} data-home={home}>
       <div className="ae-board">
-        {canMove && countries.length > 1 && <button type="button" className="ae-pause" aria-controls={panelId}
-          aria-label={paused ? copy.resume[lang] : copy.pause[lang]} title={paused ? copy.resume[lang] : copy.pause[lang]}
-          onClick={() => setPaused(value => !value)}>
-          <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" fill="currentColor">
-            {paused ? <path d="M5 2.5 13 8l-8 5.5z" /> : <path d="M4 3h2v10H4zM10 3h2v10h-2z" />}
-          </svg>
-        </button>}
         <Chart countries={countries} active={active} select={select} label={label} panelId={panelId}/>
         <div className="ae-archive" aria-hidden="true">
           {countries.map(country => {
@@ -303,6 +293,7 @@ function GeographyScene({ items, countries, more, label, lang = "ru", home = fal
             const selected = country === active;
             const catalogue = localeUrl(lang, "projects") + "?country=" + encodeURIComponent(country.region) + "#catalogue";
             const associated = items.filter(project => project.region === country.region);
+            const caption = country.featuredCaption || country.caption;
             return <div className="ae-entry" key={country.region} data-current={selected}
               aria-hidden={!selected} inert={!selected}>
               <CountryHeading className="ae-country">{country.country}</CountryHeading>
@@ -315,18 +306,18 @@ function GeographyScene({ items, countries, more, label, lang = "ru", home = fal
                   </a>)}
                 </div>
               </div>
-              {country.region === "hungary" && country.caption && <p className="ae-caption">{country.caption}</p>}
+              {caption && <p className="ae-caption">{caption}</p>}
             </div>;
           })}
         </div>
       </div>
       <nav className="ae-register geo-country-list" aria-label={label} onKeyDown={moveSelection}>
-        {countries.map(country => <button type="button" key={country.region} aria-controls={panelId}
+        {countries.map(country => <button type="button" key={country.region} aria-controls={panelId} data-region={country.region}
           aria-pressed={country === active} onClick={() => select(country.region)}
           onFocus={() => dispatch({ type: "warm", region: country.region })}
           onPointerEnter={event => { if (event.pointerType === "mouse") dispatch({ type: "warm", region: country.region }); }}>
           <span className="ae-thumbnail" aria-hidden="true">
-            {seen && <Photo src={archiveFrame(country)} alt="" sizes="(max-width: 680px) 30vw, 24vw"/>}
+            {seen && <Photo src={archiveFrame(country)} alt="" sizes="(max-width: 680px) 46vw, 18vw"/>}
           </span>
           <span className="ae-index-name">{country.country}</span>
         </button>)}

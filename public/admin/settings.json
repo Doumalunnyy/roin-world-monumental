@@ -230,7 +230,10 @@
     "/images/paks-construction.webp",
     "/images/paks-night.webp",
     "/images/el-dabaa-delivery.webp",
-    "/images/el-dabaa-lifting.webp"
+    "/images/el-dabaa-lifting.webp",
+    "/images/akkuyu-construction.webp",
+    "/images/novovoronezh-ii-construction.webp",
+    "/images/novovoronezh-ii-2010.webp"
   ],
   "landingKeys": [
     "expertise",
@@ -239,19 +242,17 @@
   "atlasKeys": [
     "heading",
     "intro",
-    "countryProjects",
-    "pause",
-    "resume"
+    "countryProjects"
   ],
   "atlasProjects": [
     "rooppur",
-    "el-dabaa"
+    "el-dabaa",
+    "akkuyu",
+    "novovoronezh-ii"
   ],
   "showcaseKeys": [
     "film",
     "archive",
-    "pause",
-    "resume",
     "index",
     "select",
     "role",

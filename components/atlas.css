@@ -69,6 +69,8 @@
   stroke: #f5f5f5;
   stroke-width: 1.1;
 }
+.atlas-engineering .ae-territory[data-region="russia"] { fill-opacity: .16; }
+.atlas-engineering .ae-territory[data-region="russia"][data-active="true"] { fill-opacity: .43; }
 .atlas-engineering .ae-pin {
   position: absolute;
   display: grid;
@@ -104,7 +106,7 @@
   line-height: 1.25;
   white-space: nowrap;
 }
-.atlas-engineering .ae-pin[data-region="egypt"] span {
+.atlas-engineering .ae-pin:is([data-region="egypt"], [data-region="hungary"]) span {
   left: auto;
   right: calc(50% + 13px);
 }
@@ -256,7 +258,7 @@
   display: grid;
   position: relative;
   z-index: 1;
-  grid-template-columns: repeat(3,minmax(0,1fr));
+  grid-template-columns: repeat(5,minmax(0,1fr));
   gap: clamp(.6rem, 1.1vw, 1.55rem);
   margin: 0;
   padding: clamp(1.1rem, 1.8vw, 2.15rem) var(--ae-gutter);
@@ -269,7 +271,7 @@
   overflow: hidden;
   min-height: clamp(5.05rem, 6.45vw, 8rem);
   margin: 0;
-  padding: 1rem clamp(1.1rem, 2.9vw, 4.25rem);
+  padding: 1rem clamp(.55rem, 1.6vw, 2rem);
   border: 1px solid #73737380;
   border-radius: clamp(.55rem, .92vw, 1.05rem);
   background: #191919;
@@ -322,25 +324,6 @@
   outline: 2px solid #ffffff;
   outline-offset: 3px;
 }
-.atlas-engineering .ae-pause {
-  position: absolute;
-  z-index: 2;
-  inset-block-end: .55rem;
-  inset-inline-end: var(--ae-gutter);
-  display: grid;
-  place-items: center;
-  width: 44px;
-  height: 44px;
-  padding: 0;
-  border: 1px solid #858585;
-  border-radius: 50%;
-  color: white;
-  background: #101010d9;
-}
-.atlas-engineering .ae-pause:hover { border-color: white; }
-@media (max-width: 680px) {
-  .atlas-engineering .ae-record { padding-inline-end: 4.5rem; }
-}
 
 .atlas-engineering[data-home="false"] .ae-board { min-height: clamp(28rem, 35vw, 42rem); }
 .atlas-engineering[data-home="false"] .ae-plane { top: .2rem; }
@@ -350,6 +333,11 @@
 [dir="rtl"] .atlas-engineering .ae-summary { margin-left: auto; }
 [dir="rtl"] .atlas-engineering .ae-record { padding-right: 1rem; }
 [dir="rtl"] .atlas-engineering .ae-thumbnail { inset: 0 12% 0 0; mask-image: linear-gradient(270deg, transparent 0%, #0006 27%, #000f 67%); }
+
+@media (min-width: 981px) and (max-width: 1280px) {
+  .atlas-engineering[data-home="true"] .ae-viewport { grid-area: 2 / 1; overflow: visible; }
+  .atlas-engineering[data-home="true"] .ae-plane.map-canvas { top: -.75rem; }
+}
 
 @media (max-width: 980px) and (min-width: 681px) {
   .atlas-engineering.geo-widget { --ae-gutter: clamp(1.5rem, 3.6vw, 2.5rem); }
@@ -389,6 +377,7 @@
     width: max(166%, 36rem);
     transform: translateX(-50%) translate(var(--ae-pan-x), var(--ae-pan-y));
   }
+  .atlas-engineering .ae-pin { width: 26px; height: 26px; }
   .atlas-engineering .ae-pin span { font-size: .66rem; padding: .25rem .38rem; }
   .atlas-engineering .ae-cartography {
     mask-image: linear-gradient(180deg, transparent 0%, #000 11%, #000 45%, #000a 59%, #0003 75%, transparent 88%);
@@ -425,7 +414,12 @@
   .atlas-engineering .ae-summary { max-width: 31em; margin: .75rem 0 .45rem; font-size: .91rem; }
   .atlas-engineering .ae-links { gap: .2rem .8rem; }
   .atlas-engineering .ae-caption { margin-top: .2rem; }
-  .atlas-engineering .ae-register.geo-country-list { gap: .4rem; }
+  .atlas-engineering .ae-register.geo-country-list {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: .4rem;
+  }
+  .atlas-engineering .ae-register button { grid-column: span 2; }
+  .atlas-engineering .ae-register button:nth-child(n + 4) { grid-column: span 3; }
   .atlas-engineering .ae-register button {
     min-height: clamp(3.6rem, 15vw, 5rem);
     padding: .65rem .38rem;

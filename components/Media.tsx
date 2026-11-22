@@ -88,6 +88,7 @@ export function MediaButton({
   closeLabel,
   externalLabel,
   poster,
+  children,
 }: {
   url: string;
   title: string;
@@ -95,6 +96,7 @@ export function MediaButton({
   closeLabel: string;
   externalLabel: string;
   poster?: string;
+  children?: React.ReactNode;
 }) {
   const dlg = useRef<HTMLDialogElement>(null);
   const [active, setActive] = useState(false);
@@ -104,17 +106,18 @@ export function MediaButton({
       <a
         className="film-trigger"
         href={publicUrl(url)}
+        aria-label={children ? playLabel + " · " + title : undefined}
         onClick={(e) => {
-          if (!dlg.current?.showModal) return;
+          if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey || !dlg.current?.showModal) return;
           e.preventDefault();
           setActive(true);
           dlg.current.showModal();
         }}
       >
-        <span className="play-ring">
+        {children || <><span className="play-ring">
           <Icon name="play" size={14} />
         </span>
-        {playLabel}
+        {playLabel}</>}
       </a>
       <dialog
         className="film-dialog"

@@ -1,4 +1,6 @@
-.missing-page { min-height:100svh; background:#181818; color:#f6f6f4; display:grid; align-items:center; }
+.missing-page { min-height:100svh; background:#fff; color:#181818; }
+.missing-top { background:#181818; color:#f6f6f4; }
+.missing-top::after { content:""; display:block; height:clamp(3.75rem,7vw,8.5rem); background:linear-gradient(#181818,#282828 18%,#8a8a8a 52%,#e5e5e5 80%,white); }
 .missing-sheet { width:min(76rem,90%); margin:auto; padding:clamp(2rem,6vh,5rem) 0; }
 .missing-layout { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); align-items:center; gap:clamp(2rem,7vw,6rem); border-block:1px solid #656565; padding-block:clamp(2.4rem,12vh,9rem); margin-block:2rem 1.2rem; }
 .missing-number { direction:ltr; font-size:clamp(6rem,18vw,17rem); letter-spacing:-.075em; font-weight:600; line-height:.92; color:#ccc; }

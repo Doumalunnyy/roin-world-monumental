@@ -1,5 +1,30 @@
 /* The public homepage does not mount any of these editorial openings. */
 .interior {
+  --chapter-fade: clamp(3.75rem, 7vw, 8.5rem);
+  --chapter-paper: 245 245 245;
+}
+.interior:has(> .company-pages) { --chapter-paper: 255 255 255; }
+.interior > :is(.chapter--partners,.chapter--documents,.chapter--notice) {
+  --chapter-surface:#181818; --chapter-text:#fafafa; --chapter-secondary:#e3e3e3; --chapter-line:#676767;
+}
+.interior > .chapter--partners .chapter-partner-types { background:#efefed; }
+.interior > :is(.chapter--job,.chapter--story,.chapter--notice) .chapter-shell { border-block-end:0; }
+/* The map is the dark continuation of its opening. On that route the fade
+   belongs under the map, immediately before the light country register. */
+.interior > .chapter:not(.chapter--atlas)::after,
+.interior > .atlas-room::after {
+  content:"";
+  display:block;
+  position:relative;
+  block-size:var(--chapter-fade);
+  pointer-events:none;
+  background:linear-gradient(180deg,
+    rgb(var(--chapter-paper) / 0) 0%, rgb(var(--chapter-paper) / .045) 12%,
+    rgb(var(--chapter-paper) / .19) 28%, rgb(var(--chapter-paper) / .51) 51%,
+    rgb(var(--chapter-paper) / .83) 75%, rgb(var(--chapter-paper) / .97) 92%, rgb(var(--chapter-paper)) 100%);
+}
+.interior > .chapter > .chapter-plate figcaption { margin-block-end:var(--chapter-fade); }
+.interior {
   --chapter-display:clamp(3rem,5.35vw,6.25rem);
   --chapter-title:clamp(2.4rem,3.85vw,4.6rem);
 }

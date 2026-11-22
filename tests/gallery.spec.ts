@@ -11,7 +11,7 @@ async function ready(strip: Locator) {
   });
 }
 
-test("the photo archive loads on demand, advances only in view and pauses in the lightbox", async ({ page, baseURL }) => {
+test("the photo archive keeps rotating under the pointer and keyboard focus, and holds an open photo", async ({ page, baseURL }) => {
   await page.clock.install();
   await page.emulateMedia({ reducedMotion: "no-preference" });
   await page.goto(project(baseURL, "en"));
@@ -25,31 +25,33 @@ test("the photo archive loads on demand, advances only in view and pauses in the
   await expect(opener).toHaveAttribute("href", first!);
 
   await ready(strip);
-  await page.mouse.move(1, 1);
+  await expect(gallery.locator(".cg-overview button")).toHaveCount(2);
+  await opener.hover();
   await page.clock.fastForward(7200);
   await expect(count).toHaveText(/^02 \/ /);
-  await gallery.getByRole("button", { name: "Pause slideshow" }).click();
-  await page.mouse.move(1, 1);
-  await page.clock.fastForward(8200);
-  await expect(count).toHaveText(/^02 \/ /);
-  await opener.click();
+  await page.keyboard.press("Tab");
+  await opener.focus();
+  await page.clock.fastForward(7200);
+  await expect(count).toHaveText(/^03 \/ /);
+  await page.keyboard.press("Enter");
   const viewer = gallery.locator("dialog");
   await expect(viewer).toBeVisible();
   const caption = await viewer.locator(".viewer-bottom p").innerText();
+  await page.clock.fastForward(8500);
+  await expect(viewer.locator(".viewer-bottom p")).toHaveText(caption);
   await page.keyboard.press("ArrowRight");
   await expect(viewer.locator(".viewer-bottom p")).not.toHaveText(caption);
   await page.keyboard.press("Escape");
   await expect(viewer).toBeHidden();
   await expect(opener).toBeFocused();
-  await gallery.getByRole("button", { name: "Resume slideshow" }).click();
-  await opener.click();
-  await page.clock.fastForward(8500);
-  await expect(count).toHaveText(/^03 \/ /);
-  await page.keyboard.press("Escape");
+  const afterClose = await count.innerText();
+  await page.clock.fastForward(7200);
+  await expect(count).not.toHaveText(afterClose);
   await page.evaluate(() => window.scrollTo({ top: 0, behavior: "instant" }));
   await expect(strip).not.toBeInViewport();
+  const offscreen = await count.innerText();
   await page.clock.fastForward(9000);
-  await expect(count).toHaveText(/^03 \/ /);
+  await expect(count).toHaveText(offscreen);
 });
 
 test.describe("touch photo archive", () => {
@@ -69,7 +71,10 @@ test.describe("touch photo archive", () => {
       return tip.x < tail.x;
     });
     expect(pointsLeft).toBe(true);
-    await expect(gallery.locator(".cg-cycle")).toBeHidden();
+    const count = gallery.locator(".cg-overview .cg-count");
+    await page.clock.install();
+    await page.clock.fastForward(8500);
+    await expect(count).toHaveText(/^01 \/ /);
     const box = await strip.boundingBox();
     const x = Math.round(box!.x + box!.width * .25);
     const y = Math.round(box!.y + box!.height * .5);
@@ -79,7 +84,6 @@ test.describe("touch photo archive", () => {
       await touch.send("Input.dispatchTouchEvent", { type: "touchMove", touchPoints: [{ x: x + distance, y }] });
     }
     await touch.send("Input.dispatchTouchEvent", { type: "touchEnd", touchPoints: [] });
-    const count = gallery.locator(".cg-overview .cg-count");
     await expect(count).toHaveText(/^02 \/ /);
     await expect(gallery.locator("dialog")).toBeHidden();
     await gallery.locator(".cg-open").focus();

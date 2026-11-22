@@ -89,14 +89,6 @@ function Frames({ frames, sequence, eager = false }: { frames: Frame[]; sequence
   );
 }
 
-const keyboardHelp = {
-  ru: "Пробел — пауза или продолжение. Стрелки — смена кадра.",
-  en: "Press Space to pause or resume. Use the arrow keys to change image.",
-  ar: "اضغط على مفتاح المسافة للإيقاف المؤقت أو الاستئناف. استخدم السهمين لتغيير الصورة.",
-  es: "Pulsa espacio para pausar o continuar. Usa las flechas para cambiar de imagen.",
-  hu: "Szünet vagy folytatás a szóközzel. A képek között a nyílbillentyűkkel válthat."
-};
-
 const arrowHelp = {
   ru: "Стрелки меняют кадр.",
   en: "Use the arrow keys to change image.",
@@ -141,9 +133,8 @@ export function Hero({ lang, title, intro, film, filmTitle, close, external }: H
   return (
     <section ref={attach} className="hero cinema-hero" aria-labelledby="hero-title" data-sequence="hero"
       tabIndex={frames.length > 1 ? 0 : undefined} aria-describedby={frames.length > 1 ? "hero-shortcuts" : undefined}
-      aria-keyshortcuts="Space ArrowLeft ArrowRight" onKeyDown={sequence.onKeyDown}
-      data-active={sequence.state.active} data-running={sequence.running} data-paused={sequence.paused}
-      onFocusCapture={sequence.interaction.onFocusCapture} onBlurCapture={sequence.interaction.onBlurCapture}>
+      aria-keyshortcuts="ArrowLeft ArrowRight" onKeyDown={sequence.onKeyDown}
+      data-active={sequence.state.active} data-running={sequence.running}>
       {frames[0].mobile && <link rel="preload" as="image" fetchPriority="high"
         media="(max-width: 640px)" type={frames[0].mobileAvif ? "image/avif" : undefined}
         href={publicUrl(frames[0].mobileAvif || frames[0].mobile)} />}
@@ -158,11 +149,11 @@ export function Hero({ lang, title, intro, film, filmTitle, close, external }: H
           <div className="hero-inscription">
             <h1 id="hero-title" tabIndex={-1}><span className="title-ink">{title}</span></h1>
             <p className="hero-intro">{intro}</p>
-            <div className="hero-film" onPointerEnter={sequence.interaction.onPointerEnter} onPointerLeave={sequence.interaction.onPointerLeave}>
+            <div className="hero-film">
               <MediaButton url={film} title={filmTitle} playLabel={messages[lang].film} closeLabel={close} externalLabel={external} />
             </div>
           </div>
-          <div className="hero-reel" onPointerEnter={sequence.interaction.onPointerEnter} onPointerLeave={sequence.interaction.onPointerLeave}>
+          <div className="hero-reel">
             {frames.length > 1 && <div className="hero-frame-picker" role="group" aria-label={messages[lang].archive}>
               {frames.map((frame, index) => (
                 <button type="button" key={frame.image} disabled={!sequence.interactive || sequence.state.failed.includes(index)}
@@ -173,7 +164,7 @@ export function Hero({ lang, title, intro, film, filmTitle, close, external }: H
           </div>
         </div>
       </div>
-      <span className="cinema-key-help" id="hero-shortcuts">{sequence.reduced ? arrowHelp[lang] : keyboardHelp[lang]}</span>
+      <span className="cinema-key-help" id="hero-shortcuts">{arrowHelp[lang]}</span>
     </section>
   );
 }
@@ -193,8 +184,8 @@ export function Featured({ items, labels, lang }: { items: Feature[]; labels: { 
   return (
     <section className="cinema-projects" ref={attach} aria-labelledby="featured-title" data-sequence="projects"
       tabIndex={items.length > 1 ? 0 : undefined} aria-describedby={items.length > 1 ? "project-shortcuts" : undefined}
-      aria-keyshortcuts="Space ArrowLeft ArrowRight" onKeyDown={sequence.onKeyDown}
-      data-active={sequence.state.active} data-running={sequence.running} data-paused={sequence.paused} {...sequence.interaction}>
+      aria-keyshortcuts="ArrowLeft ArrowRight" onKeyDown={sequence.onKeyDown}
+      data-active={sequence.state.active} data-running={sequence.running}>
       <div className="project-spread">
         <div className="project-photograph" data-project={project.slug}>
           <Frames frames={frames} sequence={sequence}/>
@@ -221,7 +212,7 @@ export function Featured({ items, labels, lang }: { items: Feature[]; labels: { 
           </div>
         </div>
       </div>
-      <span className="cinema-key-help" id="project-shortcuts">{sequence.reduced ? arrowHelp[lang] : keyboardHelp[lang]}</span>
+      <span className="cinema-key-help" id="project-shortcuts">{arrowHelp[lang]}</span>
     </section>
   );
 }

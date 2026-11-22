@@ -285,11 +285,6 @@ button:disabled {
   padding-block: 12px;
   white-space: nowrap;
 }
-.topnav a:hover,
-.topnav a[aria-current="page"] {
-  background-color: rgb(255 255 255 / 12%);
-  border-radius: .45rem;
-}
 .head-actions {
   display: flex;
   align-items: center;

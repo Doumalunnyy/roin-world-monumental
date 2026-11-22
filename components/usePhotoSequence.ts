@@ -27,7 +27,7 @@ function show(state: Sequence, index: number): Sequence {
 function update(state: Sequence, event: Event): Sequence {
   if (event.type === "settle") return { ...state, previous: null };
   if (event.type === "request") {
-    if (state.failed.includes(event.index)) return state;
+    if (state.failed.includes(event.index) || (!event.manual && state.pending?.manual)) return state;
     return state.ready.includes(event.index)
       ? show(state, event.index)
       : { ...state, pending: { index: event.index, manual: event.manual } };
@@ -64,16 +64,14 @@ export function usePhotoSequence<T extends HTMLElement>(count: number, holdFirst
   const [section, attach] = useState<T | null>(null);
   const [state, dispatch] = useReducer(update, { active: 0, previous: null, pending: null, ready: [], failed: [], moves: 0 });
   const [onscreen, setOnscreen] = useState(false);
-  const [paused, setPaused] = useState(false);
-  const [hovered, setHovered] = useState(false);
-  const [focused, setFocused] = useState(false);
   const [buffer, setBuffer] = useState<number | null>(null);
   const reduced = useSyncExternalStore(subscribeMotion, reducedMotion, serverFalse);
   const visible = useSyncExternalStore(subscribeVisibility, visibleDocument, serverFalse);
-  const running = count - state.failed.length > 1 && onscreen && visible && !paused && !reduced && !hovered && !focused;
+  const running = count - state.failed.length > 1 && onscreen && visible && !reduced;
   const candidates = Array.from({ length: count }, (_, n) => (state.active + 1 + n) % count);
   const next = candidates.find(index => index !== state.active && !state.failed.includes(index));
   const activeReady = state.ready.includes(state.active);
+  const manualPending = state.pending?.manual === true;
 
   function step(direction: 1 | -1) {
     const origin = state.pending?.manual ? state.pending.index : state.active;
@@ -89,10 +87,7 @@ export function usePhotoSequence<T extends HTMLElement>(count: number, holdFirst
   function onKeyDown(event: React.KeyboardEvent<T>) {
     if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
     if (event.target !== event.currentTarget) return;
-    if (event.key === " ") {
-      event.preventDefault();
-      if (!event.repeat && !reduced) setPaused(value => !value);
-    } else if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+    if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
       event.preventDefault();
       const rtl = getComputedStyle(event.currentTarget).direction === "rtl";
       step((event.key === "ArrowRight") !== rtl ? 1 : -1);
@@ -111,14 +106,14 @@ export function usePhotoSequence<T extends HTMLElement>(count: number, holdFirst
   }, [section]);
 
   useEffect(() => {
-    if (!running || next === undefined || !activeReady || (holdFirst && state.moves === 0)) return;
+    if (!running || next === undefined || !activeReady || manualPending || (holdFirst && state.moves === 0)) return;
     // Delay the next download until the current frame has had time to paint.
     const loadNext = window.setTimeout(() => setBuffer(next), HOLD_MS / 2);
     const advance = window.setTimeout(() => {
       if (!document.hidden && !reducedMotion()) dispatch({ type: "request", index: next, manual: false });
     }, HOLD_MS);
     return () => { clearTimeout(loadNext); clearTimeout(advance); };
-  }, [running, next, state.active, state.moves, activeReady, holdFirst]);
+  }, [running, next, state.active, state.moves, activeReady, holdFirst, manualPending]);
 
   useEffect(() => {
     if (state.previous === null) return;
@@ -127,19 +122,11 @@ export function usePhotoSequence<T extends HTMLElement>(count: number, holdFirst
   }, [state.previous, state.moves]);
 
   return {
-    attach, state, running, reduced, paused, interactive: section !== null,
+    attach, state, running, interactive: section !== null,
     step, onKeyDown,
     select: (index: number) => dispatch({ type: "request", index, manual: true }),
     ready: (index: number) => dispatch({ type: "ready", index, autoplayAllowed: running && !document.hidden && !reducedMotion() }),
     failed: (index: number) => dispatch({ type: "failed", index, count }),
     mounted: new Set([...state.ready, state.active, state.previous, state.pending?.index, buffer]),
-    interaction: {
-      onPointerEnter: (event: React.PointerEvent<T>) => setHovered(event.pointerType === "mouse"),
-      onPointerLeave: () => setHovered(false),
-      onFocusCapture: (event: React.FocusEvent<T>) => setFocused(event.target.matches(":focus-visible") && event.target.matches("a, button")),
-      onBlurCapture: (event: React.FocusEvent<T>) => {
-        if (!event.currentTarget.contains(event.relatedTarget)) setFocused(false);
-      },
-    },
   };
 }
