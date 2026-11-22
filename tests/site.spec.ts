@@ -1,4 +1,5 @@
 import AxeBuilder from "@axe-core/playwright";
+import { active as activeLanguages } from "../content/locales.json";
 import { test as base, expect, type Page } from "@playwright/test";
 
 const test = base.extend<{ browserErrors: void }>({
@@ -30,9 +31,19 @@ test("archive hero and project selection are independent under reduced motion", 
   await expect(hero.locator('a[href*="/about"]')).toHaveCount(0);
   await expect(hero.getByRole("link", {name:/фильм/i})).toBeVisible();
   await expect(hero).toHaveAttribute("data-active", "0");
-  await featured.locator(".sequence-tabs button").nth(1).click();
+  await expect(hero.locator(".hero-exposure").getByRole("link", {name:/фильм/i})).toBeVisible();
+  await expect(hero.getByRole("button")).toHaveCount(2);
+  await expect(featured.getByRole("button")).toHaveCount(2);
+  await expect(hero).toHaveAttribute("data-running", "false");
+  await featured.locator('[data-step="next"]').click();
   await expect(featured).toHaveAttribute("data-active", "1");
   await expect(hero).toHaveAttribute("data-active", "0");
+  await featured.focus();
+  await page.keyboard.press("ArrowLeft");
+  await expect(featured).toHaveAttribute("data-active", "0");
+  await expect(featured.locator(".sequence-layer.current img")).toHaveAttribute("src", /project-bd\.webp$/);
+  await page.keyboard.press("ArrowRight");
+  await expect(featured).toHaveAttribute("data-active", "1");
   await featured.getByRole("link", {name:/Подробнее/}).click();
   await expect(page).toHaveURL(/\/ru\/projects\/el-dabaa\/?$/);
 });
@@ -45,7 +56,9 @@ test("visible photo sequences advance in place and the logo strip can be paused"
   const position = await heading.boundingBox();
   await expect(hero).toHaveAttribute("data-active", "1", {timeout:16000});
   expect(await heading.boundingBox()).toEqual(position);
-  await hero.locator(".sequence-toggle").click();
+  await hero.focus();
+  await page.keyboard.press("Space");
+  await expect(hero).toHaveAttribute("data-paused", "true");
   await expect(hero).toHaveAttribute("data-running", "false");
   await projects.scrollIntoViewIfNeeded();
   await page.mouse.move(0,0);
@@ -54,7 +67,8 @@ test("visible photo sequences advance in place and the logo strip can be paused"
   const strip = page.locator(".partner-strip");
   await strip.scrollIntoViewIfNeeded();
   await expect(strip).toHaveAttribute("data-running","true");
-  await strip.getByRole("button").click();
+  await strip.getByRole("button").focus();
+  await page.keyboard.press("Space");
   await expect(strip).toHaveAttribute("data-running","false");
   await expect(strip.locator("ul").first().getByRole("img")).toHaveCount(6);
   await page.emulateMedia({reducedMotion:"reduce"});
@@ -144,6 +158,22 @@ test("mobile menu restores focus and language changes preserve the project", asy
   );
 });
 
+test("Spanish and Hungarian preserve the project and publish its language alternatives", async ({ page }) => {
+  await open(page, "/es/projects/rooppur");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Central nuclear de Rooppur");
+  for (const lang of activeLanguages) {
+    await expect(page.locator('link[hreflang="' + lang + '"]')).toHaveAttribute(
+      "href", new RegExp("/" + lang + "/projects/rooppur/?$"),
+    );
+  }
+  const language = page.locator("details.languages");
+  await language.locator("summary").click();
+  await language.getByRole("link", { name: "Magyar", exact: true }).click();
+  await expect(page).toHaveURL(/\/hu\/projects\/rooppur\/?$/);
+  await expect(page.locator("html")).toHaveAttribute("dir", "ltr");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Ruppuri Atomerőmű");
+});
+
 test("film is requested on activation and released when the player closes", async ({
   page,
 }) => {
@@ -219,7 +249,7 @@ for (const width of [360, 390, 768, 1024, 1440, 1920]) {
     "home fits a " + width + "px viewport in every active locale",
     async ({ page }) => {
       await page.setViewportSize({ width, height: width < 600 ? 844 : 960 });
-      for (const lang of ["ru", "en", "ar"]) {
+      for (const lang of activeLanguages) {
         await open(page, "/" + lang);
         const bounds = await page.evaluate(() => ({
           viewport: document.documentElement.clientWidth,
@@ -237,7 +267,7 @@ for (const width of [360, 390, 768, 1024, 1440, 1920]) {
 test("long document and article titles fit compact phones", async ({ page }) => {
   for (const width of [360, 390]) {
     await page.setViewportSize({ width, height: 844 });
-    for (const lang of ["ru", "en", "ar"]) {
+    for (const lang of activeLanguages) {
       for (const route of ["privacy", "news/rooppur-fire-drill"]) {
         const path = "/" + lang + "/" + route;
         await open(page, path);
@@ -252,6 +282,8 @@ for (const path of [
   "/ru",
   "/en",
   "/ar",
+  "/es",
+  "/hu",
   "/ru/projects",
   "/ru/projects/rooppur",
   "/ru/geography",

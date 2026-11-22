@@ -17,7 +17,7 @@ const file = (name, label, fields) => ({
   name, label, fields, file: 'content/' + name + '.json', format: 'json'
 });
 
-export function collections({ languages, interfaceKeys, companyInterfaceKeys, captionPaths }) {
+export function collections({ languages, interfaceKeys, companyInterfaceKeys, captionPaths, landingKeys, atlasKeys, atlasProjects, showcaseKeys, contactKeys }) {
   const tr = (name, label, widget = 'string', hint) => ({
     name, label, widget: 'object', collapsed: true,
     ...(hint ? { hint } : {}),
@@ -43,7 +43,7 @@ export function collections({ languages, interfaceKeys, companyInterfaceKeys, ca
         tr('intro', 'Вводный текст', 'text'), image('hero', 'Обложка для компьютеров'),
         image('heroMobile', 'Обложка для телефонов'), tr('heroAlt', 'Описание обложки для экранного диктора'),
         list('heroFrames', 'Фотографии первого экрана', [
-          image('image', 'Широкий кадр'), image('mobile', 'Мобильный кадр'), tr('alt', 'Описание снимка'), uri('source','Корпоративный оригинал')
+          image('image', 'Широкий кадр'), image('mobile', 'Мобильный кадр'), tr('alt', 'Описание снимка'), uri('source','Первоисточник фотографии')
         ], '{{fields.alt.ru}}'),
         input('heroProject', 'Идентификатор проекта, если объект на обложке подтверждён', 'string', { required: false }), uri('film', 'Корпоративный фильм'), tr('about', 'Заголовок о компании'),
         tr('aboutText', 'О компании', 'text'), tr('expertise', 'Заголовок направлений'),
@@ -66,6 +66,7 @@ export function collections({ languages, interfaceKeys, companyInterfaceKeys, ca
         ] }),
         tr('sector', 'Отрасль'), summary, optionalTranslation('context', 'Масштаб объекта'),
         uri('contextSource', 'Источник сведений о масштабе объекта', false), tr('role', 'Роль ROIN WORLD', 'text'), source, image(),
+        image('featuredImage', 'Фотография проекта на главной', false),
         input('services', 'Направления работ', 'list', {
           field: input('slug', 'Идентификатор направления'), hint: 'Укажите идентификаторы из раздела «Направления».'
         }),
@@ -123,6 +124,19 @@ export function collections({ languages, interfaceKeys, companyInterfaceKeys, ca
     library.files.push(file('ui', 'Переводы интерфейса', interfaceKeys.map(key => tr(key, key, 'text'))));
   }
   library.files.push(file('company-ui', 'Тексты внутренних страниц', companyInterfaceKeys.map(key => tr(key, key, 'text'))));
+  library.files.push(file('landing-ui', 'Подписи главной страницы', landingKeys.map(key => tr(key, key, 'text'))));
+  library.files.push(file('atlas-ui', 'Тексты карты проектов', [
+    ...atlasKeys.map(key => tr(key, key, 'text')),
+    input('projectNotes', 'Справки по проектам', 'object', { fields: atlasProjects.map(key => tr(key, key, 'text')) })
+  ]));
+  for (const [name, title, keys] of [
+    ['showcase-ui', 'Подписи галерей и управления', showcaseKeys],
+    ['contact-ui', 'Переводы формы обращения', contactKeys]
+  ]) {
+    library.files.push(file(name, title, languages.map(({ code, label }) =>
+      input(code, label, 'object', { fields: keys.map(key => input(key, key, 'text')) })
+    )));
+  }
   library.files.push(file('captions', 'Подписи фотографий', captionPaths.map(path => tr(path, path, 'text'))));
   library.files.push(file('technical-ui', 'Навигация по проектам и направлениям',
     ['countryProjects','regionRegister','exploreGeography','serviceApproach','projectRecord','cooperation','catalogue','siteMedia','openImage'].map(key => tr(key, key, 'text'))));

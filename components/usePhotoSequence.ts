@@ -75,6 +75,30 @@ export function usePhotoSequence<T extends HTMLElement>(count: number) {
   const next = candidates.find(index => index !== state.active && !state.failed.includes(index));
   const activeReady = state.ready.includes(state.active);
 
+  function step(direction: 1 | -1) {
+    const origin = state.pending?.manual ? state.pending.index : state.active;
+    for (let offset = 1; offset < count; offset++) {
+      const index = (origin + count + direction * offset) % count;
+      if (!state.failed.includes(index)) {
+        dispatch({ type: "request", index, manual: true });
+        break;
+      }
+    }
+  }
+
+  function onKeyDown(event: React.KeyboardEvent<T>) {
+    if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+    if (event.target !== event.currentTarget) return;
+    if (event.key === " ") {
+      event.preventDefault();
+      if (!event.repeat && !reduced) setPaused(value => !value);
+    } else if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+      event.preventDefault();
+      const rtl = getComputedStyle(event.currentTarget).direction === "rtl";
+      step((event.key === "ArrowRight") !== rtl ? 1 : -1);
+    }
+  }
+
   useEffect(() => {
     if (!section) return;
     if (!("IntersectionObserver" in window)) {
@@ -104,8 +128,7 @@ export function usePhotoSequence<T extends HTMLElement>(count: number) {
 
   return {
     attach, state, running, reduced, paused,
-    toggle: () => setPaused(value => !value),
-    select: (index: number) => dispatch({ type: "request", index, manual: true }),
+    step, onKeyDown,
     ready: (index: number) => dispatch({ type: "ready", index, autoplayAllowed: running && !document.hidden && !reducedMotion() }),
     failed: (index: number) => dispatch({ type: "failed", index, count }),
     mounted: new Set([...state.ready, state.active, state.previous, state.pending?.index, buffer]),

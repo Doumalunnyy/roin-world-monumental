@@ -3,11 +3,15 @@ import { readFile, writeFile } from "node:fs/promises";
 const root = new URL("../", import.meta.url);
 const readJson = async (path) =>
   JSON.parse(await readFile(new URL(path, root), "utf8"));
-const [locales, ui, companyUi, captions] = await Promise.all([
+const [locales, ui, companyUi, captions, landingUi, atlasUi, showcaseUi, contactUi] = await Promise.all([
   readJson("content/locales.json"),
   readJson("content/ui.json"),
   readJson("content/company-ui.json"),
   readJson("content/captions.json"),
+  readJson("content/landing-ui.json"),
+  readJson("content/atlas-ui.json"),
+  readJson("content/showcase-ui.json"),
+  readJson("content/contact-ui.json"),
 ]);
 const repository = process.env.CMS_REPOSITORY?.trim();
 const oauthBase = process.env.CMS_OAUTH_BASE_URL?.trim();
@@ -31,6 +35,11 @@ const settings = {
   interfaceKeys: Object.keys(ui),
   companyInterfaceKeys: Object.keys(companyUi),
   captionPaths: Object.keys(captions),
+  landingKeys: Object.keys(landingUi),
+  atlasKeys: Object.keys(atlasUi).filter((key) => key !== "projectNotes"),
+  atlasProjects: Object.keys(atlasUi.projectNotes),
+  showcaseKeys: Object.keys(showcaseUi.ru),
+  contactKeys: Object.keys(contactUi.ru),
   backend: repository
     ? {
         name: "github",

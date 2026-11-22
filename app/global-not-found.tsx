@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { locales, languageInfo } from "@/lib/content";
 import "./site.css";
 export default function GlobalMissing() {
   return (
@@ -13,11 +14,16 @@ export default function GlobalMissing() {
               На главную
             </Link>
           </div>
-          <nav>
-            <Link href="/en">English</Link> ·{" "}
-            <Link href="/ar" lang="ar">
-              العربية
-            </Link>
+          <nav aria-label="Другие языки">
+            <ul>
+              {locales.filter((code) => code !== "ru").map((code) => (
+                <li key={code}>
+                  <Link href={"/" + code} lang={code} dir={languageInfo[code].dir}>
+                    {languageInfo[code].name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </nav>
         </main>
       </body>

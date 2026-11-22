@@ -1,15 +1,28 @@
 /* Industrial graphite, paper and the warm light of the construction site. */
 :root {
-  --ink: #0e1519;
-  --carbon: #171f24;
-  --paper: #f2f1ed;
-  --lime: #edc28b;
+  --navy: #081823;
+  --ink: #111c23;
+  --carbon: #111c23;
+  --slate: #2b3b46;
+  --white: #f4f3ef;
+  --paper: #f4f3ef;
+  --silver: #a9b5bd;
+  --lime: #d8a35e;
   --motion-fast: 220ms;
   --motion-enter: 640ms;
   --ease-industrial: cubic-bezier(.2,.7,.22,1);
 }
-.mast:not(.solid) { background: linear-gradient(180deg, #0b1018b3, #0b101835 83%, transparent); }
-.mast.solid { background: #0d1419f5; }
+.mast:not(.solid) { background: linear-gradient(180deg, #071823bf, #08182348 83%, transparent); }
+.mast.solid { background: #081823fa; }
+.mast .topnav a { display:inline-flex; align-items:center; min-height:44px; font-weight:550; }
+@media(min-width:901px) { .mast .menu-toggle,.mast noscript { display:none; } }
+.mast .languages summary { padding-inline:.55rem; }
+.mast .locale-list { background:var(--navy); border-color:#53626c; }
+.mast .head-actions { border-inline-start:1px solid #a9b5bd55; padding-inline-start:clamp(8px,1.4vw,26px); }
+.action,button[type=submit] { min-height:44px; border-radius:0; font-weight:650; transition:background-color .2s,color .2s,border-color .2s; }
+.text-link { min-height:44px; width:fit-content; font-weight:580; border-color:var(--lime); gap:1.2em; }
+.text-link:focus-visible,.action:focus-visible,button:focus-visible,.languages summary:focus-visible { outline:2px solid currentColor; outline-offset:3px; }
+@media (prefers-reduced-motion:reduce) { .text-link:hover .icon-arrow,.action:hover .icon-arrow { transform:none; } }
 .mast-inner { height: clamp(68px, 6.1vw, 88px); }
 .hero .hero-picture { inset-inline-start: 0; animation: image-reveal .8s var(--ease-industrial) both; }
 .hero .hero-picture img { object-position: 60% 47%; }

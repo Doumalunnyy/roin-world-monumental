@@ -21,7 +21,7 @@ function SceneImage({ asset, className }: { asset: keyof typeof textures; classN
     <picture className={className}>
       <source media="(max-width: 700px) and (orientation: portrait) and (prefers-reduced-motion: no-preference)" srcSet={publicUrl("/transition/compact/" + file)} />
       <source media="(prefers-reduced-motion: no-preference)" srcSet={publicUrl("/transition/" + file)} />
-      <img src={transparentPixel} width={width} height={height} alt="" decoding="sync" loading="eager" fetchPriority="low" />
+      <img src={transparentPixel} width={width} height={height} alt="" decoding="async" loading="lazy" fetchPriority="low" />
     </picture>
   );
 }
@@ -62,6 +62,8 @@ export function IndustrialCloudTransition({ languages }: { languages: readonly s
         const probe = handoffKey + ":available";
         sessionStorage.setItem(probe, "1");
         sessionStorage.removeItem(probe);
+        // This decorative, normally hidden scene can wait until idle or navigation intent.
+        for (const img of images) img.loading = "eager";
         Promise.all(images.map((img) => img.decode())).then(() => {
           if (disposed || reduced.matches || currentGeneration !== assetGeneration || images.some((img) => img.naturalWidth <= 1)) return;
           ready = true;

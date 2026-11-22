@@ -23,6 +23,8 @@ export function feature(lang: Lang, p: Project) {
     role: p.role[lang],
     image: p.image,
     caption: caption(lang, p.image),
+    featuredImage: p.featuredImage,
+    featuredCaption: p.featuredImage ? caption(lang, p.featuredImage) : undefined,
     url: href(lang, "projects/" + p.slug),
     areas: p.services,
   };

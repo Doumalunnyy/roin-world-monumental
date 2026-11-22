@@ -32,7 +32,7 @@ export function CorporatePartnersMarquee({ logos, lang }: { logos: { name: strin
   const labels=motionLabels[lang];
   return (
     <div className="partner-strip" ref={root} data-running={visible && !paused}>
-      <div className="partner-window" dir="ltr" role="group" aria-label={{ru:"Логотипы организаций",en:"Organisation logos",ar:"شعارات المؤسسات"}[lang]} tabIndex={0}>
+      <div className="partner-window" dir="ltr" role="group" aria-label={words.partnerList[lang]} tabIndex={0}>
         <div className="partner-track">
           {[false,true].map((clone) => (
             <ul key={String(clone)} aria-hidden={clone || undefined}>
@@ -47,7 +47,7 @@ export function CorporatePartnersMarquee({ logos, lang }: { logos: { name: strin
         </div>
       </div>
       <button type="button" className="strip-control" aria-label={labels[paused ? 1 : 0]} aria-pressed={paused} onClick={() => setPaused(!paused)}>
-        <span aria-hidden="true">{paused ? "▷" : "Ⅱ"}</span>
+        {labels[paused ? 1 : 0]}
       </button>
     </div>
   );

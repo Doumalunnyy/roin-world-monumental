@@ -2,74 +2,110 @@
   "title": {
     "ru": "СОЗДАЁМ МАСШТАБ.\nСТРОИМ БУДУЩЕЕ.",
     "en": "CREATING SCALE.\nBUILDING THE FUTURE.",
-    "ar": "نصنع الفارق.\nونبني المستقبل."
+    "ar": "نصنع الفارق.\nونبني المستقبل.",
+    "es": "PROYECTOS DE GRAN ESCALA.\nCONSTRUIMOS EL FUTURO.",
+    "hu": "NAGY LÉPTÉKBEN DOLGOZUNK.\nA JÖVŐT ÉPÍTJÜK."
   },
   "intro": {
-    "ru": "ROIN WORLD — международная компания в сфере строительства и инженерных работ. Участвуем в реализации крупных энергетических и инфраструктурных проектов, объединяя инженерные компетенции, логистику, снабжение и комплексные сервисы.",
+    "ru": "ROIN WORLD — международная компания в сфере строительства и инженерных работ. Участвуем в реализации крупных энергетических и инфраструктурных проектов, объединяя инженерную экспертизу, логистику, снабжение и комплексные сервисы.",
     "en": "ROIN WORLD is an international construction and engineering company. We contribute to major energy and infrastructure projects through engineering, logistics, procurement and site services.",
-    "ar": "ROIN WORLD شركة دولية متخصصة في البناء والهندسة. نساهم في مشاريع كبرى للطاقة والبنية التحتية من خلال الهندسة والنقل والتوريد وخدمات المواقع."
+    "ar": "ROIN WORLD شركة دولية متخصصة في البناء والهندسة. نساهم في مشاريع كبرى للطاقة والبنية التحتية من خلال الهندسة والنقل والتوريد وخدمات المواقع.",
+    "es": "ROIN WORLD es una empresa internacional de construcción e ingeniería. Participamos en grandes proyectos de energía e infraestructuras combinando ingeniería, logística, aprovisionamiento y servicios integrales de obra.",
+    "hu": "A ROIN WORLD nemzetközi építőipari és mérnöki vállalat. Nagyszabású energetikai és infrastrukturális beruházásokban veszünk részt, amelyekhez mérnöki szaktudást, logisztikát, beszerzést és átfogó helyszíni szolgáltatásokat biztosítunk."
   },
-  "hero": "/images/hero-3.webp",
-  "heroMobile": "/images/hero-3-mobile.webp",
+  "hero": "/images/rooppur-towers-panorama.webp",
+  "heroMobile": "/images/rooppur-towers-portrait.webp",
   "heroAlt": {
-    "ru": "Панорама стройплощадки с башенными кранами в вечернем свете",
-    "en": "Tower cranes over an industrial construction site in evening light",
-    "ar": "رافعات برجية فوق موقع إنشاء صناعي في ضوء المساء"
+    "ru": "Строительная площадка и градирни АЭС „Руппур“, Бангладеш",
+    "en": "Construction site and cooling towers at Rooppur nuclear power plant, Bangladesh",
+    "ar": "موقع البناء وأبراج التبريد في محطة روبور النووية، بنغلاديش",
+    "es": "Obras y torres de refrigeración de la central nuclear de Rooppur, Bangladés",
+    "hu": "A ruppuri atomerőmű építési területe és hűtőtornyai, Banglades"
   },
   "film": "https://www.youtube.com/watch?v=4KEZoq2ubVE",
   "teamImage": "/images/team.webp",
-  "careerImage": "/images/archive-field-team.webp",
+  "careerImage": "/images/hero-dusk.webp",
   "about": {
     "ru": "Большие задачи.\nСильные решения.",
     "en": "Complex challenges.\nPractical solutions.",
-    "ar": "تحديات كبيرة.\nوحلول عملية."
+    "ar": "تحديات كبيرة.\nوحلول عملية.",
+    "es": "Retos complejos.\nSoluciones prácticas.",
+    "hu": "Összetett feladatok.\nGyakorlati megoldások."
   },
   "aboutText": {
     "ru": "Мы работаем там, где решения инженеров становятся промышленными объектами. На одной площадке сходятся строительные команды, поставки материалов и сервисы для людей. ROIN WORLD объединяет эти направления в международных проектах.",
     "en": "We work where engineering decisions become industrial facilities. Construction crews, material deliveries and site services come together on every site. ROIN WORLD connects these disciplines on international projects.",
-    "ar": "نعمل حيث تتحول القرارات الهندسية إلى منشآت صناعية. تجمع مواقع البناء فرق التنفيذ وتوريد المواد وخدمات الأفراد، وتربط ROIN WORLD بين هذه الأعمال في المشاريع الدولية."
+    "ar": "نعمل حيث تتحول القرارات الهندسية إلى منشآت صناعية. تجمع مواقع البناء فرق التنفيذ وتوريد المواد وخدمات الأفراد، وتربط ROIN WORLD بين هذه الأعمال في المشاريع الدولية.",
+    "es": "Trabajamos allí donde los proyectos de ingeniería se convierten en instalaciones industriales. En cada obra coinciden los equipos de construcción, el suministro de materiales y los servicios de apoyo. ROIN WORLD coordina estas actividades en proyectos internacionales.",
+    "hu": "Ott dolgozunk, ahol a mérnöki tervekből ipari létesítmények születnek. Minden építkezésen össze kell hangolni a kivitelezőcsapatok munkáját, az anyagszállítást és a helyszíni szolgáltatásokat. A ROIN WORLD ezt a feladatot nemzetközi projektekben végzi."
   },
   "expertise": {
     "ru": "Направления деятельности",
     "en": "Our capabilities",
-    "ar": "مجالات العمل"
+    "ar": "مجالات العمل",
+    "es": "Nuestras capacidades",
+    "hu": "Szakterületeink"
   },
   "projects": {
-    "ru": "Избранные международные проекты",
-    "en": "Selected international projects",
-    "ar": "مشاريع دولية مختارة"
+    "ru": "Ключевые международные проекты",
+    "en": "Key international projects",
+    "ar": "أبرز مشاريعنا الدولية",
+    "es": "Proyectos internacionales clave",
+    "hu": "Kiemelt nemzetközi projektek"
   },
   "team": {
     "ru": "За каждым проектом —\nнаша команда.",
     "en": "Behind every project\nis our team.",
-    "ar": "وراء كل مشروع\nفريقنا."
+    "ar": "وراء كل مشروع\nفريقنا.",
+    "es": "Detrás de cada proyecto\nestá nuestro equipo.",
+    "hu": "Minden projektünk mögött\negy csapat áll."
   },
   "geo": {
     "ru": "География проектов",
     "en": "Where we work",
-    "ar": "نطاق مشاريعنا"
+    "ar": "نطاق مشاريعنا",
+    "es": "Dónde trabajamos",
+    "hu": "Hol dolgozunk?"
   },
   "career": {
-    "ru": "Создавайте будущее\nвместе с нами.",
-    "en": "Build the future\nwith us.",
-    "ar": "ابنوا المستقبل\nمعنا."
+    "ru": "Развивайтесь вместе с ROIN WORLD",
+    "en": "Grow with ROIN WORLD",
+    "ar": "تطوّر مهنياً مع ROIN WORLD",
+    "es": "Crece con ROIN WORLD",
+    "hu": "Fejlődjön a ROIN WORLD csapatában"
   },
   "contact": {
     "ru": "Обсудить сотрудничество",
     "en": "Discuss a project",
-    "ar": "لنتحدث عن مشروعكم"
+    "ar": "لنتحدث عن مشروعكم",
+    "es": "Hablemos de tu proyecto",
+    "hu": "Beszéljünk a projektjéről"
   },
   "teamCount": "800+",
   "teamCountSource": "https://roinworld.ae/",
   "heroProject": "",
   "heroFrames": [
     {
+      "image": "/images/rooppur-towers-panorama.webp",
+      "mobile": "/images/rooppur-towers-portrait.webp",
+      "alt": {
+        "ru": "Строительная площадка и градирни АЭС „Руппур“, Бангладеш",
+        "en": "Construction site and cooling towers at Rooppur nuclear power plant, Bangladesh",
+        "ar": "موقع البناء وأبراج التبريد في محطة روبور النووية، بنغلاديش",
+        "es": "Obras y torres de refrigeración de la central nuclear de Rooppur, Bangladés",
+        "hu": "A ruppuri atomerőmű építési területe és hűtőtornyai, Banglades"
+      },
+      "source": "https://commons.wikimedia.org/wiki/File:Cooling_Tower_of_Rooppur_Nuclear_Power_Plant.jpg"
+    },
+    {
       "image": "/images/hero-3.webp",
       "mobile": "/images/hero-3-mobile.webp",
       "alt": {
         "ru": "Панорама стройплощадки с башенными кранами в вечернем свете",
         "en": "Tower cranes over an industrial construction site in evening light",
-        "ar": "رافعات برجية فوق موقع إنشاء صناعي في ضوء المساء"
+        "ar": "رافعات برجية فوق موقع إنشاء صناعي في ضوء المساء",
+        "es": "Grúas torre en una obra industrial al atardecer",
+        "hu": "Toronydaruk egy ipari építkezésen az alkonyi fényben"
       },
       "source": "https://roinworld.ae/wp-content/uploads/2025/11/WhatsApp-Image-2025-09-30-at-16.28.52-1.jpeg"
     },
@@ -79,7 +115,9 @@
       "alt": {
         "ru": "Монтаж кровли над пролётами стального каркаса",
         "en": "Roof panels over a wide-span steel frame",
-        "ar": "ألواح السقف فوق هيكل فولاذي واسع البحور"
+        "ar": "ألواح السقف فوق هيكل فولاذي واسع البحور",
+        "es": "Paneles de cubierta sobre una estructura de acero de gran luz",
+        "hu": "Tetőpanelek egy nagy fesztávú acélszerkezeten"
       },
       "source": "https://roinworld.ae/wp-content/uploads/2025/11/WhatsApp-Image-2025-09-30-at-16.28.59.jpeg"
     },
@@ -89,7 +127,9 @@
       "alt": {
         "ru": "Промышленные водоёмы и инженерные сооружения с высоты",
         "en": "Industrial basins and infrastructure seen from the air",
-        "ar": "منظر جوي لأحواض صناعية ومنشآت هندسية"
+        "ar": "منظر جوي لأحواض صناعية ومنشآت هندسية",
+        "es": "Vista aérea de balsas industriales e infraestructuras",
+        "hu": "Ipari medencék és infrastruktúra madártávlatból"
       },
       "source": "https://roinworld.ae/wp-content/uploads/2025/11/WhatsApp-Image-2025-09-30-at-16.28.54-3.jpeg"
     },
@@ -99,7 +139,9 @@
       "alt": {
         "ru": "Стальные колонны, балки и подъёмная техника на монтажной площадке",
         "en": "Steel columns, girders and lifting equipment on site",
-        "ar": "أعمدة وعوارض فولاذية ومعدات رفع في موقع التركيب"
+        "ar": "أعمدة وعوارض فولاذية ومعدات رفع في موقع التركيب",
+        "es": "Pilares y vigas de acero y equipos de elevación en la obra",
+        "hu": "Acéloszlopok, tartók és emelőgépek a szerelési területen"
       },
       "source": "https://roinworld.ae/wp-content/uploads/2025/11/WhatsApp-Image-2025-09-30-at-16.28.52-2.jpeg"
     },
@@ -109,7 +151,9 @@
       "alt": {
         "ru": "Строящийся купол и краны над корпусами энергетического комплекса",
         "en": "A dome under construction and cranes over an energy complex",
-        "ar": "قبة قيد الإنشاء ورافعات فوق مباني مجمع للطاقة"
+        "ar": "قبة قيد الإنشاء ورافعات فوق مباني مجمع للطاقة",
+        "es": "Cúpula en construcción y grúas sobre un complejo energético",
+        "hu": "Épülő kupola és daruk egy energetikai létesítmény felett"
       },
       "source": "https://roinworld.ae/wp-content/uploads/2025/11/WhatsApp-Image-2025-09-30-at-16.28.42.jpeg"
     }

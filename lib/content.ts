@@ -44,6 +44,7 @@ export type Project = {
   sector: Local;
   services: string[];
   image: string;
+  featuredImage?: string;
   role: Local;
   source: string;
   context?: Local;

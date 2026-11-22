@@ -2,7 +2,9 @@
   "active": [
     "ru",
     "en",
-    "ar"
+    "ar",
+    "es",
+    "hu"
   ],
   "locales": {
     "ru": {
@@ -23,12 +25,12 @@
     "es": {
       "name": "Español",
       "dir": "ltr",
-      "review": "planned"
+      "review": "draft"
     },
     "hu": {
       "name": "Magyar",
       "dir": "ltr",
-      "review": "planned"
+      "review": "draft"
     }
   }
 }

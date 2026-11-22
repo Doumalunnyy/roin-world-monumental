@@ -4,10 +4,11 @@ import { useEffect, useEffectEvent, useState } from "react";
 import { Icon } from "./Icons";
 import { MediaButton } from "./Media";
 import { usePhotoSequence } from "./usePhotoSequence";
-import { publicUrl } from "@/lib/urls";
+import { localeUrl, publicUrl } from "@/lib/urls";
 import type { Lang } from "@/lib/content";
 import home from "@/content/home.json";
 import messages from "@/content/showcase-ui.json";
+import ui from "@/content/ui.json";
 import "./showcases.css";
 
 export type Feature = {
@@ -16,6 +17,8 @@ export type Feature = {
   country: string;
   title: string;
   image: string;
+  featuredImage?: string;
+  featuredCaption?: string;
   summary: string;
   role?: string;
   sector: string;
@@ -26,7 +29,6 @@ export type Feature = {
 type Frame = { image: string; mobile?: string; alt: string };
 type ArchiveFrame = { image: string; mobile?: string; alt: Record<Lang, string> };
 type Sequence = Omit<ReturnType<typeof usePhotoSequence<HTMLElement>>, "attach">;
-type Labels = typeof messages.ru;
 
 function ArchiveImage({ frame, current, first, eager, ready, failed }: {
   frame: Frame; current: boolean; first: boolean; eager: boolean; ready: () => void; failed: () => void;
@@ -84,25 +86,43 @@ function Frames({ frames, sequence, eager = false }: { frames: Frame[]; sequence
   );
 }
 
-function Counter({ active, count, label }: { active: number; count: number; label: string }) {
-  return <span className="sequence-count" dir="ltr" aria-label={label + " " + (active + 1) + " / " + count}>
-    <b>{String(active + 1).padStart(2, "0")}</b><span aria-hidden="true"> / </span>{String(count).padStart(2, "0")}
-  </span>;
-}
-function Toggle({ sequence, labels }: { sequence: Sequence; labels: Labels }) {
-  if (sequence.reduced) return null;
-  const name = sequence.paused ? labels.resume : labels.pause;
-  return <button className="sequence-toggle" type="button" title={name} aria-label={name} aria-pressed={sequence.paused} onClick={sequence.toggle}>
-    {sequence.paused ? <Icon name="play" size={14} /> : <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3v10M11 3v10" fill="none" stroke="currentColor" strokeWidth="2"/></svg>}
-  </button>;
+const keyboardHelp = {
+  ru: "Пробел — пауза или продолжение. Стрелки — смена кадра.",
+  en: "Press Space to pause or resume. Use the arrow keys to change image.",
+  ar: "اضغط على مفتاح المسافة للإيقاف المؤقت أو الاستئناف. استخدم السهمين لتغيير الصورة.",
+  es: "Pulsa espacio para pausar o continuar. Usa las flechas para cambiar de imagen.",
+  hu: "Szünet vagy folytatás a szóközzel. A képek között a nyílbillentyűkkel válthat."
+};
+
+const arrowHelp = {
+  ru: "Стрелки меняют кадр.",
+  en: "Use the arrow keys to change image.",
+  ar: "استخدم السهمين لتغيير الصورة.",
+  es: "Usa las flechas para cambiar de imagen.",
+  hu: "A képek között a nyílbillentyűkkel válthat."
+};
+
+function SequenceNavigation({ lang, count, sequence }: { lang: Lang; count: number; sequence: Sequence }) {
+  if (count < 2) return null;
+  return (
+    <div className="cinema-navigation">
+      <div className="cinema-indicators" aria-hidden="true">
+        {Array.from({ length: count }, (_, index) => <span key={index} data-current={sequence.state.active === index} />)}
+      </div>
+      <div className="cinema-arrows">
+        <button type="button" data-step="previous" aria-label={ui.prev[lang]} onClick={() => sequence.step(-1)}><Icon name="left" size={17}/></button>
+        <button type="button" data-step="next" aria-label={ui.next[lang]} onClick={() => sequence.step(1)}><Icon name="right" size={17}/></button>
+      </div>
+    </div>
+  );
 }
 
 type HeroProps = {
   lang: Lang; title: string; intro: string; tag: string; film: string; filmTitle: string;
   close: string; external: string; scroll: string;
 };
-export function Hero({lang,title,intro,tag,film,filmTitle,close,external,scroll}: HeroProps) {
-  const labels = messages[lang];
+
+export function Hero({ lang, title, intro, tag, film, filmTitle, close, external }: HeroProps) {
   const gallery: { heroFrames?: ArchiveFrame[]; hero: string } = home;
   const frames = gallery.heroFrames?.length
     ? gallery.heroFrames.map(frame => ({ image: frame.image, mobile: frame.mobile, alt: frame.alt[lang] }))
@@ -110,86 +130,80 @@ export function Hero({lang,title,intro,tag,film,filmTitle,close,external,scroll}
   const { attach, ...sequence } = usePhotoSequence<HTMLElement>(frames.length);
   return (
     <section ref={attach} className="hero cinema-hero" aria-labelledby="hero-title" data-sequence="hero"
-      data-active={sequence.state.active} data-running={sequence.running}
+      tabIndex={frames.length > 1 ? 0 : undefined} aria-describedby={frames.length > 1 ? "hero-shortcuts" : undefined}
+      aria-keyshortcuts="Space ArrowLeft ArrowRight" onKeyDown={sequence.onKeyDown}
+      data-active={sequence.state.active} data-running={sequence.running} data-paused={sequence.paused}
       onFocusCapture={sequence.interaction.onFocusCapture} onBlurCapture={sequence.interaction.onBlurCapture}>
+      {frames[0].mobile && <link rel="preload" as="image" fetchPriority="high"
+        media="(max-width: 640px)" href={publicUrl(frames[0].mobile)} />}
+      <link rel="preload" as="image" fetchPriority="high"
+        media={frames[0].mobile ? "(width > 640px)" : undefined} href={publicUrl(frames[0].image)} />
       <div className="hero-exposure">
         <Frames frames={frames} sequence={sequence} eager />
-        <div className="shell hero-inscription">
-          <div className="hero-company-line">{tag}</div>
-          <h1 id="hero-title" tabIndex={-1}>
-            {title.split("\n").map(line => <span key={line}>{line}</span>)}
-          </h1>
-        </div>
-      </div>
-      <div className="hero-colophon">
-        <div className="shell hero-colophon-inner">
-          <p className="hero-intro">{intro}</p>
-          <div className="hero-film">
-            <MediaButton url={film} title={filmTitle} playLabel={labels.film} closeLabel={close} externalLabel={external} />
-          </div>
-          <div className="hero-reel" onPointerEnter={sequence.interaction.onPointerEnter} onPointerLeave={sequence.interaction.onPointerLeave}>
-            <a className="archive-source" href={publicUrl("/images/credits.html") + "?lang=" + lang}>{labels.archive}</a>
-            <div className="reel-controls">
-              <Counter active={sequence.state.active} count={frames.length} label={labels.index}/>
-              {frames.length > 1 && <Toggle sequence={sequence} labels={labels}/>}
+        <div className="shell hero-film-layout">
+          <div className="hero-inscription">
+            <div className="cinema-kicker hero-company-line">{tag}</div>
+            <h1 id="hero-title" tabIndex={-1}>{title.split("\n").map(line => <span key={line}>{line}</span>)}</h1>
+            <p className="hero-intro">{intro}</p>
+            <div className="hero-film">
+              <MediaButton url={film} title={filmTitle} playLabel={messages[lang].film} closeLabel={close} externalLabel={external} />
             </div>
           </div>
-          <a className="hero-location-link" href="#geography" aria-label={scroll} title={scroll}><Icon name="down" size={18}/></a>
+          <div className="hero-reel" onPointerEnter={sequence.interaction.onPointerEnter} onPointerLeave={sequence.interaction.onPointerLeave}>
+            <SequenceNavigation lang={lang} count={frames.length} sequence={sequence}/>
+          </div>
         </div>
       </div>
+      <span className="cinema-key-help" id="hero-shortcuts">{sequence.reduced ? arrowHelp[lang] : keyboardHelp[lang]}</span>
     </section>
   );
 }
 
+function featuredFrame(project: Feature): Frame {
+  if (project.featuredImage && project.featuredCaption) {
+    return { image: project.featuredImage, alt: project.featuredCaption };
+  }
+  return { image: project.image, alt: project.caption };
+}
+
 export function Featured({ items, labels, lang }: { items: Feature[]; labels: { more: string }; lang: Lang }) {
-  const copy = messages[lang];
   const { attach, ...sequence } = usePhotoSequence<HTMLElement>(items.length);
   const project = items[sequence.state.active];
   if (!project) return null;
-  const frames = items.map(item => ({image:item.image,alt:item.caption}));
+  const frames = items.map(featuredFrame);
   return (
-    <section className="featured cinema-projects" ref={attach}
-      data-sequence="projects" data-active={sequence.state.active} data-running={sequence.running}
-      aria-label={home.projects[lang]} {...sequence.interaction}>
-      <div className="project-exposure" data-project={project.slug}>
-        <Frames frames={frames} sequence={sequence}/>
-        <div className="shell project-inscription">
-          <div className="project-titles">
-            {items.map((p, index) => <h3 key={p.slug} aria-hidden={index !== sequence.state.active}
-              className={index === sequence.state.active ? "current" : ""}>{p.title}</h3>)}
+    <section className="cinema-projects" ref={attach} aria-labelledby="featured-title" data-sequence="projects"
+      tabIndex={items.length > 1 ? 0 : undefined} aria-describedby={items.length > 1 ? "project-shortcuts" : undefined}
+      aria-keyshortcuts="Space ArrowLeft ArrowRight" onKeyDown={sequence.onKeyDown}
+      data-active={sequence.state.active} data-running={sequence.running} data-paused={sequence.paused} {...sequence.interaction}>
+      <div className="project-spread">
+        <div className="project-photograph" data-project={project.slug}>
+          <Frames frames={frames} sequence={sequence}/>
+        </div>
+        <div className="shell project-edition">
+          <div className="project-preface">
+            <div className="cinema-kicker">{ui.projectHeading[lang]}</div>
+            <h2 id="featured-title">{home.projects[lang]}</h2>
+            <a className="cinema-project-link all-projects" href={localeUrl(lang,"projects")}>{ui.allProjects[lang]}<Icon name="arrow" size={17}/></a>
+          </div>
+          <a className="project-image-credit" href={publicUrl("/images/credits.html") + "?lang=" + lang}>{frames[sequence.state.active].alt}</a>
+          <div className="project-story-column">
+            <div className="project-stories">
+              {items.map((p, index) => {
+                const active = index === sequence.state.active;
+                return <article key={p.slug} className={"project-account" + (active ? " current" : "")} aria-hidden={!active} inert={!active}>
+                  <div className="project-dateline"><span>{p.country}</span><span>{p.sector}</span></div>
+                  <h3>{p.title}</h3>
+                  <p>{p.role || p.summary}</p>
+                  <a className="cinema-project-link" href={p.url}>{labels.more}<Icon name="arrow" size={17}/></a>
+                </article>;
+              })}
+            </div>
+            <SequenceNavigation lang={lang} count={items.length} sequence={sequence}/>
           </div>
         </div>
       </div>
-      <div className="shell project-legend">
-        <div className="project-contexts">
-          {items.map((p, index) => <div key={p.slug}
-            className={"project-context" + (index === sequence.state.active ? " current" : "")}
-            aria-hidden={index !== sequence.state.active}>
-            <div className="project-location"><Icon name="pin" size={18}/>{p.country}</div>
-            <span>{p.sector}</span>
-            <span className="scene-credit">{p.caption}</span>
-          </div>)}
-        </div>
-        <div className="project-accounts">
-          {items.map((p, index) => {
-            const active = index === sequence.state.active;
-            return <div key={p.slug} className={"project-account" + (active ? " current" : "")} aria-hidden={!active} inert={!active}>
-              <p>{p.role || p.summary}</p>
-              <a className="text-link" href={p.url}>{labels.more}<Icon name="arrow"/></a>
-            </div>;
-          })}
-        </div>
-        <div className="project-chapters">
-          <div className="reel-controls">
-            <Counter active={sequence.state.active} count={items.length} label={copy.index}/>
-            {items.length > 1 && <Toggle sequence={sequence} labels={copy}/>}
-          </div>
-          <div className="sequence-tabs" role="group" aria-label={copy.select}>
-            {items.map((p,i) => <button type="button" key={p.slug} aria-pressed={i === sequence.state.active}
-              onClick={() => sequence.select(i)}>{p.country}</button>)}
-          </div>
-        </div>
-      </div>
+      <span className="cinema-key-help" id="project-shortcuts">{sequence.reduced ? arrowHelp[lang] : keyboardHelp[lang]}</span>
     </section>
   );
 }

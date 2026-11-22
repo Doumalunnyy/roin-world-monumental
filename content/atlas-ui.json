@@ -1,0 +1,30 @@
+{
+  "heading": { "ru": "География проектов", "en": "Project locations", "ar": "جغرافيا المشاريع", "es": "Geografía de los proyectos", "hu": "Projektjeink helyszínei" },
+  "presence": { "ru": "Международное присутствие", "en": "International presence", "ar": "الحضور الدولي", "es": "Presencia internacional", "hu": "Nemzetközi jelenlét" },
+  "intro": {
+    "ru": "ROIN WORLD участвует в строительных и инженерных проектах в сфере атомной энергетики и инфраструктуры.",
+    "en": "ROIN WORLD contributes to construction and engineering projects in nuclear energy and infrastructure.",
+    "ar": "تشارك ROIN WORLD في مشاريع البناء والهندسة في قطاعَي الطاقة النووية والبنية التحتية.",
+    "es": "ROIN WORLD participa en proyectos de construcción e ingeniería en los sectores de la energía nuclear y las infraestructuras.",
+    "hu": "A ROIN WORLD nukleáris energetikai és infrastrukturális projektek építési és mérnöki munkáiban vesz részt."
+  },
+  "countryProjects": { "ru": "Проекты страны", "en": "Projects in this country", "ar": "مشاريع هذا البلد", "es": "Proyectos del país", "hu": "Projektek az országban" },
+  "pause": { "ru": "Приостановить автоматическую смену стран", "en": "Pause automatic country changes", "ar": "إيقاف التنقل التلقائي بين الدول مؤقتًا", "es": "Pausar el cambio automático de país", "hu": "Az automatikus országváltás szüneteltetése" },
+  "resume": { "ru": "Возобновить автоматическую смену стран", "en": "Resume automatic country changes", "ar": "استئناف التنقل التلقائي بين الدول", "es": "Reanudar el cambio automático de país", "hu": "Az automatikus országváltás folytatása" },
+  "projectNotes": {
+    "rooppur": {
+      "ru": "На площадке АЭС «Руппур» ROIN WORLD завершила работы в цехе предварительной сборки.",
+      "en": "At Rooppur nuclear power plant, ROIN WORLD completed work on the pre-assembly workshop.",
+      "ar": "أنجزت ROIN WORLD أعمالها في ورشة التجميع المسبق في موقع محطة روبور للطاقة النووية.",
+      "es": "En la central nuclear de Rooppur, ROIN WORLD concluyó los trabajos en el taller de premontaje.",
+      "hu": "A ruppuri atomerőmű területén a ROIN WORLD befejezte az előszerelő csarnokban végzett munkát."
+    },
+    "el-dabaa": {
+      "ru": "ROIN WORLD заключила с KHNP и Doosan Enerbility соглашение о строительстве объектов турбинного острова АЭС «Эль-Дабаа».",
+      "en": "ROIN WORLD signed an agreement with KHNP and Doosan Enerbility to build facilities on the turbine island at El Dabaa nuclear power plant.",
+      "ar": "أبرمت ROIN WORLD اتفاقًا مع KHNP وDoosan Enerbility لبناء منشآت جزيرة التوربينات في محطة الضبعة النووية.",
+      "es": "ROIN WORLD firmó un acuerdo con KHNP y Doosan Enerbility para construir instalaciones en la isla de turbinas de la central nuclear de El Dabaa.",
+      "hu": "A ROIN WORLD a KHNP és a Doosan Enerbility vállalattal kötött megállapodást az El-Dabaa atomerőmű turbinaszigetének építési munkáiról."
+    }
+  }
+}

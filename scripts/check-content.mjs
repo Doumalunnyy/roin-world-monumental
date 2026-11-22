@@ -4,9 +4,18 @@ const read = (name) =>
   JSON.parse(fs.readFileSync("content/" + name + ".json", "utf8"));
 const locales = read("locales");
 const errors = [];
+const requiredLocales = ["ru", "en", "ar", "es", "hu"];
+for (const lang of requiredLocales) {
+  if (!locales.active.includes(lang)) errors.push("Missing active locale: " + lang);
+}
+for (const lang of locales.active) {
+  const locale = locales.locales[lang];
+  if (!locale?.name || !["ltr", "rtl"].includes(locale.dir) || locale.review === "planned")
+    errors.push("Incomplete locale settings: " + lang);
+}
 function check(value, at) {
   if (!value || typeof value !== "object") return;
-  if (Object.hasOwn(value, "ru") && typeof value.ru === "string")
+  if (locales.active.some((lang) => typeof value[lang] === "string"))
     for (const l of locales.active)
       if (typeof value[l] !== "string" || !value[l].trim())
         errors.push(at + " missing " + l);
@@ -25,6 +34,14 @@ for (const file of fs
   .filter((n) => n.endsWith(".json"))) {
   const obj = read(file.slice(0, -5));
   check(obj, file);
+}
+for (const name of ["showcase-ui", "contact-ui"]) {
+  const dictionary = read(name);
+  for (const lang of locales.active) {
+    for (const key of Object.keys(dictionary.ru)) {
+      if (!dictionary[lang]?.[key]?.trim()) errors.push(name + "." + lang + " missing " + key);
+    }
+  }
 }
 for (const list of [
   read("services").items,

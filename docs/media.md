@@ -23,13 +23,14 @@
 | archive-roof.webp | Монтаж кровли стального каркаса | [ROIN WORLD](https://roinworld.ae/wp-content/uploads/2025/11/WhatsApp-Image-2025-09-30-at-16.28.59.jpeg) |
 | archive-field-team.webp | Бетонирование плиты бригадой на площадке | [ROIN WORLD](https://roinworld.ae/wp-content/uploads/2018/08/foto-stroiki-2.jpg) |
 
-Для первого экрана подобраны пять видов из открытой галереи. Файлы, исходные размеры, описания и основания выбора приведены в [реестре отбора](photo-selection.md). В нём также есть [контактный лист](archive-contact-sheet.jpg). Подписи архивных кадров описывают видимое. Для проекта требуются индивидуальные сведения об объекте. Для материалов, публикуемых самой компанией, дополнительное подтверждение полномочий на внешнюю корпоративную публикацию и согласия изображённых людей остаются предметом редакторской приёмки.
+Первый экран открывает фотография градирен «Руппура» по лицензии CC BY 4.0. Следом идут пять видов из корпоративной галереи. Файлы, исходные размеры, описания и основания выбора приведены в [реестре отбора](photo-selection.md). В нём также есть [контактный лист](archive-contact-sheet.jpg). Подписи архивных кадров описывают видимое. Для проекта требуются индивидуальные сведения об объекте. Для материалов, публикуемых самой компанией, дополнительное подтверждение полномочий на внешнюю корпоративную публикацию и согласия изображённых людей остаются предметом редакторской приёмки.
 
 
 ## Внешние фотографии объектов
 
 | Файлы WebP | Сюжет | Источник | Лицензия |
 | --- | --- | --- | --- |
+| `rooppur-towers-panorama.webp`, `rooppur-towers-portrait.webp` | Градирни и строительство АЭС «Руппур», Бангладеш, 08.11.2024. Монументальная главная, первый кадр. Два кадрирования, коррекция контраста и резкости, сжатие WebP | [মোঃ সাকিবুল হাসান](https://commons.wikimedia.org/wiki/File:Cooling_Tower_of_Rooppur_Nuclear_Power_Plant.jpg) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
 | `hero-dusk.webp`, `hero-dusk-mobile.webp` | АЭС «Руппур», четыре освещённые градирни, май 2026 | [ROCKY](https://commons.wikimedia.org/wiki/File:Rooppur_Nuclear_Power_Plant_at_night.jpg) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
 | `hero.webp`, `hero-mobile.webp` | Площадка строительства АЭС «Руппур», 2023 | [Dean Calma / IAEA](https://commons.wikimedia.org/wiki/File:Rooppur_Nuclear_Power_Plant_2023.jpg) | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) |
 | `project-bd.webp` | Градирни АЭС «Руппур» и мост Хардинга | [Jusujon1980](https://commons.wikimedia.org/wiki/File:Ruppur_Nuclear_Power_Plant_2024.jpg) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |

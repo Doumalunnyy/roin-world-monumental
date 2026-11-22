@@ -28,5 +28,25 @@
     "select": "اختيار المشروع",
     "role": "دور ROIN WORLD",
     "illustration": "صورة توضيحية"
+  },
+  "es": {
+    "film": "Ver el vídeo corporativo",
+    "archive": "Archivo fotográfico de ROIN WORLD",
+    "pause": "Pausar la presentación",
+    "resume": "Reanudar la presentación",
+    "index": "Fotografía",
+    "select": "Seleccionar un proyecto",
+    "role": "Participación de ROIN WORLD",
+    "illustration": "Fotografía ilustrativa"
+  },
+  "hu": {
+    "film": "Vállalati film megtekintése",
+    "archive": "A ROIN WORLD fotóarchívuma",
+    "pause": "Diavetítés szüneteltetése",
+    "resume": "Diavetítés folytatása",
+    "index": "Kép",
+    "select": "Projekt kiválasztása",
+    "role": "A ROIN WORLD szerepe",
+    "illustration": "Illusztráció"
   }
 }

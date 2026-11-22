@@ -2,46 +2,64 @@
   "countryProjects": {
     "ru": "Проекты страны",
     "en": "Projects in this country",
-    "ar": "مشاريع هذا البلد"
+    "ar": "مشاريع هذا البلد",
+    "es": "Proyectos en este país",
+    "hu": "Projektek az országban"
   },
   "regionRegister": {
     "ru": "Страны и объекты",
     "en": "Countries and sites",
-    "ar": "البلدان والمواقع"
+    "ar": "البلدان والمواقع",
+    "es": "Países y emplazamientos",
+    "hu": "Országok és helyszínek"
   },
   "exploreGeography": {
     "ru": "География проектов",
     "en": "Explore project locations",
-    "ar": "استكشف مواقع المشاريع"
+    "ar": "استكشف مواقع المشاريع",
+    "es": "Ver dónde se ubican los proyectos",
+    "hu": "A projektek helyszínei"
   },
   "serviceApproach": {
     "ru": "Подход к работе",
     "en": "Delivery approach",
-    "ar": "نهج التنفيذ"
+    "ar": "نهج التنفيذ",
+    "es": "Cómo trabajamos",
+    "hu": "Így dolgozunk"
   },
   "projectRecord": {
     "ru": "Об объекте",
     "en": "The site",
-    "ar": "عن الموقع"
+    "ar": "عن الموقع",
+    "es": "El emplazamiento",
+    "hu": "A létesítmény"
   },
   "cooperation": {
     "ru": "Обсудить сотрудничество",
     "en": "Discuss working together",
-    "ar": "تواصل بشأن التعاون"
+    "ar": "تواصل بشأن التعاون",
+    "es": "Hablemos de colaboración",
+    "hu": "Együttműködési lehetőségek"
   },
   "catalogue": {
     "ru": "Каталог проектов",
     "en": "Project portfolio",
-    "ar": "دليل المشاريع"
+    "ar": "دليل المشاريع",
+    "es": "Cartera de proyectos",
+    "hu": "Projektjeink"
   },
   "siteMedia": {
     "ru": "Съёмка на площадке",
     "en": "From the site",
-    "ar": "من موقع العمل"
+    "ar": "من موقع العمل",
+    "es": "Imágenes de la obra",
+    "hu": "Képek az építkezésről"
   },
   "openImage": {
     "ru": "Открыть фотографию",
     "en": "Open photograph",
-    "ar": "فتح الصورة"
+    "ar": "فتح الصورة",
+    "es": "Abrir fotografía",
+    "hu": "Fénykép megnyitása"
   }
 }

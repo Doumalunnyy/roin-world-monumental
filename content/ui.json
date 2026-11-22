@@ -2,516 +2,722 @@
   "home": {
     "ru": "Главная",
     "en": "Home",
-    "ar": "الرئيسية"
+    "ar": "الرئيسية",
+    "es": "Inicio",
+    "hu": "Kezdőlap"
   },
   "about": {
     "ru": "О компании",
     "en": "Company",
-    "ar": "عن الشركة"
+    "ar": "عن الشركة",
+    "es": "La empresa",
+    "hu": "Vállalatunk"
   },
   "services": {
     "ru": "Направления",
     "en": "Expertise",
-    "ar": "مجالات العمل"
+    "ar": "مجالات العمل",
+    "es": "Servicios",
+    "hu": "Szakterületek"
   },
   "projects": {
     "ru": "Проекты",
     "en": "Projects",
-    "ar": "المشاريع"
+    "ar": "المشاريع",
+    "es": "Proyectos",
+    "hu": "Projektek"
   },
   "team": {
     "ru": "Команда",
     "en": "People",
-    "ar": "الفريق"
+    "ar": "الفريق",
+    "es": "Equipo",
+    "hu": "Munkatársaink"
   },
   "careers": {
     "ru": "Карьера",
     "en": "Careers",
-    "ar": "المسارات المهنية"
+    "ar": "المسارات المهنية",
+    "es": "Empleo",
+    "hu": "Karrier"
   },
   "contacts": {
     "ru": "Контакты",
     "en": "Contact",
-    "ar": "اتصل بنا"
+    "ar": "اتصل بنا",
+    "es": "Contacto",
+    "hu": "Kapcsolat"
   },
   "history": {
     "ru": "История компании",
     "en": "Our history",
-    "ar": "تاريخ الشركة"
+    "ar": "تاريخ الشركة",
+    "es": "Nuestra historia",
+    "hu": "Történetünk"
   },
   "leadership": {
     "ru": "Руководство",
     "en": "Leadership",
-    "ar": "الإدارة"
+    "ar": "الإدارة",
+    "es": "Dirección",
+    "hu": "Vezetőség"
   },
   "geography": {
     "ru": "География",
     "en": "Our locations",
-    "ar": "الانتشار الجغرافي"
+    "ar": "الانتشار الجغرافي",
+    "es": "Dónde trabajamos",
+    "hu": "Helyszíneink"
   },
   "partners": {
     "ru": "Партнёры",
     "en": "Partners",
-    "ar": "الشركاء"
+    "ar": "الشركاء",
+    "es": "Colaboradores",
+    "hu": "Partnereink"
   },
   "certificates": {
     "ru": "Сертификаты",
     "en": "Certificates",
-    "ar": "الشهادات"
+    "ar": "الشهادات",
+    "es": "Certificados",
+    "hu": "Tanúsítványok"
   },
   "news": {
     "ru": "Новости и медиа",
     "en": "News and media",
-    "ar": "الأخبار والإعلام"
+    "ar": "الأخبار والإعلام",
+    "es": "Noticias y medios",
+    "hu": "Hírek és média"
   },
   "privacy": {
     "ru": "Конфиденциальность",
     "en": "Privacy",
-    "ar": "الخصوصية"
+    "ar": "الخصوصية",
+    "es": "Privacidad",
+    "hu": "Adatvédelem"
   },
   "expertTag": {
     "ru": "Международная строительная и инжиниринговая компания",
     "en": "International construction and engineering company",
-    "ar": "شركة دولية للإنشاءات والهندسة"
+    "ar": "شركة دولية للإنشاءات والهندسة",
+    "es": "Empresa internacional de construcción e ingeniería",
+    "hu": "Nemzetközi építőipari és mérnöki vállalat"
   },
   "film": {
     "ru": "Смотреть корпоративный фильм",
     "en": "Watch the company film",
-    "ar": "شاهد فيلم الشركة"
+    "ar": "شاهد فيلم الشركة",
+    "es": "Ver el vídeo corporativo",
+    "hu": "Vállalati film megtekintése"
   },
   "watch": {
     "ru": "Смотреть видео",
     "en": "Watch video",
-    "ar": "شاهد الفيديو"
+    "ar": "شاهد الفيديو",
+    "es": "Ver vídeo",
+    "hu": "Videó megtekintése"
   },
   "filmTitle": {
     "ru": "Корпоративный фильм",
     "en": "Corporate film",
-    "ar": "فيلم الشركة"
+    "ar": "فيلم الشركة",
+    "es": "Vídeo corporativo",
+    "hu": "Vállalati film"
   },
   "more": {
     "ru": "Подробнее",
     "en": "Explore",
-    "ar": "اعرف المزيد"
+    "ar": "اعرف المزيد",
+    "es": "Ver más",
+    "hu": "Részletek"
   },
   "allProjects": {
     "ru": "Все проекты",
     "en": "All projects",
-    "ar": "جميع المشاريع"
+    "ar": "جميع المشاريع",
+    "es": "Todos los proyectos",
+    "hu": "Összes projekt"
   },
   "allServices": {
     "ru": "Все направления",
     "en": "All expertise",
-    "ar": "جميع المجالات"
+    "ar": "جميع المجالات",
+    "es": "Todos los servicios",
+    "hu": "Összes szakterület"
   },
   "menu": {
     "ru": "Меню",
     "en": "Menu",
-    "ar": "القائمة"
+    "ar": "القائمة",
+    "es": "Menú",
+    "hu": "Menü"
   },
   "close": {
     "ru": "Закрыть",
     "en": "Close",
-    "ar": "إغلاق"
+    "ar": "إغلاق",
+    "es": "Cerrar",
+    "hu": "Bezárás"
   },
   "language": {
     "ru": "Язык",
     "en": "Language",
-    "ar": "اللغة"
+    "ar": "اللغة",
+    "es": "Idioma",
+    "hu": "Nyelv"
   },
   "navigation": {
     "ru": "Навигация",
     "en": "Navigation",
-    "ar": "التنقل"
+    "ar": "التنقل",
+    "es": "Navegación",
+    "hu": "Navigáció"
   },
   "skip": {
     "ru": "К содержанию",
     "en": "Skip to content",
-    "ar": "انتقل إلى المحتوى"
+    "ar": "انتقل إلى المحتوى",
+    "es": "Saltar al contenido",
+    "hu": "Ugrás a tartalomra"
   },
   "scroll": {
     "ru": "Листайте вниз",
     "en": "Scroll to explore",
-    "ar": "انتقل للأسفل"
+    "ar": "انتقل للأسفل",
+    "es": "Desplázate para descubrir más",
+    "hu": "További tartalom lejjebb"
   },
   "prev": {
     "ru": "Предыдущий",
     "en": "Previous",
-    "ar": "السابق"
+    "ar": "السابق",
+    "es": "Anterior",
+    "hu": "Előző"
   },
   "next": {
     "ru": "Следующий",
     "en": "Next",
-    "ar": "التالي"
+    "ar": "التالي",
+    "es": "Siguiente",
+    "hu": "Következő"
   },
   "show": {
     "ru": "Показать",
     "en": "Show",
-    "ar": "عرض"
+    "ar": "عرض",
+    "es": "Mostrar",
+    "hu": "Megjelenítés"
   },
   "gallery": {
     "ru": "Фотогалерея",
     "en": "Gallery",
-    "ar": "معرض الصور"
+    "ar": "معرض الصور",
+    "es": "Galería",
+    "hu": "Galéria"
   },
   "project": {
     "ru": "Проект",
     "en": "Project",
-    "ar": "المشروع"
+    "ar": "المشروع",
+    "es": "Proyecto",
+    "hu": "Projekt"
   },
   "servicesHeading": {
     "ru": "Направления деятельности",
     "en": "Our expertise",
-    "ar": "مجالات عملنا"
+    "ar": "مجالات عملنا",
+    "es": "Nuestros servicios",
+    "hu": "Szakterületeink"
   },
   "projectHeading": {
     "ru": "Избранные проекты",
     "en": "Selected projects",
-    "ar": "مشاريع مختارة"
+    "ar": "مشاريع مختارة",
+    "es": "Proyectos destacados",
+    "hu": "Kiemelt projektek"
   },
   "teamTag": {
     "ru": "Люди ROIN WORLD",
     "en": "People of ROIN WORLD",
-    "ar": "أفراد ROIN WORLD"
+    "ar": "أفراد ROIN WORLD",
+    "es": "Las personas de ROIN WORLD",
+    "hu": "A ROIN WORLD munkatársai"
   },
   "geoTag": {
     "ru": "География проектов",
     "en": "Project locations",
-    "ar": "مواقع المشاريع"
+    "ar": "مواقع المشاريع",
+    "es": "Ubicación de los proyectos",
+    "hu": "Projekthelyszínek"
   },
   "teamText": {
     "ru": "Инженеры, строители и специалисты по логистике работают над общими задачами на международных площадках.",
     "en": "Engineers, construction crews and logistics specialists work together on international sites.",
-    "ar": "يتعاون المهندسون وفرق البناء وأخصائيو النقل في مواقع دولية."
+    "ar": "يتعاون المهندسون وفرق البناء وأخصائيو النقل في مواقع دولية.",
+    "es": "Nuestros equipos de ingeniería, construcción y logística trabajan juntos en obras de distintos países.",
+    "hu": "Mérnökeink, építőcsapataink és logisztikai szakembereink több ország építkezésein dolgoznak együtt."
   },
   "teamLink": {
     "ru": "Знакомьтесь с командой",
     "en": "Meet our people",
-    "ar": "تعرّف على فريقنا"
+    "ar": "تعرّف على فريقنا",
+    "es": "Conoce al equipo",
+    "hu": "Ismerje meg munkatársainkat"
   },
   "careerText": {
     "ru": "Познакомьтесь с работой на международных строительных площадках и свяжитесь с командой по вопросам трудоустройства.",
     "en": "Explore work on international construction sites and contact the team about career opportunities.",
-    "ar": "تعرف على العمل في مواقع البناء الدولية وتواصل مع الفريق بشأن فرص التوظيف."
+    "ar": "تعرف على العمل في مواقع البناء الدولية وتواصل مع الفريق بشأن فرص التوظيف.",
+    "es": "Descubre cómo trabajamos en obras internacionales y consulta con nuestro equipo las oportunidades de empleo.",
+    "hu": "Ismerje meg nemzetközi építkezéseinken végzett munkánkat, és érdeklődjön csapatunknál az álláslehetőségekről."
   },
   "careerLink": {
     "ru": "Карьера в ROIN WORLD",
     "en": "Careers at ROIN WORLD",
-    "ar": "اعمل مع ROIN WORLD"
+    "ar": "اعمل مع ROIN WORLD",
+    "es": "Trabajar en ROIN WORLD",
+    "hu": "Karrier a ROIN WORLD-nél"
   },
   "photoDemo": {
     "ru": "Фотоархив",
     "en": "Photo archive",
-    "ar": "الأرشيف المصور"
+    "ar": "الأرشيف المصور",
+    "es": "Archivo fotográfico",
+    "hu": "Fotóarchívum"
   },
   "photoCredits": {
     "ru": "Авторы фотографий",
     "en": "Photo credits",
-    "ar": "حقوق الصور"
+    "ar": "حقوق الصور",
+    "es": "Créditos fotográficos",
+    "hu": "Fotók forrásai"
   },
   "source": {
     "ru": "Источник",
     "en": "Source",
-    "ar": "المصدر"
+    "ar": "المصدر",
+    "es": "Fuente",
+    "hu": "Forrás"
   },
   "backHome": {
     "ru": "На главную",
     "en": "Back to home",
-    "ar": "العودة إلى الرئيسية"
+    "ar": "العودة إلى الرئيسية",
+    "es": "Volver al inicio",
+    "hu": "Vissza a kezdőlapra"
   },
   "related": {
     "ru": "Другие проекты",
     "en": "Related projects",
-    "ar": "مشاريع أخرى"
+    "ar": "مشاريع أخرى",
+    "es": "Proyectos relacionados",
+    "hu": "Kapcsolódó projektek"
   },
   "area": {
     "ru": "Направление работ",
     "en": "Area of work",
-    "ar": "مجال العمل"
+    "ar": "مجال العمل",
+    "es": "Área de actividad",
+    "hu": "Tevékenységi terület"
   },
   "country": {
     "ru": "Страна",
     "en": "Country",
-    "ar": "الدولة"
+    "ar": "الدولة",
+    "es": "País",
+    "hu": "Ország"
   },
   "industry": {
     "ru": "Отрасль",
     "en": "Sector",
-    "ar": "القطاع"
+    "ar": "القطاع",
+    "es": "Sector",
+    "hu": "Ágazat"
   },
   "role": {
     "ru": "Участие ROIN WORLD",
     "en": "ROIN WORLD’s role",
-    "ar": "دور ROIN WORLD"
+    "ar": "دور ROIN WORLD",
+    "es": "Participación de ROIN WORLD",
+    "hu": "A ROIN WORLD szerepe"
   },
   "scope": {
     "ru": "Состав направления",
     "en": "Scope of services",
-    "ar": "نطاق الخدمات"
+    "ar": "نطاق الخدمات",
+    "es": "Alcance de los servicios",
+    "hu": "A szolgáltatások köre"
   },
   "topic": {
     "ru": "Обсудить сотрудничество",
     "en": "Discuss a project",
-    "ar": "ناقش التعاون"
+    "ar": "ناقش التعاون",
+    "es": "Hablemos de tu proyecto",
+    "hu": "Beszéljünk a projektjéről"
   },
   "allCountries": {
     "ru": "Все страны",
     "en": "All countries",
-    "ar": "جميع الدول"
+    "ar": "جميع الدول",
+    "es": "Todos los países",
+    "hu": "Összes ország"
   },
   "allAreas": {
     "ru": "Все направления",
     "en": "All disciplines",
-    "ar": "جميع المجالات"
+    "ar": "جميع المجالات",
+    "es": "Todas las disciplinas",
+    "hu": "Összes szakterület"
   },
   "reset": {
     "ru": "Сбросить фильтры",
     "en": "Reset filters",
-    "ar": "إعادة ضبط الخيارات"
+    "ar": "إعادة ضبط الخيارات",
+    "es": "Restablecer filtros",
+    "hu": "Szűrők törlése"
   },
   "noResults": {
     "ru": "Для выбранных условий проектов нет.",
     "en": "No projects match these filters.",
-    "ar": "لا توجد مشاريع تطابق هذه الخيارات."
+    "ar": "لا توجد مشاريع تطابق هذه الخيارات.",
+    "es": "Ningún proyecto coincide con estos filtros.",
+    "hu": "Nincs a szűrőknek megfelelő projekt."
   },
   "found": {
     "ru": "Найдено проектов",
     "en": "Projects found",
-    "ar": "عدد المشاريع"
+    "ar": "عدد المشاريع",
+    "es": "Proyectos encontrados",
+    "hu": "Találatok száma"
   },
   "geoText": {
     "ru": "Выберите страну, чтобы увидеть проекты ROIN WORLD.",
     "en": "Select a country to explore ROIN WORLD projects.",
-    "ar": "اختر دولة للاطلاع على مشاريع ROIN WORLD."
+    "ar": "اختر دولة للاطلاع على مشاريع ROIN WORLD.",
+    "es": "Selecciona un país para ver los proyectos de ROIN WORLD.",
+    "hu": "Válasszon országot a ROIN WORLD projektjeinek megtekintéséhez."
   },
   "companyDetails": {
     "ru": "О компании подробнее",
     "en": "Company profile",
-    "ar": "ملف الشركة"
+    "ar": "ملف الشركة",
+    "es": "Perfil de la empresa",
+    "hu": "Cégbemutató"
   },
   "ourProjects": {
     "ru": "Наши проекты",
     "en": "Our projects",
-    "ar": "مشاريعنا"
+    "ar": "مشاريعنا",
+    "es": "Nuestros proyectos",
+    "hu": "Projektjeink"
   },
   "directory": {
     "ru": "Разделы сайта",
     "en": "Site directory",
-    "ar": "دليل الموقع"
+    "ar": "دليل الموقع",
+    "es": "Índice del sitio",
+    "hu": "Oldaltérkép"
   },
   "contactUs": {
     "ru": "Связаться с нами",
     "en": "Get in touch",
-    "ar": "تواصل معنا"
+    "ar": "تواصل معنا",
+    "es": "Contacta con nosotros",
+    "hu": "Kapcsolatfelvétel"
   },
   "aboutCaption": {
     "ru": "Международная строительная компания",
     "en": "International construction company",
-    "ar": "شركة إنشاءات دولية"
+    "ar": "شركة إنشاءات دولية",
+    "es": "Empresa internacional de construcción",
+    "hu": "Nemzetközi építőipari vállalat"
   },
   "factsServices": {
     "ru": "направления деятельности",
     "en": "areas of expertise",
-    "ar": "مجالات عمل"
+    "ar": "مجالات عمل",
+    "es": "áreas de especialización",
+    "hu": "szakterület"
   },
   "factsRegions": {
     "ru": "страны в обзоре проектов",
     "en": "countries in this project selection",
-    "ar": "دول في مجموعة المشاريع"
+    "ar": "دول في مجموعة المشاريع",
+    "es": "países en esta selección de proyectos",
+    "hu": "ország a bemutatott projektekben"
   },
   "factsTeam": {
     "ru": "специалистов ROIN WORLD",
     "en": "ROIN WORLD specialists",
-    "ar": "متخصص في ROIN WORLD"
+    "ar": "متخصص في ROIN WORLD",
+    "es": "especialistas de ROIN WORLD",
+    "hu": "a ROIN WORLD szakemberei"
   },
   "servicesIntro": {
     "ru": "Компетенции ROIN WORLD охватывают сам процесс строительства и обеспечение объекта — от перевозки оборудования до повседневной работы команд.",
     "en": "ROIN WORLD brings together construction and site support, from equipment transport to everyday services for the people on site.",
-    "ar": "تجمع ROIN WORLD بين أعمال البناء ودعم المواقع، من نقل المعدات إلى الخدمات اليومية لفرق العمل."
+    "ar": "تجمع ROIN WORLD بين أعمال البناء ودعم المواقع، من نقل المعدات إلى الخدمات اليومية لفرق العمل.",
+    "es": "ROIN WORLD coordina la construcción y el apoyo en obra, desde el transporte de equipos hasta los servicios cotidianos para el personal.",
+    "hu": "A ROIN WORLD az építési munkákat a helyszíni feladatokkal hangolja össze, a berendezések szállításától a dolgozók napi ellátásáig."
   },
   "projectsIntro": {
     "ru": "Три страны, три площадки атомного строительства. Изучите географию проектов и подтверждённую роль компании на каждом объекте.",
     "en": "Explore three nuclear construction sites and the company’s documented role in each project.",
-    "ar": "تعرف على ثلاثة مواقع بناء نووية ودور الشركة الموثق في كل مشروع."
+    "ar": "تعرف على ثلاثة مواقع بناء نووية ودور الشركة الموثق في كل مشروع.",
+    "es": "Conoce tres obras de centrales nucleares y la participación documentada de la empresa en cada una.",
+    "hu": "Három atomerőmű építkezését és cégünk dokumentált szerepét mutatjuk be."
   },
   "historyIntro": {
     "ru": "События из открытого архива ROIN WORLD — от работы на площадке до международного сотрудничества.",
     "en": "Milestones from ROIN WORLD’s public archive, from work on site to international cooperation.",
-    "ar": "محطات من أرشيف ROIN WORLD، من العمل الميداني إلى التعاون الدولي."
+    "ar": "محطات من أرشيف ROIN WORLD، من العمل الميداني إلى التعاون الدولي.",
+    "es": "Hitos del archivo público de ROIN WORLD, desde los trabajos en obra hasta la cooperación internacional.",
+    "hu": "Mérföldkövek a ROIN WORLD nyilvános archívumából, a helyszíni munkáktól a nemzetközi együttműködésig."
   },
   "leadIntro": {
     "ru": "Люди, определяющие направление развития компании.",
     "en": "The people shaping the company’s direction.",
-    "ar": "الأشخاص الذين يرسمون مسار الشركة."
+    "ar": "الأشخاص الذين يرسمون مسار الشركة.",
+    "es": "Las personas que marcan el rumbo de la empresa.",
+    "hu": "Vállalatunk irányításáért felelős szakemberek."
   },
   "partnersIntro": {
     "ru": "Организации, сотрудничество с которыми отмечено в материалах ROIN WORLD.",
     "en": "Organisations whose collaboration is documented by ROIN WORLD.",
-    "ar": "جهات توثّق ROIN WORLD التعاون معها."
+    "ar": "جهات توثّق ROIN WORLD التعاون معها.",
+    "es": "Organizaciones cuya colaboración con ROIN WORLD consta en el archivo de la empresa.",
+    "hu": "Szervezetek, amelyekkel a ROIN WORLD dokumentáltan együttműködött."
   },
   "certificateIntro": {
     "ru": "Документы из открытого архива компании. Область сертификации, даты и сведения об организации указаны в каждом документе.",
     "en": "Documents from the corporate archive. Each document sets out its scope, dates and issuing organisation.",
-    "ar": "وثائق من أرشيف الشركة. تُذكر جهة الإصدار والتواريخ ونطاق الشهادة في كل وثيقة."
+    "ar": "وثائق من أرشيف الشركة. تُذكر جهة الإصدار والتواريخ ونطاق الشهادة في كل وثيقة.",
+    "es": "Documentos del archivo de la empresa. Cada uno indica su alcance, sus fechas y la entidad emisora.",
+    "hu": "A vállalati archívum dokumentumai. Mindegyikben szerepel az alkalmazási kör, a dátumok és a kiállító szervezet."
   },
   "openDoc": {
     "ru": "Открыть документ",
     "en": "Open document",
-    "ar": "فتح الوثيقة"
+    "ar": "فتح الوثيقة",
+    "es": "Abrir documento",
+    "hu": "Dokumentum megnyitása"
   },
   "contactIntro": {
     "ru": "Выберите представительство или направьте обращение команде ROIN WORLD.",
     "en": "Find a representative office or contact the ROIN WORLD team.",
-    "ar": "اختر مكتباً تمثيلياً أو تواصل مع فريق ROIN WORLD."
+    "ar": "اختر مكتباً تمثيلياً أو تواصل مع فريق ROIN WORLD.",
+    "es": "Busca una oficina de representación o ponte en contacto con el equipo de ROIN WORLD.",
+    "hu": "Keresse meg képviseletünket, vagy lépjen kapcsolatba a ROIN WORLD munkatársaival."
   },
   "offices": {
     "ru": "Представительства",
     "en": "Offices",
-    "ar": "المكاتب"
+    "ar": "المكاتب",
+    "es": "Oficinas",
+    "hu": "Irodák"
   },
   "mediaIntro": {
     "ru": "Корпоративный фильм, кадры со стройплощадок и события из архива компании.",
     "en": "The corporate film, site footage and events from the company archive.",
-    "ar": "فيلم الشركة ولقطات المواقع وفعاليات من الأرشيف."
+    "ar": "فيلم الشركة ولقطات المواقع وفعاليات من الأرشيف.",
+    "es": "El vídeo corporativo, imágenes de las obras y acontecimientos del archivo de la empresa.",
+    "hu": "Vállalati filmünk, helyszíni felvételek és események a cég archívumából."
   },
   "vacancies": {
     "ru": "Вакансии",
     "en": "Open positions",
-    "ar": "الوظائف الشاغرة"
+    "ar": "الوظائف الشاغرة",
+    "es": "Vacantes",
+    "hu": "Nyitott állások"
   },
   "vacancyEmpty": {
     "ru": "В этом каталоге пока нет опубликованных вакансий. Уточните актуальные возможности у команды компании.",
     "en": "There are currently no listings in this catalogue. Contact the team for available opportunities.",
-    "ar": "لا توجد إعلانات وظائف منشورة هنا حالياً. يمكن التواصل مع الفريق لمعرفة الفرص المتاحة."
+    "ar": "لا توجد إعلانات وظائف منشورة هنا حالياً. يمكن التواصل مع الفريق لمعرفة الفرص المتاحة.",
+    "es": "En este momento no hay vacantes publicadas en este catálogo. Consulta al equipo las oportunidades disponibles.",
+    "hu": "Jelenleg nincs meghirdetett állás a jegyzékben. Az elérhető lehetőségekről munkatársaink adnak tájékoztatást."
   },
   "join": {
     "ru": "Связаться по вопросам карьеры",
     "en": "Contact the careers team",
-    "ar": "تواصل بشأن فرص العمل"
+    "ar": "تواصل بشأن فرص العمل",
+    "es": "Contactar con el equipo de selección",
+    "hu": "Kapcsolat a toborzási csapattal"
   },
   "biography": {
     "ru": "Биография",
     "en": "Biography",
-    "ar": "السيرة المهنية"
+    "ar": "السيرة المهنية",
+    "es": "Biografía",
+    "hu": "Életrajz"
   },
   "interviews": {
     "ru": "Истории и интервью",
     "en": "Stories and interviews",
-    "ar": "قصص ومقابلات"
+    "ar": "قصص ومقابلات",
+    "es": "Historias y entrevistas",
+    "hu": "Történetek és interjúk"
   },
   "interviewsPending": {
     "ru": "Раздел готовится к публикации. Здесь появятся интервью со специалистами с их согласия.",
     "en": "Interviews will appear here once the specialists have approved their stories.",
-    "ar": "ستُنشر المقابلات هنا بعد موافقة المختصين على قصصهم."
+    "ar": "ستُنشر المقابلات هنا بعد موافقة المختصين على قصصهم.",
+    "es": "Los testimonios se publicarán aquí cuando las personas entrevistadas los hayan aprobado.",
+    "hu": "Az interjúk az érintett munkatársak jóváhagyása után jelennek meg."
   },
   "media": {
     "ru": "Медиа",
     "en": "Media",
-    "ar": "الوسائط"
+    "ar": "الوسائط",
+    "es": "Medios",
+    "hu": "Média"
   },
   "stages": {
     "ru": "Этапы проекта",
     "en": "Project milestones",
-    "ar": "مراحل المشروع"
+    "ar": "مراحل المشروع",
+    "es": "Hitos del proyecto",
+    "hu": "A projekt mérföldkövei"
   },
   "externalVideo": {
     "ru": "Открыть у источника",
     "en": "Open original video",
-    "ar": "فتح الفيديو الأصلي"
+    "ar": "فتح الفيديو الأصلي",
+    "es": "Abrir el vídeo original",
+    "hu": "Eredeti videó megnyitása"
   },
   "privacyIntro": {
     "ru": "Информация об обработке обращений в этой версии сайта.",
     "en": "How this version of the website handles enquiries.",
-    "ar": "معلومات عن معالجة المراسلات في هذه النسخة من الموقع."
+    "ar": "معلومات عن معالجة المراسلات في هذه النسخة من الموقع.",
+    "es": "Cómo se gestionan las consultas en esta versión del sitio.",
+    "hu": "Hogyan kezeljük a weboldalon keresztül érkező megkereséseket?"
   },
   "privacyText": {
     "ru": "Форма запрашивает имя, электронную почту и текст обращения. При включённом приёме эти сведения сохраняются на сервере оператора для ответа на обращение. Если приём закрыт, данные формы не сохраняются. Для просмотра страниц регистрация не требуется. Внешний видеоплеер подключается после выбора просмотра. При переходе по внешним ссылкам действуют правила соответствующего сервиса.",
     "en": "The form requests a name, email address and message. When submissions are enabled, the operator’s server stores these details to respond. When closed, the form stores no submissions. Browsing requires no registration. External video players load on request. External services apply their own policies.",
-    "ar": "يطلب النموذج الاسم والبريد الإلكتروني ونص الرسالة. عند تفعيل الاستلام تُحفظ هذه البيانات في خادم المشغّل للرد. عند إيقاف الاستلام لا تُحفظ الرسائل. لا يتطلب التصفح التسجيل. يتم تحميل مشغلات الفيديو الخارجية عند الطلب وتخضع الروابط الخارجية لسياسات خدماتها."
+    "ar": "يطلب النموذج الاسم والبريد الإلكتروني ونص الرسالة. عند تفعيل الاستلام تُحفظ هذه البيانات في خادم المشغّل للرد. عند إيقاف الاستلام لا تُحفظ الرسائل. لا يتطلب التصفح التسجيل. يتم تحميل مشغلات الفيديو الخارجية عند الطلب وتخضع الروابط الخارجية لسياسات خدماتها.",
+    "es": "El formulario solicita nombre, correo electrónico y mensaje. Si está habilitado el envío, el servidor del responsable almacena estos datos para responder. Cuando el envío está deshabilitado, el formulario no guarda consultas. Puedes consultar el sitio sin registrarte. Los reproductores de vídeo externos se cargan a petición del usuario. Los servicios externos aplican sus propias políticas.",
+    "hu": "Az űrlap a nevet, az e-mail-címet és az üzenetet kéri. Ha a beküldés engedélyezett, az üzemeltető szervere a válaszadás céljából tárolja ezeket az adatokat. Ha a beküldés le van zárva, az űrlap nem tárol megkereséseket. A böngészéshez nem kell regisztrálni. A külső videólejátszók kérésre töltődnek be. A külső szolgáltatók saját adatkezelési szabályzatot alkalmaznak."
   },
   "privacyPending": {
     "ru": "Перед запуском оператору предстоит опубликовать утверждённую политику, сроки хранения и порядок обращения по вопросам персональных данных.",
     "en": "Before launch, the operator must publish its approved policy, retention periods and privacy contact details.",
-    "ar": "قبل الإطلاق سينشر المشغّل السياسة المعتمدة وفترات الاحتفاظ وقنوات التواصل المتعلقة بالبيانات."
+    "ar": "قبل الإطلاق سينشر المشغّل السياسة المعتمدة وفترات الاحتفاظ وقنوات التواصل المتعلقة بالبيانات.",
+    "es": "Antes del lanzamiento, el responsable debe publicar su política aprobada, los plazos de conservación y los datos de contacto para cuestiones de privacidad.",
+    "hu": "Az indulás előtt az üzemeltetőnek közzé kell tennie a jóváhagyott adatkezelési tájékoztatót, a megőrzési időket és az adatvédelemmel kapcsolatos elérhetőségeket."
   },
   "notFound": {
     "ru": "Страница не найдена",
     "en": "Page not found",
-    "ar": "الصفحة غير موجودة"
+    "ar": "الصفحة غير موجودة",
+    "es": "Página no encontrada",
+    "hu": "Az oldal nem található"
   },
   "notFoundText": {
     "ru": "Воспользуйтесь навигацией или вернитесь на главную страницу.",
     "en": "Use the navigation or return to the home page.",
-    "ar": "استخدم القائمة أو عد إلى الصفحة الرئيسية."
+    "ar": "استخدم القائمة أو عد إلى الصفحة الرئيسية.",
+    "es": "Utiliza el menú o vuelve a la página de inicio.",
+    "hu": "Használja a menüt, vagy térjen vissza a kezdőlapra."
   },
   "video": {
     "ru": "Видео",
     "en": "Video",
-    "ar": "فيديو"
+    "ar": "فيديو",
+    "es": "Vídeo",
+    "hu": "Videó"
   },
   "teamArchive": {
     "ru": "Команда на площадке",
     "en": "On site with the team",
-    "ar": "الفريق في الموقع"
+    "ar": "الفريق في الموقع",
+    "es": "Con el equipo en la obra",
+    "hu": "Munkatársainkkal az építkezésen"
   },
   "otherExpertise": {
     "ru": "Другие направления",
     "en": "Other services",
-    "ar": "مجالات أخرى"
+    "ar": "مجالات أخرى",
+    "es": "Otros servicios",
+    "hu": "További szolgáltatások"
   },
   "contactLabel": {
     "ru": "Обращение в компанию",
     "en": "Company enquiries",
-    "ar": "مراسلة الشركة"
+    "ar": "مراسلة الشركة",
+    "es": "Consultas a la empresa",
+    "hu": "Vállalati megkeresések"
   },
   "countryProject": {
     "ru": "Проекты в стране",
     "en": "Projects in this country",
-    "ar": "المشاريع في الدولة"
+    "ar": "المشاريع في الدولة",
+    "es": "Proyectos en este país",
+    "hu": "Projektek az országban"
   },
   "firstFrame": {
     "ru": "Панорама площадки",
     "en": "Site panorama",
-    "ar": "مشهد الموقع"
+    "ar": "مشهد الموقع",
+    "es": "Panorámica de la obra",
+    "hu": "Az építkezés látképe"
   },
   "secondFrame": {
     "ru": "Строительные работы",
     "en": "Construction work",
-    "ar": "أعمال البناء"
+    "ar": "أعمال البناء",
+    "es": "Trabajos de construcción",
+    "hu": "Építési munkák"
   },
   "thirdFrame": {
     "ru": "Промышленная архитектура",
     "en": "Industrial architecture",
-    "ar": "العمارة الصناعية"
+    "ar": "العمارة الصناعية",
+    "es": "Arquitectura industrial",
+    "hu": "Ipari építészet"
   },
   "breadcrumb": {
     "ru": "Путь к странице",
     "en": "Breadcrumbs",
-    "ar": "مسار الصفحة"
+    "ar": "مسار الصفحة",
+    "es": "Ruta de navegación",
+    "hu": "Navigációs útvonal"
   },
   "details": {
     "ru": "Карточка проекта",
     "en": "Project profile",
-    "ar": "ملف المشروع"
+    "ar": "ملف المشروع",
+    "es": "Ficha del proyecto",
+    "hu": "Projektadatlap"
   },
   "experienceTitle": {
     "ru": "Компания в цифрах",
     "en": "Company in figures",
-    "ar": "الشركة بالأرقام"
+    "ar": "الشركة بالأرقام",
+    "es": "La empresa en cifras",
+    "hu": "Vállalatunk számokban"
   },
   "partnersLink": {
     "ru": "Организации и проекты",
     "en": "Partners and projects",
-    "ar": "الشركاء والمشاريع"
+    "ar": "الشركاء والمشاريع",
+    "es": "Colaboradores y proyectos",
+    "hu": "Partnerek és projektek"
   },
   "documentLibrary": {
     "ru": "Библиотека документов",
     "en": "Document library",
-    "ar": "مكتبة الوثائق"
+    "ar": "مكتبة الوثائق",
+    "es": "Biblioteca de documentos",
+    "hu": "Dokumentumtár"
   },
   "corporateArchive": {
     "ru": "Архив ROIN WORLD",
     "en": "ROIN WORLD archive",
-    "ar": "أرشيف ROIN WORLD"
+    "ar": "أرشيف ROIN WORLD",
+    "es": "Archivo de ROIN WORLD",
+    "hu": "A ROIN WORLD archívuma"
   }
 }

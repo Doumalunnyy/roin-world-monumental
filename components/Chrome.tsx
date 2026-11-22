@@ -41,6 +41,12 @@ export function SiteHeader({
     document.addEventListener("pointerdown", close);
     return () => document.removeEventListener("pointerdown", close);
   }, []);
+  useEffect(() => {
+    const desktop = window.matchMedia("(min-width: 901px)");
+    const closeMobileMenu = () => { if (desktop.matches) menu.current?.close(); };
+    desktop.addEventListener("change", closeMobileMenu);
+    return () => desktop.removeEventListener("change", closeMobileMenu);
+  }, []);
   const url = (slug: string) => localeUrl(lang, slug);
   const links = (items: LinkItem[]) =>
     items.map((i) => (
@@ -141,17 +147,6 @@ export function SiteHeader({
           </div>
           <div className="menu-primary">{links(main)}</div>
           <div className="menu-secondary">{links(more)}</div>
-          <div className="menu-locales">
-            {languages.map((l) => (
-              <a
-                lang={l.code}
-                key={l.code}
-                href={localeUrl(l.code, path)}
-              >
-                {l.name}
-              </a>
-            ))}
-          </div>
         </div>
       </dialog>
     </>

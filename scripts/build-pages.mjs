@@ -1,5 +1,5 @@
 import { spawnSync } from "node:child_process";
-import { writeFileSync, existsSync } from "node:fs";
+import { writeFileSync, existsSync, readFileSync } from "node:fs";
 import { createRequire } from "node:module";
 
 const require = createRequire(import.meta.url);
@@ -27,7 +27,8 @@ run("scripts/cms-config.mjs");
 run("scripts/check-content.mjs");
 run(require.resolve("next/dist/bin/next"), "build", "--webpack");
 
-for (const route of ["ru", "en", "ar", "ru/contacts", "ru/projects", "ar/projects"]) {
+const { active } = JSON.parse(readFileSync(new URL("../content/locales.json", import.meta.url), "utf8"));
+for (const route of active.flatMap((lang) => [lang, lang + "/contacts", lang + "/projects"])) {
   if (!existsSync("out/" + route + "/index.html")) {
     throw new Error("Missing exported page: " + route);
   }

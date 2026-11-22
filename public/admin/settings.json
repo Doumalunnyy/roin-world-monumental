@@ -11,6 +11,14 @@
     {
       "code": "ar",
       "label": "العربية"
+    },
+    {
+      "code": "es",
+      "label": "Español"
+    },
+    {
+      "code": "hu",
+      "label": "Magyar"
     }
   ],
   "interfaceKeys": [
@@ -204,7 +212,63 @@
     "/images/hero-dusk.webp",
     "/images/archive-roof.webp",
     "/images/archive-field-team.webp",
-    "/images/archive-rooppur-workshop.webp"
+    "/images/archive-rooppur-workshop.webp",
+    "/images/rooppur-towers-panorama.webp",
+    "/images/rooppur-towers-portrait.webp"
+  ],
+  "landingKeys": [
+    "expertise",
+    "facts"
+  ],
+  "atlasKeys": [
+    "heading",
+    "presence",
+    "intro",
+    "countryProjects",
+    "pause",
+    "resume"
+  ],
+  "atlasProjects": [
+    "rooppur",
+    "el-dabaa"
+  ],
+  "showcaseKeys": [
+    "film",
+    "archive",
+    "pause",
+    "resume",
+    "index",
+    "select",
+    "role",
+    "illustration"
+  ],
+  "contactKeys": [
+    "mailMode",
+    "openDraft",
+    "title",
+    "name",
+    "email",
+    "company",
+    "message",
+    "placeholder",
+    "consent",
+    "privacy",
+    "send",
+    "check",
+    "sending",
+    "closed",
+    "verified",
+    "received",
+    "invalid",
+    "invalidName",
+    "invalidEmail",
+    "invalidMessage",
+    "invalidConsent",
+    "large",
+    "limit",
+    "unavailable",
+    "js",
+    "offices"
   ],
   "backend": null
 }
