@@ -130,13 +130,14 @@ export function Hero({ lang, title, intro, film, filmTitle, close, external }: H
   const frames: Frame[] = gallery.heroFrames?.length
     ? gallery.heroFrames.map(frame => ({ image: frame.image, wideAvif: frame.wideAvif, mobile: frame.mobile, mobileAvif: frame.mobileAvif, alt: frame.alt[lang] }))
     : [{ image: home.hero, mobile: home.heroMobile, alt: home.heroAlt[lang] }];
-  const { attach, ...sequence } = usePhotoSequence<HTMLElement>(frames.length);
   // The elevation is registered to these particular source crops.
   const first = frames[0];
   const hasElevation = first.image === "/images/industrial-sunset.webp" &&
     first.mobile === "/images/industrial-sunset-portrait.webp" &&
     (!first.wideAvif || first.wideAvif === "/images/industrial-sunset.avif") &&
     (!first.mobileAvif || first.mobileAvif === "/images/industrial-sunset-portrait.avif");
+  const [elevationAvailable, setElevationAvailable] = useState(false);
+  const { attach, ...sequence } = usePhotoSequence<HTMLElement>(frames.length, hasElevation && !elevationAvailable);
   return (
     <section ref={attach} className="hero cinema-hero" aria-labelledby="hero-title" data-sequence="hero"
       tabIndex={frames.length > 1 ? 0 : undefined} aria-describedby={frames.length > 1 ? "hero-shortcuts" : undefined}
@@ -152,7 +153,7 @@ export function Hero({ lang, title, intro, film, filmTitle, close, external }: H
       <div className="hero-exposure">
         <Frames frames={frames} sequence={sequence} eager />
         {hasElevation && sequence.state.moves === 0 && !sequence.state.failed.includes(0) &&
-          !sequence.state.pending?.manual && <HeroDrafting />}
+          !sequence.state.pending?.manual && <HeroDrafting onAvailable={() => setElevationAvailable(true)} />}
         <div className="shell hero-film-layout">
           <div className="hero-inscription">
             <h1 id="hero-title" tabIndex={-1}><span className="title-ink">{title}</span></h1>

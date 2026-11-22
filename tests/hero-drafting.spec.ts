@@ -37,3 +37,20 @@ test("reduced motion opens straight onto the home photograph", async ({ page, ba
   await expect(page.locator(".hero-draft")).toBeHidden();
   await expect(page.locator(".hero picture.current img")).toBeVisible();
 });
+
+test("a slow mobile drawing still plays when its artwork arrives", async ({ page, baseURL }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ reducedMotion: "no-preference" });
+  let release!: () => void;
+  const gate = new Promise<void>(resolve => { release = resolve; });
+  await page.route("**/illustrations/hero-elevation.svg*", async route => { await gate; await route.continue(); });
+  await page.goto(new URL("ru/", (baseURL || "http://localhost:3000").replace(/\/?$/, "/")).href, { waitUntil: "domcontentloaded" });
+  const drawing = page.locator(".hero-draft");
+  await expect(drawing).toHaveAttribute("data-phase", "waiting");
+  // Exceed both the former cancellation deadline and the normal first-slide hold.
+  await page.waitForTimeout(8500);
+  await expect(page.locator(".hero")).toHaveAttribute("data-active", "0");
+  release();
+  await expect(drawing).toHaveAttribute("data-phase", "drawing");
+  await expect(drawing).toHaveAttribute("data-phase", "complete");
+});

@@ -60,7 +60,7 @@ const reducedMotion = () => window.matchMedia(motionQuery).matches;
 const visibleDocument = () => !document.hidden;
 const serverFalse = () => false;
 
-export function usePhotoSequence<T extends HTMLElement>(count: number) {
+export function usePhotoSequence<T extends HTMLElement>(count: number, holdFirst = false) {
   const [section, attach] = useState<T | null>(null);
   const [state, dispatch] = useReducer(update, { active: 0, previous: null, pending: null, ready: [], failed: [], moves: 0 });
   const [onscreen, setOnscreen] = useState(false);
@@ -111,14 +111,14 @@ export function usePhotoSequence<T extends HTMLElement>(count: number) {
   }, [section]);
 
   useEffect(() => {
-    if (!running || next === undefined || !activeReady) return;
+    if (!running || next === undefined || !activeReady || (holdFirst && state.moves === 0)) return;
     // Delay the next download until the current frame has had time to paint.
     const loadNext = window.setTimeout(() => setBuffer(next), HOLD_MS / 2);
     const advance = window.setTimeout(() => {
       if (!document.hidden && !reducedMotion()) dispatch({ type: "request", index: next, manual: false });
     }, HOLD_MS);
     return () => { clearTimeout(loadNext); clearTimeout(advance); };
-  }, [running, next, state.active, activeReady]);
+  }, [running, next, state.active, state.moves, activeReady, holdFirst]);
 
   useEffect(() => {
     if (state.previous === null) return;

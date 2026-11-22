@@ -1,8 +1,7 @@
 /* The drawing uses the original photo coordinates. The portrait source is the
    rightmost 822 px of that same 1672 × 941 photograph. */
 .hero-draft { display:none; }
-@supports (width:1cqw) {
-  @media (scripting:enabled) and (prefers-reduced-motion:no-preference) {
+@media (prefers-reduced-motion:no-preference) {
     .hero-draft:not([data-phase="complete"]) {
       display:block;
       position:absolute;
@@ -22,7 +21,9 @@
       position:absolute;
       left:var(--hero-photo-x);
       top:var(--hero-photo-y);
-      translate:calc(0% - var(--hero-photo-x)) calc(0% - var(--hero-photo-y));
+      transform:translate(calc(0% - var(--hero-photo-x)), calc(0% - var(--hero-photo-y)));
+      width:var(--draft-fit,100%);
+      height:var(--draft-height,auto);
       width:max(100cqw, calc(100cqh * var(--draft-aspect)));
       aspect-ratio:var(--draft-aspect);
       overflow:hidden;
@@ -74,7 +75,6 @@
     }
     @keyframes elevation-develop { from { mask-position:0% 0; } to { mask-position:100% 0; } }
     @keyframes elevation-release { to { opacity:0; visibility:hidden; } }
-  }
 }
 @media (max-width:640px) {
   .hero-draft-crop { --draft-aspect:.87353879; }
