@@ -63,14 +63,16 @@ function Chart({ countries, active, select, label, panelId }: {
   return (
     <div className="ae-viewport" role="group" aria-label={label}>
       <div className="ae-plane map-canvas" style={style}>
-        {/* The local relief and vector overlay share the same Equal Earth viewport. */}
-        {/* eslint-disable-next-line @next/next/no-img-element -- Single preprojected local relief; country geometry must align pixel-for-pixel. */}
-        <img className="ae-drawing ae-relief" src={publicUrl("/images/atlas-relief.webp")}
-          width={chartWidth} height={chartHeight} loading="lazy" fetchPriority="low" decoding="async" alt="" />
-        <svg className="ae-drawing" viewBox={geometry.viewBox.join(" ")} aria-hidden="true">
-          {countries.map(country => <path key={country.region} d={pointFor(country.region).outline}
-            className="ae-territory" data-active={country === active}/>)}
-        </svg>
+        <div className="ae-cartography" aria-hidden="true">
+          {/* The relief and vector share a projection and dissolve together. Map controls remain crisp. */}
+          {/* eslint-disable-next-line @next/next/no-img-element -- Single preprojected local relief; country geometry must align pixel-for-pixel. */}
+          <img className="ae-drawing ae-relief" src={publicUrl("/images/atlas-relief.webp")}
+            width={chartWidth} height={chartHeight} loading="lazy" fetchPriority="low" decoding="async" alt="" />
+          <svg className="ae-drawing" viewBox={geometry.viewBox.join(" ")}>
+            {countries.map(country => <path key={country.region} d={pointFor(country.region).outline}
+              className="ae-territory" data-active={country === active}/>)}
+          </svg>
+        </div>
         {countries.map(country => {
           const point = pointFor(country.region);
           return <button key={country.region} type="button" className="ae-pin"
@@ -179,7 +181,7 @@ function ArchivePhoto({ src, region, load, active, onSettled }: {
   return <div className="ae-frame" ref={frame} data-region={region} data-active={active}>
     {load.status === "failed"
       ? <span className="media-missing"><Icon name="layers" size={40}/></span>
-      : <Photo src={src} alt="" sizes="(max-width: 680px) 100vw, 54vw"/>}
+      : <Photo src={src} alt="" sizes="(max-width: 680px) 100vw, 66vw"/>}
   </div>;
 }
 

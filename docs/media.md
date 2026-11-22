@@ -34,7 +34,7 @@
 
 | Файлы WebP | Сюжет | Источник | Лицензия |
 | --- | --- | --- | --- |
-| `rooppur-towers-panorama.webp`, `rooppur-towers-portrait.webp`, `rooppur-towers-portrait.avif` | Градирни и строительство АЭС «Руппур», Бангладеш, 08.11.2024. Монументальная главная, первый кадр. Два кадрирования, коррекция контраста и резкости, сжатие WebP | [মোঃ সাকিবুল হাসান](https://commons.wikimedia.org/wiki/File:Cooling_Tower_of_Rooppur_Nuclear_Power_Plant.jpg) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
+| `rooppur-towers-panorama.webp`, `rooppur-towers-portrait.webp`, `rooppur-towers-portrait.avif` | Градирни и строительство АЭС «Руппур», Бангладеш, 08.11.2024. Архивная обложка и проектные материалы. Два кадрирования, коррекция контраста и резкости, сжатие WebP | [মোঃ সাকিবুল হাসান](https://commons.wikimedia.org/wiki/File:Cooling_Tower_of_Rooppur_Nuclear_Power_Plant.jpg) | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) |
 | `hero-dusk.webp`, `hero-dusk-mobile.webp` | АЭС «Руппур», четыре освещённые градирни, май 2026 | [ROCKY](https://commons.wikimedia.org/wiki/File:Rooppur_Nuclear_Power_Plant_at_night.jpg) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
 | `hero.webp`, `hero-mobile.webp` | Площадка строительства АЭС «Руппур», 2023 | [Dean Calma / IAEA](https://commons.wikimedia.org/wiki/File:Rooppur_Nuclear_Power_Plant_2023.jpg) | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) |
 | `project-bd.webp` | Градирни АЭС «Руппур» и мост Хардинга | [Jusujon1980](https://commons.wikimedia.org/wiki/File:Ruppur_Nuclear_Power_Plant_2024.jpg) | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
@@ -48,3 +48,5 @@
 ## При замене через CMS
 
 Укажите в подписи сюжет, автора, источник и условия использования. Для фотографий конкретного объекта или человека требуется подтверждённая атрибуция. Для каждого активного языка заполните описание изображения. При загрузке нового файла обновите соответствующую строку в реестре и на странице источников. Для первого экрана загрузите также вертикальную версию и укажите проект только при подтверждённой связи. Для кейса Венгрии используется фото действующей станции «Пакш». Для замены требуется разрешённый к корпоративной публикации кадр «Пакш II».
+
+Демонстрационный фон первого экрана предоставлен заказчиком в PNG 1672 × 941. Серия `industrial-sunset` включает широкие WebP/AVIF исходного размера и портретный фрагмент 822 × 941. Изображение используется как иллюстрация без привязки к конкретному проекту.

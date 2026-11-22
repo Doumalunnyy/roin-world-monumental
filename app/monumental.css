@@ -11,6 +11,7 @@
 .mast .languages summary { padding-inline:.55rem; }
 .mast .locale-list { background:var(--deep); border-color:#606060; }
 .mast .head-actions { border-inline-start:1px solid #b3b3b355; padding-inline-start:clamp(8px,1.4vw,26px); }
+@media(max-width:900px) { .mast .head-actions { border:0; padding:0; } }
 .text-link:hover { text-decoration:underline; text-underline-offset:.22em; }
 .action,button[type=submit] { min-height:44px; border-radius:0; font-weight:650; transition:background-color .2s,color .2s,border-color .2s; }
 .text-link { min-height:44px; width:fit-content; font-weight:580; border-color:currentColor; gap:1.2em; }

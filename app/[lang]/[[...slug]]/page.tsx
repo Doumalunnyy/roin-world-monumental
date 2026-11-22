@@ -18,7 +18,6 @@ import {
   pageTitle,
   description,
   primary,
-  secondary,
   type Key,
 } from "@/lib/content";
 
@@ -74,8 +73,7 @@ export default async function Page({ params }: Props) {
     title = pageTitle(lang, path);
   if (!title) notFound();
   const link = (key: Key) => ({ slug: key, title: txt(lang, key) });
-  const main = primary.map(link),
-    more = secondary.map(link);
+  const main = primary.map(link);
   const structured = path
     ? {
         "@context": "https://schema.org",
@@ -111,19 +109,18 @@ export default async function Page({ params }: Props) {
         lang={lang}
         path={path}
         main={main}
-        more={more}
         languages={locales.map((l) => ({
           code: l,
           name: languageInfo[l].name,
         }))}
         labels={{
           menu: txt(lang, "menu"),
+          openMenu: txt(lang, "openMenu"),
           close: txt(lang, "close"),
           language: txt(lang, "language"),
           navigation: txt(lang, "navigation"),
           skip: txt(lang, "skip"),
           home: txt(lang, "home"),
-          directory: txt(lang, "directory"),
         }}
       />
       <main id="main" className={path ? "interior" : ""}>

@@ -26,7 +26,7 @@ export type Feature = {
   url: string;
   areas: string[];
 };
-type Frame = { image: string; mobile?: string; mobileAvif?: string; alt: string };
+type Frame = { image: string; wideAvif?: string; mobile?: string; mobileAvif?: string; alt: string };
 type ArchiveFrame = Omit<Frame, "alt"> & { alt: Record<Lang, string> };
 type Sequence = Omit<ReturnType<typeof usePhotoSequence<HTMLElement>>, "attach">;
 
@@ -77,7 +77,8 @@ function Frames({ frames, sequence, eager = false }: { frames: Frame[]; sequence
             data-transition={current && sequence.state.moves > 0}>
             {frame.mobileAvif && <source type="image/avif" media="(max-width: 640px)" srcSet={publicUrl(frame.mobileAvif)} />}
             {frame.mobile && <source media="(max-width: 640px)" srcSet={publicUrl(frame.mobile)} />}
-            {/* Local archive WebPs are art-directed and sized independently for phones. */}
+            {frame.wideAvif && <source type="image/avif" srcSet={publicUrl(frame.wideAvif)} />}
+            {/* Local WebPs are art-directed and sized independently for phones. */}
             <ArchiveImage frame={frame} current={current} first={index === 0} eager={eager}
               ready={() => sequence.ready(index)} failed={() => sequence.failed(index)} />
           </picture>
@@ -126,7 +127,7 @@ type HeroProps = {
 export function Hero({ lang, title, intro, tag, film, filmTitle, close, external }: HeroProps) {
   const gallery: { heroFrames?: ArchiveFrame[]; hero: string } = home;
   const frames: Frame[] = gallery.heroFrames?.length
-    ? gallery.heroFrames.map(frame => ({ image: frame.image, mobile: frame.mobile, mobileAvif: frame.mobileAvif, alt: frame.alt[lang] }))
+    ? gallery.heroFrames.map(frame => ({ image: frame.image, wideAvif: frame.wideAvif, mobile: frame.mobile, mobileAvif: frame.mobileAvif, alt: frame.alt[lang] }))
     : [{ image: home.hero, mobile: home.heroMobile, alt: home.heroAlt[lang] }];
   const { attach, ...sequence } = usePhotoSequence<HTMLElement>(frames.length);
   return (
@@ -139,7 +140,8 @@ export function Hero({ lang, title, intro, tag, film, filmTitle, close, external
         media="(max-width: 640px)" type={frames[0].mobileAvif ? "image/avif" : undefined}
         href={publicUrl(frames[0].mobileAvif || frames[0].mobile)} />}
       <link rel="preload" as="image" fetchPriority="high"
-        media={frames[0].mobile ? "(width > 640px)" : undefined} href={publicUrl(frames[0].image)} />
+        media={frames[0].mobile ? "(width > 640px)" : undefined} type={frames[0].wideAvif ? "image/avif" : undefined}
+        href={publicUrl(frames[0].wideAvif || frames[0].image)} />
       <div className="hero-exposure">
         <Frames frames={frames} sequence={sequence} eager />
         <div className="shell hero-film-layout">

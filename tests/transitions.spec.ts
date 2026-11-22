@@ -43,7 +43,7 @@ async function menuLink(page: Page, name: string): Promise<Locator> {
     .locator(".topnav")
     .getByRole("link", { name, exact: true });
   if (await desktop.isVisible()) return desktop;
-  await page.getByRole("button", { name: "Меню", exact: true }).click();
+  await page.getByRole("button", { name: "Открыть меню", exact: true }).click();
   return page
     .getByRole("dialog", { name: "Меню" })
     .getByRole("link", { name, exact: true });

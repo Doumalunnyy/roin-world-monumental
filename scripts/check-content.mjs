@@ -76,7 +76,8 @@ const frames = read("home").heroFrames;
 if (frames && (!Array.isArray(frames) || frames.length < 4 || frames.length > 6))
   errors.push("The homepage requires 4–6 archive frames");
 for (const frame of frames || []) {
-  if (!frame.image || !frame.mobile || !frame.alt || !/^https:\/\//.test(frame.source || ""))
+  const hasSource = frame.source ? /^https:\/\//.test(frame.source) : Boolean(frame.sourceNote?.trim());
+  if (!frame.image || !frame.mobile || !frame.alt || !hasSource)
     errors.push("A homepage frame is missing its image, mobile crop, description or source");
 }
 const coverProject = read("home").heroProject;

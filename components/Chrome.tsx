@@ -7,25 +7,25 @@ type LinkItem = { slug: string; title: string };
 type LocaleItem = { code: string; name: string };
 type Labels = Pick<
   Record<Key, string>,
-  "menu" | "close" | "language" | "navigation" | "skip" | "home" | "directory"
+  "menu" | "openMenu" | "close" | "language" | "navigation" | "skip" | "home"
 >;
 export function SiteHeader({
   lang,
   path,
   main,
-  more,
   languages,
   labels,
 }: {
   lang: Lang;
   path: string;
   main: LinkItem[];
-  more: LinkItem[];
   languages: LocaleItem[];
   labels: Labels;
 }) {
   const [scrolled, setScrolled] = useState(false);
   const menu = useRef<HTMLDialogElement>(null);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const trigger = useRef<HTMLButtonElement>(null);
   const locale = useRef<HTMLDetailsElement>(null);
   useEffect(() => {
     const update = () => setScrolled(window.scrollY > 32);
@@ -58,6 +58,13 @@ export function SiteHeader({
         {i.title}
       </a>
     ));
+  function openMenu() {
+    const panel = menu.current;
+    if (!panel || panel.open) return;
+    trigger.current?.focus({ preventScroll: true });
+    panel.showModal();
+    setMenuOpen(true);
+  }
   return (
     <>
       <a className="skip" href="#main">
@@ -114,11 +121,14 @@ export function SiteHeader({
             <button
               type="button"
               className="menu-toggle"
-              aria-label={labels.menu}
+              ref={trigger}
+              aria-label={labels.openMenu}
+              aria-expanded={menuOpen}
+              aria-controls="mobile-navigation"
               aria-haspopup="dialog"
-              onClick={() => menu.current?.showModal()}
+              onClick={openMenu}
             >
-              <Icon name="menu" size={24} />
+              <span className="menu-glyph" aria-hidden="true" />
             </button>
             <noscript>
               <a href="#footer">{labels.menu}</a>
@@ -127,26 +137,44 @@ export function SiteHeader({
         </div>
       </header>
       <dialog
+        id="mobile-navigation"
         ref={menu}
         className="menu-panel"
         aria-label={labels.menu}
-        onClick={(e) => {
-          if (e.target === menu.current) menu.current.close();
+        onClose={() => setMenuOpen(false)}
+        onClick={event => {
+          if (event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey
+            && event.target instanceof Element && event.target.closest("a[href]")) menu.current?.close();
+        }}
+        onKeyDown={event => {
+          if (event.key !== "Tab") return;
+          const stops = event.currentTarget.querySelectorAll<HTMLElement>("button, a[href]");
+          const first = stops[0], last = stops[stops.length - 1];
+          if (event.shiftKey && document.activeElement === first) {
+            event.preventDefault();
+            last?.focus();
+          } else if (!event.shiftKey && document.activeElement === last) {
+            event.preventDefault();
+            first?.focus();
+          }
         }}
       >
         <div className="menu-content">
-          <div className="menu-head">
+          <div className="shell mast-inner menu-head">
             <Wordmark />
-            <button
-              className="circle"
-              aria-label={labels.close}
-              onClick={() => menu.current?.close()}
-            >
-              <Icon name="close" />
+            <button type="button" className="menu-toggle menu-dismiss" aria-label={labels.close}
+              onClick={() => menu.current?.close()}>
+              <span className="menu-glyph" aria-hidden="true" />
             </button>
           </div>
-          <div className="menu-primary">{links(main)}</div>
-          <div className="menu-secondary">{links(more)}</div>
+          <nav className="shell menu-primary" aria-label={labels.navigation}>{links(main)}</nav>
+          <nav className="shell menu-locales" aria-label={labels.language}>
+            <span className="menu-language-title"><Icon name="globe" size={15}/>{labels.language}</span>
+            <div>{languages.map(l => <a key={l.code} href={localeUrl(l.code, path)} hrefLang={l.code} lang={l.code}
+              aria-label={l.name} aria-current={l.code === lang ? "true" : undefined}>
+              <bdi>{l.code.toUpperCase()}</bdi>
+            </a>)}</div>
+          </nav>
         </div>
       </dialog>
     </>

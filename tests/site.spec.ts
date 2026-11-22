@@ -128,10 +128,16 @@ test("mobile menu restores focus and language changes preserve the project", asy
 }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await open(page, "/ru");
-  const menu = page.getByRole("button", { name: "Меню", exact: true });
+  const menu = page.getByRole("button", { name: "Открыть меню", exact: true });
   await menu.click();
   const panel = page.getByRole("dialog", { name: "Меню" });
   await expect(panel).toBeVisible();
+  const close = panel.getByRole("button", { name: "Закрыть" });
+  await expect(close).toBeFocused();
+  await page.keyboard.press("Shift+Tab");
+  await expect(panel.getByRole("link").last()).toBeFocused();
+  await page.keyboard.press("Tab");
+  await expect(close).toBeFocused();
   await page.keyboard.press("Escape");
   await expect(panel).toBeHidden();
   await expect(menu).toBeFocused();
@@ -140,16 +146,15 @@ test("mobile menu restores focus and language changes preserve the project", asy
   await expect(page).toHaveURL(/\/ru\/projects\/?$/);
   await page.locator(".project-card").filter({ hasText: "Руппур" }).click();
   await expect(page).toHaveURL(/\/ru\/projects\/rooppur\/?$/);
-  const language = page.locator("details.languages");
-  await language.locator("summary").click();
-  await language.getByRole("link", { name: "English", exact: true }).click();
+  await menu.click();
+  await panel.getByRole("link", { name: "English", exact: true }).click();
   await expect(page).toHaveURL(/\/en\/projects\/rooppur\/?$/);
   await expect(page.locator("html")).toHaveAttribute("lang", "en");
   await expect(page.getByRole("heading", { level: 1 })).toContainText(
     /Rooppur/i,
   );
-  await language.locator("summary").click();
-  await language.getByRole("link", { name: "العربية", exact: true }).click();
+  await page.getByRole("button", { name: "Open menu" }).click();
+  await page.getByRole("dialog", { name: "Menu" }).getByRole("link", { name: "العربية", exact: true }).click();
   await expect(page).toHaveURL(/\/ar\/projects\/rooppur\/?$/);
   await expect(page.locator("html")).toHaveAttribute("lang", "ar");
   await expect(page.locator("main")).toHaveCSS("direction", "rtl");
@@ -248,7 +253,8 @@ for (const width of [360, 390, 768, 1024, 1440, 1920]) {
   test(
     "home fits a " + width + "px viewport in every active locale",
     async ({ page }) => {
-      await page.setViewportSize({ width, height: width < 600 ? 844 : 960 });
+      const height = width < 600 ? 844 : 960;
+      await page.setViewportSize({ width, height });
       for (const lang of activeLanguages) {
         await open(page, "/" + lang);
         const bounds = await page.evaluate(() => ({
@@ -259,6 +265,8 @@ for (const width of [360, 390, 768, 1024, 1440, 1920]) {
           bounds.content,
           lang + " at " + width + "px",
         ).toBeLessThanOrEqual(bounds.viewport + 1);
+        const atlas = await page.locator("#geography").boundingBox();
+        expect(atlas?.y).toBe(height);
       }
     },
   );

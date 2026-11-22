@@ -85,9 +85,11 @@
 .hero.cinema-hero {background:#222222;}
 .hero-exposure {
   display:grid;
-  min-height:clamp(590px,89svh,1120px);
+  min-height:100vh;
+  min-height:100svh;
   position:relative;
   isolation:isolate;
+  overflow:clip;
 }
 .hero-exposure::before {
   content:"";
@@ -96,17 +98,33 @@
   z-index:-1;
   pointer-events:none;
   background:
-    linear-gradient(90deg,#080808dc 0%,#080808ab 28%,#08080855 50%,transparent 75%),
-    linear-gradient(0deg,#0007,transparent 19%);
+    linear-gradient(90deg,#0808089c 0%,#08080880 26%,#08080830 49%,transparent 73%),
+    linear-gradient(0deg,#08080870,transparent 19%);
 }
 html[dir="rtl"] .hero-exposure::before { transform:scaleX(-1); }
-.hero-exposure .sequence-layer img {object-position:center 51%;}
+.hero-exposure .sequence-layer img {object-position:67% 50%;}
 .hero-film-layout {
   display:grid;
   grid-template-rows:1fr auto;
   padding-block:clamp(98px,15svh,180px) clamp(13px,2.2vw,32px);
 }
 .hero-inscription {align-self:center; padding-block:16px clamp(14px,3vh,40px);}
+@media (min-width:581px) {
+  .hero-inscription {
+    position:relative;
+    isolation:isolate;
+    justify-self:start;
+    max-width:100%;
+  }
+  .hero-inscription::before {
+    content:"";
+    position:absolute;
+    z-index:-1;
+    inset:-38% -35%;
+    pointer-events:none;
+    background:radial-gradient(ellipse closest-side, #08080873 0 61%, #08080860 76%, #08080821 89%, transparent 100%);
+  }
+}
 .hero-company-line {max-width:35ch; margin-block-end:clamp(19px,2.1vw,32px);}
 .hero.cinema-hero h1 {
   max-width:none;
@@ -243,7 +261,7 @@ html[dir="rtl"] .cinema-kicker {letter-spacing:0;}
   .project-preface h2 {font-size:clamp(31px,3.25vw,37px);}
 }
 @media (max-width:850px) {
-  .hero-exposure {min-height:clamp(570px,85svh,830px);}
+  .hero-exposure .sequence-layer img {object-position:78% 45%;}
   .hero-intro {max-width:47ch;}
   .project-spread {display:grid; grid-template-columns:minmax(0, .87fr) minmax(0,1.13fr);}
   .project-edition {display:contents;}
@@ -256,18 +274,19 @@ html[dir="rtl"] .cinema-kicker {letter-spacing:0;}
   .project-story-column {grid-area:2/1/3/3; display:grid; grid-template-columns:minmax(0,1fr) auto; gap:25px; padding:25px var(--gutter) 20px; border-top:1px solid #90909057;}
   .project-story-column .cinema-navigation {align-self:end; display:grid; justify-items:end; justify-content:end;}
 }
-@media (max-width:580px) {
-  .hero-exposure {min-height:clamp(625px,88svh,880px);}
-  .cinema-hero .sequence-pictures {
-    height:83%;
-    mask-image:linear-gradient(180deg,black 0 74%,transparent 100%);
+@media (min-width:581px) and (max-width:900px) and (orientation:portrait) {
+  .hero-inscription { align-self:end; }
+  .hero-exposure::before {
+    background:linear-gradient(0deg,#080808e3, #080808ad 27%, #08080868 48%, transparent 75%);
   }
-  .hero-film-layout {padding-block:90px 10px;}
+}
+@media (max-width:580px) {
+  .hero-film-layout {padding-block:84px max(.75rem,env(safe-area-inset-bottom));}
   .hero-inscription {align-self:end; padding-block:20px 13px;}
   .hero-exposure::before {
-    background:linear-gradient(0deg,#080808 2%,#080808ed 23%,#080808bf 42%,#08080842 64%,transparent 78%);
+    background:linear-gradient(0deg,#080808e8 0%,#080808d6 22%,#080808a6 43%,#08080838 64%,transparent 79%);
   }
-  .hero-exposure .sequence-layer img {object-position:center 38%;}
+  .hero-exposure .sequence-layer img {object-position:80% 47%;}
   .hero-company-line {max-width:34ch; margin-bottom:16px;font-size:.72rem;}
   .hero.cinema-hero h1 {font-size:clamp(32px,8.65vw,49px);line-height:1.02;}
   .hero-intro {font-size:.91rem; line-height:1.47; margin-top:15px; max-width:42ch;}

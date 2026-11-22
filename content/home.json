@@ -7,20 +7,20 @@
     "hu": "NAGY LÉPTÉKBEN DOLGOZUNK.\nA JÖVŐT ÉPÍTJÜK."
   },
   "intro": {
-    "ru": "ROIN WORLD — международная компания в сфере строительства и инженерных работ. Участвуем в реализации крупных энергетических и инфраструктурных проектов, объединяя инженерную экспертизу, логистику, снабжение и комплексные сервисы.",
-    "en": "ROIN WORLD is an international construction and engineering company. We contribute to major energy and infrastructure projects through engineering, logistics, procurement and site services.",
-    "ar": "ROIN WORLD شركة دولية متخصصة في البناء والهندسة. نساهم في مشاريع كبرى للطاقة والبنية التحتية من خلال الهندسة والنقل والتوريد وخدمات المواقع.",
-    "es": "ROIN WORLD es una empresa internacional de construcción e ingeniería. Participamos en grandes proyectos de energía e infraestructuras combinando ingeniería, logística, aprovisionamiento y servicios integrales de obra.",
-    "hu": "A ROIN WORLD nemzetközi építőipari és mérnöki vállalat. Nagyszabású energetikai és infrastrukturális beruházásokban veszünk részt, amelyekhez mérnöki szaktudást, logisztikát, beszerzést és átfogó helyszíni szolgáltatásokat biztosítunk."
+    "ru": "ROIN WORLD ведёт строительные и инженерные работы на международных проектах в энергетике и инфраструктуре.",
+    "en": "ROIN WORLD provides construction and engineering services for energy and infrastructure projects worldwide.",
+    "ar": "تتولى ROIN WORLD أعمال البناء والهندسة في مشاريع الطاقة والبنية التحتية حول العالم.",
+    "es": "ROIN WORLD presta servicios de construcción e ingeniería en proyectos de energía e infraestructura a escala internacional.",
+    "hu": "A ROIN WORLD nemzetközi energetikai és infrastrukturális projektekben végez építési és mérnöki munkát."
   },
-  "hero": "/images/rooppur-towers-panorama.webp",
-  "heroMobile": "/images/rooppur-towers-portrait.webp",
+  "hero": "/images/industrial-sunset.webp",
+  "heroMobile": "/images/industrial-sunset-portrait.webp",
   "heroAlt": {
-    "ru": "Строительная площадка и градирни АЭС „Руппур“, Бангладеш",
-    "en": "Construction site and cooling towers at Rooppur nuclear power plant, Bangladesh",
-    "ar": "موقع البناء وأبراج التبريد في محطة روبور النووية، بنغلاديش",
-    "es": "Obras y torres de refrigeración de la central nuclear de Rooppur, Bangladés",
-    "hu": "A ruppuri atomerőmű építési területe és hűtőtornyai, Banglades"
+    "ru": "Градирни и башенные краны на промышленной стройке в закатном свете",
+    "en": "Cooling towers and tower cranes on an industrial construction site at sunset",
+    "ar": "أبراج تبريد ورافعات برجية في موقع إنشاء صناعي عند الغروب",
+    "es": "Torres de refrigeración y grúas en una obra industrial al atardecer",
+    "hu": "Hűtőtornyok és toronydaruk egy ipari építkezésen naplementekor"
   },
   "film": "https://www.youtube.com/watch?v=4KEZoq2ubVE",
   "teamImage": "/images/team.webp",
@@ -86,17 +86,18 @@
   "heroProject": "",
   "heroFrames": [
     {
-      "image": "/images/rooppur-towers-panorama.webp",
-      "mobile": "/images/rooppur-towers-portrait.webp",
-      "mobileAvif": "/images/rooppur-towers-portrait.avif",
+      "image": "/images/industrial-sunset.webp",
+      "wideAvif": "/images/industrial-sunset.avif",
+      "mobile": "/images/industrial-sunset-portrait.webp",
+      "mobileAvif": "/images/industrial-sunset-portrait.avif",
       "alt": {
-        "ru": "Строительная площадка и градирни АЭС „Руппур“, Бангладеш",
-        "en": "Construction site and cooling towers at Rooppur nuclear power plant, Bangladesh",
-        "ar": "موقع البناء وأبراج التبريد في محطة روبور النووية، بنغلاديش",
-        "es": "Obras y torres de refrigeración de la central nuclear de Rooppur, Bangladés",
-        "hu": "A ruppuri atomerőmű építési területe és hűtőtornyai, Banglades"
+        "ru": "Градирни и башенные краны на промышленной стройке в закатном свете",
+        "en": "Cooling towers and tower cranes on an industrial construction site at sunset",
+        "ar": "أبراج تبريد ورافعات برجية في موقع إنشاء صناعي عند الغروب",
+        "es": "Torres de refrigeración y grúas en una obra industrial al atardecer",
+        "hu": "Hűtőtornyok és toronydaruk egy ipari építkezésen naplementekor"
       },
-      "source": "https://commons.wikimedia.org/wiki/File:Cooling_Tower_of_Rooppur_Nuclear_Power_Plant.jpg"
+      "sourceNote": "Демонстрационная иллюстрация первого экрана, предоставлена заказчиком."
     },
     {
       "image": "/images/hero-3.webp",

@@ -42,6 +42,12 @@
   background: none;
   transform: translateX(-50%) translate(var(--ae-pan-x), var(--ae-pan-y));
 }
+.atlas-engineering .ae-cartography {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  mask-image: linear-gradient(96deg, transparent 18%, #0002 32%, #0009 42%, #000 54%);
+}
 .atlas-engineering .ae-drawing {
   position: absolute;
   inset: 0;
@@ -124,24 +130,25 @@
 .atlas-engineering .ae-archive {
   z-index: -2;
   right: auto;
-  top: 19%;
-  width: 55%;
+  top: 10%;
+  width: 66%;
   overflow: hidden;
-  mask-image: linear-gradient(90deg, #000 54%, #000f 62%, #0007 84%, transparent 100%);
+  /* A curved falloff dissolves the architecture into the relief without softening either image. */
+  mask-image: radial-gradient(ellipse 100% 90% at 1% 79%, #000 45%, #000f 52%, #000c 66%, #0006 80%, #0002 90%, transparent 100%);
   pointer-events: none;
 }
 .atlas-engineering .ae-archive::after {
   position: absolute;
   inset: 0;
   content: "";
-  background: linear-gradient(90deg, #080808c2 0%, #08080891 27%, #08080824 58%, transparent 82%),
-    linear-gradient(180deg, #101010 0%, #1010107b 15%, #10101004 42%, #10101016 72%, #101010de 100%);
+  background: linear-gradient(90deg, #080808a1 0%, #08080879 23%, #08080824 49%, transparent 72%),
+    linear-gradient(180deg, #101010 0%, #10101084 11%, transparent 38%, transparent 79%, #101010e8 100%);
 }
 .atlas-engineering .ae-frame { opacity: 0; }
 .atlas-engineering .ae-frame[data-active="true"] { opacity: 1; }
 .atlas-engineering .ae-frame img {
   object-fit: cover;
-  object-position: 52% 50%;
+  object-position: 48% 50%;
 }
 
 .atlas-engineering .ae-heading {
@@ -215,7 +222,7 @@
     inset: -18% -9% -17% -19%;
     content: "";
     pointer-events: none;
-    background: radial-gradient(ellipse 70% 73% at 43% 50%, #08080875 0%, #08080870 53%, #0808083d 77%, transparent 100%);
+    background: radial-gradient(ellipse 76% 78% at 47% 50%, #0808088c 0%, #08080886 55%, #0808084f 78%, transparent 100%);
   }
 }
 .atlas-engineering .ae-entry[data-current="true"] {
@@ -418,6 +425,9 @@
     transform: translateX(-50%) translate(var(--ae-pan-x), var(--ae-pan-y));
   }
   .atlas-engineering .ae-pin span { font-size: .66rem; padding: .25rem .38rem; }
+  .atlas-engineering .ae-cartography {
+    mask-image: linear-gradient(180deg, transparent 0%, #000 11%, #000 45%, #000a 59%, #0003 75%, transparent 88%);
+  }
   .atlas-engineering .ae-pin[data-region="bangladesh"] span {
     top: calc(50% + 12px);
     left: 50%;
@@ -432,12 +442,12 @@
   .atlas-engineering .ae-archive,
   .atlas-engineering[data-home="false"] .ae-archive {
     grid-area: 3 / 1;
-    inset: -3rem 0 0;
+    inset: -3.5rem 0 0;
     width: 100%;
-    mask-image: linear-gradient(0deg, #000 70%, #000d 84%, transparent 100%);
+    mask-image: radial-gradient(ellipse 112% 95% at 24% 100%, #000 50%, #000e 67%, #0009 81%, #0003 93%, transparent 100%);
   }
   .atlas-engineering .ae-archive::after {
-    background: linear-gradient(0deg, #101010 0%, #101010f0 13%, #101010a9 48%, #1010104e 75%, #10101004 100%),
+    background: linear-gradient(0deg, #101010 0%, #101010e8 15%, #101010b0 40%, #10101030 75%, transparent 100%),
       linear-gradient(90deg, #1010104e, transparent 85%);
   }
   .atlas-engineering .ae-record,

@@ -146,6 +146,13 @@
     "es": "Todos los servicios",
     "hu": "Összes szakterület"
   },
+  "openMenu": {
+    "ru": "Открыть меню",
+    "en": "Open menu",
+    "ar": "فتح القائمة",
+    "es": "Abrir menú",
+    "hu": "Menü megnyitása"
+  },
   "menu": {
     "ru": "Меню",
     "en": "Menu",
