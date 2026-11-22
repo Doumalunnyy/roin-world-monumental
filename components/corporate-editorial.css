@@ -1,84 +1,287 @@
-/* Editorial treatments for the corporate register and the reporting pages. */
-.company-pages[data-chapter-body] { --cp-paper:#fff; --cp-graphite:#111; --cp-rule:#d4d4d4; }
-.company-pages[data-chapter-body] h2 { letter-spacing:-.055em; }
-.company-pages[data-chapter-body="about"] .cp-introduction { border-block-start:1px solid var(--cp-rule); padding-block-start:clamp(1.5rem,4vw,4.5rem); }
-.company-pages[data-chapter-body="about"] .cp-introduction h2 { font-size:clamp(2.4rem,5.5vw,6rem); font-weight:550; }
-.company-pages[data-chapter-body="about"] .cp-introduction .cp-lede { width:min(100%,38ch); }
-.company-pages[data-chapter-body="about"] .cp-principles { margin-inline:calc((100vw - 100%)/-2); padding-inline:max(4vw,calc((100vw - 100%)/2)); padding-block:clamp(3rem,7vw,8rem); }
-.company-pages[data-chapter-body] .cp-sites { align-items:end; }
-.company-pages[data-chapter-body] .cp-sites a:first-child .cp-site-image { aspect-ratio:1.25; }
-.company-pages[data-chapter-body] .cp-sites a:nth-child(2) .cp-site-image { aspect-ratio:1.5; }
+/* Shared measures for the corporate pages. Photographs retain their published colours. */
+.company-pages[data-chapter-body] {
+  --cp-rule: #d4d4d4;
+  --cp-muted: #525252;
+  --cp-ink: #111;
+  --cp-ground: #f5f5f5;
+  --cp-gap: clamp(1.5rem, 4.2vw, 4.75rem);
+  --cp-space: clamp(3rem, 6.7vw, 7rem);
+  --cp-title: clamp(1.95rem, 4vw, 4.5rem);
+  --cp-subtitle: clamp(1.35rem, 2.2vw, 2.35rem);
+  --cp-reading: clamp(1.08rem, 1.48vw, 1.45rem);
+  background:#fff;
+  padding-block-start:clamp(2.5rem, 4.2vw, 4.7rem);
+}
+.company-pages[data-chapter-body] :is(h2,h3) { font-weight:560; letter-spacing:-.055em; }
+.company-pages[data-chapter-body] h2 { font-size:var(--cp-title); line-height:1.02; }
+.company-pages[data-chapter-body] :is(.cp-lede,.cp-copy p,.archive-entry p,.publication-story p) { text-wrap:pretty; }
+.company-pages[data-chapter-body] .cp-source { font-size:.81rem; }
+.company-pages .company-profile, .company-pages .company-capabilities, .company-pages .company-archive-index,
+.company-pages .company-standards, .company-pages .leadership-register, .company-pages .biography-profile,
+.company-pages .partners-preface, .company-pages .policy-layout {
+  display:grid; grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);
+  gap:var(--cp-gap); align-items:start;
+}
+.company-pages .company-profile { grid-template-columns:minmax(0,1fr) minmax(0,1.12fr); align-items:center; }
+.company-pages .company-profile .cp-frame { aspect-ratio:1.77; }
+.company-pages .company-profile h2 { font-size:clamp(2.1rem,4.3vw,4.6rem); }
+.company-pages .company-profile .cp-lede { margin-block:1.3rem .65rem; max-width:42ch; }
+.company-pages .company-capabilities, .company-pages .company-archive-index,
+.company-pages .company-standards { border-block-start:1px solid #292929; padding-block-start:clamp(1.35rem,3.4vw,3.5rem); }
+.company-pages .company-capabilities > div > p { margin-block-start:1rem; max-width:40ch; }
+.company-capability-links { display:grid; }
+.company-pages .company-capability-links a, .company-pages .company-standards > div:last-child a {
+  display:flex; align-items:center; justify-content:space-between; gap:1rem; padding-block:1rem;
+  min-height:3.5rem; border-block-end:1px solid var(--cp-rule); color:inherit; font-size:var(--cp-subtitle);
+  line-height:1.15; text-decoration:none; text-wrap:pretty;
+}
+.company-pages .company-capability-links a:first-child, .company-pages .company-standards > div:last-child a:first-child { padding-block-start:0; }
+.company-pages .company-capability-links svg,.company-archive-index svg,.company-standards svg { flex:none; }
+.company-pages .company-archive-index ol { list-style:none; margin:0; padding:0; }
+.company-archive-index li a { display:grid; grid-template-columns:4.3rem minmax(0,1fr) auto; align-items:center; gap:.7rem; padding:1rem 0; border-block-end:1px solid var(--cp-rule); color:inherit; text-decoration:none; }
+.company-archive-index li:first-child a { padding-block-start:0; }
+.company-archive-index li bdi { font-variant-numeric:tabular-nums; color:var(--cp-muted); }
+.company-archive-index li span { font-size:var(--cp-reading); }
+.company-archive-index > div > a,.company-standards > div > a { margin-block-start:.9rem; }
+.company-pages .company-work-method {
+  margin-inline:calc(50% - 50vw); padding-inline:max(5vw, calc((100vw - 100%) / 2));
+  padding-block:clamp(3rem,6vw,6.5rem); grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);
+}
+.company-work-method .cp-principle-body p { max-width:53ch; }
+.company-pages .cp-sites { align-items:start; }
+.company-pages .cp-sites .cp-site-image { aspect-ratio:1.65; }
+.company-pages .cp-sites strong { font-weight:560; }
+.company-pages .cp-team { align-items:center; grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr); }
+.company-pages .cp-team .cp-frame { aspect-ratio:1.55; }
+.company-pages .company-standards > div:last-child a { display:grid; grid-template-columns:minmax(0,.77fr) minmax(0,1fr) auto; margin:0; }
+.company-pages .company-standards a span { font-size:.95rem; color:var(--cp-muted); }
+.company-pages .company-end { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1rem; margin-block-start:var(--cp-space); }
+
+/* The date column is an index. A document-only event uses the full reading measure. */
 .archive-timeline { list-style:none; padding:0; }
-.archive-timeline li { display:grid; align-items:start; grid-template-columns:minmax(5.8rem,.46fr) minmax(0,1.1fr) minmax(0,.9fr); gap:clamp(1.5rem,4.5vw,6rem); border-block-start:1px solid var(--cp-rule); padding-block:clamp(1.8rem,4vw,5rem); scroll-margin-top:5.8rem; }
-.archive-date { font-size:clamp(2.5rem,5.3vw,6.6rem); letter-spacing:-.075em; font-weight:550; line-height:.95; }
-.archive-entry { padding-block-start:.25rem; }
-.company-pages .archive-entry h2 { font-size:clamp(1.5rem,2.7vw,3.2rem); }
-.company-pages .archive-entry p { margin:1rem 0; max-width:42ch; }
-.company-pages .archive-entry a { display:flex; width:fit-content; }
-.company-pages .archive-timeline .cp-frame { aspect-ratio:1.7; }
-.company-pages[data-chapter-body="leadership"] .cp-person,
-.company-pages[data-chapter-body="team"] .cp-person { background:none; border-inline:0; border-block:1px solid var(--cp-rule); padding:clamp(1.5rem,4vw,4.5rem) 0; }
-.company-pages[data-chapter-body="leadership"] .cp-person > div:last-child { width:100%; display:grid; align-items:start; grid-template-columns:minmax(0,1.05fr) minmax(0,.8fr); gap:.8rem clamp(1.8rem,6vw,8rem); }
-.company-pages[data-chapter-body="leadership"] .cp-person .cp-meta { grid-column:1/-1; }
-.company-pages[data-chapter-body="leadership"] .cp-person h3 { grid-row:2/4; font-weight:550; font-size:clamp(2.4rem,5vw,6rem); }
-.company-pages[data-chapter-body="leadership"] .cp-person .text-link { justify-self:start; }
+.archive-timeline li { display:grid; grid-template-columns:minmax(6rem,.52fr) minmax(0,1fr) minmax(0,1.07fr); gap:var(--cp-gap);
+  border-block-start:1px solid var(--cp-rule); padding-block:clamp(1.55rem,3.2vw,3.65rem); scroll-margin-top:6rem; align-items:start; }
+.archive-timeline li:first-child { border-color:#292929; }
+.archive-date { font-size:clamp(3.3rem,6.9vw,8rem); font-weight:500; line-height:.92; letter-spacing:-.075em; font-variant-numeric:tabular-nums; }
+.company-pages .archive-entry h2 { font-size:clamp(1.5rem,2.65vw,3.1rem); line-height:1.08; }
+.company-pages .archive-entry p { margin:1rem 0 .6rem; max-width:54ch; }
+.archive-links { display:flex; gap:0 1.4rem; flex-wrap:wrap; align-items:center; }
+.archive-timeline li:not([data-photo]) .archive-entry { grid-column:2/-1; max-width:51rem; }
+.company-pages .archive-timeline .cp-frame { aspect-ratio:1.85; }
 .company-pages[data-chapter-body="team"] .cp-team:first-child { margin-block-start:0; }
-.company-pages[data-chapter-body="team"] .cp-team:first-child .cp-frame { aspect-ratio:1.64; }
-.company-pages[data-chapter-body="team"] .cp-people-section { margin-block:var(--cp-space); }
-.company-pages[data-chapter-body="partners"] .cp-logo-directory { margin-block-start:0; padding-block-end:2rem; }
-.company-pages[data-chapter-body="partners"] .cp-logo-row { padding-block:clamp(1.2rem,3vw,3rem); }
-.company-pages[data-chapter-body="partners"] .cp-logo-row li { display:flex; flex-direction:column; align-items:flex-start; }
-.company-pages[data-chapter-body="partners"] .cp-catalogue-logo { display:block; width:100%; height:clamp(64px,7vw,110px); }
-.company-pages[data-chapter-body="certificates"] .cp-docs-grid { display:block; }
-.company-pages[data-chapter-body="certificates"] .cp-docs-grid article { display:grid; grid-template-columns:minmax(100px,.65fr) minmax(0,1.05fr) minmax(0,.9fr); column-gap:clamp(1.8rem,4.5vw,5rem); align-items:start; border-block-start:1px solid var(--cp-rule); padding-block:clamp(1.5rem,3.5vw,4rem); }
-.company-pages[data-chapter-body="certificates"] .cp-scan { height:100%; min-height:11rem; max-height:17rem; grid-column:1; grid-row:1/6; width:100%; aspect-ratio:auto; margin:0; }
-.company-pages[data-chapter-body="certificates"] .cp-docs-grid h3 { font-size:clamp(1.6rem,2.7vw,3.3rem); grid-column:2; grid-row:1; }
-.company-pages[data-chapter-body="certificates"] .cp-docs-grid article > p { grid-column:2; grid-row:2; margin:0; }
-.company-pages[data-chapter-body="certificates"] .cp-docs-grid dl { grid-column:3; grid-row:1/6; margin:0; }
-.company-pages[data-chapter-body="certificates"] .cp-scan-actions,
-.company-pages[data-chapter-body="certificates"] .cp-docs-grid .cp-source { grid-column:2; }
-.company-pages[data-chapter-body="careers"] .cp-application { border-inline-start:3px solid #292929; }
-.company-pages[data-chapter-body] :is(.cp-lede,.cp-copy p,.cp-story p,.archive-entry p) { text-wrap:pretty; }
-.company-pages .cp-library dd { overflow-wrap:anywhere; }
-.company-pages[data-chapter-body="careers"] .cp-vacancies :is(h3,a) { text-decoration:none; }
-.company-pages[data-chapter-body="careers"] .cp-vacancies article { padding-block:clamp(1.3rem,2.4vw,2.3rem); }
-.company-pages[data-chapter-body="news"] .cp-index .cp-news-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:2.4rem 3vw; }
-.company-pages[data-chapter-body="news"] .cp-index .cp-news-list > div:first-child { grid-column:1/-1; }
-.company-pages[data-chapter-body="news"] .cp-index .cp-news-list article { display:block; position:relative; padding:0; border:none; }
-.company-pages[data-chapter-body="news"] .cp-index .cp-news-list > div:first-child article { display:grid; grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr); align-items:center; gap:3.5vw; border-block-start:1px solid var(--cp-rule); padding-block-start:1.5rem; }
-.company-pages[data-chapter-body="news"] .cp-index .cp-news-list .cp-news-open { display:none; }
-.company-pages[data-chapter-body="news"] .cp-index .cp-news-meta { margin-block-start:.9rem; }
-.company-pages[data-chapter-body="news"] .cp-news-thumb { aspect-ratio:1.98; }
-.company-pages[data-chapter-body="news"] .cp-index .cp-news-list > div:first-child .cp-news-thumb { aspect-ratio:1.6; }
-.company-pages[data-chapter-body="news"] .cp-story-links { border-block-start:1px solid var(--cp-rule); padding-block-start:1rem; }
-.company-pages[data-chapter-body="contacts"] .cp-contact-choices { margin-block-end:2.5rem; }
-.office-entry { border-block-start:1px solid var(--cp-rule); padding-block:.9rem; }
-.office-entry summary { display:flex; align-items:center; justify-content:space-between; gap:.8rem; color:inherit; font-size:clamp(1.15rem,1.7vw,1.85rem); font-weight:600; list-style:none; cursor:pointer; padding:.4rem 0; }
+.company-pages .team-field-reports .cp-news-list,.company-pages .cp-related-news .cp-news-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:var(--cp-gap); }
+
+.company-pages .leadership-register { grid-template-columns:minmax(0,1fr) minmax(0,.85fr); align-items:center; border-block-start:1px solid #292929; padding-block-start:clamp(1.5rem,3.3vw,3.6rem); }
+.company-pages .leadership-register .cp-frame { aspect-ratio:1.62; }
+.company-pages[data-chapter-body] .cp-person { background:none; border:0; display:flex; align-items:flex-start; padding:0; }
+.company-pages .cp-person :is(h2,h3) { font-size:clamp(1.9rem,3.4vw,3.75rem); line-height:1.03; margin-block:.45rem 1rem; }
+.company-pages .cp-person > div:last-child { min-width:0; max-width:38rem; }
+.company-pages .cp-person > div:last-child > p:not(.cp-meta) { max-width:49ch; }
+.company-pages .cp-people-section { border-block-start:1px solid var(--cp-rule); padding-block-start:2rem; display:grid; gap:var(--cp-gap); grid-template-columns:minmax(0,.68fr) minmax(0,1.32fr); }
+.company-pages .biography-profile { grid-template-columns:minmax(0,1.18fr) minmax(0,.65fr); align-items:start; }
+.company-pages .biography-profile > section { border-block-start:1px solid #292929; padding-block-start:1.3rem; }
+.company-pages .biography-profile .cp-lede { margin-block:1rem; max-width:43ch; font-size:var(--cp-reading); }
+.biography-profile aside { background:var(--cp-ground); padding:clamp(1.3rem,3vw,3rem); }
+.biography-profile aside > strong { display:block; line-height:1.2; font-size:var(--cp-subtitle); font-weight:550; margin-block:.45rem 1.3rem; }
+.biography-profile aside > div:not(.cp-portrait) { padding-block-start:1.35rem; border-block-start:1px solid #bdbdbd; }
+.bio-year { display:block; font-size:clamp(2.7rem,4.9vw,5rem); line-height:1; letter-spacing:-.06em; }
+.biography-profile .cp-portrait { aspect-ratio:4/5; margin-block-end:1.2rem; }
+.company-pages .biography-profile aside .text-link { margin-block-start:.65rem; }
+
+.company-pages .partners-preface { align-items:start; padding-block-end:clamp(1.5rem,3vw,3rem); }
+.company-pages .partners-preface p { max-width:47ch; font-size:var(--cp-reading); }
+.company-pages .cp-logo-directory { margin-block-start:0; }
+.company-pages .cp-logo-row { scroll-margin-block-start:6rem; }
+.company-pages .cp-logo-row { grid-template-columns:minmax(8rem,.32fr) minmax(0,1fr); gap:var(--cp-gap); padding-block:clamp(1.25rem,2.5vw,2.7rem); }
+.company-pages .cp-logo-row h2 { font-size:var(--cp-subtitle); }
+.company-pages .cp-logo-row ul { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(.7rem,2vw,2.2rem); }
+.company-pages .cp-logo-row li { display:flex; flex-direction:column; align-items:flex-start; justify-content:flex-end; gap:.75rem; min-height:0; }
+.company-pages .cp-logo-row .cp-catalogue-logo { display:block; height:clamp(4rem,6.1vw,6.75rem); width:100%; }
+.company-pages .cp-catalogue-logo img { object-fit:contain; object-position:left center; }
+[dir=rtl] .company-pages .cp-catalogue-logo img { object-position:right center; }
+.company-pages .cp-logo-row li > span:last-child { color:var(--cp-muted); font-size:.87rem; }
+.company-pages .cp-partners { margin-block-start:var(--cp-space); }
+
+.company-pages .cp-docs-grid { display:block; }
+.company-pages .document-folio { display:grid; grid-template-areas:"scan title data" "scan actions data" "scan source data";
+  grid-template-columns:minmax(7.75rem,.56fr) minmax(0,1.03fr) minmax(0,.88fr); grid-template-rows:auto auto 1fr;
+  align-items:start; gap:.7rem var(--cp-gap); border-block-start:1px solid var(--cp-rule); padding-block:clamp(1.3rem,3vw,3.2rem); }
+.company-pages .document-folio:first-child { border-color:#292929; }
+.company-pages .document-folio .cp-scan { grid-area:scan; width:100%; height:auto; aspect-ratio:1.12; margin:0; background:#eee; }
+.company-pages .document-folio .cp-scan img { object-fit:contain; padding:clamp(.55rem,1.5vw,1.4rem); }
+.document-title { grid-area:title; }
+.company-pages .document-title h3 { font-size:clamp(1.55rem,3.2vw,3.4rem); line-height:1; margin:0; }
+.company-pages .document-title p { margin-block-start:.65rem; font-size:var(--cp-reading); line-height:1.3; }
+.company-pages .document-folio dl { grid-area:data; margin:0; display:grid; grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr); column-gap:1rem; }
+.company-pages .document-folio :is(dt,dd) { margin:0; padding:.55rem 0; border:0; border-block-end:1px solid var(--cp-rule); overflow-wrap:anywhere; }
+.company-pages .document-folio dt { color:var(--cp-muted); font-size:.83rem; }
+.company-pages .document-folio dd { font-size:.94rem; }
+.document-folio .cp-source { grid-area:source; justify-self:start; }
+.company-pages .document-folio .cp-scan-actions { grid-area:actions; display:flex; gap:0 1.25rem; flex-wrap:wrap; margin:0; }
+.company-pages .cp-scan-actions a { font-size:.94rem; }
+.company-pages .cp-library .cp-invitation { margin-block-start:2rem; }
+
+.company-pages #vacancies { scroll-margin-top:6rem; }
+.company-pages .cp-filter-toolbar {
+  border-block:1px solid var(--cp-rule); display:flex; flex-wrap:wrap; gap:.65rem 1.5rem; align-items:center;
+  margin-block:clamp(1.2rem,2vw,2.25rem) 0; padding:.85rem 0;
+}
+.company-pages .cp-filter-toolbar label { display:flex; align-items:center; gap:.55rem; font-size:.84rem; color:var(--cp-muted); }
+.company-pages .cp-filter-toolbar select { color:#111; background-color:#f5f5f5; border-color:transparent; min-width:5.7rem; min-height:2.6rem; max-width:100%; font-size:.9rem; }
+.company-pages .cp-filter-toolbar button { min-height:2.5rem; font-size:.87rem; }
+.cp-match-count { margin-inline-end:auto; color:var(--cp-muted); font-size:.88rem; }
+.cp-match-count bdi { margin-inline-start:.4rem; color:var(--cp-ink); font-variant-numeric:tabular-nums; font-weight:650; }
+.company-pages .cp-vacancies article { display:grid; grid-template-columns:minmax(0,1.25fr) minmax(0,.58fr) auto; align-items:center; border-block-end:1px solid var(--cp-rule); border-block-start:0; gap:var(--cp-gap); padding-block:clamp(1.3rem,2.2vw,2.3rem); }
+.company-pages .cp-vacancies h3 { margin:.35rem 0 0; font-size:var(--cp-subtitle); font-weight:550; }
+.company-pages .cp-vacancies h3 a { text-decoration:none; }
+.company-pages .vacancy-location { font-size:.91rem; color:var(--cp-muted); }
+.company-pages .recruitment-culture { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,.85fr); gap:1rem var(--cp-gap); }
+.recruitment-culture > figure { grid-row:span 2; }
+.company-pages .recruitment-culture .cp-frame { aspect-ratio:1.38; }
+.company-pages .recruitment-culture .cp-service-list { display:flex; flex-wrap:wrap; gap:0 1rem; }
+.company-pages .recruitment-culture .cp-service-list .text-link { font-size:.95rem; }
+.company-pages .cp-job-detail { grid-template-columns:minmax(0,1.15fr) minmax(0,.72fr); }
+.company-pages .cp-job-detail .cp-copy > h2 { font-size:clamp(1.8rem,3vw,3.4rem); }
+.company-pages .cp-job-detail .cp-copy > .cp-lede { max-width:45ch; }
+.company-pages .cp-job-detail .cp-application { border:0; background:#151515; }
+.vacancy-facts { display:grid; grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr); gap:.7rem 1rem; border-block:1px solid #595959; padding-block:1rem; }
+.vacancy-facts span { color:#bdbdbd; font-size:.86rem; }
+.vacancy-facts strong { font-size:.95rem; font-weight:550; }
+.company-pages .vacancy-board + .recruitment-culture { margin-block-start:var(--cp-space); }
+
+.company-pages[data-chapter-body="news"] .cp-index .cp-news-list { display:block; }
+.company-pages .cp-news-list article { border:0; }
+.company-pages[data-chapter-body="news"] .cp-index .cp-news-list article {
+  display:grid; grid-template-columns:minmax(11rem,.64fr) minmax(0,1.32fr) auto;
+  align-items:center; gap:var(--cp-gap); padding-block:clamp(1rem,2.3vw,2.25rem); border-block-end:1px solid var(--cp-rule); }
+.company-pages .cp-news-list :is(h3,p) { max-width:50ch; }
+.company-pages .cp-news-list h3 { margin-block:.45rem; font-size:var(--cp-subtitle); }
+.company-pages .cp-news-list h3 a { text-decoration:none; }
+.company-pages .cp-news-list p { display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; color:var(--cp-muted); }
+.company-pages .cp-news-thumb { aspect-ratio:1.78; }
+.company-pages .cp-related-news, .company-pages .cp-people-section { margin-block:var(--cp-space); }
+.company-pages .cp-related-news h2 { margin-block-end:1.5rem; }
+.company-pages .team-field-reports .cp-news-list article,.company-pages .cp-related-news .cp-news-list article {
+  display:grid; grid-template-columns:minmax(0,.82fr) minmax(0,1fr); align-items:start; gap:1rem;
+  border-block-start:1px solid var(--cp-rule); padding-block-start:1rem; }
+.company-pages :is(.team-field-reports,.cp-related-news) .cp-news-open { display:none; }
+.company-pages :is(.team-field-reports,.cp-related-news) .cp-news-list h3 { font-size:clamp(1.1rem,1.7vw,1.8rem); }
+.company-pages .publication-story { display:grid; grid-template-columns:minmax(0,.84fr) minmax(0,1.16fr); align-items:start; gap:var(--cp-gap); }
+.company-pages .publication-story .cp-body { border-block-start:1px solid #292929; padding-block-start:1.2rem; }
+.company-pages .publication-story .cp-lede { font-size:var(--cp-reading); line-height:1.5; margin-block:1rem; }
+.publication-player { position:relative; display:grid; place-items:center; aspect-ratio:16/9; isolation:isolate; background:#151515; }
+.publication-player img { object-fit:contain; }
+.company-pages .publication-player .film-trigger { position:relative; display:inline-flex; align-items:center; gap:.65rem; color:#fff; background:#111; padding:.65rem 1rem; min-height:44px; border:1px solid #d4d4d4; }
+.company-pages .publication-player .film-trigger:hover { background:#292929; }
+.company-pages .publication-player .play-ring { border:0; width:auto; height:auto; }
+.company-pages .publication-story .cp-story-links { border:0; padding:0; }
+.company-pages .publication-story .cp-story-links > .text-link { margin-block-start:.65rem; }
+
+.company-pages .cp-contact-choices { margin-block-end:clamp(1.4rem,3vw,3rem); padding-block:0; }
+.company-pages .cp-contact-choices a { min-height:3.25rem; font-size:.92rem; }
+.company-pages .cp-contacts { grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr); gap:var(--cp-gap); }
+.company-pages .cp-contacts > section > h2 { font-size:clamp(1.8rem,3.3vw,3.7rem); }
+.office-entry { border-block-start:1px solid var(--cp-rule); padding:.25rem 0; }
+.office-entry:last-child { border-block-end:1px solid var(--cp-rule); }
+.office-entry summary { list-style:none; display:flex; justify-content:space-between; align-items:center; gap:.8rem; cursor:pointer; min-height:3.5rem; padding:.45rem 0; font-size:clamp(1.11rem,1.5vw,1.55rem); line-height:1.25; font-weight:550; }
 .office-entry summary::-webkit-details-marker { display:none; }
-.office-entry summary svg { flex-shrink:0; transition:transform .18s ease-out; }
+.office-entry summary svg { flex-shrink:0; transition:transform .16s ease-out; }
 .office-entry[open] summary svg { transform:rotate(45deg); }
-.office-entry summary:focus-visible { outline:2px solid currentColor; outline-offset:3px; }
-.company-pages[data-chapter-body="contacts"] .cp-contacts > aside { align-self:start; }
-[dir=rtl] .company-pages[data-chapter-body] :is(h2,h3,.archive-date) { letter-spacing:normal; }
-@media(min-width:901px) {
-  .company-pages[data-chapter-body="contacts"] .cp-contacts > aside { position:sticky; top:6.2rem; }
+.office-entry summary:focus-visible,.office-map button:focus-visible { outline:2px solid currentColor; outline-offset:3px; }
+.company-pages .office-entry address { max-width:53ch; }
+.office-map { margin-block:.5rem 1.1rem; }
+.office-map button { min-height:2.75rem; color:#111; background:transparent; border:1px solid #737373; padding:.45rem .85rem; font:inherit; font-size:.93rem; cursor:pointer; }
+.office-map button:hover { background:#f5f5f5; }
+.office-map iframe { width:100%; height:clamp(13rem,23vw,21rem); margin-block-start:.7rem; display:block; border:0; }
+.company-pages .cp-contacts #enquiry { align-self:start; }
+.company-pages .policy-layout { grid-template-columns:minmax(0,.55fr) minmax(0,1.15fr); }
+.policy-layout nav { display:grid; border-block-start:1px solid #292929; align-content:start; padding-block-start:1.1rem; }
+.company-pages .policy-layout nav h2 { font-size:var(--cp-subtitle); margin-block-end:.75rem; }
+.policy-layout nav a { padding-block:.8rem; min-height:44px; color:inherit; text-decoration:none; border-block-end:1px solid var(--cp-rule); }
+.company-pages .policy-layout .cp-policy { max-width:47rem; }
+.policy-layout .cp-policy section { scroll-margin-top:6.5rem; padding-block:0 1.7rem; }
+.company-pages .policy-layout .cp-policy h2 { font-size:clamp(1.65rem,2.9vw,3.1rem); margin-block:0 .8rem; }
+.company-pages .policy-layout .cp-policy p { font-size:var(--cp-reading); }
+.company-pages .policy-layout .cp-policy p + p { margin-block-start:1rem; }
+
+@media(hover:hover) {
+  .company-pages :is(.company-capability-links,.company-archive-index,.company-standards,.policy-layout nav) a:hover,
+  .company-pages :is(.cp-vacancies,.cp-news-list) h3 a:hover { text-decoration:underline; text-underline-offset:.17em; }
+}
+@media(min-width:901px) { .company-pages .cp-contacts > aside,.policy-layout nav { position:sticky; top:6rem; } }
+@media(min-width:1051px) {
+  .company-pages .cp-docs-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); align-items:stretch; gap:clamp(1.25rem,2.4vw,3rem); }
+  .company-pages .cp-docs-grid .document-folio {
+    grid-template-columns:minmax(0,1fr); grid-template-areas:"scan" "title" "data" "actions" "source";
+    grid-template-rows:auto minmax(5rem,auto) 1fr auto auto; gap:1rem; border-block-start:1px solid #292929; padding-block:1rem 0;
+  }
+  .company-pages .document-folio .cp-scan { aspect-ratio:1.42; }
+  .company-pages .document-folio .cp-scan img { padding:1rem; }
+  .company-pages .document-title h3 { font-size:clamp(1.55rem,2.65vw,3rem); }
+  .company-pages .document-title p { font-size:1rem; }
+  .company-pages .document-folio dl { align-self:start; }
+  .company-pages .document-folio .cp-source { min-height:2rem; }
+}
+@media(max-width:950px) {
+  .company-pages .document-folio { grid-template-columns:minmax(6.8rem,.47fr) minmax(0,.84fr) minmax(0,.82fr); column-gap:1.5rem; }
+  .company-pages .document-folio dl { display:block; }
+  .company-pages .document-folio dt { border:0; padding:.4rem 0 0; }
+  .company-pages .document-folio dd { padding:.12rem 0 .4rem; }
+  .company-pages .cp-people-section { grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr); }
+  .company-pages .cp-vacancies article { gap:1rem; }
+  .company-pages .team-field-reports .cp-news-list article,.company-pages .cp-related-news .cp-news-list article { display:block; }
+  .company-pages :is(.team-field-reports,.cp-related-news) .cp-news-meta { margin-block-start:.65rem; }
 }
 @media(max-width:760px) {
-  .archive-timeline li { grid-template-columns:5rem minmax(0,1fr); gap:1rem; }
+  .company-pages .company-profile, .company-pages .company-capabilities, .company-pages .company-archive-index,
+  .company-pages .company-standards,.company-pages .company-work-method,.company-pages .leadership-register,
+  .company-pages .biography-profile,.company-pages .partners-preface,.company-pages .recruitment-culture,
+  .company-pages .cp-contacts,.company-pages .policy-layout,.company-pages .cp-job-detail,
+  .company-pages .publication-story,.company-pages .cp-team { grid-template-columns:minmax(0,1fr); }
+  .company-pages .company-capabilities, .company-pages .company-archive-index, .company-pages .company-standards { gap:1.2rem; }
+  .company-pages .company-work-method { margin-inline:calc(50% - 50vw); padding-inline:5vw; gap:1.5rem; }
+  .company-pages .cp-contacts > aside { grid-row:auto; }
+  .company-pages #offices { order:0; }
+  .company-pages #enquiry { order:1; }
+  .company-pages .recruitment-culture > figure { grid-row:auto; }
+  .company-pages .recruitment-culture .cp-frame { aspect-ratio:1.8; }
+  .company-pages .cp-people-section { grid-template-columns:1fr; gap:1rem; }
+  .archive-timeline li { grid-template-columns:4.6rem minmax(0,1fr); gap:.9rem 1.1rem; }
+  .archive-date { font-size:clamp(2rem,6.6vw,3rem); }
   .archive-timeline .cp-figure { grid-column:2; }
-  .company-pages[data-chapter-body="certificates"] .cp-docs-grid article { grid-template-columns:minmax(6.5rem,.54fr) minmax(0,1fr); gap:.6rem 1rem; }
-  .company-pages[data-chapter-body="certificates"] .cp-scan { grid-row:1/4; min-height:8rem; }
-  .company-pages[data-chapter-body="certificates"] .cp-docs-grid dl { grid-column:2; grid-row:auto; }
-  .company-pages[data-chapter-body="certificates"] .cp-scan-actions,
-  .company-pages[data-chapter-body="certificates"] .cp-docs-grid .cp-source { grid-column:1/-1; }
+  .company-pages .archive-entry h2 { font-size:var(--cp-subtitle); }
+  .company-pages .cp-filter-toolbar { gap:.6rem 1rem; }
+  .company-pages .cp-filter-toolbar label { flex-wrap:wrap; }
+  .company-pages .cp-logo-row { grid-template-columns:1fr; gap:1rem; }
+  .company-pages .document-folio { grid-template-columns:minmax(5.5rem,.5fr) minmax(0,1fr); grid-template-areas:"scan title" "scan actions" "data data" "source source"; }
+  .company-pages .document-folio .cp-scan { aspect-ratio:.84; }
+  .company-pages .document-folio dl { display:grid; }
+  .company-pages .document-folio :is(dt,dd) { border-block-end:1px solid var(--cp-rule); padding:.5rem 0; }
+  .company-pages .cp-job-detail .cp-application { margin:0; }
+  .company-pages .publication-story .cp-story-links { grid-row:1; }
 }
-@media(max-width:560px) {
-  .company-pages[data-chapter-body="leadership"] .cp-person > div:last-child,
-  .company-pages[data-chapter-body="news"] .cp-index .cp-news-list,
-  .company-pages[data-chapter-body="news"] .cp-index .cp-news-list > div:first-child article { display:block; }
-  .company-pages[data-chapter-body="news"] .cp-index .cp-news-list > div+div { margin-block-start:2rem; }
-  .company-pages[data-chapter-body="certificates"] .cp-docs-grid article { grid-template-columns:minmax(6.7rem,.57fr) minmax(0,1fr); }
-  .company-pages .archive-date { font-size:2.1rem; }
-  .company-pages[data-chapter-body="contacts"] .cp-contacts > aside { grid-row:auto; }
+@media(max-width:580px) {
+  .company-pages[data-chapter-body] { padding-block-start:2.15rem; }
+  .company-pages .company-standards > div:last-child a { grid-template-columns:minmax(0,1fr) auto; gap:.4rem .7rem; }
+  .company-standards a span { grid-column:1; }
+  .company-standards a svg { grid-column:2; grid-row:1/3; }
+  .company-pages .cp-logo-row ul { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .company-pages .cp-logo-row .cp-catalogue-logo { height:3.45rem; }
+  .company-pages .cp-filter-toolbar label { display:grid; gap:.2rem; min-width:0; flex:1; }
+  .company-pages .cp-filter-toolbar select { width:100%; min-width:0; font-size:1rem; }
+  .cp-match-count { flex-basis:100%; }
+  .company-pages .cp-vacancies article { grid-template-columns:minmax(0,1fr) auto; }
+  .company-pages .vacancy-location { display:none; }
+  .company-pages .cp-vacancies article > .text-link { font-size:0; min-width:44px; min-height:44px; justify-content:center; }
+  .company-pages .cp-index .cp-news-list article { display:block; }
+  .company-pages[data-chapter-body="news"] .cp-index .cp-news-list article { grid-template-columns:minmax(5.7rem,.56fr) minmax(0,1fr); gap:1rem; }
+  .company-pages[data-chapter-body="news"] .cp-index .cp-news-list .cp-news-open { display:none; }
+  .company-pages[data-chapter-body="news"] .cp-index .cp-news-list h3 { font-size:1.21rem; }
+  .company-pages[data-chapter-body="news"] .cp-index .cp-news-list p { -webkit-line-clamp:2; font-size:.9rem; }
+  .company-pages .team-field-reports .cp-news-list,.company-pages .cp-related-news .cp-news-list { grid-template-columns:1fr; gap:1rem; }
+  .company-pages .team-field-reports .cp-news-list article,.company-pages .cp-related-news .cp-news-list article { display:grid; grid-template-columns:minmax(5rem,.58fr) minmax(0,1fr); }
+  .company-pages .cp-contact-choices { gap:0 1rem; }
 }
+[dir=rtl] .company-pages[data-chapter-body] :is(h2,h3,.archive-date,.bio-year) { letter-spacing:normal; }
+[dir=rtl] .company-pages :is(.company-capability-links,.company-archive-index,.cp-vacancies) svg { transform:scaleX(-1); }
 @media(prefers-reduced-motion:reduce) { .office-entry summary svg { transition:none; } }

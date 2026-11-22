@@ -1,106 +1,132 @@
-/* The entry treatment follows the material: company story, project plate or working register. */
-.chapter {
-  --paper: #f5f5f5;
-  --ink: #111;
-  --muted: #525252;
-  position: relative;
-  background: var(--paper);
-  color: var(--ink);
-  padding-block-start: 88px;
+/* Shared scale for the editorial openings and their navigation. */
+.interior {
+  --chapter-display:clamp(3.3rem,6.9vw,7.4rem);
+  --chapter-title:clamp(2.55rem,4.55vw,5.25rem);
+  --chapter-intro:clamp(1rem,1.35vw,1.36rem);
+  --chapter-note:clamp(.77rem,.85vw,.9rem);
+  --chapter-inset:clamp(24px,4vw,70px);
+  --chapter-gap:clamp(24px,3.4vw,62px);
 }
-.chapter :is(figure,h1,p) { margin:0; }
-.mast.inner-mast:not(.solid) { background:#111; }
-.chapter .chapter-shell { padding-block: 25px clamp(34px,5.5vw,88px); }
-.chapter-crumbs { display:flex; align-items:center; flex-wrap:wrap; gap:7px; font-size:12px; line-height:1.4; color:var(--muted); }
+.mast.inner-mast:not(.solid) { background:#0b0b0b; }
+.chapter {
+  --chapter-surface:#f5f5f5; --chapter-text:#151515; --chapter-secondary:#424242; --chapter-line:#a8a8a8;
+  background:var(--chapter-surface); color:var(--chapter-text); position:relative; isolation:isolate;
+  padding-block-start:clamp(68px,6.1vw,88px);
+}
+.chapter--portfolio,.chapter--crew,.chapter--case,.chapter--careers,.chapter--chronicle,.chapter--atlas,.chapter--press,.chapter--person,.chapter--contact {
+  --chapter-surface:#151515; --chapter-text:#fff; --chapter-secondary:#dedede; --chapter-line:#666;
+}
+.chapter :is(h1,figure,p) { margin:0; }
+.chapter .chapter-shell { position:relative; padding-block:16px var(--chapter-inset); }
+.chapter-crumbs { position:relative; z-index:2; display:flex; align-items:center; flex-wrap:wrap; gap:5px 8px; font-size:var(--chapter-note); line-height:1.45; color:var(--chapter-secondary); }
 .chapter-crumbs a { color:inherit; text-decoration:underline; text-underline-offset:.23em; }
 .chapter-crumbs span { overflow-wrap:anywhere; }
-.chapter-stage { position:relative; padding-block-start: clamp(36px,5vw,85px); }
-.chapter h1 {
-  color:inherit; font-weight:600; font-size:clamp(3.1rem,7.5vw,8.5rem);
-  line-height:1.01; letter-spacing:-.055em; text-transform:none; overflow-wrap:anywhere;
-  text-wrap:balance; max-width:18ch;
+.chapter-stage { padding-block-start:var(--chapter-gap); }
+.chapter h1 { max-width:17ch; font-size:var(--chapter-display); line-height:.99; letter-spacing:-.055em; font-weight:550; text-wrap:balance; overflow-wrap:anywhere; color:inherit; text-transform:none; }
+.chapter h1:focus { outline:0; }
+.chapter .chapter-deck { max-width:45ch; margin-block-start:1.25rem; color:var(--chapter-secondary); font-size:var(--chapter-intro); line-height:1.47; text-wrap:pretty; }
+.chapter .chapter-place { display:flex; flex-wrap:wrap; align-items:center; gap:.4rem; font-size:var(--chapter-note); line-height:1.45; color:var(--chapter-secondary); margin-block-end:1rem; }
+.chapter-type,.chapter-plate { min-width:0; }
+.chapter-plate { position:relative; }
+.chapter-frame,.chapter-issue-photo,.scan-paper { position:relative; display:block; overflow:hidden; }
+.chapter-frame { background:#292929; }
+.chapter-frame .photo,.chapter-issue-photo .photo { object-fit:cover; }
+.chapter-plate figcaption { font-size:var(--chapter-note); line-height:1.4; color:var(--chapter-secondary); padding-block-start:.5rem; max-width:75ch; }
+.chapter-actions { display:flex; align-items:center; flex-wrap:wrap; gap:.7rem 1.6rem; margin-block-start:1.5rem; }
+.interior :is(.action,.text-link) { min-height:44px; width:fit-content; max-width:100%; font-weight:600; line-height:1.35; }
+.interior .text-link { color:inherit; border-color:currentColor; }
+.interior :is(.action,.text-link):focus-visible,.chapter a:focus-visible { outline:2px solid currentColor; outline-offset:4px; }
+.chapter .action.light { background:#f5f5f5; color:#111; padding:12px 18px; }
+.chapter .action.light:focus-visible { outline-color:white; }
+.chapter .text-link { color:inherit; }
+.chapter--portfolio,.chapter--crew { overflow:hidden; background:#111; }
+:is(.chapter--portfolio,.chapter--crew) > .chapter-plate { position:absolute; inset:0; z-index:-1; }
+:is(.chapter--portfolio,.chapter--crew) > .chapter-plate .chapter-frame { position:absolute; inset:0; }
+:is(.chapter--portfolio,.chapter--crew) > .chapter-plate .chapter-frame::after { content:""; position:absolute; inset:0;
+  background:linear-gradient(0deg,rgba(0,0,0,.64),transparent 39%),linear-gradient(90deg,rgba(0,0,0,.81) 0%,rgba(0,0,0,.55) 32%,rgba(0,0,0,.06) 75%); }
+[dir=rtl] :is(.chapter--portfolio,.chapter--crew) > .chapter-plate .chapter-frame::after { transform:scaleX(-1); }
+:is(.chapter--portfolio,.chapter--crew) .chapter-shell { display:flex; flex-direction:column; justify-content:space-between;
+  min-height:clamp(27rem,57svh,41rem); padding-block-end:clamp(46px,4.2vw,76px); }
+:is(.chapter--portfolio,.chapter--crew) > .chapter-plate figcaption { position:absolute; inset-inline-end:max(var(--gutter),calc((100% - 1680px)/2 + var(--gutter))); bottom:18px;
+  max-width:min(43%,60ch); color:#f5f5f5; text-align:end; text-shadow:0 1px 4px #000; }
+.chapter--portfolio h1 { font-size:clamp(4.4rem,8vw,9.1rem); }
+.chapter--portfolio .chapter-deck,.chapter--crew .chapter-deck { max-width:37ch; color:#f5f5f5; }
+.chapter--portfolio .chapter-frame img { object-position:55% 54%; }
+.chapter--crew > .chapter-plate { inset-block-start:clamp(68px,6.1vw,88px); }
+.chapter--crew .chapter-frame img { object-position:50% 4%; }
+.chapter--crew .chapter-shell { min-height:clamp(26rem,57svh,40rem); }
+:is(.chapter--case,.chapter--discipline,.chapter--company,.chapter--practice,.chapter--careers,.chapter--press,.chapter--documents,.chapter--contact,.chapter--chronicle) .chapter-stage {
+  display:grid; grid-template-columns:minmax(0,.84fr) minmax(0,1.16fr); gap:var(--chapter-gap); align-items:center;
 }
-.chapter h1:focus { outline:none; }
-.chapter .chapter-deck { margin-block-start:clamp(18px,2.6vw,38px); font-size:clamp(1rem,1.42vw,1.43rem);
-  line-height:1.5; max-width:55ch; color:var(--muted); }
-.chapter .chapter-place, .chapter .chapter-issue-label { display:flex; align-items:center; gap:.55rem; margin-block-end:1.15rem; color:var(--muted); font-size:clamp(.83rem,.95vw,1.02rem); line-height:1.5; }
-.chapter-art { position:relative; min-width:0; }
-.chapter-image,.chapter-issue-photo { position:relative; display:block; overflow:hidden; background:#292929; }
-.chapter-image img,.chapter-issue-photo img { object-fit:cover; }
-.chapter-art figcaption { max-width:76ch; color:var(--muted); font-size:clamp(.8rem,.88vw,.92rem); line-height:1.5; margin-block-start:.55rem; }
-.chapter-jump, .chapter-index-action, .chapter-register a, .chapter-years a { color:inherit; }
-.chapter-jump { display:inline-flex; gap:.75rem; align-items:center; margin-block-start:1.3rem; text-underline-offset:.3em; font-weight:650; }
-.chapter--spread .chapter-stage,.chapter--discipline .chapter-stage,.chapter--workforce .chapter-stage,
-.chapter--story .chapter-stage,.chapter--disciplines .chapter-stage { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.05fr); gap:clamp(25px,5.7vw,100px); align-items:center; }
-.chapter--spread .chapter-image { aspect-ratio:1.4; }
-.chapter--discipline .chapter-image { aspect-ratio:1.27; }
-.chapter--disciplines .chapter-image { aspect-ratio:2.4; }
-.chapter--disciplines h1 { font-size:clamp(2.8rem,6.1vw,7.2rem); }
-.chapter--discipline h1, .chapter--story h1 { font-size:clamp(2.5rem,4.9vw,6.2rem); }
-.chapter--workforce { background:#f5f5f5; }
-.chapter--workforce .chapter-stage { grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); }
-.chapter--workforce .chapter-image { aspect-ratio:1.5; }
-.chapter--profile,.chapter--atlas,.chapter--scene { --paper:#111; --ink:#fff; --muted:#d4d4d4; }
-.chapter--scene .chapter-shell { padding-block-end:0; }
-.chapter--scene .chapter-stage { display:grid; grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr); gap:4vw; align-items:end; }
-.chapter--scene .chapter-type { padding-block-end:clamp(34px,5vw,80px); }
-.chapter--scene .chapter-image { aspect-ratio:1.9; }
-.chapter--scene .chapter-art figcaption,.chapter--case .chapter-art figcaption { padding-block-end:.9rem; }
-.chapter--case .chapter-stage { display:grid; grid-template-columns:1fr; gap:2rem; }
-.chapter--case h1 { font-size:clamp(2.65rem,6.2vw,7rem); }
-.chapter--case .chapter-type { display:grid; grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr); gap:0 6vw; align-items:end; }
-.chapter--case .chapter-place { grid-column:1/-1; }
-.chapter--case .chapter-deck { margin-block:0 .2rem; }
-.chapter--case .chapter-image { height:clamp(18rem,42vw,37rem); }
-.chapter--case .chapter-shell { padding-block-end:0; }
-.chapter--story .chapter-image { aspect-ratio:1.9; }
-.chapter--chronicle { --paper:#f5f5f5; }
-.chapter--chronicle .chapter-stage,.chapter--press .chapter-stage { display:grid; grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr); align-items:end; gap:3vw; }
-.chapter-years { display:flex; flex-wrap:wrap; align-items:baseline; gap:.6rem 1.4rem; padding-block:.8rem; border-block:1px solid #a3a3a3; }
-.chapter-years a { font-size:clamp(1.15rem,2.3vw,2.5rem); letter-spacing:-.045em; text-underline-offset:.22em; }
-.chapter--profile .chapter-type,.chapter--atlas .chapter-type,.chapter--register .chapter-type,
-.chapter--catalog .chapter-type { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,.55fr); align-items:end; gap:4vw; }
-.chapter--profile .chapter-deck,.chapter--atlas .chapter-deck,.chapter--register .chapter-deck,.chapter--catalog .chapter-deck { margin:0; }
-.chapter[data-section="privacy"] .chapter-type { display:block; }
-.chapter[data-section="privacy"] h1 { max-width:none; font-size:clamp(2.3rem,6.4vw,7rem); }
-.chapter[data-section="privacy"] .chapter-deck { margin-block-start:1.25rem; }
-.chapter--atlas .chapter-shell { padding-block-end:clamp(20px,3vw,48px); }
-.chapter--atlas h1 { font-size:clamp(3.25rem,7.5vw,7.8rem); }
-.chapter--catalog .chapter-index-action { display:inline-flex; align-items:center; gap:.6rem; margin-block-start:1.5rem; font-weight:650; }
-.chapter--documents .chapter-stage,.chapter--contact .chapter-stage { display:grid; grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr); align-items:end; gap:4vw; }
-.chapter-register,.chapter-mail { border-block-start:1px solid #737373; }
-.chapter-register a { display:flex; gap:.6rem; align-items:center; padding:.6rem 0; border-block-end:1px solid #d4d4d4; }
-.chapter-mail { display:grid; grid-template-columns:1fr auto; align-items:center; gap:.65rem; color:inherit; padding-block:1.3rem; }
-.chapter-mail span { grid-column:1/-1; color:var(--muted); font-size:.9rem; }
-.chapter-mail bdi { font-size:clamp(1.15rem,2.2vw,2.65rem); font-weight:550; letter-spacing:-.045em; overflow-wrap:anywhere; }
-.chapter--contact { --paper:#f5f5f5; }
-.chapter--press .chapter-stage { grid-template-columns:minmax(0,1fr) minmax(0,.8fr); align-items:center; }
-.chapter-issue { position:relative; display:grid; grid-template-columns:minmax(6.8rem,.75fr) minmax(0,1fr) auto; align-items:center; gap:.35rem .9rem; color:inherit; }
-.chapter-issue-photo { grid-row:1/3; aspect-ratio:1.2; }
-.chapter .chapter-issue-label { display:block; margin:0; align-self:end; grid-column:2/4; }
-.chapter-issue strong { font-size:clamp(1rem,1.55vw,1.7rem); line-height:1.25; align-self:start; }
-.chapter-issue > svg { align-self:start; }
-.chapter--profile:has(.chapter-art) .chapter-image { max-width:26rem; aspect-ratio:4/5; margin-block-start:2rem; }
+:is(.chapter--case,.chapter--discipline,.chapter--careers) .chapter-stage { padding-block-start:1.25rem; }
+:is(.chapter--case,.chapter--discipline) h1,.chapter--story h1,.chapter--job h1,.chapter--person h1,.chapter--notice h1 { font-size:var(--chapter-title); }
+:is(.chapter--case,.chapter--discipline,.chapter--careers) .chapter-frame { height:clamp(20rem,30vw,32rem); }
+.chapter--case .chapter-shell { padding-block-end:clamp(26px,2.5vw,46px); }
+.chapter--company .chapter-frame { aspect-ratio:1.68; }
+.chapter--company .chapter-stage { align-items:end; }
+.chapter--company .chapter-type { padding-block-end:2rem; }
+.chapter--practice .chapter-frame { aspect-ratio:2.45; }
+.chapter--practice h1,.chapter--documents h1,.chapter--partners h1 { font-size:clamp(3rem,5.9vw,6.7rem); }
+.chapter--practice .chapter-deck { max-width:39ch; }
+.chapter--leadership .chapter-deck,.chapter--person .chapter-deck { font-size:clamp(1.15rem,1.7vw,1.65rem); }
+.chapter--person:has(.chapter-plate) .chapter-stage { display:grid; grid-template-columns:1fr minmax(200px,34%); gap:var(--chapter-gap); }
+.chapter--person .chapter-frame { aspect-ratio:4/5; }
+.chapter--leadership .chapter-type,.chapter--atlas .chapter-type {
+  display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,.7fr); gap:var(--chapter-gap); align-items:end; }
+:is(.chapter--leadership,.chapter--atlas) .chapter-deck { margin:0; }
+.chapter--atlas .chapter-shell { padding-block-end:clamp(18px,2vw,38px); }
+.chapter--atlas h1 { font-size:var(--chapter-title); }
+.chapter--chronicle .chapter-stage,.chapter--contact .chapter-stage { align-items:end; }
+.chapter-years { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); column-gap:1.4rem; }
+.chapter-years a { display:flex; align-items:center; justify-content:space-between; border-block-start:1px solid var(--chapter-line); padding-block:.6rem; min-height:48px;
+  font-size:clamp(1.5rem,2.4vw,3rem); letter-spacing:-.045em; font-variant-numeric:tabular-nums; color:inherit; }
+.chapter-years a:hover,.chapter-scans a:hover bdi,.chapter-mail:hover bdi,.chapter-issue:hover strong { text-decoration:underline; text-underline-offset:.19em; }
+.chapter--documents .chapter-stage { grid-template-columns:minmax(0,1fr) minmax(0,.92fr); }
+.chapter-scans { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(9px,1.3vw,22px); align-self:end; padding:clamp(12px,1.5vw,24px); background:#e5e5e5; }
+.chapter-scans a { display:grid; min-width:0; gap:.5rem; color:inherit; font-size:var(--chapter-note); }
+.scan-paper { aspect-ratio:1/1.14; background:#dedede; }
+.scan-paper .photo { object-fit:contain; }
+.chapter-partner-types { display:flex; flex-wrap:wrap; gap:.5rem 1.2rem; border-block-start:1px solid var(--chapter-line); padding-block-start:.8rem; margin-block-start:1.5rem; color:var(--chapter-secondary); font-size:var(--chapter-note); }
+.chapter-partner-types a { display:inline-flex; align-items:center; gap:.6rem; min-height:44px; color:inherit; font-weight:600; }
+.chapter-partner-types a:hover { text-decoration:underline; text-underline-offset:.22em; }
+.chapter-mail { color:inherit; display:grid; grid-template-columns:1fr auto; align-items:center; gap:.5rem 1rem; padding:1rem 0; border-block:1px solid var(--chapter-line); }
+.chapter-mail span { grid-column:1/-1; color:var(--chapter-secondary); font-size:var(--chapter-note); }
+.chapter-mail bdi { font-size:clamp(1.4rem,2.65vw,3.15rem); letter-spacing:-.035em; overflow-wrap:anywhere; }
+.chapter--press .chapter-stage { padding-block-start:1rem; }
+.chapter-issue { display:grid; grid-template-columns:1fr auto; gap:.85rem; align-items:center; color:inherit; }
+.chapter-issue-photo { grid-column:1/-1; aspect-ratio:2.25; background:#292929; }
+.chapter-issue-legend { display:grid; gap:.35rem; }
+.chapter-issue small { color:var(--chapter-secondary); font-size:var(--chapter-note); }
+.chapter-issue strong { font-size:clamp(1.15rem,1.75vw,1.9rem); line-height:1.16; }
+:is(.chapter--job,.chapter--story,.chapter--notice) .chapter-shell { padding-block-end:clamp(24px,3vw,50px); border-block-end:1px solid var(--chapter-line); }
+:is(.chapter--job,.chapter--story,.chapter--notice) h1 { max-width:28ch; }
 [dir=rtl] .chapter h1 { letter-spacing:0; line-height:1.18; }
 @media (max-width:760px) {
-  .chapter { padding-block-start:69px; }
-  .chapter .chapter-shell { padding-block:19px 33px; }
+  .chapter { padding-block-start:68px; }
+  .chapter .chapter-shell { padding-block:14px 25px; }
   .chapter .chapter-stage,.chapter .chapter-type { display:block; }
-  .chapter-stage { padding-block-start:37px; }
-  .chapter h1 { font-size:clamp(2.64rem,11.2vw,4.8rem); line-height:1.01; max-width:none; }
-  .chapter--discipline h1,.chapter--story h1,.chapter--job h1 { font-size:clamp(2.25rem,9vw,4.4rem); }
-  .chapter[data-section="privacy"] h1 { font-size:clamp(1.8rem,7.8vw,3.75rem); }
-  .chapter .chapter-deck { margin-block-start:1rem; font-size:1rem; }
-  .chapter-crumbs { font-size:.73rem; }
-  .chapter-art,.chapter-register,.chapter-mail,.chapter-years,.chapter-issue { margin-block-start:1.6rem !important; }
-  .chapter--case .chapter-shell,.chapter--scene .chapter-shell { padding-block-end:0; }
-  .chapter--case .chapter-image { height:auto; aspect-ratio:1.48; }
-  .chapter--scene .chapter-type { padding-block-end:0; }
-  .chapter--scene .chapter-image,.chapter--spread .chapter-image,.chapter--discipline .chapter-image,.chapter--workforce .chapter-image { aspect-ratio:1.8; }
-  .chapter--scene .chapter-image { aspect-ratio:1.6; }
-  .chapter--atlas .chapter-shell { padding-block-end:0; }
-  .chapter--press .chapter-issue { grid-template-columns:minmax(6.6rem,.6fr) minmax(0,1.1fr) auto; }
+  .chapter .chapter-stage { padding-block-start:24px; }
+  .chapter h1 { max-width:none; font-size:clamp(2.6rem,10.8vw,4.7rem); }
+  .chapter--portfolio h1 { font-size:clamp(3.55rem,14vw,5.8rem); }
+  :is(.chapter--case,.chapter--discipline,.chapter--job,.chapter--story,.chapter--notice,.chapter--person) h1 { font-size:clamp(2.2rem,8.6vw,4.1rem); }
+  .chapter .chapter-deck { margin-block-start:.8rem; max-width:42ch; }
+  .chapter .chapter-place { margin-block-end:.65rem; }
+  .chapter-crumbs { font-size:.76rem; }
+  .chapter-crumbs[aria-label] a { padding-block:3px; }
+  .chapter-actions { margin-block-start:1rem; gap:.5rem 1.1rem; }
+  :is(.chapter--portfolio,.chapter--crew) .chapter-shell { min-height:clamp(24rem,55svh,32rem); padding-block-end:47px; }
+  :is(.chapter--portfolio,.chapter--crew) > .chapter-plate figcaption { inset-inline:var(--gutter); bottom:9px; max-width:none; text-align:start; font-size:.7rem; }
+  :is(.chapter--portfolio,.chapter--crew) > .chapter-plate .chapter-frame::after { background:linear-gradient(0deg,rgba(0,0,0,.89) 1%,rgba(0,0,0,.63) 42%,rgba(0,0,0,.06) 76%,rgba(0,0,0,.65)); }
+  .chapter--portfolio .chapter-frame img { object-position:63% 48%; }
+  .chapter--crew .chapter-frame img { object-position:28% center; }
+  .chapter-stage > :is(.chapter-plate,.chapter-years,.chapter-scans,.chapter-mail,.chapter-issue) { margin-block-start:1.3rem; }
+  :is(.chapter--case,.chapter--company,.chapter--careers,.chapter--discipline,.chapter--practice) .chapter-frame { height:auto; aspect-ratio:1.82; }
+  .chapter--company .chapter-type { padding-block-end:0; }
+  .chapter--person:has(.chapter-plate) .chapter-stage { display:block; }
+  .chapter--atlas .chapter-shell { padding-block-end:16px; }
+  .chapter-scans { gap:8px; padding:10px; }
+  .chapter--documents .scan-paper { aspect-ratio:1; }
 }
-.chapter-register a,.chapter-jump,.chapter-index-action { min-block-size:44px; }
-.chapter-register a:hover,.chapter-years a:hover,.chapter-mail:hover bdi,.chapter-issue:hover strong { text-decoration:underline; text-underline-offset:.18em; }
-.chapter a:focus-visible { outline:2px solid currentColor; outline-offset:4px; }
+@media (prefers-reduced-motion:reduce) {
+  .interior :is(.action,.text-link) { transition:none; }
+}

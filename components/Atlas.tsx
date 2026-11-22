@@ -391,88 +391,52 @@ export function ProjectFilters({
   }
   return (
     <>
-      <div className="filter-bar catalogue-controls">
-        <label>
-          {labels.country}
-          <select
-            value={country}
-            onChange={(e) => update(e.target.value, area)}
-          >
+      <div className="catalogue-controls">
+        <label className="portfolio-select">
+          <span>{labels.country}</span>
+          <select value={country} onChange={event => update(event.target.value, area)}>
             <option value="">{labels.allCountries}</option>
-            {items
-              .filter(
-                (p, i) => items.findIndex((x) => x.region === p.region) === i,
-              )
-              .map((p) => (
-                <option key={p.region} value={p.region}>
-                  {p.country}
-                </option>
-              ))}
+            {items.filter((p, i) => items.findIndex(other => other.region === p.region) === i)
+              .map(p => <option key={p.region} value={p.region}>{p.country}</option>)}
           </select>
+          <Icon name="chevron" size={16}/>
         </label>
-        <label>
-          {labels.area}
-          <select
-            value={area}
-            onChange={(e) => update(country, e.target.value)}
-          >
+        <label className="portfolio-select">
+          <span>{labels.area}</span>
+          <select value={area} onChange={event => update(country, event.target.value)}>
             <option value="">{labels.allAreas}</option>
-            {areas.map((a) => (
-              <option key={a.slug} value={a.slug}>
-                {a.name}
-              </option>
-            ))}
+            {areas.map(item => <option key={item.slug} value={item.slug}>{item.name}</option>)}
           </select>
+          <Icon name="chevron" size={16}/>
         </label>
-        <span aria-live="polite">
-          {labels.found} · {filtered.length}
-        </span>
-        {(country || area) && (
-          <button
-            className="clear-selection"
-            type="button"
-            onClick={() => update("", "")}
-          >
-            {labels.reset}
-          </button>
-        )}
+        <div className="portfolio-status">
+          {(country || area) &&
+            <button className="clear-selection" type="button" onClick={() => update("", "")}>
+              {labels.reset}<Icon name="close" size={14}/>
+            </button>}
+          <span aria-live="polite" aria-atomic="true">{labels.found} · {filtered.length}</span>
+        </div>
       </div>
-      {filtered.length > 0 ? (
-        <div className="catalogue-list">
-          {filtered.map((p) => (
-            <a
-              className="project-card portfolio-entry"
-              key={p.slug}
-              href={p.url}
-            >
-              <div className="project-image">
-                <Photo
-                  src={p.image}
-                  alt={p.caption}
-                  sizes="(max-width:700px) 100vw,55vw"
-                />
-                {p.caption && <span className="site-caption">{p.caption}</span>}
-              </div>
+      {filtered.length ? (
+        <div className="catalogue-list" key={country + "/" + area}>
+          {filtered.map((p, index) => (
+            <a className="project-card portfolio-entry" key={p.slug} href={p.url}>
+              <figure className="portfolio-figure">
+                <div className="project-image">
+                  <Photo src={p.image} alt="" sizes={index === 0
+                    ? "(max-width:760px) 92vw, 58vw" : "(max-width:760px) 92vw, 49vw"}/>
+                </div>
+                {p.caption && <figcaption>{p.caption}</figcaption>}
+              </figure>
               <div className="portfolio-text">
-                <span className="portfolio-country">
-                  <Icon name="pin" size={17} />
-                  {p.country}
-                </span>
-                <h2>{p.title}</h2>
-                <p>{p.summary}</p>
-                <span className="portfolio-sector">
-                  {p.sector}
-                  <Icon name="diagonal" size={22} />
-                </span>
+                <div className="portfolio-meta"><span>{p.country}</span><span>{p.sector}</span></div>
+                <h2>{p.title}<span className="portfolio-arrow"><Icon name="diagonal" size={23}/></span></h2>
+                <p>{p.role || p.summary}</p>
               </div>
             </a>
           ))}
         </div>
-      ) : (
-        <p className="empty-results" role="status">
-          {labels.noResults}
-        </p>
-      )}
+      ) : <p className="empty-results" role="status">{labels.noResults}</p>}
     </>
   );
 }

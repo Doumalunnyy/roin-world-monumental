@@ -21,7 +21,7 @@ import { ContactForm } from "./ContactForm";
 import { Icon } from "./Icons";
 import { MediaButton, Photo } from "./Media";
 import { Action } from "./Shared";
-import { CorporateDirectory } from "./CorporateDirectory";
+import { CorporateDirectory, OfficeMap } from "./CorporateDirectory";
 import "./company-pages.css";
 import "./corporate-editorial.css";
 
@@ -136,79 +136,108 @@ function Culture({ lang }: LanguageProps) {
 }
 
 function About({ lang }: LanguageProps) {
+  const discipline = services.find((service) => service.slug === "engineering");
   return (
     <>
-      <section className="cp-introduction cp-split">
+      <section className="company-profile">
         <div>
           <h2>{copy.companyProfile[lang]}</h2>
           <p className="cp-lede">{copy.companyProfileText[lang]}</p>
-          <Action to={href(lang, "projects")}>{txt(lang, "projects")}</Action>
-        </div>
-        <div className="cp-copy">
-          <h3>{copy.mission[lang]}</h3>
-          <p>{copy.missionText[lang]}</p>
-          <Source lang={lang} url="https://roinworld.ae/o-kompanii/" />
-        </div>
-      </section>
-      <section className="cp-principles">
-        <h2>{copy.principles[lang]}</h2>
-        <div className="cp-principle-body">
-          <article>
-            <h3>{copy.quality[lang]}</h3>
-            <p>{copy.qualityText[lang]}</p>
-          </article>
-          <article>
-            <h3>{copy.partnership[lang]}</h3>
-            <p>{copy.partnershipText[lang]}</p>
-          </article>
-        </div>
-      </section>
-      <div className="cp-block cp-split">
-        <section>
-          <h2>{copy.historyLead[lang]}</h2>
-          <ol className="cp-milestones">
-            {company.history.map((event) => (
-              <li key={event.source}>
-                <span>{event.title[lang]}</span>
-              </li>
-            ))}
-          </ol>
-          <Action to={href(lang, "history")}>{txt(lang, "history")}</Action>
-        </section>
-        <section>
-          <h2>{txt(lang, "services")}</h2>
-          <div className="cp-service-list">
-            {services.map((service) => (
-              <Action
-                key={service.slug}
-                to={href(lang, "services/" + service.slug)}
-              >
-                {service.title[lang]}
-              </Action>
-            ))}
+          <div className="archive-links">
+            <Action to={href(lang, "projects")}>{txt(lang, "projects")}</Action>
+            <Source lang={lang} url="https://roinworld.ae/o-kompanii/" />
           </div>
-        </section>
-      </div>
-      <Sites lang={lang} />
-      <Culture lang={lang} />
-      <section className="cp-block">
-        <h2>{copy.capabilityDocs[lang]}</h2>
-        <div className="cp-standards">
-          {certificates.map((doc) => (
-            <a
-              href={href(lang, "certificates") + "#" + doc.slug}
-              key={doc.slug}
-            >
-              {doc.title}
+        </div>
+        {discipline && (
+          <Figure
+            lang={lang}
+            src={discipline.image}
+            alt={caption(lang, discipline.image)}
+            caption={caption(lang, discipline.image)}
+          />
+        )}
+      </section>
+      <section className="company-capabilities cp-block">
+        <h2>{txt(lang, "services")}</h2>
+        <div className="company-capability-links">
+          {services.map((service) => (
+            <a key={service.slug} href={href(lang, "services/" + service.slug)}>
+              {service.title[lang]} <Icon name="arrow" size={20} />
             </a>
           ))}
         </div>
-        <RelatedSections lang={lang} entries={["leadership", "partners"]} />
       </section>
-      <div className="cp-invitation">
+      <Sites lang={lang} />
+      <section className="company-archive-index cp-block">
+        <div>
+          <h2>{copy.historyLead[lang]}</h2>
+          <Action to={href(lang, "history")}>{txt(lang, "history")}</Action>
+        </div>
+        <ol>
+          {company.history.map((event, i) => {
+            const [year, ...title] = event.title[lang].split(" · ");
+            return (
+              <li key={event.source}>
+                <a href={href(lang, "history") + "#event-" + (i + 1)}>
+                  <bdi>{year}</bdi>
+                  <span>{title.join(" · ") || event.title[lang]}</span>
+                  <Icon name="arrow" size={16} />
+                </a>
+              </li>
+            );
+          })}
+        </ol>
+      </section>
+      <section className="cp-principles company-work-method">
+        <div>
+          <h2>{copy.principles[lang]}</h2>
+          <Source lang={lang} url="https://roinworld.ae/o-kompanii/" />
+        </div>
+        <div className="cp-principle-body">
+          {(["mission", "quality", "partnership"] as const).map((key) => (
+            <article key={key}>
+              <h3>{copy[key][lang]}</h3>
+              <p>
+                {
+                  copy[
+                    (key + "Text") as
+                      | "missionText"
+                      | "qualityText"
+                      | "partnershipText"
+                  ][lang]
+                }
+              </p>
+            </article>
+          ))}
+        </div>
+      </section>
+      <Culture lang={lang} />
+      <RelatedSections lang={lang} entries={["team", "leadership"]} />
+      <section className="cp-block company-standards">
+        <div>
+          <h2>{copy.capabilityDocs[lang]}</h2>
+          <Action to={href(lang, "certificates")}>
+            {txt(lang, "certificates")}
+          </Action>
+        </div>
+        <div>
+          {certificates.map((doc) => (
+            <a
+              key={doc.slug}
+              href={href(lang, "certificates") + "#" + doc.slug}
+            >
+              <bdi>{doc.title}</bdi>
+              <span>{doc.summary[lang]}</span>
+              <Icon name="diagonal" size={16} />
+            </a>
+          ))}
+        </div>
+      </section>
+      <div className="cp-invitation company-end">
         <Action to={href(lang, "contacts")} light>
           {copy.discuss[lang]}
         </Action>
+        <Action to={href(lang, "partners")}>{txt(lang, "partners")}</Action>
       </div>
     </>
   );
@@ -218,25 +247,50 @@ function History({ lang }: LanguageProps) {
   return (
     <ol className="archive-timeline">
       {company.history.map((event, i) => {
-        const [year, ...label] = event.title[lang].split(" · ");
+        const [year, ...title] = event.title[lang].split(" · ");
         const related = news.find((article) => article.source === event.source);
-        return <li key={event.source} id={"event-" + (i + 1)}>
-          <div className="archive-date">{year}</div>
-          <div className="archive-entry">
-            <h2>{label.join(" · ") || year}</h2><p>{event.body[lang]}</p>
-            {related && <Action to={href(lang,"news/"+related.slug)}>{copy.reports[lang]}</Action>}
-            <Source lang={lang} url={event.source} />
-          </div>
-          {related && <Figure lang={lang} src={related.image}
-            alt={caption(lang,related.image) || related.title[lang]}
-            caption={caption(lang,related.image) || copy.archive[lang]} />}
-        </li>;
+        return (
+          <li
+            key={event.source}
+            id={"event-" + (i + 1)}
+            data-photo={related ? "true" : undefined}
+          >
+            <div className="archive-date">
+              <bdi>{year}</bdi>
+            </div>
+            <div className="archive-entry">
+              <h2>{title.join(" · ") || year}</h2>
+              <p>{event.body[lang]}</p>
+              <div className="archive-links">
+                {related && (
+                  <Action to={href(lang, "news/" + related.slug)}>
+                    {copy.reports[lang]}
+                  </Action>
+                )}
+                <Source lang={lang} url={event.source} />
+              </div>
+            </div>
+            {related && (
+              <Figure
+                lang={lang}
+                src={related.image}
+                alt={caption(lang, related.image) || related.title[lang]}
+                caption={caption(lang, related.image) || copy.archive[lang]}
+              />
+            )}
+          </li>
+        );
       })}
     </ol>
   );
 }
 
-function PersonRow({ person, lang }: LanguageProps & { person: Person }) {
+function PersonRow({
+  person,
+  lang,
+  primary = false,
+}: LanguageProps & { person: Person; primary?: boolean }) {
+  const Heading = primary ? "h2" : "h3";
   return (
     <article className="cp-person">
       {person.photo && (
@@ -246,7 +300,7 @@ function PersonRow({ person, lang }: LanguageProps & { person: Person }) {
       )}
       <div>
         <p className="cp-meta">{person.role[lang]}</p>
-        <h3>{person.name[lang]}</h3>
+        <Heading>{person.name[lang]}</Heading>
         <p>{person.bio[lang]}</p>
         <Action to={href(lang, "team/" + person.slug)}>
           {txt(lang, "biography")}
@@ -262,23 +316,32 @@ function Leadership({ lang }: LanguageProps) {
   );
   return (
     <>
-      <section className="cp-leadership">
-        {leaders.map((person) => (
-          <PersonRow lang={lang} person={person} key={person.slug} />
-        ))}
+      <section
+        className="leadership-register"
+        aria-label={txt(lang, "leadership")}
+      >
+        <div className="leadership-profiles">
+          {leaders.map((person) => (
+            <PersonRow lang={lang} person={person} primary key={person.slug} />
+          ))}
+        </div>
+        <Figure
+          lang={lang}
+          src="/images/archive-briefing.webp"
+          alt={caption(lang, "/images/archive-briefing.webp")}
+          caption={caption(lang, "/images/archive-briefing.webp")}
+        />
       </section>
-      <div className="cp-block cp-split">
-        <div className="cp-copy">
+      <section className="company-capabilities cp-block">
+        <div>
           <h2>{copy.principles[lang]}</h2>
           <p>{copy.partnershipText[lang]}</p>
-          <Action to={href(lang, "about")}>{txt(lang, "about")}</Action>
         </div>
-        <div className="cp-copy">
-          <h2>{copy.culture[lang]}</h2>
-          <p>{copy.cultureText[lang]}</p>
+        <div className="company-capability-links">
+          <Action to={href(lang, "about")}>{txt(lang, "about")}</Action>
           <Action to={href(lang, "team")}>{txt(lang, "team")}</Action>
         </div>
-      </div>
+      </section>
     </>
   );
 }
@@ -292,6 +355,12 @@ function Team({ lang }: LanguageProps) {
   return (
     <>
       <Culture lang={lang} />
+      {reports.length > 0 && (
+        <section className="cp-block team-field-reports">
+          <h2>{copy.reports[lang]}</h2>
+          <NewsIndex lang={lang} articles={reports} />
+        </section>
+      )}
       {(["leadership", "team"] as const).map((group) => {
         const people = company.people.filter(
           (person) => person.group === group,
@@ -312,12 +381,6 @@ function Team({ lang }: LanguageProps) {
         );
       })}
       <Sites lang={lang} />
-      {reports.length > 0 && (
-        <section className="cp-block">
-          <h2>{copy.reports[lang]}</h2>
-          <NewsIndex lang={lang} articles={reports} />
-        </section>
-      )}
       {interviews.length > 0 && (
         <section className="cp-interviews">
           <h2>{txt(lang, "interviews")}</h2>
@@ -335,39 +398,58 @@ function Team({ lang }: LanguageProps) {
 }
 
 function Biography({ lang, person }: LanguageProps & { person: Person }) {
+  const firstEvent = company.history[0];
   return (
-    <div className="cp-bio">
-      {person.photo && (
-        <div className="cp-portrait">
-          <Photo src={person.photo} alt={person.name[lang]} sizes="30rem" />
-        </div>
-      )}
-      <div>
-        <h2>{txt(lang, "biography")}</h2>
-        <p className="cp-lede">{person.bio[lang]}</p>
-        {person.experience?.[lang] && (
-          <section className="cp-profile-detail">
-            <h3>{copy.experience[lang]}</h3>
-            <p>{person.experience[lang]}</p>
-          </section>
-        )}
-        {person.achievements?.[lang] && (
-          <section className="cp-profile-detail">
-            <h3>{copy.achievements[lang]}</h3>
-            <p>{person.achievements[lang]}</p>
-          </section>
-        )}
-        {person.interviewSlug && (
-          <p>
+    <>
+      <article className="biography-profile">
+        <section>
+          <h2>{txt(lang, "biography")}</h2>
+          <p className="cp-lede">{person.bio[lang]}</p>
+          {person.experience?.[lang] && (
+            <div className="cp-profile-detail">
+              <h3>{copy.experience[lang]}</h3>
+              <p>{person.experience[lang]}</p>
+            </div>
+          )}
+          {person.achievements?.[lang] && (
+            <div className="cp-profile-detail">
+              <h3>{copy.achievements[lang]}</h3>
+              <p>{person.achievements[lang]}</p>
+            </div>
+          )}
+          {person.interviewSlug && (
             <Action to={href(lang, "news/" + person.interviewSlug)}>
               {txt(lang, "interviews")}
             </Action>
-          </p>
-        )}
-        <Source lang={lang} url={person.source} />
-      </div>
+          )}
+          <Source lang={lang} url={person.source} />
+        </section>
+        <aside>
+          {person.photo && (
+            <div className="cp-portrait">
+              <Photo
+                src={person.photo}
+                alt={person.name[lang]}
+                sizes="(max-width:760px) 90vw, 28vw"
+              />
+            </div>
+          )}
+          <p className="cp-meta">{txt(lang, "leadership")}</p>
+          <strong>{person.role[lang]}</strong>
+          {firstEvent && (
+            <div>
+              <p className="cp-meta">{copy.historyLead[lang]}</p>
+              <span className="bio-year">
+                <bdi>{firstEvent.title[lang].split(" · ")[0]}</bdi>
+              </span>
+              <p>{firstEvent.title[lang].split(" · ").slice(1).join(" · ")}</p>
+              <Action to={href(lang, "history")}>{txt(lang, "history")}</Action>
+            </div>
+          )}
+        </aside>
+      </article>
       <RelatedSections lang={lang} entries={["leadership", "team"]} />
-    </div>
+    </>
   );
 }
 
@@ -375,19 +457,36 @@ function Partners({ lang }: LanguageProps) {
   return (
     <>
       {company.partnerDirectory.length > 0 && (
-        <section className="cp-logo-directory" aria-label={copy.partnerList[lang]}>
+        <section
+          className="cp-logo-directory"
+          aria-label={copy.partnerList[lang]}
+        >
+          <div className="partners-preface">
+            <h2>{copy.partnership[lang]}</h2>
+            <p>{copy.partnershipText[lang]}</p>
+          </div>
           {(["customer", "supplier", "partner"] as const).map((group) => {
-            const members = company.partnerDirectory.filter((item) => item.group === group);
+            const members = company.partnerDirectory.filter(
+              (item) => item.group === group,
+            );
             if (!members.length) return null;
             return (
-              <div className="cp-logo-row" key={group}>
+              <div className="cp-logo-row" id={"partners-" + group} key={group}>
                 <h2>{copy[group][lang]}</h2>
-                <ul>{members.map((member) => (
-                  <li key={member.name}>
-                    <span className="cp-catalogue-logo"><Photo src={member.logo} alt="" sizes="13rem" /></span>
-                    <span dir="auto">{member.name}</span>
-                  </li>
-                ))}</ul>
+                <ul>
+                  {members.map((member) => (
+                    <li key={member.name}>
+                      <span className="cp-catalogue-logo">
+                        <Photo
+                          src={member.stripLogo || member.logo}
+                          alt=""
+                          sizes="(max-width:760px) 32vw, 13rem"
+                        />
+                      </span>
+                      <span dir="auto">{member.name}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             );
           })}
@@ -440,7 +539,7 @@ function Certificates({ lang }: LanguageProps) {
       <h2>{copy.docRegister[lang]}</h2>
       <div className="cp-docs-grid">
         {certificates.map((doc) => (
-          <article id={doc.slug} key={doc.slug}>
+          <article id={doc.slug} key={doc.slug} className="document-folio">
             <a
               className="cp-scan"
               href={publicUrl(doc.file)}
@@ -458,10 +557,19 @@ function Certificates({ lang }: LanguageProps) {
                 <Icon name="file" size={45} />
               )}
             </a>
-            <h3>{doc.title}</h3>
-            <p>{doc.summary[lang]}</p>
+            <div className="document-title">
+              <h3>
+                <bdi>{doc.title}</bdi>
+              </h3>
+              <p>{doc.summary[lang]}</p>
+            </div>
             <dl>
-              {doc.issuer && <><dt>{copy.issuer[lang]}</dt><dd dir="auto">{doc.issuer}</dd></>}
+              {doc.issuer && (
+                <>
+                  <dt>{copy.issuer[lang]}</dt>
+                  <dd dir="auto">{doc.issuer}</dd>
+                </>
+              )}
               {doc.holder && (
                 <>
                   <dt>{copy.holder[lang]}</dt>
@@ -522,40 +630,104 @@ function Careers({ lang, slug }: LanguageProps & { slug?: string }) {
     const vacancy = vacancies.find((item) => item.slug === slug);
     if (!vacancy) notFound();
     return (
-      <article className="cp-job-detail cp-split">
-        <section className="cp-copy">
-          <p className="cp-meta">
-            {vacancy.location[lang]}
-            {vacancy.department?.[lang] && " · " + vacancy.department[lang]}
-          </p>
-          <p className="cp-lede">{vacancy.body[lang]}</p>
-          {vacancy.responsibilities?.[lang] && (
+      <>
+        <article className="cp-job-detail cp-split">
+          <section className="cp-copy">
+            <h2>{copy.positionDescription[lang]}</h2>
+            <p className="cp-lede">{vacancy.body[lang]}</p>
+            {vacancy.responsibilities?.[lang] && (
+              <div>
+                <h2>{copy.responsibilities[lang]}</h2>
+                <p>{vacancy.responsibilities[lang]}</p>
+              </div>
+            )}
+            {vacancy.requirements?.[lang] && (
+              <div>
+                <h2>{copy.requirements[lang]}</h2>
+                <p>{vacancy.requirements[lang]}</p>
+              </div>
+            )}
+            {vacancy.source && <Source lang={lang} url={vacancy.source} />}
             <div>
-              <h2>{copy.responsibilities[lang]}</h2>
-              <p>{vacancy.responsibilities[lang]}</p>
+              <Action to={href(lang, "careers") + "#vacancies"}>
+                {txt(lang, "vacancies")}
+              </Action>
             </div>
-          )}
-          {vacancy.requirements?.[lang] && (
-            <div>
-              <h2>{copy.requirements[lang]}</h2>
-              <p>{vacancy.requirements[lang]}</p>
+          </section>
+          <section className="cp-application cp-copy">
+            <h2>{copy.application[lang]}</h2>
+            <p>{copy.applicationText[lang]}</p>
+            <div className="vacancy-facts">
+              <span>{copy.location[lang]}</span>
+              <strong>{vacancy.location[lang]}</strong>
+              {vacancy.department?.[lang] && (
+                <>
+                  <span>{copy.department[lang]}</span>
+                  <strong>{vacancy.department[lang]}</strong>
+                </>
+              )}
             </div>
-          )}
-          {vacancy.source && <Source lang={lang} url={vacancy.source} />}
-        </section>
-        <section className="cp-application cp-copy">
-          <h2>{copy.application[lang]}</h2>
-          <p>{copy.applicationText[lang]}</p>
-          <Action to={recruitmentLink(lang, vacancy.title[lang])}>
-            {copy.apply[lang]}
-          </Action>
-        </section>
-      </article>
+            <Action to={recruitmentLink(lang, vacancy.title[lang])}>
+              {copy.apply[lang]}
+            </Action>
+          </section>
+        </article>
+        <Culture lang={lang} />
+      </>
     );
   }
   return (
     <>
-      <div className="cp-introduction cp-split">
+      <section className="vacancy-board" id="vacancies">
+        <h2>{txt(lang, "vacancies")}</h2>
+        {vacancies.length ? (
+          <CorporateDirectory
+            layout="jobs"
+            labels={{
+              category: copy.department[lang],
+              location: copy.location[lang],
+              all: copy.all[lang],
+              empty: copy.noMatches[lang],
+              clear: copy.clear[lang],
+              results: copy.results[lang],
+            }}
+            entries={vacancies.map((vacancy) => ({
+              id: vacancy.slug,
+              category: vacancy.department?.[lang] || "",
+              location: vacancy.location[lang],
+              card: (
+                <article>
+                  <div>
+                    <p className="cp-meta">
+                      {vacancy.department?.[lang] || vacancy.location[lang]}
+                    </p>
+                    <h3>
+                      <a href={href(lang, "careers/" + vacancy.slug)}>
+                        {vacancy.title[lang]}
+                      </a>
+                    </h3>
+                  </div>
+                  <span className="vacancy-location">
+                    {vacancy.location[lang]}
+                  </span>
+                  <Action to={href(lang, "careers/" + vacancy.slug)}>
+                    {copy.readPosition[lang]}
+                  </Action>
+                </article>
+              ),
+            }))}
+          />
+        ) : (
+          <p>{txt(lang, "vacancyEmpty")}</p>
+        )}
+      </section>
+      <div className="cp-block recruitment-culture">
+        <Figure
+          lang={lang}
+          src={home.teamImage}
+          alt={caption(lang, home.teamImage)}
+          caption={caption(lang, home.teamImage)}
+        />
         <div className="cp-copy">
           <h2>{copy.workInCompany[lang]}</h2>
           <p>{copy.cultureText[lang]}</p>
@@ -575,43 +747,6 @@ function Careers({ lang, slug }: LanguageProps & { slug?: string }) {
           </div>
         </div>
       </div>
-      <section className="cp-block" id="vacancies">
-        <h2>{txt(lang, "vacancies")}</h2>
-        {vacancies.length ? (
-          <CorporateDirectory
-            layout="jobs"
-            labels={{
-              category: copy.department[lang],
-              location: copy.location[lang],
-              all: copy.all[lang],
-              empty: copy.noMatches[lang],
-              clear: copy.clear[lang],
-            }}
-            entries={vacancies.map((vacancy) => ({
-              id: vacancy.slug,
-              category: vacancy.department?.[lang] || "",
-              location: vacancy.location[lang],
-              card: (
-                <article>
-                  <div>
-                    <p className="cp-meta">{vacancy.location[lang]}</p>
-                    <h3>
-                      <a href={href(lang, "careers/" + vacancy.slug)}>
-                        {vacancy.title[lang]}
-                      </a>
-                    </h3>
-                  </div>
-                  <Action to={href(lang, "careers/" + vacancy.slug)}>
-                    {copy.readPosition[lang]}
-                  </Action>
-                </article>
-              ),
-            }))}
-          />
-        ) : (
-          <p>{txt(lang, "vacancyEmpty")}</p>
-        )}
-      </section>
       <div className="cp-application cp-block cp-copy">
         <h2>{copy.application[lang]}</h2>
         <p>{copy.applicationText[lang]}</p>
@@ -629,7 +764,7 @@ function NewsCard({ lang, article }: LanguageProps & { article: Article }) {
         <Photo
           src={article.image}
           alt=""
-          sizes="(max-width: 600px) 92vw, 24vw"
+          sizes="(max-width: 600px) 90vw, (max-width: 1000px) 33vw, 25vw"
         />
       </a>
       <div>
@@ -674,6 +809,7 @@ function News({ lang, slug }: LanguageProps & { slug?: string }) {
             all: copy.all[lang],
             empty: copy.noMatches[lang],
             clear: copy.clear[lang],
+            results: copy.results[lang],
           }}
           entries={news.map((article) => ({
             id: article.slug,
@@ -688,7 +824,7 @@ function News({ lang, slug }: LanguageProps & { slug?: string }) {
   const project = projects.find((item) => item.slug === article.project);
   return (
     <>
-      <article className="cp-article cp-story">
+      <article className="cp-story publication-story">
         <div className="cp-body">
           <div className="cp-news-meta">
             <ArticleDate lang={lang} date={article.date} />
@@ -699,16 +835,26 @@ function News({ lang, slug }: LanguageProps & { slug?: string }) {
         </div>
         <aside className="cp-story-links">
           {article.video && (
-            <div className="cp-video-link">
-              <MediaButton
-                url={article.video}
-                title={article.title[lang]}
-                playLabel={txt(lang, "watch")}
-                closeLabel={txt(lang, "close")}
-                externalLabel={txt(lang, "externalVideo")}
-                poster={article.image}
-              />
-            </div>
+            <figure className="publication-media">
+              <div className="publication-player">
+                <Photo
+                  src={article.image}
+                  alt={caption(lang, article.image) || article.title[lang]}
+                  sizes="(max-width:760px) 90vw, 56vw"
+                />
+                <MediaButton
+                  url={article.video}
+                  title={article.title[lang]}
+                  playLabel={txt(lang, "watch")}
+                  closeLabel={txt(lang, "close")}
+                  externalLabel={txt(lang, "externalVideo")}
+                  poster={article.image}
+                />
+              </div>
+              <figcaption>
+                {caption(lang, article.image) || article.title[lang]}
+              </figcaption>
+            </figure>
           )}
           {project && (
             <Action to={href(lang, "projects/" + project.slug)}>
@@ -749,8 +895,16 @@ function Contacts({ lang }: LanguageProps) {
           <h2>{txt(lang, "offices")}</h2>
           <div className="cp-offices">
             {company.offices.map((office, index) => (
-              <details key={office.label.en} className="office-entry" name="office-list" open={index === 0}>
-                <summary><span>{office.label[lang]}</span><Icon name="plus" size={21}/></summary>
+              <details
+                key={office.label.en}
+                className="office-entry"
+                name="office-list"
+                open={index === 0}
+              >
+                <summary>
+                  <span>{office.label[lang]}</span>
+                  <Icon name="plus" size={21} />
+                </summary>
                 <address>
                   <p>{office.address[lang]}</p>
                   <div>
@@ -766,6 +920,12 @@ function Contacts({ lang }: LanguageProps) {
                     )}
                   </div>
                 </address>
+                <OfficeMap
+                  url={office.mapEmbed}
+                  name={copy.mapArea[lang] + " · " + office.label[lang]}
+                  show={copy.loadMap[lang]}
+                  hide={copy.hideMap[lang]}
+                />
               </details>
             ))}
           </div>
@@ -780,13 +940,25 @@ function Contacts({ lang }: LanguageProps) {
 
 function Privacy({ lang }: LanguageProps) {
   return (
-    <section className="cp-reading cp-policy">
-      <h2>{copy.requests[lang]}</h2>
-      <p>{txt(lang, "privacyText")}</p>
-      <h2>{copy.policyStatus[lang]}</h2>
-      <p>{txt(lang, "privacyPending")}</p>
-      <Action to={href(lang, "contacts")}>{txt(lang, "contactUs")}</Action>
-    </section>
+    <div className="policy-layout">
+      <nav aria-label={copy.onThisPage[lang]}>
+        <h2>{copy.onThisPage[lang]}</h2>
+        <a href="#requests">{copy.requests[lang]}</a>
+        <a href="#policy-status">{copy.policyStatus[lang]}</a>
+      </nav>
+      <div className="cp-policy">
+        <section id="requests">
+          <h2>{copy.requests[lang]}</h2>
+          <p>{txt(lang, "privacyText")}</p>
+          <p>{copy.mapPrivacy[lang]}</p>
+        </section>
+        <section id="policy-status">
+          <h2>{copy.policyStatus[lang]}</h2>
+          <p>{txt(lang, "privacyPending")}</p>
+        </section>
+        <Action to={href(lang, "contacts")}>{txt(lang, "contactUs")}</Action>
+      </div>
+    </div>
   );
 }
 
@@ -835,7 +1007,11 @@ export function CompanyPages({ lang, path }: Props) {
       notFound();
   }
   return (
-    <div className="company-pages" data-chapter-body={section} data-detail={slug ? "true" : undefined}>
+    <div
+      className="company-pages"
+      data-chapter-body={section}
+      data-detail={slug ? "true" : undefined}
+    >
       <div className="shell">{page}</div>
     </div>
   );

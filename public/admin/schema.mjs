@@ -67,6 +67,7 @@ export function collections({ languages, interfaceKeys, companyInterfaceKeys, ca
         tr('sector', 'Отрасль'), summary, optionalTranslation('context', 'Масштаб объекта'),
         uri('contextSource', 'Источник сведений о масштабе объекта', false), tr('role', 'Роль ROIN WORLD', 'text'), source, image(),
         image('featuredImage', 'Фотография проекта на главной', false),
+        image('coverImage', 'Панорама для страницы проекта', false),
         input('services', 'Направления работ', 'list', {
           field: input('slug', 'Идентификатор направления'), hint: 'Укажите идентификаторы из раздела «Направления».'
         }),
@@ -100,7 +101,8 @@ export function collections({ languages, interfaceKeys, companyInterfaceKeys, ca
           ] }), image('logo', 'Официальный логотип'), image('stripLogo', 'Логотип для ленты без внешних полей', false), source
         ], '{{fields.name}}'),
         list('offices', 'Офисы', [tr('label', 'Название офиса'), tr('address', 'Адрес', 'text'),
-          input('email', 'Email', 'string', { required: false }), input('phone', 'Телефон', 'string', { required: false }), source
+          input('email', 'Email', 'string', { required: false }), input('phone', 'Телефон', 'string', { required: false }),
+          uri('mapEmbed', 'Ссылка на встроенную карту официального офиса', false), source
         ], '{{fields.label.ru}}')
       ]),
       file('news', 'Новости и медиа', [list('items', 'Публикации', [

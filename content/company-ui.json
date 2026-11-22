@@ -460,5 +460,54 @@
     "ar": "جهة الإصدار",
     "es": "Entidad emisora",
     "hu": "Kiállító szervezet"
+  },
+  "mapArea": {
+    "ru": "Карта местности",
+    "en": "Area map",
+    "ar": "خريطة المنطقة",
+    "es": "Mapa de la zona",
+    "hu": "A környék térképe"
+  },
+  "loadMap": {
+    "ru": "Показать Google Maps",
+    "en": "Show Google Maps",
+    "ar": "عرض خرائط Google",
+    "es": "Mostrar Google Maps",
+    "hu": "Google Térkép megjelenítése"
+  },
+  "hideMap": {
+    "ru": "Закрыть карту",
+    "en": "Close map",
+    "ar": "إغلاق الخريطة",
+    "es": "Cerrar mapa",
+    "hu": "Térkép bezárása"
+  },
+  "results": {
+    "ru": "Результаты",
+    "en": "Results",
+    "ar": "النتائج",
+    "es": "Resultados",
+    "hu": "Találatok"
+  },
+  "onThisPage": {
+    "ru": "На этой странице",
+    "en": "On this page",
+    "ar": "في هذه الصفحة",
+    "es": "En esta página",
+    "hu": "Ezen az oldalon"
+  },
+  "positionDescription": {
+    "ru": "О вакансии",
+    "en": "About the role",
+    "ar": "عن الوظيفة",
+    "es": "Sobre el puesto",
+    "hu": "A munkakörről"
+  },
+  "mapPrivacy": {
+    "ru": "Карта в разделе контактов загружается с Google Maps после нажатия кнопки показа.",
+    "en": "The contact page loads a map from Google Maps when you choose to view it.",
+    "ar": "لا تُحمَّل الخريطة من خرائط Google في صفحة التواصل إلا عندما تختار عرضها.",
+    "es": "La página de contacto carga el mapa de Google Maps cuando eliges mostrarlo.",
+    "hu": "A kapcsolati oldal akkor tölti be a Google Térképet, amikor megnyitja a térképet."
   }
 }

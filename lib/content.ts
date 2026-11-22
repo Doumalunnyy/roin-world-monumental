@@ -45,6 +45,7 @@ export type Project = {
   services: string[];
   image: string;
   featuredImage?: string;
+  coverImage?: string;
   role: Local;
   source: string;
   context?: Local;

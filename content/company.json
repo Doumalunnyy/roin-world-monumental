@@ -2,6 +2,23 @@
   "history": [
     {
       "title": {
+        "ru": "2011 · Основание ROIN WORLD",
+        "en": "2011 · ROIN WORLD founded",
+        "ar": "2011 · تأسيس ROIN WORLD",
+        "es": "2011 · Fundación de ROIN WORLD",
+        "hu": "2011 · Megalakul a ROIN WORLD"
+      },
+      "body": {
+        "ru": "Роин Бараташвили основал ROIN WORLD. Компания объединила специалистов по строительству АЭС, недвижимости, логистике и поставкам оборудования и материалов.",
+        "en": "Roin Baratashvili founded ROIN WORLD, bringing together specialists in nuclear construction, real estate, logistics, materials and equipment supply.",
+        "ar": "أسّس روين باراتاشفيلي شركة ROIN WORLD وجمع فيها متخصصين في إنشاء المحطات النووية والعقارات والخدمات اللوجستية وتوريد المواد والمعدات.",
+        "es": "Roin Baratashvili fundó ROIN WORLD y reunió a especialistas en construcción nuclear, sector inmobiliario, logística y suministro de materiales y equipos.",
+        "hu": "Roin Baratashvili alapította a ROIN WORLD vállalatot. Az atomenergetikai építés, az ingatlanpiac, a logisztika, valamint az anyag- és eszközellátás szakembereit hozta össze."
+      },
+      "source": "https://roinworld.ae/o-kompanii/"
+    },
+    {
+      "title": {
         "ru": "2019 · Совместные учения в Бангладеш",
         "en": "2019 · Joint drill in Bangladesh",
         "ar": "٢٠١٩ · تدريب مشترك في بنغلاديش",
@@ -136,7 +153,8 @@
       },
       "email": "info@roinworld.com",
       "phone": "+971 4 885 1143",
-      "source": "https://roinworld.ae/kontakti-2/"
+      "source": "https://roinworld.ae/kontakti-2/",
+      "mapEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7234.0560310240335!2d55.07462909274319!3d24.96516144652756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f0d9082ca1bd5%3A0x5b2b8f41ba57a008!2sJAFZA%20ONE!5e0!3m2!1ses!2ses!4v1756902767036!5m2!1ses!2ses"
     },
     {
       "label": {
@@ -155,7 +173,8 @@
       },
       "email": "info@roinworld.com",
       "phone": "+20 127 601 2995",
-      "source": "https://roinworld.ae/kontakti-2/"
+      "source": "https://roinworld.ae/kontakti-2/",
+      "mapEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28757.44435171286!2d28.402429759017092!3d31.02733362054771!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14601a54f1fb8e99%3A0x99a79df6ad4fb543!2sEl%20Dabaa%2C%20Al%20Dabaa%2C%20Matr%C3%BA%2C%20Egipto!5e0!3m2!1ses!2ses!4v1756902429872!5m2!1ses!2ses"
     },
     {
       "label": {
@@ -174,7 +193,8 @@
       },
       "email": "info@roinworld.com",
       "phone": "+36 70 640 9009",
-      "source": "https://roinworld.ae/kontakti-2/"
+      "source": "https://roinworld.ae/kontakti-2/",
+      "mapEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d87717.80911015914!2d18.72499075076412!3d46.60341530732155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47425d39ec3c04ab%3A0x6d00f861f5a25f5c!2sPaks%20Ipari%20Park!5e0!3m2!1ses!2ses!4v1756901371847!5m2!1ses!2ses"
     },
     {
       "label": {
@@ -193,7 +213,8 @@
       },
       "email": "info@roinworld.com",
       "phone": "+34 965 86 8248",
-      "source": "https://roinworld.ae/kontakti-2/"
+      "source": "https://roinworld.ae/kontakti-2/",
+      "mapEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3120.095963663424!2d-0.1786023262373945!3d38.55460276686129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd621b6e42460737%3A0xb7cdce0bc3a1e150!2sC.%20Roma%2C%2033%2C%2003509%20Finestrat%2C%20Alicante!5e0!3m2!1ses!2ses!4v1756900928395!5m2!1ses!2ses"
     },
     {
       "label": {
@@ -212,7 +233,8 @@
       },
       "email": "info@roinworld.com",
       "phone": "+880 13 1309 0009",
-      "source": "https://roinworld.ae/kontakti-2/"
+      "source": "https://roinworld.ae/kontakti-2/",
+      "mapEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58284.66187766848!2d88.97511771091222!3d24.07365051253497!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fea1d16ccffc0b%3A0xbebee90a4f0900e6!2sPioneer%20Base!5e0!3m2!1ses!2ses!4v1756901723781!5m2!1ses!2ses"
     }
   ],
   "partnerDirectory": [

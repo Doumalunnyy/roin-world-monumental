@@ -5,6 +5,10 @@ import type { Lang, Key } from "@/lib/content";
 import { localeUrl } from "@/lib/urls";
 type LinkItem = { slug: string; title: string };
 type LocaleItem = { code: string; name: string };
+// Native dialog commands also work in the interval before React attaches its handlers.
+function navigationCommand(command: "show-modal" | "close") {
+  return { commandfor: "mobile-navigation", command };
+}
 type Labels = Pick<
   Record<Key, string>,
   "menu" | "openMenu" | "close" | "language" | "navigation" | "skip" | "home"
@@ -126,7 +130,8 @@ export function SiteHeader({
               aria-expanded={menuOpen}
               aria-controls="mobile-navigation"
               aria-haspopup="dialog"
-              onClick={openMenu}
+              {...navigationCommand("show-modal")}
+              onClick={event => { event.preventDefault(); openMenu(); }}
             >
               <span className="menu-glyph" aria-hidden="true" />
             </button>
@@ -141,6 +146,7 @@ export function SiteHeader({
         ref={menu}
         className="menu-panel"
         aria-label={labels.menu}
+        onToggle={event => setMenuOpen(event.currentTarget.open)}
         onClose={() => setMenuOpen(false)}
         onClick={event => {
           if (event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey
@@ -163,7 +169,8 @@ export function SiteHeader({
           <div className="shell mast-inner menu-head">
             <Wordmark />
             <button type="button" className="menu-toggle menu-dismiss" aria-label={labels.close}
-              onClick={() => menu.current?.close()}>
+              {...navigationCommand("close")}
+              onClick={event => { event.preventDefault(); menu.current?.close(); }}>
               <span className="menu-glyph" aria-hidden="true" />
             </button>
           </div>
