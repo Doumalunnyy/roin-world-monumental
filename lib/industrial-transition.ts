@@ -1,4 +1,4 @@
-export const handoffKey = "roin-industrial-clouds-v2";
+export const handoffKey = "roin-atomic-transition-v1";
 export const reducedQuery = "(prefers-reduced-motion: reduce)";
 
 // The target is a separate HTML document on both Node and GitHub Pages. Install
@@ -17,7 +17,7 @@ export const arrivalScript = `
     if (!fresh || navigation?.type === "reload" ||
         matchMedia(${JSON.stringify(reducedQuery)}).matches) return;
 
-    root.dataset.atmosphere = "arrive";
+    root.dataset.transition = "arrive";
     let timer;
     function focusContent() {
       if (historyEntry || location.hash || document.activeElement !== document.body) return;
@@ -31,13 +31,13 @@ export const arrivalScript = `
       clearTimeout(timer);
       document.removeEventListener("animationend", ended, true);
       window.removeEventListener("pagehide", finish);
-      if (root.dataset.atmosphere !== "arrive") return;
-      delete root.dataset.atmosphere;
+      if (root.dataset.transition !== "arrive") return;
+      delete root.dataset.transition;
       if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", focusContent, {once: true});
       else focusContent();
     }
     function ended(event) {
-      if (event.animationName === "industrial-seal" && event.target.matches("[data-layer=veil]")) finish();
+      if (event.animationName === "atom-open" && event.target.matches(".page-transition")) finish();
     }
     document.addEventListener("animationend", ended, true);
     window.addEventListener("pagehide", finish, { once: true });

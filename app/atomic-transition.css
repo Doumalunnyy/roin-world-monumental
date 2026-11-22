@@ -1,0 +1,96 @@
+/* The arriving document starts in the exact completed pose of the departing one. */
+.page-transition {
+  display: none;
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: 2147483600;
+  isolation: isolate;
+  background: #000;
+  color: #fff;
+  pointer-events: auto;
+  direction: ltr;
+}
+html[data-transition] .page-transition { display: block; }
+html[data-transition="leave"] .page-transition { animation: atom-close 1140ms linear both; }
+html[data-transition="arrive"] .page-transition { animation: atom-open 360ms ease-in-out both; }
+
+.atom-traces { position: absolute; inset: 0; width: 100%; height: 100%; fill: none; }
+.atom-traces path {
+  stroke: #fff;
+  stroke-width: var(--trace-weight, 1);
+  stroke-linecap: round;
+  stroke-dasharray: var(--strand) var(--gap);
+}
+html[data-transition="leave"] .atom-traces path {
+  animation: atom-travel 620ms cubic-bezier(.38,.025,.16,1) var(--delay, 165ms) both;
+}
+.atom-traces [data-edge="east"] { --delay: 182ms; }
+.atom-traces [data-edge="north"] { --delay: 195ms; }
+.atom-traces [data-edge="south"] { --delay: 209ms; }
+html[data-transition="leave"] .atom-traces { animation: atom-transfer 125ms ease-in 750ms both; }
+html[data-transition="arrive"] .atom-traces { visibility: hidden; }
+
+.atom-lockup {
+  position: absolute;
+  top: 47%; left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  justify-items: center;
+  gap: clamp(13px, 2.2vh, 24px);
+  fill: #fff;
+}
+.atom-symbol, .atom-name { overflow: hidden; }
+.atom-symbol { display: block; width: clamp(91px, 9.5vw, 150px); height: auto; aspect-ratio: 80 / 91; }
+.atom-name { display: block; width: clamp(124px, 12vw, 192px); height: auto; aspect-ratio: 131 / 17; }
+html[data-transition="leave"] .atom-symbol { animation: atom-ink 125ms ease-out 750ms both; }
+html[data-transition="leave"] .atom-name { animation: atom-letter 190ms ease-out 808ms both; }
+html[data-transition="arrive"] :is(.atom-lockup, .plant-elevation) { animation: atom-transfer 220ms ease-in both; }
+
+.plant-elevation {
+  display: block;
+  position: absolute;
+  bottom: max(2vh, env(safe-area-inset-bottom, 0px));
+  left: 50%;
+  transform: translateX(-50%);
+  width: max(100%, 740px);
+  height: auto;
+  fill: none;
+  stroke: #fff;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.plant-elevation path { vector-effect: non-scaling-stroke; stroke-width: 1.05px; }
+.plant-distant { opacity: .66; }
+.plant-detail { opacity: .69; }
+.plant-detail path, .plant-ground path { stroke-width: .78px; }
+.plant-ground { opacity: .54; }
+html[data-transition="leave"] .plant-elevation path {
+  stroke-dasharray: 1;
+  animation: plant-draw 600ms cubic-bezier(.28,.08,.20,1) var(--draft-start, 305ms) both;
+}
+.plant-ground { --draft-start: 195ms; }
+.plant-distant { --draft-start: 260ms; }
+.plant-detail { --draft-start: 370ms; }
+
+@keyframes atom-close { 0% { opacity: 0; } 16%, 100% { opacity: 1; } }
+@keyframes atom-open { 0%, 12% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes atom-travel { from { stroke-dashoffset: var(--strand); } to { stroke-dashoffset: var(--land); } }
+@keyframes atom-ink { from { opacity: 0; } to { opacity: 1; } }
+@keyframes atom-letter { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes atom-transfer { from { opacity: 1; } to { opacity: 0; } }
+@keyframes plant-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+
+@media (max-aspect-ratio: 3/4) {
+  .atom-lockup { top: 46%; }
+  .plant-elevation { width: max(180%, 760px); bottom: max(5vh, env(safe-area-inset-bottom, 0px)); }
+}
+@media (min-aspect-ratio: 2/1) {
+  .atom-lockup { top: 41%; gap: 9px; }
+  .atom-symbol { width: min(12vw, 18vh); }
+  .atom-name { width: min(15vw, 27vh); }
+  .plant-elevation { height: 30%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html[data-transition] .page-transition { display: none; }
+}

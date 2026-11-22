@@ -1,3 +1,4 @@
+import sharp from "sharp";
 import {
   expect,
   test,
@@ -13,15 +14,7 @@ const desktopAndMobile = [
   [390, 844],
   [360, 800],
 ] as const;
-const layers = [
-  "background",
-  "towers",
-  "cranes",
-  "middle",
-  "foreground",
-  "veil",
-];
-const traceKey = "test-industrial-clouds-navigation";
+const traceKey = "test-atomic-navigation";
 
 async function open(page: Page, baseURL: string | undefined, route: string) {
   const base = new URL(baseURL || "http://localhost:3000");
@@ -34,8 +27,8 @@ async function open(page: Page, baseURL: string | undefined, route: string) {
 }
 
 async function ready(page: Page) {
-  await expect(page.locator("html[data-cloud-ready]")).toHaveCount(1);
-  await expect(page.locator(".atmosphere")).toBeHidden();
+  await expect(page.locator("html[data-transition-ready]")).toHaveCount(1);
+  await expect(page.locator(".page-transition")).toBeHidden();
 }
 
 async function menuLink(page: Page, name: string): Promise<Locator> {
@@ -62,7 +55,7 @@ async function observePhases(page: Page) {
       const path = location.pathname.replace(/\/$/, "");
       const values = [
         ...changes.map((record) => record.oldValue),
-        document.documentElement.dataset.atmosphere,
+        document.documentElement.dataset.transition,
       ];
       for (const phase of values) {
         if (phase !== "leave" && phase !== "arrive") continue;
@@ -74,7 +67,7 @@ async function observePhases(page: Page) {
     observe.observe(document, {
       subtree: true,
       attributes: true,
-      attributeFilter: ["data-atmosphere"],
+      attributeFilter: ["data-transition"],
       attributeOldValue: true,
     });
   }, traceKey);
@@ -89,14 +82,14 @@ function phases(page: Page): Promise<string[]> {
 
 async function arrived(page: Page, target: RegExp) {
   await expect(page).toHaveURL(target);
-  await expect(page.locator(".atmosphere")).toBeHidden();
+  await expect(page.locator(".page-transition")).toBeHidden();
   await expect(page.locator("main:focus, main h1:focus")).toHaveCount(1);
   expect(await page.evaluate(() => scrollY)).toBeLessThan(5);
 }
 
 for (const [width, height] of desktopAndMobile) {
   test(
-    "atmospheric navigation and history at " + width + " × " + height,
+    "atomic navigation and history at " + width + " × " + height,
     async ({ page, baseURL }) => {
       await page.setViewportSize({ width, height });
       await page.emulateMedia({ reducedMotion: "no-preference" });
@@ -112,15 +105,14 @@ for (const [width, height] of desktopAndMobile) {
         "id",
         "geography",
       );
-      const scene = page.locator("[data-industrial-clouds]");
-      expect(
-        await scene
-          .locator(":scope > [data-layer]")
-          .evaluateAll((items) =>
-            items.map((item) => item.getAttribute("data-layer")),
-          ),
-      ).toEqual(layers);
-      await expect(page.locator(".atmosphere")).toHaveAttribute(
+      const scene = page.locator(".page-transition");
+      expect(await scene.locator(".atom-traces [data-edge]").evaluateAll((items) =>
+        items.map((item) => item.getAttribute("data-edge")),
+      )).toEqual(["west", "north", "east", "south"]);
+      await expect(scene.locator(".atom-symbol image")).toHaveAttribute("href", /roin-world\.svg$/);
+      await expect(scene.locator(".atom-name image")).toHaveAttribute("href", /roin-world\.svg$/);
+      await expect(scene.locator(".plant-main path").first()).toBeAttached();
+      await expect(page.locator(".page-transition")).toHaveAttribute(
         "aria-hidden",
         "true",
       );
@@ -131,7 +123,7 @@ for (const [width, height] of desktopAndMobile) {
       const historyLength = await page.evaluate(() => history.length);
       await cta.click();
       await expect(page.locator("html")).toHaveAttribute(
-        "data-atmosphere",
+        "data-transition",
         "leave",
       );
       await page.locator("footer").getByRole("link", {name:"О компании", exact:true})
@@ -151,10 +143,10 @@ for (const [width, height] of desktopAndMobile) {
       await arrived(page, /\/ru\/contacts\/?$/);
       await page.goBack();
       await expect(page).toHaveURL(/\/ru\/about\/?$/);
-      await expect(page.locator(".atmosphere")).toBeHidden();
+      await expect(page.locator(".page-transition")).toBeHidden();
       await page.goForward();
       await expect(page).toHaveURL(/\/ru\/contacts\/?$/);
-      await expect(page.locator(".atmosphere")).toBeHidden();
+      await expect(page.locator(".page-transition")).toBeHidden();
       expect(
         await page.evaluate(() => document.documentElement.scrollWidth),
       ).toBeLessThanOrEqual(width + 1);
@@ -210,13 +202,13 @@ test("Escape cancels before departure and a subsequent navigation succeeds", asy
   const link = page.locator(".topnav").getByRole("link", { name: "Company", exact: true });
   await link.click();
   await expect(page.locator("html")).toHaveAttribute(
-    "data-atmosphere",
+    "data-transition",
     "leave",
   );
   await page.keyboard.press("Escape");
-  await expect(page.locator(".atmosphere")).toBeHidden();
+  await expect(page.locator(".page-transition")).toBeHidden();
   // Allow the cancelled departure timer to expire to catch a late redirect.
-  await page.waitForTimeout(1050);
+  await page.waitForTimeout(1350);
   await expect(page).toHaveURL(/\/en\/?$/);
   await link.click();
   await arrived(page, /\/en\/about\/?$/);
@@ -261,13 +253,13 @@ test("reduced motion uses ordinary links without a closing or opening overlay", 
   await page.locator(".topnav").getByRole("link", { name: "Company", exact: true }).click();
   await expect(page).toHaveURL(/\/en\/about\/?$/);
   await expect(page.locator("main h1")).toBeVisible();
-  await expect(page.locator(".atmosphere")).toBeHidden();
+  await expect(page.locator(".page-transition")).toBeHidden();
   expect(await phases(page)).toEqual([]);
 });
 
 for (const state of ["pending", "failed"] as const) {
   test(
-    "ordinary links work when a required cloud texture is " + state,
+    "ordinary links work when the official SVG is " + state,
     async ({ page, baseURL }) => {
       await page.emulateMedia({ reducedMotion: "no-preference" });
       await observePhases(page);
@@ -275,24 +267,24 @@ for (const state of ["pending", "failed"] as const) {
       const gate = new Promise<void>((resolve) => {
         finishRequest = resolve;
       });
-      await page.route("**/transition/fog-front.webp", async (route) => {
+      await page.route("**/brand/roin-world.svg", async (route) => {
         if (state === "pending") await gate;
         await route.abort("failed");
       });
-      const isForeground = (request: Request) =>
-        new URL(request.url()).pathname.endsWith("/transition/fog-front.webp");
+      const isBrand = (request: Request) =>
+        new URL(request.url()).pathname.endsWith("/brand/roin-world.svg");
       const request =
         state === "pending"
-          ? page.waitForRequest(isForeground)
-          : page.waitForEvent("requestfailed", isForeground);
+          ? page.waitForRequest(isBrand)
+          : page.waitForEvent("requestfailed", isBrand);
       try {
         await open(page, baseURL, "en/");
         await request;
-        await expect(page.locator("html[data-cloud-ready]")).toHaveCount(0);
+        await expect(page.locator("html[data-transition-ready]")).toHaveCount(0);
         await page.locator(".topnav").getByRole("link", { name: "Company", exact: true }).click();
         await expect(page).toHaveURL(/\/en\/about\/?$/);
         await expect(page.locator("main h1")).toBeVisible();
-        await expect(page.locator(".atmosphere")).toBeHidden();
+        await expect(page.locator(".page-transition")).toBeHidden();
         expect(await phases(page)).toEqual([]);
       } finally {
         finishRequest();
@@ -343,13 +335,55 @@ test("a navigation cancelled by a 204 response leaves the current page usable", 
   );
   await link.click();
   await expect(page.locator("html")).toHaveAttribute(
-    "data-atmosphere",
+    "data-transition",
     "leave",
   );
   await navigation;
-  await expect(page.locator(".atmosphere")).toBeHidden();
+  await expect(page.locator(".page-transition")).toBeHidden();
   await expect(page).toHaveURL(/\/en\/?$/);
   await page.unroute(destination);
   await link.click();
   await arrived(page, /\/en\/about\/?$/);
 });
+
+for (const width of [1440, 390]) {
+  test("the four arriving strokes settle within the original sign at " + width, async ({ page, baseURL }) => {
+    await page.setViewportSize({ width, height: width === 390 ? 844 : 900 });
+    await page.emulateMedia({ reducedMotion: "no-preference" });
+    await open(page, baseURL, "en/");
+    await ready(page);
+    await page.clock.install();
+    await page.clock.pauseAt(new Date(Date.now() + 1500));
+    // Keep the departure pending while sampling the painted strokes in isolation.
+    await page.locator(".topnav a").first().evaluate((el: HTMLAnchorElement) => el.click());
+    const scene = page.locator(".page-transition");
+    const mark = await scene.locator(".atom-symbol").boundingBox();
+    expect(mark).toBeTruthy();
+    const animations = (time: number) => scene.evaluate((el, t) => {
+      for (const animation of el.getAnimations({ subtree: true })) {
+        animation.pause();
+        animation.currentTime = t;
+      }
+    }, time);
+    const ink = async (time: number) => {
+      await animations(time);
+      const image = await page.screenshot({ style: ".page-transition{opacity:1!important}.atom-lockup,.plant-elevation{visibility:hidden!important}" });
+      const { data, info } = await sharp(image).removeAlpha().greyscale().raw().toBuffer({ resolveWithObject: true });
+      let inside = 0;
+      let outside = 0;
+      for (let y = 0; y < info.height; y++) {
+        for (let x = 0; x < info.width; x++) {
+          if (data[y * info.width + x] <= 12) continue;
+          if (x >= mark!.x - 1 && x <= mark!.x + mark!.width + 1 && y >= mark!.y - 1 && y <= mark!.y + mark!.height + 1) inside++;
+          else outside++;
+        }
+      }
+      return { inside, outside };
+    };
+    expect(await ink(100)).toEqual({ inside: 0, outside: 0 });
+    expect((await ink(370)).outside).toBeGreaterThan(100);
+    const assembled = await ink(836);
+    expect(assembled.inside).toBeGreaterThan(220);
+    expect(assembled.outside).toBe(0);
+  });
+}
