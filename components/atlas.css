@@ -141,7 +141,7 @@
   position: absolute;
   inset: 0;
   content: "";
-  background: linear-gradient(90deg, #080808a1 0%, #08080879 23%, #08080824 49%, transparent 72%),
+  background: linear-gradient(90deg, #080808ba 0%, #080808ad 45%, #08080887 62%, transparent 90%),
     linear-gradient(180deg, #101010 0%, #10101084 11%, transparent 38%, transparent 79%, #101010e8 100%);
 }
 .atlas-engineering .ae-frame { opacity: 0; }
@@ -198,16 +198,6 @@
   visibility: hidden;
   transform: translateY(4px);
 }
-@media (min-width: 681px) {
-  .atlas-engineering .ae-entry::before {
-    position: absolute;
-    z-index: -1;
-    inset: -18% -9% -17% -19%;
-    content: "";
-    pointer-events: none;
-    background: radial-gradient(ellipse 76% 78% at 47% 50%, #0808088c 0%, #08080886 55%, #0808084f 78%, transparent 100%);
-  }
-}
 .atlas-engineering .ae-entry[data-current="true"] {
   opacity: 1;
   visibility: visible;
@@ -252,12 +242,7 @@
   text-decoration: none;
   pointer-events: auto;
 }
-.atlas-engineering .ae-more {
-  justify-content: space-between;
-  gap: 1.1rem;
-  border-block-end: 2px solid var(--ae-active);
-  font-weight: 620;
-}
+.atlas-engineering .ae-more { font-weight: 620; }
 .atlas-engineering .ae-projects a { color: #d4d4d4; }
 .atlas-engineering .ae-caption {
   max-width: 27em;

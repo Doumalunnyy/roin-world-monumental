@@ -163,7 +163,13 @@ export function Hero({ lang, title, intro, film, filmTitle, close, external }: H
             </div>
           </div>
           <div className="hero-reel" onPointerEnter={sequence.interaction.onPointerEnter} onPointerLeave={sequence.interaction.onPointerLeave}>
-            <SequenceNavigation lang={lang} count={frames.length} sequence={sequence}/>
+            {frames.length > 1 && <div className="hero-frame-picker" role="group" aria-label={messages[lang].archive}>
+              {frames.map((frame, index) => (
+                <button type="button" key={frame.image} disabled={!sequence.interactive || sequence.state.failed.includes(index)}
+                  aria-label={messages[lang].index + " " + (index + 1).toLocaleString(lang)}
+                  aria-pressed={sequence.state.active === index} onClick={() => sequence.select(index)} />
+              ))}
+            </div>}
           </div>
         </div>
       </div>

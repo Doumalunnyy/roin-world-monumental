@@ -32,17 +32,7 @@ section.home-expertise { background:var(--deep); color:var(--white); padding-blo
 html[dir=rtl] .discipline-photo { clip-path:polygon(0 0,calc(100% - var(--rake)) 0,100% 100%,var(--rake) 100%); }
 html[dir=rtl] .discipline-story { padding-left:calc(var(--rake) + 10px); padding-right:13%; }
 
-section.partners-band { color:var(--white); background:var(--carbon); padding-block:clamp(25px,3vw,50px); border-block-start:1px solid var(--rule); }
-.partners-band .section-heading { margin-bottom:1.2rem; align-items:baseline; }
-.partners-band h2 { font-size:clamp(1.35rem,2.2vw,2.5rem); }
-.partners-band .partner-strip { margin:0; padding:0; }
-.partners-band .partner-window { background:var(--white); }
-.partners-band .partner-track li { height:clamp(100px,8.8vw,148px); padding:1.15rem 2.2rem; row-gap:.35rem; }
-.partners-band .partner-track img { mix-blend-mode:normal; height:clamp(32px,3.6vw,60px); }
-.partner-strip .strip-control:not(:focus-visible) { width:1px; height:1px; min-height:0; min-width:0; clip-path:inset(50%); overflow:hidden; white-space:nowrap; padding:0; border:0; }
-.partner-strip .strip-control:focus-visible { bottom:.3rem; background:var(--deep); color:white; border-radius:0; padding:.65rem 1rem; }
-.partners-band .partner-strip:focus-within .partner-track,.partners-band .partner-window:active .partner-track { animation-play-state:paused; }
-@media(hover:hover) { .partners-band .partner-strip:hover .partner-track { animation-play-state:paused; } }
+
 
 section.hiring-story { position:relative; isolation:isolate; display:grid; padding-block:0; color:var(--white); background:var(--deep); }
 .hiring-photo { position:absolute; inset:0; z-index:-1; }
@@ -58,8 +48,7 @@ section.people-story { display:grid; grid-template-columns:minmax(0,1.1fr) minma
 .people-story .team-view { min-height:0; aspect-ratio:1.58; }
 .people-figure figcaption { margin-top:.6rem; color:#5f5f5f; font-size:.84rem; }
 .people-story .team-copy { padding:0; }
-section.certificate-band { background:var(--paper); }
-section.certificate-band .section-heading h2 { font-size:clamp(2.2rem,3.5vw,4rem); }
+
 .contact-section .contact-layout h2 { max-width:13ch; }
 
 @media (max-width:1190px) {

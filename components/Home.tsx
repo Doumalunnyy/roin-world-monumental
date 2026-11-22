@@ -19,13 +19,11 @@ import { CorporatePartnersMarquee } from "./CorporatePartnersMarquee";
 import "./corporate-evidence.css";
 import "./home-editorial.css";
 import captions from "@/content/captions.json";
-import { Icon } from "./Icons";
 import { ContactForm } from "./ContactForm";
 import { contactEnabled } from "@/lib/contact";
 export function Home({ lang }: { lang: Lang }) {
   const t = (key: Parameters<typeof txt>[1]) => txt(lang, key);
   const items = features(lang);
-  const office = company.offices.find((o) => o.email);
   return (
     <>
       <Hero lang={lang} title={home.title[lang]} intro={home.intro[lang]}
@@ -72,9 +70,6 @@ export function Home({ lang }: { lang: Lang }) {
         </div>
       </section>
       <section className="partners-band section-space">
-        <div className="shell">
-          <div className="section-heading"><h2>{t("partners")}</h2><Action to={href(lang,"partners")}>{t("partnersLink")}</Action></div>
-        </div>
         <CorporatePartnersMarquee lang={lang} logos={company.partnerDirectory} />
       </section>
       <section className="career-band hiring-story">
@@ -105,24 +100,23 @@ export function Home({ lang }: { lang: Lang }) {
         </div>
       </section>
       <section className="certificate-band section-space">
-        <div className="shell">
-          <div className="section-heading"><h2>{t("certificates")}</h2><Action to={href(lang,"certificates")}>{t("documentLibrary")}</Action></div>
-          <DocumentRegister lang={lang} />
-        </div>
+        <DocumentRegister lang={lang} />
       </section>
-      <section className="contact-section section-space">
-        <div className="shell contact-layout">
-          <div>
-            <h2>{home.contact[lang]}</h2>
-            {office?.email && (
-              <a className="contact-email" href={"mailto:" + office.email}>
-                <Icon name="mail" />
-                {office.email}
-              </a>
-            )}
-            <Action to={href(lang, "contacts")}>{t("offices")}</Action>
+      <section className="contact-section home-correspondence" aria-labelledby="home-contact-title">
+        <div className="shell">
+          <div className="correspondence-spread">
+            <div className="correspondence-invitation">
+              <div className="correspondence-photo">
+                <Photo src="/images/archive-briefing.webp" alt={captions["/images/archive-briefing.webp"][lang]}
+                  sizes="(max-width: 840px) 94vw, 43vw" />
+              </div>
+              <div className="correspondence-caption">
+                <h2 id="home-contact-title">{home.contact[lang]}</h2>
+                <Action to={href(lang, "contacts")}>{t("offices")}</Action>
+              </div>
+            </div>
+            <ContactForm lang={lang} enabled={contactEnabled()} homepage />
           </div>
-          <ContactForm lang={lang} enabled={contactEnabled()} />
         </div>
       </section>
     </>

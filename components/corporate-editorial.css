@@ -269,9 +269,8 @@
   .company-pages .cp-filter-toolbar label { display:grid; gap:.2rem; min-width:0; flex:1; }
   .company-pages .cp-filter-toolbar select { width:100%; min-width:0; font-size:1rem; }
   .cp-match-count { flex-basis:100%; }
-  .company-pages .cp-vacancies article { grid-template-columns:minmax(0,1fr) auto; }
+  .company-pages .cp-vacancies article { grid-template-columns:minmax(0,1fr); gap:.75rem; }
   .company-pages .vacancy-location { display:none; }
-  .company-pages .cp-vacancies article > .text-link { font-size:0; min-width:44px; min-height:44px; justify-content:center; }
   .company-pages .cp-index .cp-news-list article { display:block; }
   .company-pages[data-chapter-body="news"] .cp-index .cp-news-list article { grid-template-columns:minmax(5.7rem,.56fr) minmax(0,1fr); gap:1rem; }
   .company-pages[data-chapter-body="news"] .cp-index .cp-news-list .cp-news-open { display:none; }

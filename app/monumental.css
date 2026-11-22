@@ -12,9 +12,8 @@
 .mast .locale-list { background:var(--deep); border-color:#606060; }
 .mast .head-actions { border-inline-start:1px solid #b3b3b355; padding-inline-start:clamp(8px,1.4vw,26px); }
 @media(max-width:900px) { .mast .head-actions { border:0; padding:0; } }
-.text-link:hover { text-decoration:underline; text-underline-offset:.22em; }
 .action,button[type=submit] { min-height:44px; border-radius:0; font-weight:650; transition:background-color .2s,color .2s,border-color .2s; }
-.text-link { min-height:44px; width:fit-content; font-weight:580; border-color:currentColor; gap:1.2em; }
+.text-link { font-weight:580; }
 .text-link:focus-visible,.action:focus-visible,button:focus-visible,.languages summary:focus-visible { outline:2px solid currentColor; outline-offset:3px; }
 @media (prefers-reduced-motion:reduce) { .text-link:hover .icon-arrow,.action:hover .icon-arrow { transform:none; } }
 .mast-inner { height: clamp(68px, 6.1vw, 88px); }

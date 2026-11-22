@@ -178,7 +178,6 @@
 .related-thumbnail { aspect-ratio: 1.65; }
 .related-records small { display: block; color: var(--ed-gray); font-size: .78rem; line-height: 1.35; }
 .related-records strong { display: block; padding-block: .2rem; font-size: clamp(1.15rem, 1.75vw, 1.84rem); line-height: 1.2; }
-.ed-link-list .text-link { min-height: 44px; justify-content: space-between; border: 0; border-block-start: 1px solid var(--ed-rule); }
 .case-contact { border-block-start: 2px solid var(--ed-ink); padding-block-start: 1.2rem; }
 .case-contact .text-link { margin-block-start: 1rem; }
 @media (max-width:1000px) {

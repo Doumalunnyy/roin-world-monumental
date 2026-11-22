@@ -4,7 +4,7 @@
 .corporate-nav ul { list-style: none; margin: 0; padding: 0; }
 .nav-sections { display: flex; align-items: center; gap: clamp(9px,1vw,23px); }
 .nav-branch { position: relative; display: flex; align-items: center; }
-.corporate-mast .nav-parent { font-size: clamp(.78rem,.91vw,1rem); font-weight: 550; text-underline-offset: .4em; }
+.corporate-mast .nav-parent { position:relative; isolation:isolate; font-size: clamp(.78rem,.91vw,1rem); font-weight: 550; }
 .nav-disclosure > summary { cursor: pointer; display: grid; place-content: center; list-style: none; min-width: 30px; height: 44px; }
 .nav-disclosure summary::-webkit-details-marker { display: none; }
 .corporate-panel summary .icon-chevron { transition: transform .2s ease; }
@@ -12,7 +12,13 @@
 .corporate-nav .nav-sublist { position: absolute; top: calc(100% + 1px); inset-inline-start: -.8rem; min-width: 14rem; padding: .45rem; background: #101010; border: 1px solid #515151; }
 .corporate-nav .nav-sublist a { display: flex; align-items: center; min-height: 44px; padding: .5rem .75rem; font-size: .875rem; font-weight: 450; }
 .corporate-nav .nav-sublist a:hover, .corporate-nav .nav-sublist a:focus-visible { background: #262626; }
-.corporate-nav [data-current-section] > .nav-parent { text-decoration: underline; }
+/* Inset the active surface without pushing adjacent menu items along the row. */
+.corporate-nav .nav-parent:is(:hover,[aria-current]), .corporate-nav [data-current-section] > .nav-parent { background:none; }
+.corporate-nav .nav-parent:is(:hover,[aria-current])::before,
+.corporate-nav [data-current-section] > .nav-parent::before {
+  content:""; position:absolute; z-index:-1; inset:5px -.35em; border-radius:.5rem;
+  background:rgb(255 255 255 / 13%); border:1px solid rgb(255 255 255 / 24%);
+}
 .corporate-panel :is(summary,a):focus-visible, .corporate-toggle:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
 .corporate-panel .corporate-languages { border-inline-start: 1px solid #ffffff55; padding-inline-start: clamp(9px,1vw,20px); }
 .corporate-panel .locale-list { min-width: 135px; background: #101010; }

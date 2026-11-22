@@ -22,10 +22,10 @@ for (const width of [1440, 390]) {
     expect(registration).toBeLessThan(1);
     await expect(draft).toBeHidden();
     await expect(page.locator(".hero")).toHaveAttribute("data-active", "0");
-    const next = page.locator(".hero [data-step=next]");
-    await next.click();
+    const frames = page.locator(".hero-frame-picker").getByRole("button");
+    await frames.nth(1).click();
     await expect(page.locator(".hero")).toHaveAttribute("data-active", "1");
-    await page.locator(".hero [data-step=previous]").click();
+    await frames.first().click();
     await expect(page.locator(".hero")).toHaveAttribute("data-active", "0");
     await expect(draft).toHaveCount(0);
   });

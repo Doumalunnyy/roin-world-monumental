@@ -8,10 +8,9 @@
 .media-archive-photos figcaption strong { display:flex; align-items:center; justify-content:space-between; gap:1rem; font-size:1.12rem; }
 .media-archive-photos figcaption small { display:block; margin-block-start:.45rem; font-size:.83rem; line-height:1.45; }
 .media-archive-video { display:grid; grid-template-columns:1fr 2fr; gap:2rem; margin-block-start:clamp(38px,5vw,78px); border-top:1px solid currentColor; padding-block-start:1.5rem; }
-.media-archive-video > div > a { display:flex; gap:.8rem; align-items:center; min-height:55px; padding-block:.65rem; border-bottom:1px solid #888; }
-.media-archive-video .archive-video-out { justify-content:space-between; }
+.media-archive-video > div { display:grid; justify-items:start; align-content:start; gap:.55rem; }
 @media(max-width:700px) { .media-archive-photos,.media-archive-video { grid-template-columns:1fr; } .media-archive-video { gap:0; } }
 
 .official-archives { display:flex; gap:.45rem 1.25rem; flex-wrap:wrap; margin-top:1rem; }
-.official-archives a { display:inline-flex; align-items:center; gap:.32em; min-height:44px; font-size:.86rem; text-decoration:underline; text-underline-offset:.24em; }
+.official-archives a { font-size:.86rem; }
 .portfolio-footer:has(.official-archives) { flex-wrap:wrap; align-items:baseline; gap:.4rem 1.5rem; }

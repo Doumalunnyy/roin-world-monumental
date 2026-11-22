@@ -5,7 +5,6 @@
 .missing-layout h1 { font-size:clamp(2rem,3.8vw,4rem); line-height:1.1; margin:0; }
 .missing-layout p { margin:1rem 0 1.5rem; max-width:44ch; color:#d0d0ce; }
 .missing-home,.missing-languages a { display:inline-flex; align-items:center; gap:.7rem; min-height:44px; }
-.missing-home { border-block-end:1px solid currentColor; }
 .missing-languages { display:flex; flex-wrap:wrap; gap:.3rem 1.3rem; }
 .missing-page a:focus-visible { outline:2px solid currentColor; outline-offset:3px; }
 .missing-page [dir="rtl"] .missing-home svg { transform:scaleX(-1); }

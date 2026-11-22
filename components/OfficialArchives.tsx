@@ -9,7 +9,7 @@ const titles = {
 export function OfficialArchives({ lang, section }: {lang: Lang; section: keyof typeof titles}) {
   return <div className="official-archives">{["roinworld.com", "roinworld.ae"].map(domain =>
     <a key={domain} href={"https://" + domain + "/" + section + "/"}>
-      {titles[section][lang]} · <bdi>{domain}</bdi> <Icon name="diagonal" size={15}/>
+      <span>{titles[section][lang]} · <bdi>{domain}</bdi></span> <Icon name="diagonal" size={15}/>
     </a>
   )}</div>;
 }

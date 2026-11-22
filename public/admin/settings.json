@@ -258,6 +258,8 @@
     "illustration"
   ],
   "contactKeys": [
+    "letterTitle",
+    "letterMailMode",
     "mailMode",
     "openDraft",
     "title",

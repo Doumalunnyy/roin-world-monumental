@@ -22,7 +22,7 @@ export function Action({
 }) {
   return (
     <a className={light ? "action light" : "text-link"} href={publicUrl(to)}>
-      {children}
+      <span>{children}</span>
       <Icon name="arrow" size={18} />
     </a>
   );

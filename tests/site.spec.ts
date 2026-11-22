@@ -32,7 +32,8 @@ test("archive hero and project selection are independent under reduced motion", 
   await expect(hero.getByRole("link", {name:/фильм/i})).toBeVisible();
   await expect(hero).toHaveAttribute("data-active", "0");
   await expect(hero.locator(".hero-exposure").getByRole("link", {name:/фильм/i})).toBeVisible();
-  await expect(hero.getByRole("button")).toHaveCount(2);
+  await expect(hero.locator(".cinema-arrows")).toHaveCount(0);
+  await expect(hero.getByRole("button", { name: "Кадр 1", pressed: true })).toBeVisible();
   await expect(featured.getByRole("button")).toHaveCount(2);
   await expect(hero).toHaveAttribute("data-running", "false");
   await featured.locator('[data-step="next"]').click();
@@ -97,6 +98,27 @@ test("project filters combine, communicate an empty result and reset", async ({
   await expect(country).toHaveValue("");
   await expect(service).toHaveValue("");
   await expect(cards).toHaveCount(3);
+});
+
+test("the certificate strip moves in RTL, pauses and exposes the three originals", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ reducedMotion: "no-preference" });
+  await open(page, "/ar");
+  const strip = page.locator(".certificate-strip");
+  const viewport = strip.locator(".evidence-window");
+  await viewport.scrollIntoViewIfNeeded();
+  await expect(strip).toHaveAttribute("data-running", "true");
+  await expect.poll(() => viewport.evaluate(el => el.scrollLeft)).toBeLessThan(-2);
+  await strip.getByRole("button").click();
+  await expect(strip).toHaveAttribute("data-running", "false");
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await expect(strip.getByRole("button")).toHaveCount(0);
+  await expect(strip.getByRole("listitem")).toHaveCount(3);
+  for (const entry of await strip.getByRole("listitem").all()) {
+    const file = await entry.locator("a[target=_blank]").getAttribute("href");
+    expect(file).toBeTruthy();
+    await expect(entry.locator("a[download]")).toHaveAttribute("href", file!);
+  }
 });
 
 test("map pins and country list select the same project", async ({ page }) => {

@@ -5,6 +5,7 @@ import "../site.css";
 import "../monumental.css";
 import "../atomic-transition.css";
 import "../motion.css";
+import "../action-links.css";
 import { EditorialMotion } from "@/components/EditorialMotion";
 import { PageTransition } from "@/components/PageTransition";
 import { AtomicScene } from "@/components/AtomicScene";

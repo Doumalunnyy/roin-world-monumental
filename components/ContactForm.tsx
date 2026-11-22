@@ -7,7 +7,7 @@ import { localeUrl, publicUrl } from "@/lib/urls";
 import company from "@/content/company.json";
 import "./contact.css";
 
-type Props = { lang: keyof typeof contactCopy; enabled: boolean };
+type Props = { lang: keyof typeof contactCopy; enabled: boolean; homepage?: boolean };
 type Feedback =
   | "verified"
   | "received"
@@ -21,7 +21,7 @@ const subscribeReady = () => () => {};
 const clientReady = () => true;
 const serverReady = () => false;
 
-export function ContactForm({ lang, enabled }: Props) {
+export function ContactForm({ lang, enabled, homepage = false }: Props) {
   const ready = useSyncExternalStore(subscribeReady, clientReady, serverReady);
   const t = contactCopy[lang];
   const officeEmail = company.offices.find((office) => office.email)?.email;
@@ -134,10 +134,11 @@ export function ContactForm({ lang, enabled }: Props) {
         field.setCustomValidity(messages[field.name] ?? t.invalid);
       }}
     >
-      <h2 id={titleId}>{t.title}</h2>
+      {homepage ? <h3 id={titleId}>{t.letterTitle}</h3> : <h2 id={titleId}>{t.title}</h2>}
+      {homepage && enabled && <p className="contact-form__notice">{contactLink}</p>}
       {!enabled && (
         <p className="contact-form__notice" id={noticeId}>
-          {t.mailMode} {contactLink}
+          {homepage ? t.letterMailMode : t.mailMode} {contactLink}
         </p>
       )}
       <noscript>

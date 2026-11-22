@@ -2,6 +2,7 @@ import { locales } from "@/lib/content";
 import { basePath } from "@/lib/urls";
 import { MissingPage } from "@/components/MissingPage";
 import "./site.css";
+import "./action-links.css";
 
 // Pages serves one 404 document for every missing URL. Select its language
 // before first paint from the path, including repository-prefixed deployments.

@@ -1,5 +1,7 @@
 {
   "ru": {
+    "letterTitle": "Ваше письмо",
+    "letterMailMode": "Здесь можно составить письмо и отправить его из своей почты. Или напишите напрямую.",
     "mailMode": "Здесь можно подготовить письмо для офиса. Отправьте его из своей почтовой программы или напишите нам напрямую.",
     "openDraft": "Открыть письмо в почтовой программе",
     "title": "Написать в ROIN WORLD",
@@ -28,6 +30,8 @@
     "offices": "Контакты офисов"
   },
   "en": {
+    "letterTitle": "Your message",
+    "letterMailMode": "Draft a message here to send from your email app, or email us directly.",
     "mailMode": "Use this form to prepare a draft. Send it from your email app, or email the office directly.",
     "openDraft": "Open draft in email app",
     "title": "Contact ROIN WORLD",
@@ -56,6 +60,8 @@
     "offices": "Office contacts"
   },
   "ar": {
+    "letterTitle": "رسالتكم",
+    "letterMailMode": "يمكنكم كتابة مسودة هنا وإرسالها من تطبيق البريد، أو مراسلتنا مباشرة.",
     "mailMode": "استخدم النموذج لإعداد مسودة ثم أرسلها من تطبيق البريد، أو راسل المكتب مباشرة.",
     "openDraft": "فتح المسودة في تطبيق البريد",
     "title": "مراسلة ROIN WORLD",
@@ -84,6 +90,8 @@
     "offices": "بيانات الاتصال بالمكاتب"
   },
   "es": {
+    "letterTitle": "Su mensaje",
+    "letterMailMode": "Prepare el mensaje aquí y envíelo desde su correo, o escríbanos directamente.",
     "mailMode": "Prepara un borrador con el formulario y envíalo desde tu aplicación de correo. También puedes escribir directamente a la oficina.",
     "openDraft": "Abrir borrador en la aplicación de correo",
     "title": "Escribe a ROIN WORLD",
@@ -112,6 +120,8 @@
     "offices": "Contactos de las oficinas"
   },
   "hu": {
+    "letterTitle": "Az Ön üzenete",
+    "letterMailMode": "Itt megírhatja a levelet, majd elküldheti saját levelezőjéből. Közvetlenül is írhat nekünk.",
     "mailMode": "Az űrlappal levéltervezetet készíthet, amelyet a levelezőprogramjából küldhet el. Közvetlenül is írhat az irodának.",
     "openDraft": "Piszkozat megnyitása a levelezőprogramban",
     "title": "Írjon a ROIN WORLD munkatársainak",

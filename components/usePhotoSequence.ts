@@ -127,8 +127,9 @@ export function usePhotoSequence<T extends HTMLElement>(count: number, holdFirst
   }, [state.previous, state.moves]);
 
   return {
-    attach, state, running, reduced, paused,
+    attach, state, running, reduced, paused, interactive: section !== null,
     step, onKeyDown,
+    select: (index: number) => dispatch({ type: "request", index, manual: true }),
     ready: (index: number) => dispatch({ type: "ready", index, autoplayAllowed: running && !document.hidden && !reducedMotion() }),
     failed: (index: number) => dispatch({ type: "failed", index, count }),
     mounted: new Set([...state.ready, state.active, state.previous, state.pending?.index, buffer]),
